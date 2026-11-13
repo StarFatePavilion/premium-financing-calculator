@@ -1,0 +1,3266 @@
+/* Auto-generated bundle for file:// and static hosting. Do not edit. */
+(() => {
+/* ---- js/plans-data.js ---- */
+/** Auto-generated from data/plans.json — do not edit by hand. */
+const FX_USD_HKD_DEFAULT = 7.75;
+const PLANS = [
+  {
+    "id": "bocgl-ggg",
+    "sheet": "BOCGL GGG",
+    "insurer": {
+      "zhHant": "中銀集團人壽",
+      "zhHans": "中银集团人寿",
+      "en": "BOC Group Life"
+    },
+    "planCode": "GGG",
+    "currency": "USD",
+    "defaultOriginalPremium": 1000000,
+    "sheetDiscount": 0.085,
+    "discountTiers": [
+      {
+        "label": "Below USD 150K",
+        "rate": 0.055
+      },
+      {
+        "label": "USD 150 - Below 600K",
+        "rate": 0.067
+      },
+      {
+        "label": "USD 600K - Below 1M",
+        "rate": 0.075
+      },
+      {
+        "label": "USD 1M or above",
+        "rate": 0.085
+      }
+    ],
+    "firstSurrenderRatio": 0.808,
+    "defaultLtv": 0.85,
+    "realRate": 0.025,
+    "pRate": 0.055,
+    "hRate": 0.0294,
+    "powerUp": {
+      "y1_4": "First 4 yrs: 1H+1.0% (cap: P-3.0%)",
+      "thereafter": "Thereafter: 1H+1.0% (cap: P-1.8%)"
+    },
+    "interestRule": "standard-power-up",
+    "svPerOriginalByYear": {
+      "1": 0.80911,
+      "2": 0.830304,
+      "3": 0.935713,
+      "4": 1.012326,
+      "5": 1.126484,
+      "6": 1.173187,
+      "7": 1.218366,
+      "8": 1.26541,
+      "9": 1.313449,
+      "10": 1.363155
+    }
+  },
+  {
+    "id": "ctf-es",
+    "sheet": "CTF ES",
+    "insurer": {
+      "zhHant": "周大福人壽",
+      "zhHans": "周大福人寿",
+      "en": "CTF Life"
+    },
+    "planCode": "ES",
+    "currency": "USD",
+    "defaultOriginalPremium": 1500000,
+    "sheetDiscount": 0.05,
+    "discountTiers": [
+      {
+        "label": ">=USD 1.5M",
+        "rate": 0.05
+      },
+      {
+        "label": "<USD 1.5M",
+        "rate": 0.04
+      }
+    ],
+    "firstSurrenderRatio": 0.83,
+    "defaultLtv": 0.85,
+    "realRate": 0.025,
+    "pRate": 0.055,
+    "hRate": 0.0294,
+    "powerUp": {
+      "y1_4": "First 4 yrs: 1H+1.0% (cap: P-3.0%)",
+      "thereafter": "Thereafter: 1H+1.0% (cap:P-1.8%)"
+    },
+    "interestRule": "standard-power-up",
+    "svPerOriginalByYear": {
+      "1": 0.836,
+      "2": 0.85595,
+      "3": 0.9817,
+      "4": 1.01427,
+      "5": 1.17204,
+      "6": 1.26056,
+      "7": 1.35,
+      "8": 1.44803,
+      "9": 1.5513666667,
+      "10": 1.65
+    }
+  },
+  {
+    "id": "fwd-wis3-usd",
+    "sheet": "FWD WIS3 USD",
+    "insurer": {
+      "zhHant": "富衛",
+      "zhHans": "富卫",
+      "en": "FWD"
+    },
+    "planCode": "WIS3",
+    "currency": "USD",
+    "defaultOriginalPremium": 1500000,
+    "sheetDiscount": 0.09,
+    "discountTiers": [
+      {
+        "label": ">=USD 1.5M",
+        "rate": 0.09
+      },
+      {
+        "label": "<USD 1.5M",
+        "rate": 0.07
+      }
+    ],
+    "firstSurrenderRatio": 0.8,
+    "defaultLtv": 0.85,
+    "realRate": 0.025,
+    "pRate": 0.055,
+    "hRate": 0.0294,
+    "powerUp": {
+      "y1_4": "First 4 yrs: 1H+1.0% (cap: P-3.0%)",
+      "thereafter": "Thereafter: 1H+1.0% (cap:P-1.8%)"
+    },
+    "interestRule": "standard-power-up",
+    "svPerOriginalByYear": {
+      "1": 0.8,
+      "2": 0.8,
+      "3": 0.9615,
+      "4": 1.0312185,
+      "5": 1.116164,
+      "6": 1.1941455,
+      "7": 1.2723635,
+      "8": 1.368927,
+      "9": 1.448549,
+      "10": 1.5534325
+    }
+  },
+  {
+    "id": "fwd-wis3-hkd",
+    "sheet": "FWD WIS3 HKD",
+    "insurer": {
+      "zhHant": "富衛",
+      "zhHans": "富卫",
+      "en": "FWD"
+    },
+    "planCode": "WIS3",
+    "currency": "HKD",
+    "defaultOriginalPremium": 1000000,
+    "sheetDiscount": 0.07,
+    "discountTiers": [
+      {
+        "label": ">=USD 1.5M",
+        "rate": 0.09
+      },
+      {
+        "label": "<USD 1.5M",
+        "rate": 0.07
+      }
+    ],
+    "firstSurrenderRatio": 0.8,
+    "defaultLtv": 0.9,
+    "realRate": 0.025,
+    "pRate": 0.055,
+    "hRate": 0.0294,
+    "powerUp": {
+      "y1_4": "First 4 yrs: 1H+1.0% (cap: P-3.0%)",
+      "thereafter": "Thereafter: 1H+1.0% (cap:P-1.8%)"
+    },
+    "interestRule": "standard-power-up",
+    "svPerOriginalByYear": {
+      "1": 0.8,
+      "2": 0.8,
+      "3": 0.9585,
+      "4": 1.0312162,
+      "5": 1.1041557,
+      "6": 1.1701258,
+      "7": 1.2433274,
+      "8": 1.332868,
+      "9": 1.4054587,
+      "10": 1.5023011
+    }
+  },
+  {
+    "id": "fwd-wih-usd",
+    "sheet": "FWD WIH USD",
+    "insurer": {
+      "zhHant": "富衛",
+      "zhHans": "富卫",
+      "en": "FWD"
+    },
+    "planCode": "WIH",
+    "currency": "USD",
+    "defaultOriginalPremium": 360000,
+    "sheetDiscount": 0.045,
+    "discountTiers": [
+      {
+        "label": ">=USD 10M",
+        "rate": 0.065
+      },
+      {
+        "label": "<USD 10M",
+        "rate": 0.045
+      }
+    ],
+    "firstSurrenderRatio": 0.8,
+    "defaultLtv": 0.9,
+    "realRate": 0.025,
+    "pRate": 0.055,
+    "hRate": 0.0294,
+    "powerUp": {
+      "y1_4": "First 4 yrs: 1H+1.0% (cap: P-3.0%)",
+      "thereafter": "Thereafter: 1H+1.0% (cap:P-1.8%)"
+    },
+    "interestRule": "fwd-wih-usd-special",
+    "svPerOriginalByYear": {
+      "1": 0.8,
+      "2": 0.838,
+      "3": 0.957224,
+      "4": 1.034673,
+      "5": 1.189351,
+      "6": 1.248257,
+      "7": 1.312396,
+      "8": 1.391767,
+      "9": 1.522373,
+      "10": 1.651996
+    }
+  },
+  {
+    "id": "fwd-wih-hkd",
+    "sheet": "FWD WIH HKD",
+    "insurer": {
+      "zhHant": "富衛",
+      "zhHans": "富卫",
+      "en": "FWD"
+    },
+    "planCode": "WIH",
+    "currency": "HKD",
+    "defaultOriginalPremium": 1000000,
+    "sheetDiscount": 0.045,
+    "discountTiers": [
+      {
+        "label": ">=USD 10M",
+        "rate": 0.065
+      },
+      {
+        "label": "<USD 10M",
+        "rate": 0.045
+      }
+    ],
+    "firstSurrenderRatio": 0.8,
+    "defaultLtv": 0.85,
+    "realRate": 0.025,
+    "pRate": 0.055,
+    "hRate": 0.0294,
+    "powerUp": {
+      "y1_4": "First 4 yrs: 1H+1.0% (cap: P-3.0%)",
+      "thereafter": "Thereafter: 1H+1.0% (cap:P-1.8%)"
+    },
+    "interestRule": "standard-power-up",
+    "svPerOriginalByYear": {
+      "1": 0.8,
+      "2": 0.838,
+      "3": 0.957224,
+      "4": 1.03467375,
+      "5": 1.166351125,
+      "6": 1.209257875,
+      "7": 1.251396,
+      "8": 1.347767125,
+      "9": 1.42337325,
+      "10": 1.52399625
+    }
+  },
+  {
+    "id": "hkl-wp-usd",
+    "sheet": "HKL WP USD",
+    "insurer": {
+      "zhHant": "香港人壽",
+      "zhHans": "香港人寿",
+      "en": "Hong Kong Life"
+    },
+    "planCode": "WP",
+    "currency": "USD",
+    "defaultOriginalPremium": 1000000,
+    "sheetDiscount": 0.05,
+    "discountTiers": [],
+    "firstSurrenderRatio": 0.83,
+    "defaultLtv": 0.85,
+    "realRate": 0.025,
+    "pRate": 0.055,
+    "hRate": 0.0294,
+    "powerUp": {
+      "y1_4": "First 4 yrs: 1H+1% (cap: P-3.0%)",
+      "thereafter": "Thereafter: 1H+1% (cap:P-1.8%)"
+    },
+    "interestRule": "standard-power-up",
+    "svPerOriginalByYear": {
+      "1": 0.83,
+      "2": 0.85,
+      "3": 0.94106,
+      "4": 1.0486208333,
+      "5": 1.103145,
+      "6": 1.158195,
+      "7": 1.2623925,
+      "8": 1.3928,
+      "9": 1.4852,
+      "10": 1.5801458333
+    }
+  },
+  {
+    "id": "hkl-wp-hkd",
+    "sheet": "HKL WP HKD",
+    "insurer": {
+      "zhHant": "香港人壽",
+      "zhHans": "香港人寿",
+      "en": "Hong Kong Life"
+    },
+    "planCode": "WP",
+    "currency": "HKD",
+    "defaultOriginalPremium": 10000000,
+    "sheetDiscount": 0.05,
+    "discountTiers": [],
+    "firstSurrenderRatio": 0.83,
+    "defaultLtv": 0.95,
+    "realRate": 0.025,
+    "pRate": 0.055,
+    "hRate": 0.0294,
+    "powerUp": {
+      "y1_4": "First 4 yrs: 1H+1% (cap: P-3.0%)",
+      "thereafter": "Thereafter: 1H+1% (cap:P-1.8%)"
+    },
+    "interestRule": "standard-power-up",
+    "svPerOriginalByYear": {
+      "1": 0.83,
+      "2": 0.833,
+      "3": 0.8977,
+      "4": 0.99788,
+      "5": 1.0374816,
+      "6": 1.0995964,
+      "7": 1.1995664,
+      "8": 1.315393,
+      "9": 1.4195382,
+      "10": 1.5005342
+    }
+  },
+  {
+    "id": "ctf-pt",
+    "sheet": "CTF PT",
+    "insurer": {
+      "zhHant": "周大福人壽",
+      "zhHans": "周大福人寿",
+      "en": "CTF Life"
+    },
+    "planCode": "PT",
+    "currency": "USD",
+    "defaultOriginalPremium": 500000,
+    "sheetDiscount": 0,
+    "discountTiers": [
+      {
+        "label": ">=USD 1.5M",
+        "rate": 0.06
+      },
+      {
+        "label": "<USD 1.5M",
+        "rate": 0.05
+      }
+    ],
+    "firstSurrenderRatio": 0.8,
+    "defaultLtv": 0.85,
+    "realRate": 0.025,
+    "pRate": 0.055,
+    "hRate": 0.0294,
+    "powerUp": {
+      "y1_4": "First 4 yrs: 1H+1.0% (cap: P-3.0%)",
+      "thereafter": "Thereafter: 1H+1.0% (cap:P-1.8%)"
+    },
+    "interestRule": "standard-power-up",
+    "svPerOriginalByYear": {
+      "1": 0.805217,
+      "2": 0.810272,
+      "3": 0.912576,
+      "4": 1.000609,
+      "5": 1.069457,
+      "6": 1.195663,
+      "7": 1.272718,
+      "8": 1.355435,
+      "9": 1.424576,
+      "10": 1.502098
+    }
+  },
+  {
+    "id": "sunlife-rf",
+    "sheet": "SunLife RF",
+    "insurer": {
+      "zhHant": "永明金融",
+      "zhHans": "永明金融",
+      "en": "Sun Life"
+    },
+    "planCode": "RF",
+    "currency": "USD",
+    "defaultOriginalPremium": 1000000,
+    "sheetDiscount": 0.045,
+    "discountTiers": [],
+    "firstSurrenderRatio": 0.8,
+    "defaultLtv": 0.85,
+    "realRate": 0.025,
+    "pRate": 0.055,
+    "hRate": 0.0294,
+    "powerUp": {
+      "y1_4": "First 4 yrs: 1H+1% (cap: P-3.0%)",
+      "thereafter": "Thereafter: 1H+1% (cap:P-1.8%)"
+    },
+    "interestRule": "standard-power-up",
+    "svPerOriginalByYear": {
+      "1": 0.8005,
+      "2": 0.841613,
+      "3": 0.95606,
+      "4": 1.007369,
+      "5": 1.09601,
+      "6": 1.20944,
+      "7": 1.287855,
+      "8": 1.374907,
+      "9": 1.470815,
+      "10": 1.560422
+    }
+  }
+];
+
+/* ---- js/calc.js ---- */
+/**
+ * Pure premium-financing calculation engine.
+ * Numbers are in policy currency unless noted.
+ */
+
+const DEFAULT_FX = 7.75;
+const DEFAULT_RISE_DELTA = 0.005;
+const DEFAULT_FALL_DELTA = -0.005;
+const DEFAULT_REINVEST_RATE = 0.05;
+
+const UNIT = { K: 1e3, M: 1e6, k: 1e3, m: 1e6 };
+
+function hasUnitSuffix(token) {
+  return /[KMkm]\s*$/.test(String(token).trim().replace(/USD/gi, "").trim());
+}
+
+/**
+ * Parse a USD amount token such as "1.5M", "600K", "USD 150".
+ * @param {string} raw
+ * @param {number} [impliedUnit]
+ * @returns {number|null}
+ */
+function parseUsdToken(raw, impliedUnit) {
+  const s = String(raw)
+    .trim()
+    .replace(/USD/gi, "")
+    .replace(/,/g, "")
+    .trim();
+  const m = s.match(/^([\d.]+)\s*([KMkm])?$/);
+  if (!m) return null;
+  const n = Number(m[1]);
+  if (!Number.isFinite(n)) return null;
+  if (m[2]) return n * UNIT[m[2]];
+  if (impliedUnit) return n * impliedUnit;
+  return n;
+}
+
+function inferUnit(token) {
+  const s = String(token).trim().replace(/USD/gi, "").trim();
+  if (/[Kk]\s*$/.test(s)) return 1e3;
+  if (/[Mm]\s*$/.test(s)) return 1e6;
+  return 1;
+}
+
+/**
+ * Parse a discount-tier label into a half-open USD range [min, max).
+ * @param {string} label
+ * @returns {{ min: number, max: number }|null}
+ */
+function parseTierLabel(label) {
+  const t = String(label).replace(/\s+/g, " ").trim();
+  let m;
+
+  if (
+    (m = t.match(/^(?:>=|≥)\s*(?:USD\s*)?(.+)$/i)) ||
+    (m = t.match(/^(?:USD\s*)?(.+?)\s+or\s+above$/i))
+  ) {
+    const min = parseUsdToken(m[1]);
+    if (min == null) return null;
+    return { min, max: Infinity };
+  }
+
+  if (
+    (m = t.match(/^(?:<|＜)\s*(?:USD\s*)?(.+)$/i)) ||
+    (m = t.match(/^Below\s+(?:USD\s*)?(.+)$/i))
+  ) {
+    const max = parseUsdToken(m[1]);
+    if (max == null) return null;
+    return { min: 0, max };
+  }
+
+  if (
+    (m = t.match(
+      /^(?:USD\s*)?(.+?)\s*[-–—]\s*Below\s+(?:USD\s*)?(.+)$/i
+    ))
+  ) {
+    const upperToken = m[2];
+    const lowerToken = m[1];
+    const max = parseUsdToken(upperToken);
+    if (max == null) return null;
+    let min = parseUsdToken(lowerToken);
+    if (min == null) return null;
+    if (!hasUnitSuffix(lowerToken)) {
+      const implied = inferUnit(upperToken);
+      if (implied > 1) {
+        const scaled = parseUsdToken(lowerToken, implied);
+        if (scaled != null && scaled < max) {
+          min = scaled;
+        } else if (implied === 1e6) {
+          const kScaled = parseUsdToken(lowerToken, 1e3);
+          if (kScaled != null && kScaled < max) min = kScaled;
+        }
+      }
+    }
+    return { min, max };
+  }
+
+  return null;
+}
+
+/**
+ * Auto-pick discount from tier table when present, else sheetDiscount.
+ * CTF PT uses the tier table (5% below USD 1.5M) even if sheetDiscount is 0%.
+ * @returns {{ rate: number, source: 'tier'|'sheet', tierLabel: string|null, usdPremium: number }}
+ */
+function pickDiscount(plan, originalPremium, fx = DEFAULT_FX) {
+  const fxRate = fx || DEFAULT_FX;
+  const usdPremium =
+    plan.currency === "USD" ? originalPremium : originalPremium / fxRate;
+  const tiers = plan.discountTiers || [];
+
+  if (tiers.length) {
+    for (const tier of tiers) {
+      const range = parseTierLabel(tier.label);
+      if (!range) continue;
+      if (usdPremium >= range.min && usdPremium < range.max) {
+        return {
+          rate: tier.rate,
+          source: "tier",
+          tierLabel: tier.label,
+          usdPremium,
+        };
+      }
+    }
+  }
+
+  return {
+    rate: plan.sheetDiscount,
+    source: "sheet",
+    tierLabel: null,
+    usdPremium,
+  };
+}
+
+function defaultPostRate(plan) {
+  return plan.pRate - 0.018;
+}
+
+function defaultMidRate(plan) {
+  return plan.pRate - 0.03;
+}
+
+function defaultPromoRate(plan) {
+  return plan.realRate;
+}
+
+/**
+ * Interest rate for a given policy year.
+ * Standard: years 1–4 promo (realRate); years 5–10 post (pRate − 1.8%).
+ * fwd-wih-usd special (base scenario only): 1–4 promo; 5–7 mid (pRate − 3%); 8–10 post.
+ * Scenarios: constant = promo all years; rise/fall apply from year 5 (absolute rate if provided).
+ */
+function rateForYear(plan, year, assumptions = {}) {
+  const promo = assumptions.promoRate ?? defaultPromoRate(plan);
+  const mid = assumptions.midRate ?? defaultMidRate(plan);
+  const post = assumptions.postRate ?? defaultPostRate(plan);
+  const scenario = assumptions.scenario || "base";
+  const isSpecial =
+    plan.interestRule === "fwd-wih-usd-special" && scenario === "base";
+
+  if (scenario === "constant") return promo;
+
+  if (year <= 4) return promo;
+
+  if (scenario === "rise") {
+    if (assumptions.riseTo != null) return assumptions.riseTo;
+    return post + (assumptions.riseDelta ?? DEFAULT_RISE_DELTA);
+  }
+  if (scenario === "fall") {
+    if (assumptions.fallTo != null) return assumptions.fallTo;
+    return post + (assumptions.fallDelta ?? DEFAULT_FALL_DELTA);
+  }
+
+  if (isSpecial) {
+    if (year <= 7) return mid;
+    return post;
+  }
+  return post;
+}
+
+/**
+ * Interest phases for labels and monthly interest.
+ * @returns {{ from: number, to: number, rate: number, kind: string }[]}
+ */
+function getPhases(plan, assumptions = {}) {
+  const rates = [];
+  for (let y = 1; y <= 10; y++) {
+    rates.push(rateForYear(plan, y, assumptions));
+  }
+  const phases = [];
+  let start = 1;
+  for (let y = 2; y <= 11; y++) {
+    if (y === 11 || rates[y - 1] !== rates[start - 1]) {
+      const rate = rates[start - 1];
+      let kind = "promo";
+      if (start >= 8) kind = "late";
+      else if (start >= 5) kind = "post";
+      if (assumptions.scenario === "constant") kind = "constant";
+      else if (assumptions.scenario === "rise" && start >= 5) kind = "rise";
+      else if (assumptions.scenario === "fall" && start >= 5) kind = "fall";
+      else if (
+        plan.interestRule === "fwd-wih-usd-special" &&
+        (assumptions.scenario || "base") === "base" &&
+        start >= 5 &&
+        start <= 7
+      ) {
+        kind = "mid";
+      }
+      phases.push({ from: start, to: y - 1, rate, kind });
+      start = y;
+    }
+  }
+  return phases;
+}
+
+function svRatio(plan, year) {
+  const table = plan.svPerOriginalByYear || {};
+  const v = table[year] ?? table[String(year)];
+  return Number(v);
+}
+
+function median(values) {
+  if (!values.length) return 0;
+  const s = [...values].sort((a, b) => a - b);
+  const mid = Math.floor(s.length / 2);
+  return s.length % 2 ? s[mid] : (s[mid - 1] + s[mid]) / 2;
+}
+
+function mean(values) {
+  if (!values.length) return 0;
+  return values.reduce((a, b) => a + b, 0) / values.length;
+}
+
+/**
+ * Auto-pick 2–3 highlight years for a plan path.
+ * Never hardcodes 7 vs 8.
+ *
+ * a) First year net profit turns positive, if after year 1.
+ * b) Year with the largest meaningful step-up in years 5–10 (after-promo path).
+ *    The year before is the contrast card when the jump is the story.
+ * c) If no meaningful jump: mid hold (year 5) vs long hold (year 10).
+ *    If year 5 is still negative, use the first positive year vs year 10.
+ * d) An optional third card for a later second step-up, or year 10 if AVR
+ *    keeps climbing by 3pp or more after the main jump.
+ *
+ * @param {{ year: number, profit: number, avr: number }[]} yearRows
+ * @param {{ downPayment: number }} ctx
+ */
+function pickHighlightYears(yearRows, ctx = {}) {
+  const byYear = new Map(yearRows.map((r) => [r.year, r]));
+  const years = yearRows.map((r) => r.year).sort((a, b) => a - b);
+  const down = Math.abs(ctx.downPayment || 0);
+
+  const firstPosRow = yearRows.find((r) => r.profit > 0);
+  const firstPos = firstPosRow ? firstPosRow.year : null;
+
+  const deltaAt = (y) => {
+    const cur = byYear.get(y);
+    const prev = byYear.get(y - 1);
+    if (!cur || !prev) return null;
+    return cur.profit - prev.profit;
+  };
+
+  function isMeaningful(candidateYear, windowYears) {
+    const d = deltaAt(candidateYear);
+    if (d == null || d <= 0) return false;
+    if (down > 0 && d / down < 0.08) return false;
+    const others = windowYears
+      .filter((y) => y !== candidateYear)
+      .map((y) => deltaAt(y))
+      .filter((x) => x != null);
+    if (!others.length) return d > 0;
+    const med = median(others);
+    const avg = mean(others);
+    const ref = Math.max(med, 0);
+    const avgRef = Math.max(avg, 0);
+    return d >= 1.35 * ref || d >= 1.35 * avgRef;
+  }
+
+  const lateWindow = years.filter((y) => y >= 5 && y <= 10 && byYear.get(y - 1));
+  let jumpYear = null;
+  if (lateWindow.length) {
+    let best = lateWindow[0];
+    let bestD = deltaAt(best) ?? -Infinity;
+    for (const y of lateWindow) {
+      const d = deltaAt(y) ?? -Infinity;
+      if (d > bestD) {
+        best = y;
+        bestD = d;
+      }
+    }
+    if (isMeaningful(best, lateWindow)) jumpYear = best;
+  }
+
+  let beforeYear;
+  let afterYear;
+  let pairMode;
+
+  if (jumpYear) {
+    afterYear = jumpYear;
+    beforeYear = jumpYear - 1;
+    pairMode = "jump";
+  } else {
+    const y5 = byYear.get(5);
+    if (y5 && y5.profit > 0) {
+      beforeYear = 5;
+      afterYear = 10;
+    } else if (firstPos && firstPos < 10) {
+      beforeYear = firstPos;
+      afterYear = 10;
+    } else {
+      beforeYear = 5;
+      afterYear = 10;
+    }
+    pairMode = "smooth";
+  }
+
+  const cards = [];
+  const used = new Set();
+
+  const push = (year, role, reason, featured = false) => {
+    if (!byYear.has(year) || used.has(year)) return;
+    used.add(year);
+    cards.push({ year, role, reason, featured: !!featured });
+  };
+
+  if (firstPos && firstPos > 1 && firstPos !== beforeYear && firstPos !== afterYear) {
+    push(firstPos, "breakeven", "breakeven", false);
+  }
+
+  let beforeReason;
+  if (firstPos === beforeYear) beforeReason = "breakeven";
+  else if (pairMode === "smooth" && beforeYear === 5) beforeReason = "mid-hold";
+  else if (pairMode === "smooth") beforeReason = "mid-hold";
+  else beforeReason = "before-jump";
+
+  let afterReason;
+  if (firstPos === afterYear && pairMode === "jump") afterReason = "breakeven-stepup";
+  else if (firstPos === afterYear) afterReason = "breakeven";
+  else if (pairMode === "jump") afterReason = "stepup";
+  else afterReason = "long-hold";
+
+  const afterRow = byYear.get(afterYear);
+  const beforeRow = byYear.get(beforeYear);
+  const afterIsBetter =
+    afterRow && beforeRow ? afterRow.profit >= beforeRow.profit : true;
+
+  push(beforeYear, "before", beforeReason, !afterIsBetter);
+  push(afterYear, "after", afterReason, afterIsBetter);
+
+  // Optional later card: prefer the path's later peak (higher profit and AVR)
+  // over a second step-up that would hide a clearly better later year.
+  if (cards.length < 3 && pairMode === "jump" && afterYear < 10) {
+    const laterYears = years.filter((y) => y > afterYear && y <= 10 && byYear.has(y));
+    let peakYear = null;
+    for (const y of laterYears) {
+      const row = byYear.get(y);
+      const cur = peakYear == null ? null : byYear.get(peakYear);
+      if (
+        !cur ||
+        row.profit > cur.profit ||
+        (row.profit === cur.profit && (row.avr ?? -Infinity) > (cur.avr ?? -Infinity))
+      ) {
+        peakYear = y;
+      }
+    }
+
+    const laterWindow = years.filter((y) => y > afterYear && y <= 10 && byYear.get(y - 1));
+    let second = null;
+    if (laterWindow.length) {
+      let best = laterWindow[0];
+      let bestD = deltaAt(best) ?? -Infinity;
+      for (const y of laterWindow) {
+        const d = deltaAt(y) ?? -Infinity;
+        if (d > bestD) {
+          best = y;
+          bestD = d;
+        }
+      }
+      if (isMeaningful(best, laterWindow)) second = best;
+    }
+
+    const peakRow = peakYear ? byYear.get(peakYear) : null;
+    const secondRow = second ? byYear.get(second) : null;
+    const peakBeatsSecond =
+      peakRow &&
+      (!secondRow ||
+        peakYear === second ||
+        (peakRow.profit > secondRow.profit &&
+          (peakRow.avr ?? -Infinity) + 1e-12 >= (secondRow.avr ?? -Infinity)) ||
+        (peakRow.profit + 1e-6 >= secondRow.profit &&
+          (peakRow.avr ?? -Infinity) > (secondRow.avr ?? -Infinity)));
+    const peakIsClearLater =
+      peakRow &&
+      afterRow &&
+      peakYear > afterYear &&
+      peakRow.profit > afterRow.profit &&
+      ((peakRow.avr ?? -Infinity) + 1e-12 >= (afterRow.avr ?? -Infinity) ||
+        peakRow.profit >= afterRow.profit * 1.5);
+
+    if (peakYear && !used.has(peakYear) && peakBeatsSecond && peakIsClearLater) {
+      push(peakYear, "extra", "long-hold", false);
+    } else if (second && !used.has(second)) {
+      push(second, "extra", "second-stepup", false);
+    } else if (byYear.has(10) && !used.has(10) && afterRow) {
+      const y10 = byYear.get(10);
+      if (
+        (y10.avr ?? 0) >= (afterRow.avr ?? 0) + 0.03 ||
+        (y10.profit > 0 && y10.profit >= afterRow.profit * 1.5)
+      ) {
+        push(10, "extra", "long-hold", false);
+      }
+    }
+  }
+
+  // If the path turns positive after a meaningful mid-term loss, show that loss year.
+  const lossYear = firstPos ? firstPos - 1 : null;
+  if (lossYear && lossYear >= 5 && byYear.has(lossYear) && !used.has(lossYear)) {
+    const lossRow = byYear.get(lossYear);
+    if (lossRow.profit < 0) {
+      const meaningful = down > 0 ? Math.abs(lossRow.profit) / down >= 0.05 : true;
+      if (meaningful) push(lossYear, "loss", "pre-breakeven", false);
+    }
+  }
+
+  cards.sort((a, b) => a.year - b.year);
+  // Ensure the higher-profit year in the main pair stays featured if we added extras.
+  const main = cards.filter((c) => c.role === "before" || c.role === "after");
+  if (main.length === 2) {
+    const better =
+      byYear.get(main[0].year).profit >= byYear.get(main[1].year).profit
+        ? main[0]
+        : main[1];
+    for (const c of cards) c.featured = c === better || (c.year === better.year && (c.role === "before" || c.role === "after"));
+    // Keep only one featured card: the better of the main pair (or the better overall if desired).
+    // If an extra year is actually the highest profit (e.g. year 10), feature that instead —
+    // clients should see the later/better year in deep green when it is the peak of the set.
+    let peak = cards[0];
+    for (const c of cards) {
+      if (byYear.get(c.year).profit > byYear.get(peak.year).profit) peak = c;
+    }
+    for (const c of cards) c.featured = c.year === peak.year;
+  }
+
+  return {
+    cards,
+    firstPositiveYear: firstPos,
+    jumpYear,
+    pairMode,
+    auto: true,
+  };
+}
+
+/**
+ * Core illustration.
+ * @param {object} plan
+ * @param {object} [inputs]
+ */
+function calculate(plan, inputs = {}) {
+  const original =
+    inputs.originalPremium != null
+      ? Number(inputs.originalPremium)
+      : plan.defaultOriginalPremium;
+  const fx = inputs.fx != null ? Number(inputs.fx) : DEFAULT_FX;
+  const ltv = inputs.ltv != null ? Number(inputs.ltv) : plan.defaultLtv;
+
+  let discountMeta;
+  let discount;
+  if (inputs.discountOverride != null && inputs.discountOverride !== "") {
+    discount = Number(inputs.discountOverride);
+    discountMeta = {
+      rate: discount,
+      source: "override",
+      tierLabel: null,
+      usdPremium: plan.currency === "USD" ? original : original / fx,
+    };
+  } else {
+    discountMeta = pickDiscount(plan, original, fx);
+    discount = discountMeta.rate;
+  }
+
+  const premiumAfterDiscount = original * (1 - discount);
+  const firstSurrender = original * plan.firstSurrenderRatio;
+  const loan = firstSurrender * ltv;
+  const downPayment = premiumAfterDiscount - loan;
+
+  const assumptions = {
+    promoRate: inputs.promoRate ?? defaultPromoRate(plan),
+    midRate: inputs.midRate ?? defaultMidRate(plan),
+    postRate: inputs.postRate ?? defaultPostRate(plan),
+    scenario: inputs.scenario || "base",
+    riseDelta: inputs.riseDelta,
+    fallDelta: inputs.fallDelta,
+    riseTo: inputs.riseTo,
+    fallTo: inputs.fallTo,
+  };
+
+  const reinvest = !!inputs.reinvest;
+  const reinvestRate =
+    inputs.reinvestRate != null ? Number(inputs.reinvestRate) : DEFAULT_REINVEST_RATE;
+
+  const phases = getPhases(plan, assumptions);
+  const monthlyInterestByPhase = phases.map((p) => ({
+    ...p,
+    monthly: loan * p.rate / 12,
+    annual: loan * p.rate,
+  }));
+
+  const years = [];
+  let accInterest = 0;
+  for (let t = 1; t <= 10; t++) {
+    const ratio = svRatio(plan, t);
+    const sv = ratio * original;
+    const rate = rateForYear(plan, t, assumptions);
+    const annualInterest = loan * rate;
+    accInterest += annualInterest;
+    const profit = sv - accInterest - loan - downPayment;
+    const totalReturn = downPayment > 0 ? profit / downPayment : null;
+    const avr = totalReturn != null ? totalReturn / t : null;
+
+    const selfFundedProfit = sv - premiumAfterDiscount;
+    const selfFundedTotalReturn =
+      premiumAfterDiscount > 0 ? selfFundedProfit / premiumAfterDiscount : null;
+    const selfFundedAvr =
+      selfFundedTotalReturn != null ? selfFundedTotalReturn / t : null;
+
+    const reinvestmentGain = reinvest ? loan * reinvestRate * t : 0;
+    const profitWithReinvestment = profit + reinvestmentGain;
+
+    years.push({
+      year: t,
+      sv,
+      svRatio: ratio,
+      rate,
+      annualInterest,
+      accInterest,
+      profit,
+      totalReturn,
+      avr,
+      selfFundedProfit,
+      selfFundedTotalReturn,
+      selfFundedAvr,
+      reinvestmentGain,
+      profitWithReinvestment,
+    });
+  }
+
+  const highlights = pickHighlightYears(years, { downPayment });
+
+  return {
+    planId: plan.id,
+    currency: plan.currency,
+    original,
+    discount,
+    discountMeta,
+    premiumAfterDiscount,
+    firstSurrender,
+    ltv,
+    loan,
+    downPayment,
+    fx,
+    releasedCapital: loan,
+    phases,
+    monthlyInterestByPhase,
+    assumptions,
+    reinvest,
+    reinvestRate,
+    years,
+    highlights,
+    downPaymentHkd: plan.currency === "HKD" ? downPayment : downPayment * fx,
+    loanHkd: plan.currency === "HKD" ? loan : loan * fx,
+  };
+}
+
+/**
+ * Solve for original premium so financing down payment ≈ target HKD,
+ * iterating discount tiers because the rate can change with size.
+ */
+function scaleOriginalForTargetDownHkd(plan, targetDownHkd, inputs = {}) {
+  const fx = inputs.fx != null ? Number(inputs.fx) : DEFAULT_FX;
+  const ltv = inputs.ltv != null ? Number(inputs.ltv) : plan.defaultLtv;
+  const targetDown =
+    plan.currency === "HKD" ? targetDownHkd : targetDownHkd / fx;
+
+  let original = plan.defaultOriginalPremium;
+  let last = NaN;
+  for (let i = 0; i < 12; i++) {
+    let discount;
+    if (inputs.discountOverride != null && inputs.discountOverride !== "") {
+      discount = Number(inputs.discountOverride);
+    } else {
+      discount = pickDiscount(plan, original, fx).rate;
+    }
+    const factor = 1 - discount - plan.firstSurrenderRatio * ltv;
+    if (factor <= 1e-9) {
+      return { original: NaN, ok: false, reason: "non-positive-down" };
+    }
+    original = targetDown / factor;
+    if (Math.abs(original - last) < 1e-6) break;
+    last = original;
+  }
+
+  const check = calculate(plan, { ...inputs, originalPremium: original, ltv, fx });
+  return {
+    original,
+    ok: Number.isFinite(original) && original > 0,
+    downPayment: check.downPayment,
+    downPaymentHkd: check.downPaymentHkd,
+  };
+}
+
+
+/**
+ * Later year used in multi-plan "auto" compare: the featured highlight,
+ * or a later path peak that has clearly higher profit and AVR.
+ */
+function suggestedLaterYear(result) {
+  const cards = result.highlights?.cards || [];
+  const featured = cards.find((c) => c.featured);
+  const after = cards.find((c) => c.role === "after");
+  const fallback = featured || after || cards.at(-1) || { year: 8 };
+  let year = fallback.year;
+  const rows = result.years || [];
+  const base = rows.find((y) => y.year === year) || rows[year - 1];
+  if (!base) return year;
+  let peak = base;
+  for (const row of rows) {
+    if (row.year < 5) continue;
+    if (
+      row.profit > peak.profit ||
+      (row.profit === peak.profit && (row.avr ?? -Infinity) > (peak.avr ?? -Infinity))
+    ) {
+      peak = row;
+    }
+  }
+  if (
+    peak.year !== year &&
+    peak.profit > base.profit &&
+    (peak.avr ?? -Infinity) + 1e-12 >= (base.avr ?? -Infinity)
+  ) {
+    return peak.year;
+  }
+  return year;
+}
+
+/**
+ * Multi-plan comparison rows.
+ * yearMode: 'auto-later' (each plan's featured/later highlight year) or 'fixed'.
+ * premiumMode: 'default' | 'align-down'.
+ */
+function comparePlans(plans, options = {}) {
+  const {
+    premiumMode = "default",
+    targetDownHkd = 300000,
+    yearMode = "auto-later",
+    fixedYear = 8,
+    inputs = {},
+  } = options;
+
+  return plans.map((plan) => {
+    let original = plan.defaultOriginalPremium;
+    let scaled = null;
+    if (premiumMode === "align-down") {
+      scaled = scaleOriginalForTargetDownHkd(plan, targetDownHkd, inputs);
+      if (scaled.ok) original = scaled.original;
+    }
+    const result = calculate(plan, { ...inputs, originalPremium: original });
+    let year;
+    if (yearMode === "fixed") {
+      year = fixedYear;
+    } else {
+      year = suggestedLaterYear(result);
+    }
+    const row = result.years.find((y) => y.year === year) || result.years[year - 1];
+    return {
+      planId: plan.id,
+      plan,
+      original,
+      scaled,
+      result,
+      year,
+      profit: row.profit,
+      avr: row.avr,
+      totalReturn: row.totalReturn,
+      downPayment: result.downPayment,
+      downPaymentHkd: result.downPaymentHkd,
+      loan: result.loan,
+    };
+  });
+}
+
+function toHkd(amount, currency, fx = DEFAULT_FX) {
+  if (currency === "HKD") return amount;
+  return amount * fx;
+}
+
+function fromHkd(amountHkd, currency, fx = DEFAULT_FX) {
+  if (currency === "HKD") return amountHkd;
+  return amountHkd / fx;
+}
+
+/* ---- js/i18n.js ---- */
+const LANGS = [
+  { id: "zh-Hant", short: "繁" },
+  { id: "zh-Hans", short: "简" },
+  { id: "en", short: "EN" },
+];
+
+const STRINGS = {
+  "zh-Hant": {
+    appTitle: "保費融資計算器",
+    appSubtitle: "保費融資　｜　增值參考",
+    docTitle: "保費融資計算器",
+    settings: "設定",
+    settingsTitle: "顧問資料",
+    advisorName: "顧問姓名",
+    advisorCompany: "公司／團隊名稱",
+    advisorPhone: "電話或 WhatsApp",
+    settingsSave: "儲存",
+    settingsClose: "關閉",
+    settingsHint: "會顯示於頁首、頁末及列印提案，僅儲存在此裝置。",
+    planSelector: "選擇計劃",
+    premiumLabel: "原保費（保單貨幣）",
+    premiumReset: "還原示例保費",
+    assumptions: "假設與參數",
+    assumptionsHide: "收起參數",
+    fxLabel: "匯率（1 美元兌港元）",
+    ltvLabel: "貸款成數（LTV）",
+    discountLabel: "保費折扣",
+    discountAuto: "按級距自動計算",
+    discountOverride: "手動覆寫",
+    discountApplied: "套用折扣",
+    discountTier: "級距",
+    promoRateLabel: "首 4 年優惠息率",
+    postRateLabel: "第 5 年起息率",
+    midRateLabel: "第 5 至 7 年息率",
+    resetAssumptions: "還原預設假設",
+    heroDown: "首期投入",
+    heroMonthly: "每月利息另付",
+    heroRate: "銀行融資息率假設",
+    heroRateHint: "可輸入",
+    heroRateAllYears: "全程",
+    heroPromoShort: "首 4 年",
+    heroPostShort: "第 5 年起",
+    heroMidShort: "第 5 至 7 年",
+    heroLateShort: "第 8 至 10 年",
+    wanHkd: "萬港元",
+    wanUsd: "萬美元",
+    interestFoot: "已扣除持有期內利息；按上方／所示融資息率假設計算。首期未包括安排費用（除非另行說明）。",
+    yearCompareTitle: "持有年期比較",
+    yearCompareHint: "下列年期按本計劃的演示路徑自動選出，並非一律比較第 7 與第 8 年。你亦可自選任何兩年。",
+    useSuggested: "自動選年期",
+    manualPick: "自選年期",
+    compareYearA: "對比年份",
+    compareYearB: "與",
+    netProfit: "預計淨收益",
+    avrLabel: "以首期計平均每年回報",
+    stillLoss: "此年仍為虧損",
+    exactFigure: "精確數字",
+    reasonBreakeven: "第 {n} 年轉正",
+    reasonStepup: "第 {n} 年增值加快",
+    reasonBreakevenStepup: "第 {n} 年轉正並加快",
+    reasonBeforeJump: "第 {n} 年（加快前）",
+    reasonMidHold: "持有 {n} 年參考",
+    reasonLongHold: "持有 {n} 年參考",
+    reasonSecondStepup: "第 {n} 年再加快",
+    reasonManual: "持有 {n} 年",
+    chartTitle: "年期路徑：淨收益與平均每年回報",
+    chartProfit: "預計淨收益",
+    chartAvr: "平均每年回報",
+    chartSv: "演示退保價值",
+    chartInterest: "累計利息",
+    chartHint: "曲線展示整段演示路徑。綠點為目前比較年期；零軸以下為虧損，不會隱藏。",
+    seriesProfitAvr: "淨收益 + 回報",
+    seriesSv: "退保價值",
+    seriesInterest: "累計利息",
+    howTitle: "計劃如何運作",
+    howStep1Title: "支付首期，餘額銀行融資",
+    howStep1: "以較低的自付金額啟動整份保單，差額由銀行按退保價值的貸款成數借出。",
+    howStep2Title: "投保整付儲蓄計劃",
+    howStep2: "一次過繳付總保費（已扣折扣），保單按保險公司的演示退保價值增長。",
+    howStep3Title: "於目標年期退保還貸",
+    howStep3: "退保所得先償還貸款本金，餘額扣除已另行支付的利息後，即為預期淨收益。",
+    howInterestNote: "利息在持有期內須另行支付（按月或按年），不會自動從保單扣除，因此要預留現金流。",
+    cashflowTitle: "現金流時間線",
+    cashflowStart: "投保當日",
+    cashflowStartBody: "支付首期 {down}；銀行貸出 {loan}；保單以折扣後保費 {premium} 成立。",
+    cashflowInterest: "持有期內",
+    cashflowInterestBody: "利息另行支付。{phases}",
+    cashflowExit: "目標年期退保",
+    cashflowExitBody: "演示退保價值 {sv}，償還貸款 {loan}，已付利息累計 {interest}，預期淨收益 {profit}。",
+    phaseRange: "第 {from} 至 {to} 年",
+    phasePromo: "優惠期",
+    phasePost: "其後",
+    phaseMid: "中段",
+    phaseLate: "較後年期",
+    phaseConstant: "全程維持",
+    phaseRise: "上升情景",
+    phaseFall: "下降情景",
+    perMonth: "每月 {amount}",
+    perYear: "每年 {amount}",
+    vsTitle: "融資 vs 自資",
+    vsFinancing: "保費融資",
+    vsSelf: "全數自資",
+    vsOutlay: "資金投入",
+    vsProfit: "預計淨收益",
+    vsAvr: "以投入計平均每年回報",
+    vsReleased: "釋放資金",
+    vsReleasedNote: "融資把貸款額從保單佔用中釋出，可用於其他配置。回報率較高，是因為分母（首期）較小；絕對收益須扣除利息，不一定高於自資。",
+    vsHonestNote: "兩邊使用同一份演示退保價值。融資並不改變保單本身的價值，只改變你的資金結構與利息支出。",
+    holdYearLabel: "對比持有年期",
+    reinvestToggle: "選擇性演示：釋放資金再投資",
+    reinvestRate: "假設年率（單利）",
+    reinvestNote: "此為額外假設，並非保單演示價值的一部分。以貸款額 × 年率 × 年期作簡單累計，預設關閉以保持與主要利潤欄一致。",
+    reinvestGain: "再投資示意收益",
+    reinvestTotal: "淨收益 + 再投資示意",
+    sensTitle: "息率有變，收益會點？",
+    sensIntro: "情景套用在第 5 年起的融資息率（「全程維持」則各年沿用優惠息率）。升跌幅度可自行調整。",
+    sensBase: "現行假設",
+    sensConstant: "全程維持優惠息率",
+    sensRise: "第 5 年起上升",
+    sensFall: "第 5 年起下降",
+    sensRiseTo: "升至",
+    sensFallTo: "降至",
+    sensAmountNote: "金額：{unit}",
+    policyCcy: "保單貨幣",
+    hkd: "港元",
+    usd: "美元",
+    sensColScenario: "融資息率假設",
+    sensTableFoot: "升息及減息情景：第 5 年起按表列息率計算。回報為以首期計的簡單平均每年回報（並非複利年率）。以上只調整融資息率，保單演示價值沿用同一份演示假設。",
+    tableTitle: "年度明細",
+    tableShow: "展開年度明細",
+    tableHide: "收起年度明細",
+    colYear: "年度",
+    colSv: "演示退保價值",
+    colRate: "息率",
+    colAnnualInt: "年利息",
+    colAccInt: "累計利息",
+    colProfit: "預計淨收益",
+    colTotRet: "總回報",
+    colAvr: "平均每年回報",
+    compareTitle: "多計劃比較",
+    compareDefaultPrem: "各計劃示例保費",
+    compareAlignDown: "按相同首期（港元）對齊",
+    compareTargetDown: "目標首期（港元）",
+    compareYearAuto: "各用其較後演示年期",
+    compareYearFixed: "統一比較同一年期",
+    compareYearLabel: "統一年期",
+    compareRankHint: "按預計淨收益（換算港元）由高至低排列。較弱或仍虧損的年期同樣顯示，不予隱藏。",
+    compareColPlan: "計劃",
+    compareColYear: "年期",
+    compareColDown: "首期（港元）",
+    compareColProfit: "預計淨收益（港元）",
+    compareColAvr: "平均每年回報",
+    compareCurrent: "目前計劃",
+    compareAlignNote: "對齊模式會反推原保費，使各計劃首期約等於目標金額；折扣級距可能隨保費規模改變，數字已迭代計算。",
+    notesTitle: "申請資料",
+    note1: "首期一般指折扣後保費減去銀行貸款，並未包括安排費用、手續費或其他銀行收費，除非另行說明。",
+    note2: "融資利息須在貸款期內另行支付，並不會自動從保單價值扣除。請預留足夠現金流。",
+    note3: "銀行通常要求提供資產證明及通過貸款審批；具體文件、成數與資格視乎貸款銀行及保險公司而定。",
+    note4: "實際息率、貸款成數、還款安排及批核結果取決於當時市場、銀行政策與個人情況，並可能調整。",
+    note5: "本計算器為顧問演示工具，並非貸款或投保申請，亦不是任何銀行或保險公司的官方要約。",
+    faqTitle: "常見問題",
+    faq1q: "如果融資息率上升，會怎樣？",
+    faq1a: "保單的演示退保價值不會因為貸款息率而改變，但你另行支付的利息會增加，預計淨收益與平均每年回報會下降。可用上方「息率有變」情景，查看第 5 年起息率上升或下降後的路徑。利息需以額外現金支付，與保單價值分開。",
+    faq2q: "提早退保有什麼風險？",
+    faq2a: "較早年期的演示退保價值可能低於折扣後保費，在扣除貸款及已付利息後，淨收益可以是負數。本計算器會如實顯示虧損年份，不會為了好看而隱藏。提前退保亦可能受保險公司的退保條件約束。融資貸款仍須償還。",
+    faq3q: "美元保單有匯率風險嗎？",
+    faq3a: "有。本頁預設以 1 美元 = 7.75 港元作換算，方便以港元理解資金。實際兌回港元的金額，取決於退保或還款時的匯率。若你的收入與開支以港元為主，美元保單會承受匯率波動。匯率可在參數中調整。",
+    faq4q: "利息是額外的現金支出嗎？",
+    faq4a: "是。每月或每年利息須在持有期內另行支付，不會從保單自動扣款。預計淨收益已扣除整段期間的累計利息。請確保除了首期之外，還有穩定現金流支付利息。",
+    faq5q: "演示價值是否保證？",
+    faq5a: "不是。退保價值來自顧問的演示檔（PFCal），屬說明用途，並非保證、亦非回報承諾。實際價值取決於保險公司當時的紅利、利率或結算假設，可高可低。本工具不構成財務、法律或稅務意見，亦不是銀行或保險公司的官方要約。",
+    faq6q: "為什麼有些計劃在較後年期增值較快？是否一定要看到第 7、8 年？",
+    faq6a: "部分計劃的演示退保價值在某些年度跳升較明顯，這是該份演示的產品結構使然，並非所有計劃都在第 7 與第 8 年出現最大差距。本頁會按每份計劃的路徑，自動標示轉正年度、增值加快的年度，或在路徑平穩時改以 5 年與 10 年作參考。標示年期只為便於閱讀，並非建議或保證。",
+    disclaimerTitle: "重要聲明",
+    disclaimerBody:
+      "以上數字按顧問提供的演示退保價值（PFCal）及本頁所示融資假設計算，僅供說明，並非保證收益，亦不是任何保險公司或銀行的官方要約或銷售文件。實際退保價值、融資息率、貸款成數、批核資格與匯率均可變動，並可能令結果較演示更差，包括錄得虧損。平均每年回報為以首期計的簡單平均，並非複合年增長率。本工具不構成財務、投資、法律或稅務意見。投保及融資前，請細閱計劃說明書、演示文件與銀行貸款條款，並按個人情況考慮是否適合。",
+    exportProposal: "匯出提案",
+    printDocTitle: "保費融資參考提案",
+    printPrepared: "擬備",
+    printDate: "日期",
+    footerSource: "數字源自顧問演示檔，僅供參考。",
+    contactWhatsApp: "WhatsApp",
+    downNegative: "以目前假設，首期為零或負數，回報率無法計算。請調低貸款成數或檢查折扣。",
+    skipToContent: "跳至內容",
+    languageLabel: "語言",
+    premiumStepUp: "增加保費",
+    premiumStepDown: "減少保費",
+    premiumHint: "更改保費可能令適用的折扣級距改變。",
+    invalidRateHint: "輸入無效，已還原為上一個有效息率。",
+    invalidPremiumHint: "保費須大於零，已還原為上一個有效數字。",
+    postRateLabelLate: "第 8 年起息率",
+    avrSimpleNote: "簡單平均，非複利",
+    avrSpreadNote: "較後年期的平均每年回報較低，是因為收益分攤在更多年份。",
+    reasonPreBreakeven: "持有 {n} 年（仍為虧損）",
+    compareSampleWarn: "此模式使用各計劃各自的示例保費，首期及保費規模並不相同，不能當作公平對比。",
+    compareAssumptionsUnified: "比較使用與上方相同的貸款成數、折扣及息率假設。",
+    compareAssumptionsLtvRates: "比較使用與上方相同的貸款成數及息率假設；折扣仍按各計劃自身級距自動計算。",
+    wanShort: "萬",
+    ctfPtTierNote: "本頁按級距表計算折扣（此示例保費為 5%），並非 Excel 工作表中該格的 0%。",
+    scrollHint: "可橫向滑動查看完整數字",
+    yearUnit: "第 {n} 年",
+    holdYears: "持有 {n} 年",
+    and: "與",
+    insurerGroup: "保險公司",
+  },
+  "zh-Hans": {
+    appTitle: "保费融资计算器",
+    appSubtitle: "保费融资　｜　增值参考",
+    docTitle: "保费融资计算器",
+    settings: "设置",
+    settingsTitle: "顾问资料",
+    advisorName: "顾问姓名",
+    advisorCompany: "公司／团队名称",
+    advisorPhone: "电话或 WhatsApp",
+    settingsSave: "保存",
+    settingsClose: "关闭",
+    settingsHint: "会显示于页首、页末及打印提案，仅储存在此装置。",
+    planSelector: "选择计划",
+    premiumLabel: "原保费（保单货币）",
+    premiumReset: "还原示例保费",
+    assumptions: "假设与参数",
+    assumptionsHide: "收起参数",
+    fxLabel: "汇率（1 美元兑港元）",
+    ltvLabel: "贷款成数（LTV）",
+    discountLabel: "保费折扣",
+    discountAuto: "按级距自动计算",
+    discountOverride: "手动覆盖",
+    discountApplied: "套用折扣",
+    discountTier: "级距",
+    promoRateLabel: "首 4 年优惠利率",
+    postRateLabel: "第 5 年起利率",
+    midRateLabel: "第 5 至 7 年利率",
+    resetAssumptions: "还原默认假设",
+    heroDown: "首期投入",
+    heroMonthly: "每月利息另付",
+    heroRate: "银行融资利率假设",
+    heroRateHint: "可输入",
+    heroRateAllYears: "全程",
+    heroPromoShort: "首 4 年",
+    heroPostShort: "第 5 年起",
+    heroMidShort: "第 5 至 7 年",
+    heroLateShort: "第 8 至 10 年",
+    wanHkd: "万港元",
+    wanUsd: "万美元",
+    interestFoot: "已扣除持有期内利息；按上方／所示融资利率假设计算。首期未包括安排费用（除非另行说明）。",
+    yearCompareTitle: "持有年期比较",
+    yearCompareHint: "下列年期按本计划的演示路径自动选出，并非一律比较第 7 与第 8 年。你亦可自选任何两年。",
+    useSuggested: "自动选年期",
+    manualPick: "自选年期",
+    compareYearA: "对比年份",
+    compareYearB: "与",
+    netProfit: "预计净收益",
+    avrLabel: "以首期计平均每年回报",
+    stillLoss: "此年仍为亏损",
+    exactFigure: "精确数字",
+    reasonBreakeven: "第 {n} 年转正",
+    reasonStepup: "第 {n} 年增值加快",
+    reasonBreakevenStepup: "第 {n} 年转正并加快",
+    reasonBeforeJump: "第 {n} 年（加快前）",
+    reasonMidHold: "持有 {n} 年参考",
+    reasonLongHold: "持有 {n} 年参考",
+    reasonSecondStepup: "第 {n} 年再加快",
+    reasonManual: "持有 {n} 年",
+    chartTitle: "年期路径：净收益与平均每年回报",
+    chartProfit: "预计净收益",
+    chartAvr: "平均每年回报",
+    chartSv: "演示退保价值",
+    chartInterest: "累计利息",
+    chartHint: "曲线展示整段演示路径。绿点为目前比较年期；零轴以下为亏损，不会隐藏。",
+    seriesProfitAvr: "净收益 + 回报",
+    seriesSv: "退保价值",
+    seriesInterest: "累计利息",
+    howTitle: "计划如何运作",
+    howStep1Title: "支付首期，余额银行融资",
+    howStep1: "以较低的自付金额启动整份保单，差额由银行按退保价值的贷款成数借出。",
+    howStep2Title: "投保整付储蓄计划",
+    howStep2: "一次性缴付总保费（已扣折扣），保单按保险公司的演示退保价值增长。",
+    howStep3Title: "于目标年期退保还贷",
+    howStep3: "退保所得先偿还贷款本金，余额扣除已另行支付的利息后，即为预期净收益。",
+    howInterestNote: "利息在持有期内须另行支付（按月或按年），不会自动从保单扣除，因此要预留现金流。",
+    cashflowTitle: "现金流时间线",
+    cashflowStart: "投保当日",
+    cashflowStartBody: "支付首期 {down}；银行贷出 {loan}；保单以折扣后保费 {premium} 成立。",
+    cashflowInterest: "持有期内",
+    cashflowInterestBody: "利息另行支付。{phases}",
+    cashflowExit: "目标年期退保",
+    cashflowExitBody: "演示退保价值 {sv}，偿还贷款 {loan}，已付利息累计 {interest}，预期净收益 {profit}。",
+    phaseRange: "第 {from} 至 {to} 年",
+    phasePromo: "优惠期",
+    phasePost: "其后",
+    phaseMid: "中段",
+    phaseLate: "较后年期",
+    phaseConstant: "全程维持",
+    phaseRise: "上升情景",
+    phaseFall: "下降情景",
+    perMonth: "每月 {amount}",
+    perYear: "每年 {amount}",
+    vsTitle: "融资 vs 自资",
+    vsFinancing: "保费融资",
+    vsSelf: "全数自资",
+    vsOutlay: "资金投入",
+    vsProfit: "预计净收益",
+    vsAvr: "以投入计平均每年回报",
+    vsReleased: "释放资金",
+    vsReleasedNote: "融资把贷款额从保单占用中释出，可用于其他配置。回报率较高，是因为分母（首期）较小；绝对收益须扣除利息，不一定高于自资。",
+    vsHonestNote: "两边使用同一份演示退保价值。融资并不改变保单本身的价值，只改变你的资金结构与利息支出。",
+    holdYearLabel: "对比持有年期",
+    reinvestToggle: "选择性演示：释放资金再投资",
+    reinvestRate: "假设年率（单利）",
+    reinvestNote: "此为额外假设，并非保单演示价值的一部分。以贷款额 × 年率 × 年期作简单累计，默认关闭以保持与主要利润栏一致。",
+    reinvestGain: "再投资示意收益",
+    reinvestTotal: "净收益 + 再投资示意",
+    sensTitle: "利率有变，收益会怎样？",
+    sensIntro: "情景套用在第 5 年起的融资利率（「全程维持」则各年沿用优惠利率）。升跌幅度可自行调整。",
+    sensBase: "现行假设",
+    sensConstant: "全程维持优惠利率",
+    sensRise: "第 5 年起上升",
+    sensFall: "第 5 年起下降",
+    sensRiseTo: "升至",
+    sensFallTo: "降至",
+    sensAmountNote: "金额：{unit}",
+    policyCcy: "保单货币",
+    hkd: "港元",
+    usd: "美元",
+    sensColScenario: "融资利率假设",
+    sensTableFoot: "升息及减息情景：第 5 年起按表列利率计算。回报为以首期计的简单平均每年回报（并非复利年率）。以上只调整融资利率，保单演示价值沿用同一份演示假设。",
+    tableTitle: "年度明细",
+    tableShow: "展开年度明细",
+    tableHide: "收起年度明细",
+    colYear: "年度",
+    colSv: "演示退保价值",
+    colRate: "利率",
+    colAnnualInt: "年利息",
+    colAccInt: "累计利息",
+    colProfit: "预计净收益",
+    colTotRet: "总回报",
+    colAvr: "平均每年回报",
+    compareTitle: "多计划比较",
+    compareDefaultPrem: "各计划示例保费",
+    compareAlignDown: "按相同首期（港元）对齐",
+    compareTargetDown: "目标首期（港元）",
+    compareYearAuto: "各用其较后演示年期",
+    compareYearFixed: "统一比较同一年期",
+    compareYearLabel: "统一年期",
+    compareRankHint: "按预计净收益（换算港元）由高至低排列。较弱或仍亏损的年期同样显示，不予隐藏。",
+    compareColPlan: "计划",
+    compareColYear: "年期",
+    compareColDown: "首期（港元）",
+    compareColProfit: "预计净收益（港元）",
+    compareColAvr: "平均每年回报",
+    compareCurrent: "当前计划",
+    compareAlignNote: "对齐模式会反推原保费，使各计划首期约等于目标金额；折扣级距可能随保费规模改变，数字已迭代计算。",
+    notesTitle: "申请资料",
+    note1: "首期一般指折扣后保费减去银行贷款，并未包括安排费用、手续费或其他银行收费，除非另行说明。",
+    note2: "融资利息须在贷款期内另行支付，并不会自动从保单价值扣除。请预留足够现金流。",
+    note3: "银行通常要求提供资产证明及通过贷款审批；具体文件、成数与资格视贷款银行及保险公司而定。",
+    note4: "实际利率、贷款成数、还款安排及批核结果取决于当时市场、银行政策与个人情况，并可能调整。",
+    note5: "本计算器为顾问演示工具，并非贷款或投保申请，也不是任何银行或保险公司的官方要约。",
+    faqTitle: "常见问题",
+    faq1q: "如果融资利率上升，会怎样？",
+    faq1a: "保单的演示退保价值不会因为贷款利率而改变，但你另行支付的利息会增加，预计净收益与平均每年回报会下降。可用上方「利率有变」情景，查看第 5 年起利率上升或下降后的路径。利息需以额外现金支付，与保单价值分开。",
+    faq2q: "提早退保有什么风险？",
+    faq2a: "较早年期的演示退保价值可能低于折扣后保费，在扣除贷款及已付利息后，净收益可以是负数。本计算器会如实显示亏损年份，不会为了好看而隐藏。提前退保亦可能受保险公司的退保条件约束。融资贷款仍须偿还。",
+    faq3q: "美元保单有汇率风险吗？",
+    faq3a: "有。本页默认以 1 美元 = 7.75 港元作换算，方便以港元理解资金。实际兑回港元的金额，取决于退保或还款时的汇率。若你的收入与开支以港元为主，美元保单会承受汇率波动。汇率可在参数中调整。",
+    faq4q: "利息是额外的现金支出吗？",
+    faq4a: "是。每月或每年利息须在持有期内另行支付，不会从保单自动扣款。预计净收益已扣除整段期间的累计利息。请确保除了首期之外，还有稳定现金流支付利息。",
+    faq5q: "演示价值是否保证？",
+    faq5a: "不是。退保价值来自顾问的演示档（PFCal），属说明用途，并非保证、亦非回报承诺。实际价值取决于保险公司当时的红利、利率或结算假设，可高可低。本工具不构成财务、法律或税务意见，也不是银行或保险公司的官方要约。",
+    faq6q: "为什么有些计划在较后年期增值较快？是否一定要看到第 7、8 年？",
+    faq6a: "部分计划的演示退保价值在某些年度跳升较明显，这是该份演示的产品结构使然，并非所有计划都在第 7 与第 8 年出现最大差距。本页会按每份计划的路径，自动标示转正年度、增值加快的年度，或在路径平稳时改以 5 年与 10 年作参考。标示年期只为便于阅读，并非建议或保证。",
+    disclaimerTitle: "重要声明",
+    disclaimerBody:
+      "以上数字按顾问提供的演示退保价值（PFCal）及本页所示融资假设计算，仅供说明，并非保证收益，也不是任何保险公司或银行的官方要约或销售文件。实际退保价值、融资利率、贷款成数、批核资格与汇率均可变动，并可能令结果较演示更差，包括录得亏损。平均每年回报为以首期计的简单平均，并非复合年增长率。本工具不构成财务、投资、法律或税务意见。投保及融资前，请细阅计划说明书、演示文件与银行贷款条款，并按个人情况考虑是否适合。",
+    exportProposal: "导出提案",
+    printDocTitle: "保费融资参考提案",
+    printPrepared: "拟备",
+    printDate: "日期",
+    footerSource: "数字源自顾问演示档，仅供参考。",
+    contactWhatsApp: "WhatsApp",
+    downNegative: "以目前假设，首期为零或负数，回报率无法计算。请调低贷款成数或检查折扣。",
+    skipToContent: "跳至内容",
+    languageLabel: "语言",
+    premiumStepUp: "增加保费",
+    premiumStepDown: "减少保费",
+    premiumHint: "更改保费可能令适用的折扣级距改变。",
+    invalidRateHint: "输入无效，已还原为上一个有效利率。",
+    invalidPremiumHint: "保费须大于零，已还原为上一个有效数字。",
+    postRateLabelLate: "第 8 年起利率",
+    avrSimpleNote: "简单平均，非复利",
+    avrSpreadNote: "较后年期的平均每年回报较低，是因为收益分摊在更多年份。",
+    reasonPreBreakeven: "持有 {n} 年（仍为亏损）",
+    compareSampleWarn: "此模式使用各计划各自的示例保费，首期及保费规模并不相同，不能当作公平对比。",
+    compareAssumptionsUnified: "比较使用与上方相同的贷款成数、折扣及利率假设。",
+    compareAssumptionsLtvRates: "比较使用与上方相同的贷款成数及利率假设；折扣仍按各计划自身级距自动计算。",
+    wanShort: "万",
+    ctfPtTierNote: "本页按级距表计算折扣（此示例保费为 5%），并非 Excel 工作表中该格的 0%。",
+    scrollHint: "可横向滑动查看完整数字",
+    yearUnit: "第 {n} 年",
+    holdYears: "持有 {n} 年",
+    and: "与",
+    insurerGroup: "保险公司",
+  },
+  en: {
+    appTitle: "Premium Financing Calculator",
+    appSubtitle: "Premium financing  |  Illustrated reference",
+    docTitle: "Premium Financing Calculator",
+    settings: "Settings",
+    settingsTitle: "Advisor details",
+    advisorName: "Advisor name",
+    advisorCompany: "Firm or team name",
+    advisorPhone: "Phone or WhatsApp",
+    settingsSave: "Save",
+    settingsClose: "Close",
+    settingsHint: "Shown in the header, footer and printed proposal. Stored only on this device.",
+    planSelector: "Choose a plan",
+    premiumLabel: "Original premium (policy currency)",
+    premiumReset: "Reset to sample premium",
+    assumptions: "Assumptions",
+    assumptionsHide: "Hide assumptions",
+    fxLabel: "FX rate (HKD per 1 USD)",
+    ltvLabel: "Loan-to-value (LTV)",
+    discountLabel: "Premium discount",
+    discountAuto: "Auto from tier table",
+    discountOverride: "Manual override",
+    discountApplied: "Applied discount",
+    discountTier: "Tier",
+    promoRateLabel: "Promotional rate, first 4 years",
+    postRateLabel: "Rate from year 5",
+    midRateLabel: "Rate for years 5–7",
+    resetAssumptions: "Reset default assumptions",
+    heroDown: "Initial outlay",
+    heroMonthly: "Monthly interest (paid separately)",
+    heroRate: "Assumed financing rate",
+    heroRateHint: "Editable",
+    heroRateAllYears: "All years",
+    heroPromoShort: "Years 1–4",
+    heroPostShort: "From year 5",
+    heroMidShort: "Years 5–7",
+    heroLateShort: "Years 8–10",
+    wanHkd: "HKD ‘0000",
+    wanUsd: "USD ‘0000",
+    interestFoot: "Figures are after interest paid during the holding period, using the financing rates shown above. The initial outlay excludes arrangement fees unless stated.",
+    yearCompareTitle: "Holding-year comparison",
+    yearCompareHint: "Highlighted years are chosen from this plan’s illustrated path — not a fixed year-7 vs year-8 pair. You can also pick any two years.",
+    useSuggested: "Auto-select years",
+    manualPick: "Choose years",
+    compareYearA: "Compare year",
+    compareYearB: "and",
+    netProfit: "Illustrated net profit",
+    avrLabel: "Average annual return on initial outlay",
+    stillLoss: "Still a loss in this year",
+    exactFigure: "Exact figure",
+    reasonBreakeven: "Year {n}: turns positive",
+    reasonStepup: "Year {n}: value steps up",
+    reasonBreakevenStepup: "Year {n}: turns positive and steps up",
+    reasonBeforeJump: "Year {n} (before the step-up)",
+    reasonMidHold: "{n}-year hold (reference)",
+    reasonLongHold: "{n}-year hold (reference)",
+    reasonSecondStepup: "Year {n}: steps up again",
+    reasonManual: "{n}-year hold",
+    chartTitle: "Path by year: net profit and average annual return",
+    chartProfit: "Illustrated net profit",
+    chartAvr: "Average annual return",
+    chartSv: "Illustrated surrender value",
+    chartInterest: "Cumulative interest",
+    chartHint: "The curve shows the full illustrated path. Markers are the years in focus. Losses below the zero line are shown, not hidden.",
+    seriesProfitAvr: "Profit + return",
+    seriesSv: "Surrender value",
+    seriesInterest: "Cumulative interest",
+    howTitle: "How it works",
+    howStep1Title: "Pay the initial outlay; the bank finances the rest",
+    howStep1: "A smaller cash outlay starts the full policy. The bank lends against the first-date surrender value at the stated loan-to-value.",
+    howStep2Title: "A single-pay savings policy is issued",
+    howStep2: "The total premium (after discount) is paid once. Illustrated surrender values follow the insurer’s illustration.",
+    howStep3Title: "Surrender at the chosen year and repay the loan",
+    howStep3: "Surrender proceeds repay the loan principal. After interest already paid separately, the residual is the illustrated net profit.",
+    howInterestNote: "Interest is paid separately during the term (monthly or annually). It is not automatically deducted from the policy, so cash flow must be set aside.",
+    cashflowTitle: "Cash-flow timeline",
+    cashflowStart: "On issue",
+    cashflowStartBody: "Pay initial outlay {down}; the bank lends {loan}; the policy is issued at the discounted premium {premium}.",
+    cashflowInterest: "During the term",
+    cashflowInterestBody: "Interest is paid separately. {phases}",
+    cashflowExit: "Surrender at the target year",
+    cashflowExitBody: "Illustrated surrender value {sv}, loan repaid {loan}, interest paid {interest}, illustrated net profit {profit}.",
+    phaseRange: "Years {from}–{to}",
+    phasePromo: "Promotional",
+    phasePost: "Thereafter",
+    phaseMid: "Mid band",
+    phaseLate: "Later years",
+    phaseConstant: "Held constant",
+    phaseRise: "Rise scenario",
+    phaseFall: "Fall scenario",
+    perMonth: "{amount} per month",
+    perYear: "{amount} per year",
+    vsTitle: "Financing vs self-funded",
+    vsFinancing: "Premium financing",
+    vsSelf: "Self-funded in full",
+    vsOutlay: "Capital outlay",
+    vsProfit: "Illustrated net profit",
+    vsAvr: "Average annual return on outlay",
+    vsReleased: "Released capital",
+    vsReleasedNote: "Financing frees the loan amount that would otherwise be tied up in the policy. The rate of return is higher because the denominator (initial outlay) is smaller. Absolute profit is reduced by interest and is not always higher than self-funding.",
+    vsHonestNote: "Both sides use the same illustrated surrender values. Financing does not change the policy’s value; it changes your capital structure and interest cost.",
+    holdYearLabel: "Holding year to compare",
+    reinvestToggle: "Optional illustration: reinvest released capital",
+    reinvestRate: "Assumed annual rate (simple)",
+    reinvestNote: "This is a separate assumption, not part of the policy illustration. It uses loan × rate × years (simple interest) and is off by default so the main profit figures match the illustration file.",
+    reinvestGain: "Illustrative reinvestment gain",
+    reinvestTotal: "Net profit + illustrative reinvestment",
+    sensTitle: "What if financing rates change?",
+    sensIntro: "Scenarios apply to the financing rate from year 5 (or hold the promotional rate throughout). The rise and fall levels are editable.",
+    sensBase: "Current assumption",
+    sensConstant: "Promotional rate throughout",
+    sensRise: "Rise from year 5",
+    sensFall: "Fall from year 5",
+    sensRiseTo: "Rise to",
+    sensFallTo: "Fall to",
+    sensAmountNote: "Amounts in {unit}",
+    policyCcy: "policy currency",
+    hkd: "HKD",
+    usd: "USD",
+    sensColScenario: "Financing-rate assumption",
+    sensTableFoot: "Rise and fall scenarios use the stated rate from year 5. Returns are a simple average of total return on the initial outlay, not a compound annual rate. Only the financing rate is changed; policy illustrated values stay the same.",
+    tableTitle: "Year-by-year detail",
+    tableShow: "Show year-by-year table",
+    tableHide: "Hide year-by-year table",
+    colYear: "Year",
+    colSv: "Illustrated SV",
+    colRate: "Rate",
+    colAnnualInt: "Annual interest",
+    colAccInt: "Accrued interest",
+    colProfit: "Net profit",
+    colTotRet: "Total return",
+    colAvr: "Avg. annual return",
+    compareTitle: "Compare plans",
+    compareDefaultPrem: "Each plan’s sample premium",
+    compareAlignDown: "Align by initial outlay (HKD)",
+    compareTargetDown: "Target initial outlay (HKD)",
+    compareYearAuto: "Each plan’s later illustrated year",
+    compareYearFixed: "Same year for every plan",
+    compareYearLabel: "Common year",
+    compareRankHint: "Ranked by illustrated net profit in HKD, highest first. Weaker or still-negative years are shown, not hidden.",
+    compareColPlan: "Plan",
+    compareColYear: "Year",
+    compareColDown: "Initial outlay (HKD)",
+    compareColProfit: "Net profit (HKD)",
+    compareColAvr: "Avg. annual return",
+    compareCurrent: "Current plan",
+    compareAlignNote: "Alignment solves for the original premium so each plan’s initial outlay is close to the target. Discount tiers may change with size; the figures are iterated.",
+    notesTitle: "Application notes",
+    note1: "Initial outlay is generally the discounted premium minus the bank loan. It does not include arrangement, handling or other bank fees unless stated.",
+    note2: "Financing interest is paid separately during the loan term and is not automatically deducted from the policy. Please set aside sufficient cash flow.",
+    note3: "Banks typically require proof of assets and credit approval. Documents, loan-to-value and eligibility depend on the lending bank and the insurer.",
+    note4: "Actual interest rates, loan-to-value, repayment terms and approval depend on market conditions, bank policy and personal circumstances, and may change.",
+    note5: "This calculator is an advisor illustration tool. It is not a loan or insurance application, and not an official offer by any bank or insurer.",
+    faqTitle: "Questions worth asking",
+    faq1q: "What if financing rates rise?",
+    faq1a: "The policy’s illustrated surrender value does not change with the loan rate, but interest paid separately increases, so illustrated net profit and average annual return fall. Use the rate-sensitivity scenarios to see the path if the rate rises or falls from year 5. Interest is an extra cash outlay, separate from the policy value.",
+    faq2q: "What is the risk of surrendering early?",
+    faq2a: "Illustrated surrender values in earlier years may be below the discounted premium. After the loan and interest already paid, net profit can be negative. This calculator shows loss-making years honestly. Early surrender may also be subject to the insurer’s terms, and the financing loan still has to be repaid.",
+    faq3q: "Do USD policies carry FX risk?",
+    faq3a: "Yes. This page converts at 1 USD = 7.75 HKD by default, so amounts are easier to read in Hong Kong dollars. The HKD you actually receive depends on the rate at surrender or repayment. If your income and expenses are in HKD, a USD policy is exposed to currency moves. The FX assumption can be changed in the parameters.",
+    faq4q: "Is interest an extra cash outlay?",
+    faq4a: "Yes. Monthly or annual interest must be paid separately during the holding period; it is not taken from the policy automatically. Illustrated net profit already deducts cumulative interest over the term. You need cash flow for interest in addition to the initial outlay.",
+    faq5q: "Are illustrated values guaranteed?",
+    faq5a: "No. Surrender values come from the advisor’s illustration file (PFCal) and are for illustration only — not a guarantee or a promise of return. Actual values depend on the insurer’s then-prevailing dividends, interest or settlement assumptions, and can be higher or lower. This tool is not financial, legal or tax advice, and not an official offer by a bank or insurer.",
+    faq6q: "Why do some plans step up more in later years? Is it always years 7 and 8?",
+    faq6a: "Some illustrated schedules rise more sharply in particular years because of how that product is illustrated — it is not true that every plan’s largest gap is between years 7 and 8. This page picks, for each plan, the year profit turns positive, a year with a meaningful step-up, or a mid versus long hold when the path is smooth. Those markers are to help you read the path, not a recommendation or a guarantee.",
+    disclaimerTitle: "Important notice",
+    disclaimerBody:
+      "Figures are calculated from the advisor’s illustrated surrender values (PFCal) and the financing assumptions shown on this page. They are for illustration only, are not guaranteed, and are not an official offer or sales document of any insurer or bank. Actual surrender values, financing rates, loan-to-value, eligibility and exchange rates can change, and results may be worse than illustrated, including a loss. Average annual return is a simple average of total return on the initial outlay, not a compound annual growth rate. This tool is not financial, investment, legal or tax advice. Before applying, read the product brochure, illustration and the bank’s loan terms, and consider whether the arrangement suits your circumstances.",
+    exportProposal: "Export proposal",
+    printDocTitle: "Premium financing illustration",
+    printPrepared: "Prepared by",
+    printDate: "Date",
+    footerSource: "Figures are from the advisor’s illustration file and are for reference only.",
+    contactWhatsApp: "WhatsApp",
+    downNegative: "With the current assumptions the initial outlay is zero or negative, so rates of return cannot be calculated. Lower the LTV or check the discount.",
+    skipToContent: "Skip to content",
+    languageLabel: "Language",
+    premiumStepUp: "Increase premium",
+    premiumStepDown: "Decrease premium",
+    premiumHint: "Changing the premium may move the policy into a different discount tier.",
+    invalidRateHint: "That entry was not a valid rate, so the last valid figure was restored.",
+    invalidPremiumHint: "Premium must be greater than zero. The last valid figure was restored.",
+    postRateLabelLate: "Rate from year 8",
+    avrSimpleNote: "Simple average, not compound",
+    avrSpreadNote: "The later year’s average annual return is lower because the profit is spread over more years.",
+    reasonPreBreakeven: "{n}-year hold (still a loss)",
+    compareSampleWarn: "This mode uses each plan’s own sample premium. Initial outlays differ, so this is not a like-for-like comparison.",
+    compareAssumptionsUnified: "Comparison uses the same loan-to-value, discount and financing rates as the assumptions above.",
+    compareAssumptionsLtvRates: "Comparison uses the same loan-to-value and financing rates as the assumptions above; each plan still uses its own discount tiers.",
+    wanShort: "’0000",
+    ctfPtTierNote: "This page uses the tier table (5% at the USD 500,000 sample), not the 0% cell in the Excel sheet.",
+    scrollHint: "Swipe sideways to see the remaining figures",
+    yearUnit: "Year {n}",
+    holdYears: "{n}-year hold",
+    and: "and",
+    insurerGroup: "Insurer",
+  },
+};
+
+
+const TIER_LABELS = {
+  "Below USD 150K": {
+    "zh-Hant": "低於 15 萬美元",
+    "zh-Hans": "低于 15 万美元",
+    en: "Below USD 150,000",
+  },
+  "USD 150 - Below 600K": {
+    "zh-Hant": "15 萬至低於 60 萬美元",
+    "zh-Hans": "15 万至低于 60 万美元",
+    en: "USD 150,000–below 600,000",
+  },
+  "USD 600K - Below 1M": {
+    "zh-Hant": "60 萬至低於 100 萬美元",
+    "zh-Hans": "60 万至低于 100 万美元",
+    en: "USD 600,000–below 1,000,000",
+  },
+  "USD 1M or above": {
+    "zh-Hant": "100 萬美元或以上",
+    "zh-Hans": "100 万美元或以上",
+    en: "USD 1,000,000 or above",
+  },
+  ">=USD 1.5M": {
+    "zh-Hant": "150 萬美元或以上",
+    "zh-Hans": "150 万美元或以上",
+    en: "USD 1,500,000 or above",
+  },
+  "<USD 1.5M": {
+    "zh-Hant": "低於 150 萬美元",
+    "zh-Hans": "低于 150 万美元",
+    en: "Below USD 1,500,000",
+  },
+  ">=USD 10M": {
+    "zh-Hant": "1,000 萬美元或以上",
+    "zh-Hans": "1,000 万美元或以上",
+    en: "USD 10,000,000 or above",
+  },
+  "<USD 10M": {
+    "zh-Hant": "低於 1,000 萬美元",
+    "zh-Hans": "低于 1,000 万美元",
+    en: "Below USD 10,000,000",
+  },
+};
+
+function tierLabel(lang, label) {
+  const row = TIER_LABELS[label];
+  if (!row) return label;
+  return row[lang] || row.en || label;
+}
+
+function t(lang, key, vars) {
+  const table = STRINGS[lang] || STRINGS["zh-Hant"];
+  let s = table[key] ?? STRINGS["zh-Hant"][key] ?? key;
+  if (vars) {
+    s = s.replace(/\{(\w+)\}/g, (_, k) =>
+      vars[k] == null ? "" : String(vars[k])
+    );
+  }
+  return s;
+}
+
+function applyStaticI18n(root, lang) {
+  root.querySelectorAll("[data-i18n]").forEach((el) => {
+    el.textContent = t(lang, el.getAttribute("data-i18n"));
+  });
+  root.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
+    el.setAttribute("placeholder", t(lang, el.getAttribute("data-i18n-placeholder")));
+  });
+  root.querySelectorAll("[data-i18n-aria]").forEach((el) => {
+    el.setAttribute("aria-label", t(lang, el.getAttribute("data-i18n-aria")));
+  });
+  document.title = t(lang, "docTitle");
+  document.documentElement.lang = lang;
+  document.documentElement.dataset.lang = lang;
+}
+
+/* ---- js/app.js ---- */
+
+
+
+const LANG_KEY = "pfcal-lang";
+const ADVISOR_KEY = "pfcal-advisor";
+const PLAN_KEY = "pfcal-plan";
+
+const INSURER_ORDER = [
+  "bocgl-ggg",
+  "ctf-es",
+  "ctf-pt",
+  "fwd-wis3-usd",
+  "fwd-wis3-hkd",
+  "fwd-wih-usd",
+  "fwd-wih-hkd",
+  "hkl-wp-usd",
+  "hkl-wp-hkd",
+  "sunlife-rf",
+];
+
+const state = {
+  lang: "zh-Hant",
+  planId: "bocgl-ggg",
+  originalPremium: null,
+  discountMode: "auto",
+  discountOverride: null,
+  fx: FX_USD_HKD_DEFAULT,
+  ltvPct: null,
+  promoPct: null,
+  postPct: null,
+  midPct: null,
+  scenario: "base",
+  riseToPct: null,
+  fallToPct: null,
+  riseTouched: false,
+  fallTouched: false,
+  reinvest: false,
+  reinvestRatePct: DEFAULT_REINVEST_RATE * 100,
+  yearLock: false,
+  manualYears: [7, 8],
+  vsYear: null,
+  chartSeries: "profit-avr",
+  tableOpen: false,
+  comparePremiumMode: "align-down",
+  targetDownHkd: 300000,
+  compareYearMode: "auto-later",
+  compareFixedYear: 8,
+  advisor: { name: "", company: "", phone: "" },
+};
+
+function planById(id) {
+  return PLANS.find((p) => p.id === id) || PLANS[0];
+}
+
+function currentPlan() {
+  return planById(state.planId);
+}
+
+function langKey(lang) {
+  return lang === "zh-Hans" ? "zhHans" : lang === "en" ? "en" : "zhHant";
+}
+
+function insurerName(plan, lang = state.lang) {
+  return plan.insurer[langKey(lang)] || plan.insurer.zhHant;
+}
+
+function planShort(plan, lang = state.lang) {
+  return `${plan.planCode} · ${plan.currency}`;
+}
+
+function planFull(plan, lang = state.lang) {
+  return `${insurerName(plan, lang)} · ${plan.planCode} (${plan.currency})`;
+}
+
+function localeFor(lang) {
+  return lang === "en" ? "en-HK" : lang === "zh-Hans" ? "zh-CN" : "zh-HK";
+}
+
+function groupPlans() {
+  const groups = [];
+  const seen = new Set();
+  for (const id of INSURER_ORDER) {
+    const plan = planById(id);
+    const key = plan.insurer.en;
+    if (!seen.has(key)) {
+      seen.add(key);
+      groups.push({ insurer: plan.insurer, plans: PLANS.filter((p) => p.insurer.en === key) });
+    }
+  }
+  return groups;
+}
+
+/* ---------- formatting ---------- */
+
+function fmtInt(n, lang = state.lang) {
+  return new Intl.NumberFormat(localeFor(lang), {
+    maximumFractionDigits: 0,
+  }).format(Math.round(n));
+}
+
+function fmtMoney(amount, currency, lang = state.lang) {
+  const sign = amount < 0 ? "−" : "";
+  const abs = Math.abs(amount);
+  const n = fmtInt(abs, lang);
+  if (lang === "en") return `${sign}${currency} ${n}`;
+  const prefix = currency === "HKD" ? "HK$" : "US$";
+  return `${sign}${prefix}${n}`;
+}
+
+function wanParts(amount, currency, lang = state.lang) {
+  if (lang === "en" || Math.abs(amount) < 10000) {
+    return {
+      main: fmtMoney(amount, currency, lang),
+      unit: "",
+      wan: false,
+    };
+  }
+  const wan = amount / 10000;
+  const main = `${wan < 0 ? "−" : ""}${Math.abs(wan).toFixed(1)}`;
+  const unit = currency === "HKD" ? t(lang, "wanHkd") : t(lang, "wanUsd");
+  return { main, unit, wan: true };
+}
+
+function fmtPct(decimal, digits = 1) {
+  if (decimal == null || !Number.isFinite(decimal)) return "—";
+  const sign = decimal < 0 ? "−" : "";
+  return `${sign}${(Math.abs(decimal) * 100).toFixed(digits)}%`;
+}
+
+function fmtRatePct(pct) {
+  if (pct == null || !Number.isFinite(pct)) return "—";
+  return `${Number(pct).toFixed(2)}%`;
+}
+
+function bothCcy(amount, currency, fx, lang = state.lang) {
+  const hkd = toHkd(amount, currency, fx);
+  const primary = fmtMoney(hkd, "HKD", lang);
+  if (currency === "HKD") return primary;
+  return `${primary}  ·  ${fmtMoney(amount, "USD", lang)}`;
+}
+
+function displayPrimaryHkd(amount, currency, fx, lang = state.lang) {
+  const hkd = toHkd(amount, currency, fx);
+  return wanParts(hkd, "HKD", lang);
+}
+
+/* ---------- calculation ---------- */
+
+function inputsFromState(plan = currentPlan()) {
+  const inputs = {
+    originalPremium: state.originalPremium,
+    fx: state.fx,
+    ltv: (state.ltvPct ?? plan.defaultLtv * 100) / 100,
+    promoRate: (state.promoPct ?? defaultPromoRate(plan) * 100) / 100,
+    postRate: (state.postPct ?? defaultPostRate(plan) * 100) / 100,
+    midRate: (state.midPct ?? defaultMidRate(plan) * 100) / 100,
+    scenario: state.scenario,
+    riseTo: (state.riseToPct ?? defaultPostRate(plan) * 100 + DEFAULT_RISE_DELTA * 100) / 100,
+    fallTo: (state.fallToPct ?? defaultPostRate(plan) * 100 + DEFAULT_FALL_DELTA * 100) / 100,
+    reinvest: state.reinvest,
+    reinvestRate: state.reinvestRatePct / 100,
+  };
+  if (state.discountMode === "manual" && state.discountOverride != null) {
+    inputs.discountOverride = state.discountOverride / 100;
+  }
+  return inputs;
+}
+
+function compute(plan = currentPlan(), extra = {}) {
+  return calculate(plan, { ...inputsFromState(plan), ...extra });
+}
+
+function highlightCards(result) {
+  if (state.yearLock) {
+    const [a, b] = [...state.manualYears].sort((x, y) => x - y);
+    const years = a === b ? [a] : [a, b];
+    const rows = years.map((year) => result.years[year - 1]);
+    const peak = rows.reduce((p, r) => (r.profit > p.profit ? r : p), rows[0]);
+    return years.map((year, i) => ({
+      year,
+      role: i === 0 ? "before" : "after",
+      reason: "manual",
+      featured: year === peak.year,
+    }));
+  }
+  return result.highlights.cards;
+}
+
+function featuredYear(result) {
+  const cards = highlightCards(result);
+  const f = cards.find((c) => c.featured) || cards[cards.length - 1];
+  return f ? f.year : 8;
+}
+
+function reasonText(card) {
+  const map = {
+    breakeven: "reasonBreakeven",
+    stepup: "reasonStepup",
+    "breakeven-stepup": "reasonBreakevenStepup",
+    "before-jump": "reasonBeforeJump",
+    "mid-hold": "reasonMidHold",
+    "long-hold": "reasonLongHold",
+    "second-stepup": "reasonSecondStepup",
+    "pre-breakeven": "reasonPreBreakeven",
+    manual: "reasonManual",
+  };
+  return t(state.lang, map[card.reason] || "reasonManual", { n: card.year });
+}
+
+function applyPlanDefaults(plan, { keepPremium = false } = {}) {
+  if (!keepPremium) state.originalPremium = plan.defaultOriginalPremium;
+  state.ltvPct = plan.defaultLtv * 100;
+  state.promoPct = defaultPromoRate(plan) * 100;
+  state.postPct = defaultPostRate(plan) * 100;
+  state.midPct = defaultMidRate(plan) * 100;
+  if (!state.riseTouched) state.riseToPct = state.postPct + DEFAULT_RISE_DELTA * 100;
+  if (!state.fallTouched) state.fallToPct = state.postPct + DEFAULT_FALL_DELTA * 100;
+  state.discountMode = "auto";
+  state.discountOverride = null;
+  if (!state.yearLock) state.vsYear = null;
+}
+
+/* ---------- renderers ---------- */
+
+function renderPlanPicker() {
+  const host = document.getElementById("plan-picker");
+  host.innerHTML = "";
+  for (const group of groupPlans()) {
+    const block = document.createElement("div");
+    const lab = document.createElement("span");
+    lab.className = "insurer-label";
+    lab.textContent = group.insurer[langKey(state.lang)];
+    const chips = document.createElement("div");
+    chips.className = "plan-chips";
+    chips.setAttribute("role", "list");
+    for (const plan of group.plans) {
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "plan-chip";
+      btn.setAttribute("role", "listitem");
+      btn.setAttribute("aria-pressed", plan.id === state.planId ? "true" : "false");
+      if (plan.id === state.planId) btn.classList.add("is-current");
+      btn.textContent = planShort(plan);
+      btn.addEventListener("click", () => {
+        if (plan.id === state.planId) return;
+        state.planId = plan.id;
+        try { localStorage.setItem(PLAN_KEY, plan.id); } catch { /* ignore */ }
+        applyPlanDefaults(plan);
+        syncInputs();
+        render();
+      });
+      chips.appendChild(btn);
+    }
+    block.appendChild(lab);
+    block.appendChild(chips);
+    host.appendChild(block);
+  }
+}
+
+function renderHeading() {
+  const plan = currentPlan();
+  document.getElementById("plan-heading").textContent = planFull(plan);
+  document.getElementById("premium-ccy").textContent = plan.currency;
+}
+
+function discountReadout(result) {
+  const lang = state.lang;
+  const pct = (result.discount * 100).toFixed(1) + "%";
+  let text = `${t(lang, "discountApplied")} ${pct}`;
+  if (result.discountMeta.source === "tier" && result.discountMeta.tierLabel) {
+    text += `  ·  ${t(lang, "discountTier")} ${tierLabel(lang, result.discountMeta.tierLabel)}`;
+  } else if (result.discountMeta.source === "override") {
+    text += `  ·  ${t(lang, "discountOverride")}`;
+  }
+  return text;
+}
+
+function heroRateShape(plan) {
+  if (state.scenario === "constant") return "single";
+  if (plan.interestRule === "fwd-wih-usd-special" && state.scenario === "base") return "triple";
+  return "double:" + state.scenario;
+}
+
+function laterRateRole() {
+  if (state.scenario === "rise") return "rise";
+  if (state.scenario === "fall") return "fall";
+  return "post";
+}
+
+function rateFieldHtml(role, label) {
+  return `<label class="rate-field">
+    <span class="rate-pair">
+      <input class="rate-input" data-role="${role}" type="text" inputmode="decimal" enterkeyhint="done" aria-label="${label}" autocomplete="off" spellcheck="false">
+      <span class="rate-suffix" aria-hidden="true">%</span>
+    </span>
+  </label>`;
+}
+
+function buildHeroRateFields(shape, lang) {
+  const arrow = `<span class="rate-arrow" aria-hidden="true">→</span>`;
+  if (shape === "single") {
+    return rateFieldHtml("single", t(lang, "heroRateAllYears"));
+  }
+  if (shape === "triple") {
+    return [
+      rateFieldHtml("promo", t(lang, "heroPromoShort")),
+      arrow,
+      rateFieldHtml("mid", t(lang, "heroMidShort")),
+      arrow,
+      rateFieldHtml("post", t(lang, "heroLateShort")),
+    ].join("");
+  }
+  return [
+    rateFieldHtml("promo", t(lang, "heroPromoShort")),
+    arrow,
+    rateFieldHtml(laterRateRole(), t(lang, "heroPostShort")),
+  ].join("");
+}
+
+function setIdleValue(el, formatted) {
+  if (!el || document.activeElement === el) return;
+  if (el.value !== formatted) el.value = formatted;
+}
+
+function setIdleById(id, formatted) {
+  setIdleValue(document.getElementById(id), formatted);
+}
+
+function rateValueForRole(role) {
+  if (role === "promo" || role === "single") return state.promoPct;
+  if (role === "post") return state.postPct;
+  if (role === "mid") return state.midPct;
+  if (role === "rise") return state.riseToPct;
+  if (role === "fall") return state.fallToPct;
+  return null;
+}
+
+function syncHeroRateValues() {
+  const wrap = document.getElementById("hero-rate-edit");
+  if (!wrap) return;
+  wrap.querySelectorAll(".rate-input").forEach((inp) => {
+    const n = rateValueForRole(inp.dataset.role);
+    if (n == null || !Number.isFinite(Number(n))) return;
+    setIdleValue(inp, Number(n).toFixed(2));
+  });
+}
+
+function applyHeroRate(input) {
+  const n = parseNumber(input.value);
+  if (!Number.isFinite(n) || n < 0) return false;
+  const role = input.dataset.role;
+  if (role === "promo" || role === "single") state.promoPct = n;
+  else if (role === "post") {
+    state.postPct = n;
+    if (!state.riseTouched) state.riseToPct = n + DEFAULT_RISE_DELTA * 100;
+    if (!state.fallTouched) state.fallToPct = n + DEFAULT_FALL_DELTA * 100;
+  } else if (role === "mid") state.midPct = n;
+  else if (role === "rise") {
+    state.riseToPct = n;
+    state.riseTouched = true;
+  } else if (role === "fall") {
+    state.fallToPct = n;
+    state.fallTouched = true;
+  } else return false;
+  return true;
+}
+
+function ensureHero() {
+  const el = document.getElementById("hero");
+  if (el.dataset.ready === "1") return el;
+  el.innerHTML = `
+    <div class="metric" id="hero-down">
+      <span class="lbl" id="hero-down-lbl"></span>
+      <div class="value tabular" id="hero-down-val"></div>
+      <div class="sub" id="hero-down-sub"></div>
+    </div>
+    <div class="metric" id="hero-monthly">
+      <span class="lbl" id="hero-monthly-lbl"></span>
+      <div class="value tabular" id="hero-monthly-val"></div>
+      <div class="sub" id="hero-monthly-sub"></div>
+    </div>
+    <div class="metric" id="hero-rate">
+      <span class="lbl" id="hero-rate-lbl"></span>
+      <div class="value rate-edit" id="hero-rate-edit"></div>
+      <div class="sub" id="hero-rate-sub"></div>
+    </div>`;
+  el.dataset.ready = "1";
+  return el;
+}
+
+function renderHero(result) {
+  const lang = state.lang;
+  const plan = currentPlan();
+  ensureHero();
+
+  const down = displayPrimaryHkd(result.downPayment, plan.currency, result.fx, lang);
+  const phases = result.monthlyInterestByPhase;
+  const first = phases[0];
+  const monthlyExact = first
+    ? bothCcy(first.monthly, plan.currency, result.fx, lang)
+    : bothCcy(0, plan.currency, result.fx, lang);
+  const later = phases.filter((p) => p.from !== first?.from);
+  const phaseLabel = (p) => {
+    if (p.from === 1 && p.to === 4) return t(lang, "heroPromoShort");
+    if (p.from === 5 && p.to === 7) return t(lang, "heroMidShort");
+    if (p.from === 8 && p.to === 10) return t(lang, "heroLateShort");
+    if (p.from === 5 && p.to === 10) return t(lang, "phasePost");
+    return t(lang, "phaseRange", { from: p.from, to: p.to });
+  };
+  let monthlyTxt;
+  let monthlySub = monthlyExact;
+  if (phases.length > 1) {
+    monthlyTxt = phases
+      .map((p, i) => {
+        const amt = fmtMoney(toHkd(p.monthly, plan.currency, result.fx), "HKD", lang);
+        return `<span class="phase-line"><span class="phase-lbl">${phaseLabel(p)}</span> ${amt}</span>`;
+      })
+      .join("");
+    monthlySub = phases
+      .map((p) => {
+        const exact = bothCcy(p.monthly, plan.currency, result.fx, lang);
+        return `${t(lang, "phaseRange", { from: p.from, to: p.to })}  ·  ${exact}`;
+      })
+      .join("  ·  ");
+  } else {
+    const monthly = first ? first.monthly : 0;
+    monthlyTxt = fmtMoney(toHkd(monthly, plan.currency, result.fx), "HKD", lang);
+    if (first) {
+      monthlySub = `${t(lang, "phaseRange", { from: first.from, to: first.to })}  ·  ${monthlyExact}`;
+    }
+  }
+
+  const exactDown = bothCcy(result.downPayment, plan.currency, result.fx, lang);
+  document.getElementById("hero-down-lbl").textContent = t(lang, "heroDown");
+  document.getElementById("hero-down-val").innerHTML =
+    `${down.main}${down.unit ? `<span class="unit">${down.unit}</span>` : ""}`;
+  document.getElementById("hero-down-sub").textContent = exactDown;
+  document.getElementById("hero-monthly-lbl").textContent = t(lang, "heroMonthly");
+  const monthlyVal = document.getElementById("hero-monthly-val");
+  if (phases.length > 1) {
+    monthlyVal.classList.add("monthly-phases");
+    monthlyVal.innerHTML = monthlyTxt;
+  } else {
+    monthlyVal.classList.remove("monthly-phases");
+    monthlyVal.textContent = monthlyTxt;
+  }
+  document.getElementById("hero-monthly-sub").textContent = monthlySub;
+
+  const rateLbl = document.getElementById("hero-rate-lbl");
+  rateLbl.replaceChildren();
+  rateLbl.append(t(lang, "heroRate"));
+  const hint = document.createElement("span");
+  hint.className = "hint";
+  hint.textContent = t(lang, "heroRateHint");
+  rateLbl.append(hint);
+
+  const shape = heroRateShape(plan);
+  const wrap = document.getElementById("hero-rate-edit");
+  const stamp = shape + "|" + lang;
+  if (wrap.dataset.stamp !== stamp) {
+    wrap.dataset.stamp = stamp;
+    wrap.innerHTML = buildHeroRateFields(shape, lang);
+  }
+  syncHeroRateValues();
+  let printRates = document.getElementById("hero-rate-print");
+  if (!printRates) {
+    printRates = document.createElement("div");
+    printRates.id = "hero-rate-print";
+    printRates.className = "print-only print-rates";
+    wrap.after(printRates);
+  }
+  printRates.textContent = phases
+    .map((p) => `${t(lang, "phaseRange", { from: p.from, to: p.to })} ${fmtPct(p.rate, 2)}`)
+    .join("  →  ");
+
+  const rateSub = phases
+    .map((p) => `${t(lang, "phaseRange", { from: p.from, to: p.to })} ${fmtPct(p.rate, 2)}`)
+    .join("  ·  ");
+  document.getElementById("hero-rate-sub").textContent = rateSub;
+}
+
+function renderYearCards(result) {
+  const lang = state.lang;
+  const plan = currentPlan();
+  const cards = highlightCards(result);
+  const host = document.getElementById("year-cards");
+  host.dataset.count = String(cards.length);
+  const featured = cards.find((c) => c.featured);
+  const featuredRow = featured ? result.years[featured.year - 1] : null;
+  const avrSpread = !!(
+    featured &&
+    featuredRow &&
+    featuredRow.avr != null &&
+    cards.some((c) => {
+      const row = result.years[c.year - 1];
+      return c.year < featured.year && row.avr != null && row.avr > featuredRow.avr + 1e-12;
+    })
+  );
+
+  host.innerHTML = cards
+    .map((card) => {
+      const row = result.years[card.year - 1];
+      const wan = displayPrimaryHkd(row.profit, plan.currency, result.fx, lang);
+      const exact = bothCcy(row.profit, plan.currency, result.fx, lang);
+      const loss = row.profit < 0;
+      const feat = card.featured ? " is-featured" : "";
+      const lossCls = loss ? " is-loss" : "";
+      const badge = loss ? `<span class="loss-badge">${t(lang, "stillLoss")}</span>` : "";
+      const spread = card.featured && avrSpread
+        ? `<p class="avr-spread">${t(lang, "avrSpreadNote")}</p>`
+        : "";
+      return `<article class="year-card${feat}${lossCls}">
+        <p class="reason">${reasonText(card)}</p>
+        <div class="profit-lbl">${t(lang, "netProfit")}</div>
+        <div class="profit-line">
+          <span class="profit-num tabular">${wan.main}</span>
+          ${wan.unit ? `<span class="profit-unit">${wan.unit}</span>` : ""}
+        </div>
+        <div class="exact">${t(lang, "exactFigure")}：${exact}</div>
+        <div class="avr-block">
+          <div class="avr-lbl">${t(lang, "avrLabel")}</div>
+          <div class="avr-num tabular">${fmtPct(row.avr, 1)}</div>
+          <div class="avr-note">${t(lang, "avrSimpleNote")}</div>
+        </div>
+        ${spread}
+        ${badge}
+      </article>`;
+    })
+    .join("");
+
+  document.getElementById("btn-years-auto").setAttribute("aria-pressed", state.yearLock ? "false" : "true");
+  document.getElementById("btn-years-manual").setAttribute("aria-pressed", state.yearLock ? "true" : "false");
+  document.getElementById("manual-years").hidden = !state.yearLock;
+}
+
+/* ---------- SVG chart ---------- */
+
+function niceMax(v) {
+  if (v === 0) return 1;
+  const abs = Math.abs(v);
+  const exp = Math.floor(Math.log10(abs));
+  const f = abs / 10 ** exp;
+  const nf = f <= 1 ? 1 : f <= 2 ? 2 : f <= 5 ? 5 : 10;
+  return Math.sign(v) * nf * 10 ** exp;
+}
+
+function axisWanLabel(hkd, lang) {
+  const wan = hkd / 10000;
+  const sign = wan < 0 ? "−" : "";
+  const abs = Math.abs(wan);
+  if (lang === "en") {
+    if (Math.abs(hkd) >= 1e6) return `${hkd < 0 ? "−" : ""}${(Math.abs(hkd) / 1e6).toFixed(1)}M`;
+    if (Math.abs(hkd) >= 1e3) return `${hkd < 0 ? "−" : ""}${Math.round(Math.abs(hkd) / 1e3)}k`;
+    return fmtInt(hkd, lang);
+  }
+  if (abs >= 10) return sign + abs.toFixed(0);
+  return sign + abs.toFixed(1);
+}
+
+function renderChart(result) {
+  const lang = state.lang;
+  const plan = currentPlan();
+  const fx = result.fx;
+  const series = state.chartSeries;
+  const host = document.getElementById("chart");
+  const legend = document.getElementById("chart-legend");
+  const W = 640;
+  const H = 300;
+  const pad = { l: 52, r: series === "profit-avr" ? 48 : 16, t: 22, b: 36 };
+  const iw = W - pad.l - pad.r;
+  const ih = H - pad.t - pad.b;
+  const years = result.years;
+  const marks = new Set(highlightCards(result).map((c) => c.year));
+
+  const x = (year) => pad.l + ((year - 1) / 9) * iw;
+  const toPlot = (amt) => toHkd(amt, plan.currency, fx);
+
+  let leftVals;
+  if (series === "sv") leftVals = years.map((y) => toPlot(y.sv));
+  else if (series === "interest") leftVals = years.map((y) => toPlot(y.accInterest));
+  else leftVals = years.map((y) => toPlot(y.profit));
+
+  const minV = Math.min(0, ...leftVals);
+  const maxV = Math.max(0, ...leftVals);
+  const yMin = minV < 0 ? -niceMax(-minV) : 0;
+  const yMax = maxV > 0 ? niceMax(maxV) || 1 : 1;
+  const y = (v) => pad.t + ((yMax - v) / (yMax - yMin || 1)) * ih;
+
+  const avrVals = years.map((yrow) => yrow.avr ?? 0);
+  const avrLo = Math.min(0, ...avrVals);
+  const avrHi = Math.max(0.01, ...avrVals);
+  const avrMin = avrLo < 0 ? -niceMax(-avrLo) : 0;
+  const avrMax = Math.max(0.05, niceMax(avrHi));
+  const yAvr = (v) => pad.t + ((avrMax - v) / (avrMax - avrMin || 1)) * ih;
+
+  function linePath(vals, yfn) {
+    return vals
+      .map((v, i) => `${i ? "L" : "M"}${x(i + 1).toFixed(1)},${yfn(v).toFixed(1)}`)
+      .join(" ");
+  }
+
+  function areaPath(vals, yfn) {
+    const zero = yfn(0);
+    const top = linePath(vals, yfn);
+    return `${top} L${x(10).toFixed(1)},${zero.toFixed(1)} L${x(1).toFixed(1)},${zero.toFixed(1)} Z`;
+  }
+
+  function posNegAreas(vals, yfn) {
+    let pos = "";
+    let neg = "";
+    for (let i = 0; i < 9; i++) {
+      const x1 = x(i + 1);
+      const x2 = x(i + 2);
+      const v1 = vals[i];
+      const v2 = vals[i + 1];
+      const y1 = yfn(v1);
+      const y2 = yfn(v2);
+      const z = yfn(0);
+      if (v1 >= 0 && v2 >= 0) {
+        pos += `M${x1},${z} L${x1},${y1} L${x2},${y2} L${x2},${z} Z `;
+      } else if (v1 <= 0 && v2 <= 0) {
+        neg += `M${x1},${z} L${x1},${y1} L${x2},${y2} L${x2},${z} Z `;
+      } else {
+        const t0 = v1 / (v1 - v2);
+        const xc = x1 + (x2 - x1) * t0;
+        if (v1 > 0) {
+          pos += `M${x1},${z} L${x1},${y1} L${xc},${z} Z `;
+          neg += `M${xc},${z} L${x2},${y2} L${x2},${z} Z `;
+        } else {
+          neg += `M${x1},${z} L${x1},${y1} L${xc},${z} Z `;
+          pos += `M${xc},${z} L${x2},${y2} L${x2},${z} Z `;
+        }
+      }
+    }
+    return { pos, neg };
+  }
+
+  const ticks = 4;
+  const grid = [];
+  for (let i = 0; i <= ticks; i++) {
+    const v = yMin + ((yMax - yMin) * i) / ticks;
+    const yy = y(v);
+    const label = axisWanLabel(v, lang);
+    grid.push(`<line x1="${pad.l}" x2="${W - pad.r}" y1="${yy}" y2="${yy}" stroke="#ddd5c6" stroke-width="1"/>
+      <text x="${pad.l - 8}" y="${yy + 4}" text-anchor="end" font-size="10" fill="#5a564e" font-variant-numeric="tabular-nums">${label}</text>`);
+  }
+  const axisUnit = lang === "en" ? "HKD" : t(lang, "wanHkd");
+  grid.push(`<text x="${pad.l}" y="${pad.t - 8}" font-size="9" fill="#5a564e">${axisUnit}</text>`);
+
+  const zero = y(0);
+  const xLabels = years
+    .map((row) => {
+      const marked = marks.has(row.year);
+      return `<text x="${x(row.year)}" y="${H - 12}" text-anchor="middle" font-size="11" fill="${marked ? "#1c4a3a" : "#6b675e"}" font-weight="${marked ? 700 : 500}">${row.year}</text>`;
+    })
+    .join("");
+
+  let body = "";
+  if (series === "profit-avr") {
+    const areas = posNegAreas(leftVals, y);
+    body += `<path d="${areas.pos}" fill="#1c4a3a" fill-opacity="0.16"/>`;
+    body += `<path d="${areas.neg}" fill="#8f3328" fill-opacity="0.16"/>`;
+    body += `<path d="${linePath(leftVals, y)}" fill="none" stroke="#1c4a3a" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>`;
+    body += `<path d="${linePath(avrVals, yAvr)}" fill="none" stroke="#8a7348" stroke-width="1.8" stroke-dasharray="5 4"/>`;
+    const rightTicks = [...new Set([avrMin, 0, avrMax])].filter((v) => v >= avrMin - 1e-12 && v <= avrMax + 1e-12);
+    for (const v of rightTicks) {
+      body += `<text x="${W - pad.r + 8}" y="${yAvr(v) + 4}" font-size="10" fill="#8a7348" font-variant-numeric="tabular-nums">${fmtPct(v, 0)}</text>`;
+    }
+  } else if (series === "sv") {
+    body += `<path d="${areaPath(leftVals, y)}" fill="#3d5a80" fill-opacity="0.12"/>`;
+    body += `<path d="${linePath(leftVals, y)}" fill="none" stroke="#3d5a80" stroke-width="2.2"/>`;
+  } else {
+    body += `<path d="${areaPath(leftVals, y)}" fill="#8f5848" fill-opacity="0.12"/>`;
+    body += `<path d="${linePath(leftVals, y)}" fill="none" stroke="#8f5848" stroke-width="2.2"/>`;
+  }
+
+  body += `<line x1="${pad.l}" x2="${W - pad.r}" y1="${zero}" y2="${zero}" stroke="#a39c90" stroke-width="1.1"/>`;
+
+  for (const row of years) {
+    const v = leftVals[row.year - 1];
+    const marked = marks.has(row.year);
+    const r = marked ? 5 : 3;
+    const fill = v < 0 ? "#8f3328" : "#1c4a3a";
+    body += `<circle cx="${x(row.year)}" cy="${y(v)}" r="${r}" fill="${marked ? fill : "#faf7f1"}" stroke="${fill}" stroke-width="${marked ? 0 : 1.6}"/>`;
+    if (series === "profit-avr") {
+      body += `<circle cx="${x(row.year)}" cy="${yAvr(row.avr || 0)}" r="${marked ? 3.5 : 2}" fill="#8a7348"/>`;
+    }
+  }
+
+  host.innerHTML = `<svg class="chart-svg" viewBox="0 0 ${W} ${H}" role="img" aria-label="${t(lang, "chartTitle")}">
+    ${grid.join("")}
+    ${body}
+    ${xLabels}
+  </svg>`;
+
+  if (series === "profit-avr") {
+    legend.innerHTML = `<span><i class="swatch profit"></i>${t(lang, "chartProfit")}</span>
+      <span><i class="swatch avr"></i>${t(lang, "chartAvr")}</span>`;
+  } else if (series === "sv") {
+    legend.innerHTML = `<span><i class="swatch sv"></i>${t(lang, "chartSv")}</span>`;
+  } else {
+    legend.innerHTML = `<span><i class="swatch int"></i>${t(lang, "chartInterest")}</span>`;
+  }
+
+  document.querySelectorAll("#chart-series button").forEach((b) => {
+    b.setAttribute("aria-pressed", b.dataset.series === series ? "true" : "false");
+  });
+}
+
+function renderTimeline(result) {
+  const lang = state.lang;
+  const plan = currentPlan();
+  const fx = result.fx;
+  const year = state.vsYear || featuredYear(result);
+  const row = result.years[year - 1];
+  const money = (amt) => bothCcy(amt, plan.currency, fx, lang);
+  const phases = result.monthlyInterestByPhase
+    .map((p) => {
+      const label = t(lang, "phaseRange", { from: p.from, to: p.to });
+      const kind = t(lang, "phase" + p.kind.charAt(0).toUpperCase() + p.kind.slice(1), {});
+      const kindTxt = kind.startsWith("phase") ? "" : `（${kind}）`;
+      return `${label}${kindTxt}：${t(lang, "perMonth", { amount: bothCcy(p.monthly, plan.currency, fx, lang) })}`;
+    })
+    .join("；");
+
+  const items = [
+    { title: t(lang, "cashflowStart"), body: t(lang, "cashflowStartBody", {
+      down: money(result.downPayment),
+      loan: money(result.loan),
+      premium: money(result.premiumAfterDiscount),
+    }) },
+    { title: t(lang, "cashflowInterest"), body: t(lang, "cashflowInterestBody", { phases }) },
+    { title: t(lang, "cashflowExit") + " · " + t(lang, "holdYears", { n: year }), body: t(lang, "cashflowExitBody", {
+      sv: money(row.sv),
+      loan: money(result.loan),
+      interest: money(row.accInterest),
+      profit: money(row.profit),
+    }) },
+  ];
+
+  document.getElementById("timeline").innerHTML = items
+    .map((it) => `<div class="t-item"><div class="t-rail"><div class="t-dot"></div></div>
+      <div class="t-body"><h3>${it.title}</h3><p>${it.body}</p></div></div>`)
+    .join("");
+}
+
+function fillYearSelect(sel, current) {
+  const prev = current ?? Number(sel.value);
+  sel.innerHTML = "";
+  for (let y = 1; y <= 10; y++) {
+    const opt = document.createElement("option");
+    opt.value = String(y);
+    opt.textContent = t(state.lang, "yearUnit", { n: y });
+    sel.appendChild(opt);
+  }
+  sel.value = String(prev || 8);
+}
+
+function renderVs(result) {
+  const lang = state.lang;
+  const plan = currentPlan();
+  const sel = document.getElementById("vs-year");
+  const year = state.vsYear || featuredYear(result);
+  fillYearSelect(sel, year);
+  sel.value = String(year);
+  const row = result.years[year - 1];
+  const money = (amt) => {
+    const w = displayPrimaryHkd(amt, plan.currency, result.fx, lang);
+    const exact = bothCcy(amt, plan.currency, result.fx, lang);
+    return `<div class="v tabular">${w.main}${w.unit ? " " + w.unit : ""}</div><div class="micro" style="text-align:right">${exact}</div>`;
+  };
+  const pct = (v) => `<div class="v tabular">${fmtPct(v, 1)}</div>`;
+
+  const finRows = [
+    [t(lang, "vsOutlay"), money(result.downPayment)],
+    [t(lang, "vsProfit"), money(row.profit)],
+    [t(lang, "vsAvr"), pct(row.avr)],
+  ];
+  const selfRows = [
+    [t(lang, "vsOutlay"), money(result.premiumAfterDiscount)],
+    [t(lang, "vsProfit"), money(row.selfFundedProfit)],
+    [t(lang, "vsAvr"), pct(row.selfFundedAvr)],
+  ];
+
+  const released = displayPrimaryHkd(result.loan, plan.currency, result.fx, lang);
+
+  document.getElementById("vs-grid").innerHTML = `
+    <article class="vs-card is-financing">
+      <h3>${t(lang, "vsFinancing")}</h3>
+      ${finRows.map(([k, v]) => `<div class="vs-row"><span>${k}</span><div>${v}</div></div>`).join("")}
+      <div class="released-pill">
+        <div class="k">${t(lang, "vsReleased")}</div>
+        <div class="v">${released.main}${released.unit ? " " + released.unit : ""}</div>
+        <div class="micro">${bothCcy(result.loan, plan.currency, result.fx, lang)}</div>
+      </div>
+    </article>
+    <article class="vs-card">
+      <h3>${t(lang, "vsSelf")}</h3>
+      ${selfRows.map(([k, v]) => `<div class="vs-row"><span>${k}</span><div>${v}</div></div>`).join("")}
+    </article>`;
+
+  const wrap = document.getElementById("reinvest-rate-wrap");
+  const readout = document.getElementById("reinvest-readout");
+  wrap.hidden = !state.reinvest;
+  if (state.reinvest) {
+    readout.hidden = false;
+    const gain = displayPrimaryHkd(row.reinvestmentGain, plan.currency, result.fx, lang);
+    const tot = displayPrimaryHkd(row.profitWithReinvestment, plan.currency, result.fx, lang);
+    readout.innerHTML = `<div class="table-wrap" style="padding:12px 14px">
+      <div class="vs-row" style="border:0"><span>${t(lang, "reinvestGain")}</span>
+        <strong class="tabular">${gain.main}${gain.unit ? " " + gain.unit : ""}</strong></div>
+      <div class="vs-row"><span>${t(lang, "reinvestTotal")}</span>
+        <strong class="tabular">${tot.main}${tot.unit ? " " + tot.unit : ""}</strong></div>
+    </div>`;
+  } else {
+    readout.hidden = true;
+    readout.innerHTML = "";
+  }
+}
+
+function renderSensitivity(result) {
+  const lang = state.lang;
+  const plan = currentPlan();
+  const cards = highlightCards(result);
+  const years = cards.map((c) => c.year);
+  const scenarios = [
+    { id: "base", label: t(lang, "sensBase") },
+    { id: "constant", label: t(lang, "sensConstant") },
+    { id: "rise", label: t(lang, "sensRise") },
+    { id: "fall", label: t(lang, "sensFall") },
+  ];
+
+  const unit = t(lang, "hkd");
+  document.getElementById("sens-unit-note").textContent = t(lang, "sensAmountNote", { unit });
+
+  const thead = `<thead><tr><th>${t(lang, "sensColScenario")}</th>${years
+    .map((y) => `<th>${t(lang, "holdYears", { n: y })}</th>`)
+    .join("")}</tr></thead>`;
+
+  const rows = scenarios.map((sc) => {
+    const r = sc.id === state.scenario ? result : compute(plan, { scenario: sc.id });
+    const cells = years
+      .map((y) => {
+        const row = r.years[y - 1];
+        const wan = wanParts(toHkd(row.profit, plan.currency, r.fx), "HKD", lang);
+        const cls = row.profit < 0 ? "neg" : "";
+        let label;
+        if (lang === "en") label = wan.main;
+        else if (wan.wan) label = `${wan.main}${t(lang, "wanShort")}`;
+        else label = wan.main;
+        const yLabel = t(lang, "holdYears", { n: y });
+        return `<td class="${cls}" data-label="${yLabel}">${label}<br><span class="micro">(${fmtPct(row.avr, 1)})</span></td>`;
+      })
+      .join("");
+    const rateNote = (() => {
+      if (sc.id === "constant") return ` ${fmtPct(r.assumptions.promoRate, 2)}`;
+      if (sc.id === "rise") return ` ${fmtPct(r.assumptions.riseTo ?? r.years[4].rate, 2)}`;
+      if (sc.id === "fall") return ` ${fmtPct(r.assumptions.fallTo ?? r.years[4].rate, 2)}`;
+      return "";
+    })();
+    return `<tr class="${sc.id === state.scenario ? "is-active" : ""}"><th>${sc.label}${rateNote}</th>${cells}</tr>`;
+  }).join("");
+
+  document.getElementById("sens-table").innerHTML = thead + `<tbody>${rows}</tbody>`;
+
+  document.querySelectorAll("#scenario-seg button").forEach((b) => {
+    b.setAttribute("aria-pressed", b.dataset.scenario === state.scenario ? "true" : "false");
+  });
+}
+
+function renderDetailTable(result) {
+  const lang = state.lang;
+  const plan = currentPlan();
+  const marks = new Set(highlightCards(result).map((c) => c.year));
+  const cols = ["colYear", "colSv", "colRate", "colAnnualInt", "colAccInt", "colProfit", "colTotRet", "colAvr"];
+  const thead = `<thead><tr>${cols.map((k) => `<th>${t(lang, k)}</th>`).join("")}</tr></thead>`;
+  const body = result.years
+    .map((row) => {
+      const cls = [
+        marks.has(row.year) ? "is-active" : "",
+        row.profit < 0 ? "" : "",
+      ].join(" ");
+      const pcls = row.profit < 0 ? "neg" : "";
+      const moneyCell = (amt, extraCls = "") => {
+        const primary = fmtMoney(amt, plan.currency, lang);
+        if (plan.currency === "HKD") return `<td class="${extraCls}">${primary}</td>`;
+        const hkd = fmtMoney(toHkd(amt, plan.currency, result.fx), "HKD", lang);
+        return `<td class="${extraCls}">${primary}<div class="micro">${hkd}</div></td>`;
+      };
+      return `<tr class="${cls}">
+        <th>${row.year}</th>
+        ${moneyCell(row.sv)}
+        <td>${fmtPct(row.rate, 2)}</td>
+        ${moneyCell(row.annualInterest)}
+        ${moneyCell(row.accInterest)}
+        ${moneyCell(row.profit, pcls)}
+        <td class="${pcls}">${fmtPct(row.totalReturn, 1)}</td>
+        <td class="${pcls}">${fmtPct(row.avr, 1)}</td>
+      </tr>`;
+    })
+    .join("");
+  document.getElementById("detail-table").innerHTML = thead + `<tbody>${body}</tbody>`;
+  document.getElementById("year-table").hidden = !state.tableOpen;
+  const btn = document.getElementById("btn-table");
+  btn.setAttribute("aria-expanded", state.tableOpen ? "true" : "false");
+  btn.textContent = t(lang, state.tableOpen ? "tableHide" : "tableShow");
+}
+
+function renderCompare() {
+  const lang = state.lang;
+  const src = inputsFromState(currentPlan());
+  const compareInputs = {
+    fx: src.fx,
+    ltv: src.ltv,
+    promoRate: src.promoRate,
+    postRate: src.postRate,
+    midRate: src.midRate,
+    scenario: src.scenario,
+    riseTo: src.riseTo,
+    fallTo: src.fallTo,
+  };
+  if (src.discountOverride != null) compareInputs.discountOverride = src.discountOverride;
+  const rows = comparePlans(PLANS, {
+    premiumMode: state.comparePremiumMode,
+    targetDownHkd: state.targetDownHkd,
+    yearMode: state.compareYearMode,
+    fixedYear: state.compareFixedYear,
+    inputs: compareInputs,
+  });
+  rows.sort((a, b) => toHkd(b.profit, b.plan.currency, b.result.fx) - toHkd(a.profit, a.plan.currency, a.result.fx));
+
+  const heads = ["compareColPlan", "compareColYear", "compareColDown", "compareColProfit", "compareColAvr"];
+  const thead = `<thead><tr>${heads.map((k) => `<th>${t(lang, k)}</th>`).join("")}</tr></thead>`;
+  const body = rows
+    .map((row) => {
+      const isCur = row.planId === state.planId;
+      const pHkd = toHkd(row.profit, row.plan.currency, row.result.fx);
+      const dHkd = row.downPaymentHkd;
+      const pcls = pHkd < 0 ? "neg" : "";
+      const name = `${insurerName(row.plan, lang)} ${row.plan.planCode} · ${row.plan.currency}${isCur ? " · " + t(lang, "compareCurrent") : ""}`;
+      return `<tr class="${isCur ? "is-current" : ""}">
+        <th>${name}</th>
+        <td data-label="${t(lang, "compareColYear")}">${row.year}</td>
+        <td data-label="${t(lang, "compareColDown")}">${fmtMoney(dHkd, "HKD", lang)}</td>
+        <td class="${pcls}" data-label="${t(lang, "compareColProfit")}">${fmtMoney(pHkd, "HKD", lang)}</td>
+        <td class="${pcls}" data-label="${t(lang, "compareColAvr")}">${fmtPct(row.avr, 1)}</td>
+      </tr>`;
+    })
+    .join("");
+  document.getElementById("cmp-table").innerHTML = thead + `<tbody>${body}</tbody>`;
+
+  document.querySelectorAll("#cmp-prem-mode button").forEach((b) => {
+    b.setAttribute("aria-pressed", b.dataset.premmode === state.comparePremiumMode ? "true" : "false");
+  });
+  document.querySelectorAll("#cmp-year-mode button").forEach((b) => {
+    b.setAttribute("aria-pressed", b.dataset.yearmode === state.compareYearMode ? "true" : "false");
+  });
+  document.getElementById("align-wrap").hidden = state.comparePremiumMode !== "align-down";
+  document.getElementById("fixed-year-wrap").hidden = state.compareYearMode !== "fixed";
+  const modeNote = document.getElementById("cmp-mode-note");
+  if (modeNote) {
+    modeNote.hidden = state.comparePremiumMode !== "default";
+    modeNote.textContent = t(lang, "compareSampleWarn");
+  }
+  const assumeNote = document.getElementById("cmp-assume-note");
+  if (assumeNote) {
+    assumeNote.textContent = t(
+      lang,
+      src.discountOverride != null ? "compareAssumptionsUnified" : "compareAssumptionsLtvRates"
+    );
+  }
+}
+
+function renderAdvisor() {
+  const { name, company, phone } = state.advisor;
+  const parts = [name, company].filter(Boolean);
+  const el = document.getElementById("header-advisor");
+  if (parts.length) {
+    el.hidden = false;
+    el.textContent = parts.join(" · ");
+  } else {
+    el.hidden = true;
+    el.textContent = "";
+  }
+  const foot = document.getElementById("footer-contact");
+  const bits = [];
+  if (name) bits.push(name);
+  if (company) bits.push(company);
+  if (phone) {
+    const digits = phone.replace(/[^\d]/g, "");
+    let wa = digits;
+    if (digits.length === 8) wa = "852" + digits;
+    if (wa.length >= 8) {
+      bits.push(`<a href="https://wa.me/${wa}">${t(state.lang, "contactWhatsApp")} ${phone}</a>`);
+    } else {
+      bits.push(phone);
+    }
+  }
+  foot.innerHTML = bits.join(" · ");
+
+  const meta = document.getElementById("print-meta");
+  const date = new Intl.DateTimeFormat(localeFor(state.lang), {
+    dateStyle: "long",
+    timeZone: "Asia/Hong_Kong",
+  }).format(new Date());
+  const prepared = [t(state.lang, "printPrepared"), ...parts].filter(Boolean).join(" ");
+  meta.textContent = `${prepared}${parts.length ? "  ·  " : ""}${t(state.lang, "printDate")} ${date}  ·  ${planFull(currentPlan())}`;
+
+  const result = compute();
+  const plan = currentPlan();
+  const disc = `${(result.discount * 100).toFixed(1)}%`;
+  const rates = result.phases.map((p) => `${t(state.lang, "phaseRange", { from: p.from, to: p.to })} ${fmtPct(p.rate, 2)}`).join("；");
+  document.getElementById("print-assumptions").textContent =
+    `${t(state.lang, "premiumLabel")}：${fmtMoney(result.original, plan.currency, state.lang)}  ·  ` +
+    `${t(state.lang, "discountApplied")} ${disc}  ·  ` +
+    `${t(state.lang, "ltvLabel")} ${(result.ltv * 100).toFixed(1)}%  ·  ` +
+    `${t(state.lang, "fxLabel")} ${Number(result.fx).toFixed(2)}  ·  ` +
+    rates;
+}
+
+function syncInputs() {
+  const plan = currentPlan();
+  const prem = document.getElementById("inp-premium");
+  if (document.activeElement !== prem) {
+    prem.value = fmtInt(state.originalPremium, state.lang);
+  }
+  document.getElementById("inp-fx").value = Number(state.fx).toFixed(2);
+  document.getElementById("inp-ltv").value = Number(state.ltvPct).toFixed(1);
+  document.getElementById("inp-discount-mode").value = state.discountMode;
+  const d = document.getElementById("inp-discount");
+  d.hidden = state.discountMode !== "manual";
+  document.getElementById("discount-suffix").hidden = state.discountMode !== "manual";
+  if (state.discountMode === "manual") {
+    d.value = state.discountOverride != null ? Number(state.discountOverride).toFixed(1) : "";
+  }
+  setIdleById("inp-promo", Number(state.promoPct).toFixed(2));
+  setIdleById("inp-post", Number(state.postPct).toFixed(2));
+  setIdleById("inp-mid", Number(state.midPct).toFixed(2));
+  const showMid = plan.interestRule === "fwd-wih-usd-special" && state.scenario === "base";
+  document.getElementById("mid-rate-field").hidden = !showMid;
+  const postLbl = document.querySelector("label[for='inp-post']");
+  if (postLbl) postLbl.textContent = t(state.lang, showMid ? "postRateLabelLate" : "postRateLabel");
+  if (!state.riseTouched && state.riseToPct == null) state.riseToPct = state.postPct + DEFAULT_RISE_DELTA * 100;
+  if (!state.fallTouched && state.fallToPct == null) state.fallToPct = state.postPct + DEFAULT_FALL_DELTA * 100;
+  const riseEl = document.getElementById("inp-rise-to");
+  const fallEl = document.getElementById("inp-fall-to");
+  if (document.activeElement !== riseEl) riseEl.value = Number(state.riseToPct).toFixed(2);
+  if (document.activeElement !== fallEl) fallEl.value = Number(state.fallToPct).toFixed(2);
+  document.getElementById("inp-reinvest").checked = state.reinvest;
+  document.getElementById("inp-reinvest-rate").value = Number(state.reinvestRatePct).toFixed(1);
+  document.getElementById("inp-target-down").value = state.targetDownHkd;
+  fillYearSelect(document.getElementById("pick-year-a"), state.manualYears[0]);
+  fillYearSelect(document.getElementById("pick-year-b"), state.manualYears[1]);
+  fillYearSelect(document.getElementById("cmp-fixed-year"), state.compareFixedYear);
+}
+
+function showLiveHint(msg) {
+  const el = document.getElementById("live-hint");
+  if (!el) return;
+  if (!msg) {
+    el.hidden = true;
+    el.textContent = "";
+    return;
+  }
+  el.hidden = false;
+  el.textContent = msg;
+}
+
+function restoreField(el, formatted) {
+  if (!el) return;
+  if (el.value !== formatted) el.value = formatted;
+}
+
+function render() {
+  applyStaticI18n(document, state.lang);
+  document.querySelectorAll(".lang-switch button").forEach((b) => {
+    b.setAttribute("aria-pressed", b.dataset.lang === state.lang ? "true" : "false");
+  });
+  renderPlanPicker();
+  renderHeading();
+  syncInputs();
+
+  const plan = currentPlan();
+  const result = compute(plan);
+  document.getElementById("discount-readout").textContent = discountReadout(result);
+  const premHint = document.getElementById("premium-hint");
+  if (premHint && !premHint.dataset.temp) premHint.textContent = t(state.lang, "premiumHint");
+  const ptNote = document.getElementById("ctf-pt-note");
+  if (ptNote) {
+    const showPt = plan.id === "ctf-pt";
+    ptNote.hidden = !showPt;
+    ptNote.textContent = showPt ? t(state.lang, "ctfPtTierNote") : "";
+  }
+  const printPrem = document.getElementById("print-premium");
+  if (printPrem) {
+    printPrem.textContent = `${t(state.lang, "premiumLabel")}：${fmtMoney(result.original, plan.currency, state.lang)}`;
+  }
+  const warn = document.getElementById("down-warning");
+  if (result.downPayment <= 0) {
+    warn.hidden = false;
+    warn.textContent = t(state.lang, "downNegative");
+  } else {
+    warn.hidden = true;
+  }
+
+  renderHero(result);
+  renderYearCards(result);
+  renderChart(result);
+  renderTimeline(result);
+  renderVs(result);
+  renderSensitivity(result);
+  renderDetailTable(result);
+  renderCompare();
+  renderAdvisor();
+}
+
+/* ---------- events ---------- */
+
+function parseNumber(str) {
+  if (str == null) return NaN;
+  const s = String(str).replace(/[,\s]/g, "").replace(/−/g, "-");
+  return Number(s);
+}
+
+function bind() {
+  document.querySelectorAll(".lang-switch button").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      state.lang = btn.dataset.lang;
+      try { localStorage.setItem(LANG_KEY, state.lang); } catch { /* ignore */ }
+      render();
+    });
+  });
+
+  const hero = document.getElementById("hero");
+  hero.addEventListener("input", (e) => {
+    const inp = e.target.closest(".rate-input");
+    if (!inp) return;
+    if (applyHeroRate(inp)) {
+      showLiveHint("");
+      render();
+    }
+  });
+  hero.addEventListener("change", (e) => {
+    const inp = e.target.closest(".rate-input");
+    if (!inp) return;
+    const ok = applyHeroRate(inp);
+    if (!ok) {
+      const n = rateValueForRole(inp.dataset.role);
+      if (n != null && Number.isFinite(Number(n))) inp.value = Number(n).toFixed(2);
+    }
+    render();
+    if (!ok) showLiveHint(t(state.lang, "invalidRateHint"));
+    else showLiveHint("");
+  });
+  hero.addEventListener("focusout", (e) => {
+    const inp = e.target.closest?.(".rate-input");
+    if (!inp) return;
+    const ok = applyHeroRate(inp);
+    if (!ok) {
+      const n = rateValueForRole(inp.dataset.role);
+      if (n != null && Number.isFinite(Number(n))) inp.value = Number(n).toFixed(2);
+      render();
+      showLiveHint(t(state.lang, "invalidRateHint"));
+    }
+  });
+  hero.addEventListener("keydown", (e) => {
+    if (e.target.matches(".rate-input") && e.key === "Enter") e.target.blur();
+  });
+
+  const prem = document.getElementById("inp-premium");
+  prem.addEventListener("focus", () => {
+    prem.value = String(state.originalPremium ?? "");
+  });
+  prem.addEventListener("change", () => {
+    const n = parseNumber(prem.value);
+    const hint = document.getElementById("premium-hint");
+    if (Number.isFinite(n) && n > 0) {
+      state.originalPremium = n;
+      if (hint) {
+        hint.dataset.temp = "";
+        hint.textContent = t(state.lang, "premiumHint");
+      }
+    } else {
+      if (hint) {
+        hint.dataset.temp = "1";
+        hint.textContent = t(state.lang, "invalidPremiumHint");
+      }
+    }
+    render();
+  });
+  prem.addEventListener("blur", () => {
+    const n = parseNumber(prem.value);
+    if (!(Number.isFinite(n) && n > 0)) {
+      const hint = document.getElementById("premium-hint");
+      if (hint) {
+        hint.dataset.temp = "1";
+        hint.textContent = t(state.lang, "invalidPremiumHint");
+      }
+    }
+    render();
+  });
+
+  const stepFor = () => (currentPlan().currency === "HKD" ? 100000 : 50000);
+  document.getElementById("prem-up").addEventListener("click", () => {
+    state.originalPremium = (state.originalPremium || 0) + stepFor();
+    render();
+  });
+  document.getElementById("prem-down").addEventListener("click", () => {
+    state.originalPremium = Math.max(stepFor(), (state.originalPremium || 0) - stepFor());
+    render();
+  });
+  document.getElementById("btn-reset-premium").addEventListener("click", () => {
+    state.originalPremium = currentPlan().defaultOriginalPremium;
+    render();
+  });
+
+  const lastValid = {
+    "inp-fx": () => Number(state.fx).toFixed(2),
+    "inp-ltv": () => Number(state.ltvPct).toFixed(1),
+    "inp-promo": () => Number(state.promoPct).toFixed(2),
+    "inp-post": () => Number(state.postPct).toFixed(2),
+    "inp-mid": () => Number(state.midPct).toFixed(2),
+    "inp-discount": () => (state.discountOverride != null ? Number(state.discountOverride).toFixed(1) : ""),
+    "inp-rise-to": () => Number(state.riseToPct).toFixed(2),
+    "inp-fall-to": () => Number(state.fallToPct).toFixed(2),
+    "inp-reinvest-rate": () => Number(state.reinvestRatePct).toFixed(1),
+    "inp-target-down": () => String(state.targetDownHkd),
+  };
+  const numBind = (id, assign, { min = null, max = null, rate = false } = {}) => {
+    const el = document.getElementById(id);
+    const apply = () => {
+      const n = parseNumber(el.value);
+      if (!Number.isFinite(n)) {
+        restoreField(el, lastValid[id]());
+        if (rate) showLiveHint(t(state.lang, "invalidRateHint"));
+        return false;
+      }
+      let v = n;
+      if (min != null) v = Math.max(min, v);
+      if (max != null) v = Math.min(max, v);
+      assign(v);
+      showLiveHint("");
+      return true;
+    };
+    el.addEventListener("change", () => {
+      apply();
+      render();
+    });
+    el.addEventListener("blur", () => {
+      if (!apply()) render();
+    });
+  };
+  numBind("inp-fx", (n) => { state.fx = n; }, { min: 1, max: 20 });
+  numBind("inp-ltv", (n) => { state.ltvPct = n; }, { min: 1, max: 99 });
+  numBind("inp-promo", (n) => { state.promoPct = n; }, { min: 0, max: 20, rate: true });
+  numBind("inp-post", (n) => {
+    state.postPct = n;
+    if (!state.riseTouched) state.riseToPct = n + DEFAULT_RISE_DELTA * 100;
+    if (!state.fallTouched) state.fallToPct = n + DEFAULT_FALL_DELTA * 100;
+  }, { min: 0, max: 20, rate: true });
+  numBind("inp-mid", (n) => { state.midPct = n; }, { min: 0, max: 20, rate: true });
+  numBind("inp-discount", (n) => { state.discountOverride = n; }, { min: 0, max: 100 });
+  numBind("inp-rise-to", (n) => { state.riseToPct = n; state.riseTouched = true; }, { min: 0, max: 20, rate: true });
+  numBind("inp-fall-to", (n) => { state.fallToPct = n; state.fallTouched = true; }, { min: 0, max: 20, rate: true });
+  numBind("inp-reinvest-rate", (n) => { state.reinvestRatePct = n; }, { min: 0, max: 30 });
+  numBind("inp-target-down", (n) => { state.targetDownHkd = n; }, { min: 10000 });
+
+  document.getElementById("inp-discount-mode").addEventListener("change", (e) => {
+    state.discountMode = e.target.value;
+    if (state.discountMode === "manual" && state.discountOverride == null) {
+      state.discountOverride = compute().discount * 100;
+    }
+    render();
+  });
+
+  document.getElementById("btn-reset-assumptions").addEventListener("click", () => {
+    state.fx = FX_USD_HKD_DEFAULT;
+    state.riseTouched = false;
+    state.fallTouched = false;
+    state.scenario = "base";
+    applyPlanDefaults(currentPlan(), { keepPremium: true });
+    render();
+  });
+
+  document.getElementById("btn-years-auto").addEventListener("click", () => {
+    state.yearLock = false;
+    state.vsYear = null;
+    render();
+  });
+  document.getElementById("btn-years-manual").addEventListener("click", () => {
+    if (!state.yearLock) {
+      const cards = highlightCards(compute());
+      const pair = cards.filter((c) => c.role === "before" || c.role === "after").map((c) => c.year);
+      if (pair.length >= 2) state.manualYears = pair;
+      else if (cards.length >= 2) state.manualYears = [cards[0].year, cards[cards.length - 1].year];
+    }
+    state.yearLock = true;
+    render();
+  });
+  document.getElementById("pick-year-a").addEventListener("change", (e) => {
+    state.manualYears[0] = Number(e.target.value);
+    state.yearLock = true;
+    render();
+  });
+  document.getElementById("pick-year-b").addEventListener("change", (e) => {
+    state.manualYears[1] = Number(e.target.value);
+    state.yearLock = true;
+    render();
+  });
+
+  document.getElementById("chart-series").addEventListener("click", (e) => {
+    const btn = e.target.closest("button[data-series]");
+    if (!btn) return;
+    state.chartSeries = btn.dataset.series;
+    render();
+  });
+
+  document.getElementById("vs-year").addEventListener("change", (e) => {
+    state.vsYear = Number(e.target.value);
+    render();
+  });
+
+  document.getElementById("inp-reinvest").addEventListener("change", (e) => {
+    state.reinvest = e.target.checked;
+    render();
+  });
+
+  document.getElementById("scenario-seg").addEventListener("click", (e) => {
+    const btn = e.target.closest("button[data-scenario]");
+    if (!btn) return;
+    state.scenario = btn.dataset.scenario;
+    render();
+  });
+
+  document.getElementById("btn-table").addEventListener("click", () => {
+    state.tableOpen = !state.tableOpen;
+    render();
+  });
+
+  document.getElementById("cmp-prem-mode").addEventListener("click", (e) => {
+    const btn = e.target.closest("button[data-premmode]");
+    if (!btn) return;
+    state.comparePremiumMode = btn.dataset.premmode;
+    render();
+  });
+  document.getElementById("cmp-year-mode").addEventListener("click", (e) => {
+    const btn = e.target.closest("button[data-yearmode]");
+    if (!btn) return;
+    state.compareYearMode = btn.dataset.yearmode;
+    render();
+  });
+  document.getElementById("cmp-fixed-year").addEventListener("change", (e) => {
+    state.compareFixedYear = Number(e.target.value);
+    render();
+  });
+
+  document.getElementById("btn-print").addEventListener("click", () => {
+    window.print();
+  });
+
+  const modal = document.getElementById("settings-modal");
+  const openSettings = () => {
+    document.getElementById("set-name").value = state.advisor.name;
+    document.getElementById("set-company").value = state.advisor.company;
+    document.getElementById("set-phone").value = state.advisor.phone;
+    modal.hidden = false;
+    document.getElementById("set-name").focus();
+  };
+  const closeSettings = () => { modal.hidden = true; };
+  document.getElementById("btn-settings").addEventListener("click", openSettings);
+  document.getElementById("btn-settings-close").addEventListener("click", closeSettings);
+  modal.addEventListener("click", (e) => { if (e.target === modal) closeSettings(); });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && !modal.hidden) closeSettings();
+  });
+  modal.addEventListener("keydown", (e) => {
+    if (e.key !== "Tab" || modal.hidden) return;
+    const list = [...modal.querySelectorAll("button, input, select, textarea, a[href]")]
+      .filter((el) => !el.disabled && el.offsetParent !== null);
+    if (!list.length) return;
+    const first = list[0];
+    const last = list[list.length - 1];
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault();
+      first.focus();
+    }
+  });
+  document.getElementById("btn-settings-save").addEventListener("click", () => {
+    state.advisor = {
+      name: document.getElementById("set-name").value.trim(),
+      company: document.getElementById("set-company").value.trim(),
+      phone: document.getElementById("set-phone").value.trim(),
+    };
+    try { localStorage.setItem(ADVISOR_KEY, JSON.stringify(state.advisor)); } catch { /* ignore */ }
+    closeSettings();
+    render();
+  });
+}
+
+function loadStorage() {
+  try {
+    const lang = localStorage.getItem(LANG_KEY);
+    if (lang && LANGS.some((l) => l.id === lang)) state.lang = lang;
+  } catch { /* ignore */ }
+  try {
+    const adv = JSON.parse(localStorage.getItem(ADVISOR_KEY) || "null");
+    if (adv && typeof adv === "object") {
+      state.advisor = {
+        name: String(adv.name || ""),
+        company: String(adv.company || ""),
+        phone: String(adv.phone || ""),
+      };
+    }
+  } catch { /* ignore */ }
+  try {
+    const pid = localStorage.getItem(PLAN_KEY);
+    if (pid && planById(pid).id === pid) state.planId = pid;
+  } catch { /* ignore */ }
+}
+
+function applyUrlParams() {
+  try {
+    const q = new URLSearchParams(location.search);
+    const plan = q.get("plan");
+    if (plan && PLANS.some((p) => p.id === plan)) state.planId = plan;
+    const lang = q.get("lang");
+    if (lang && LANGS.some((l) => l.id === lang)) state.lang = lang;
+  } catch { /* ignore */ }
+}
+
+function init() {
+  loadStorage();
+  applyUrlParams();
+  applyPlanDefaults(currentPlan(), { keepPremium: false });
+  bind();
+  render();
+}
+
+init();
+
+})();

@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" data-lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="Premium financing calculator — illustrated reference for Hong Kong advisors and clients. 保費融資計算器。">
+  <title>保費融資計算器</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;600;700&family=Noto+Serif+HK:wght@500;600;700&family=Noto+Serif+SC:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231c4a3a'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-size='13' font-family='Georgia,serif' fill='%23f4efe6'%3EPF%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+  <a class="skip" href="#main" data-i18n="skipToContent">跳至內容</a>
+
+  <div class="page">
+    <header class="topbar">
+      <div class="brand">
+        <div class="mark" aria-hidden="true">PF</div>
+        <div class="brand-text">
+          <p class="brand-title" data-i18n="appTitle">保費融資計算器</p>
+          <p class="brand-advisor" id="header-advisor" hidden></p>
+        </div>
+      </div>
+      <div class="top-actions">
+        <div class="lang-switch" role="group" aria-label="語言" data-i18n-aria="languageLabel">
+          <button type="button" data-lang="zh-Hant" aria-pressed="true">繁</button>
+          <button type="button" data-lang="zh-Hans" aria-pressed="false">简</button>
+          <button type="button" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+        <button type="button" class="icon-btn" id="btn-settings" data-i18n-aria="settings" aria-label="設定" title="設定">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <circle cx="12" cy="12" r="3"></circle>
+            <path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9c.3.6.9 1 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"></path>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <main id="main" class="stage">
+      <div class="print-only" id="print-head">
+        <h1 data-i18n="printDocTitle">保費融資參考提案</h1>
+        <p id="print-meta" class="micro"></p>
+        <div id="print-assumptions" class="fineprint"></div>
+      </div>
+
+      <div class="top-grid">
+        <div class="controls-col">
+          <p class="kicker" data-i18n="appSubtitle">保費融資　｜　增值參考</p>
+          <h2 class="section-title" style="margin-top:10px" id="plan-heading"></h2>
+
+          <div class="field">
+            <span class="lbl" data-i18n="planSelector">選擇計劃</span>
+            <div id="plan-picker" class="plan-groups" role="list"></div>
+          </div>
+
+          <div class="field">
+            <div class="field-row">
+              <label for="inp-premium" data-i18n="premiumLabel">原保費（保單貨幣）</label>
+              <button type="button" class="linkish" id="btn-reset-premium" data-i18n="premiumReset">還原示例保費</button>
+            </div>
+            <div class="premium-box">
+              <span class="ccy" id="premium-ccy">USD</span>
+              <input id="inp-premium" type="text" inputmode="decimal" autocomplete="off" aria-describedby="premium-hint">
+              <div class="stepper">
+                <button type="button" id="prem-up" data-i18n-aria="premiumStepUp" aria-label="增加保費">▲</button>
+                <button type="button" id="prem-down" data-i18n-aria="premiumStepDown" aria-label="減少保費">▼</button>
+              </div>
+            </div>
+            <p class="print-only print-premium" id="print-premium"></p>
+            <p class="micro" id="premium-hint"></p>
+            <p class="applied-discount" id="discount-readout"></p>
+            <p class="fineprint" id="ctf-pt-note" hidden></p>
+          </div>
+
+          <details class="assumptions" id="assumptions">
+            <summary><span data-i18n="assumptions">假設與參數</span></summary>
+            <div class="assume-grid">
+              <div class="field" style="margin-top:0">
+                <label for="inp-fx" data-i18n="fxLabel">匯率（1 美元兌港元）</label>
+                <input id="inp-fx" class="text-input" type="number" step="0.01" min="1" max="20">
+              </div>
+              <div class="field" style="margin-top:0">
+                <label for="inp-ltv" data-i18n="ltvLabel">貸款成數（LTV）</label>
+                <div class="suffix-input">
+                  <input id="inp-ltv" class="text-input" type="number" step="0.5" min="1" max="99">
+                  <span class="sfx">%</span>
+                </div>
+              </div>
+              <div class="field span-2" style="margin-top:0">
+                <label for="inp-discount-mode" data-i18n="discountLabel">保費折扣</label>
+                <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+                  <select id="inp-discount-mode">
+                    <option value="auto" data-i18n="discountAuto">按級距自動計算</option>
+                    <option value="manual" data-i18n="discountOverride">手動覆寫</option>
+                  </select>
+                  <input id="inp-discount" class="text-input" type="number" step="0.1" min="0" max="100" style="max-width:8rem" hidden>
+                  <span class="micro" id="discount-suffix">%</span>
+                </div>
+              </div>
+              <div class="field" style="margin-top:0">
+                <label for="inp-promo" data-i18n="promoRateLabel">首 4 年優惠息率</label>
+                <div class="suffix-input">
+                  <input id="inp-promo" class="text-input" type="number" step="0.05" min="0" max="20">
+                  <span class="sfx">%</span>
+                </div>
+              </div>
+              <div class="field" id="mid-rate-field" style="margin-top:0" hidden>
+                <label for="inp-mid" data-i18n="midRateLabel">第 5 至 7 年息率</label>
+                <div class="suffix-input">
+                  <input id="inp-mid" class="text-input" type="number" step="0.05" min="0" max="20">
+                  <span class="sfx">%</span>
+                </div>
+              </div>
+              <div class="field" style="margin-top:0">
+                <label for="inp-post" data-i18n="postRateLabel">第 5 年起息率</label>
+                <div class="suffix-input">
+                  <input id="inp-post" class="text-input" type="number" step="0.05" min="0" max="20">
+                  <span class="sfx">%</span>
+                </div>
+              </div>
+              <div class="span-2">
+                <button type="button" class="btn-ghost" id="btn-reset-assumptions" data-i18n="resetAssumptions">還原預設假設</button>
+              </div>
+            </div>
+          </details>
+
+          <div class="warning" id="down-warning" hidden></div>
+        </div>
+
+        <div class="results-col">
+          <div class="hero" id="hero"></div>
+          <p class="micro input-hint" id="live-hint" role="status" hidden></p>
+
+          <section class="year-compare" aria-labelledby="year-title">
+            <h2 class="section-title" id="year-title" data-i18n="yearCompareTitle">持有年期比較</h2>
+            <p class="section-lead" data-i18n="yearCompareHint"></p>
+            <div class="year-toolbar">
+              <div class="seg" role="group">
+                <button type="button" id="btn-years-auto" aria-pressed="true" data-i18n="useSuggested">使用建議年期</button>
+                <button type="button" id="btn-years-manual" aria-pressed="false" data-i18n="manualPick">自選年期</button>
+              </div>
+              <div id="manual-years" hidden>
+                <label class="micro" for="pick-year-a" data-i18n="compareYearA">對比年份</label>
+                <select id="pick-year-a"></select>
+                <span class="micro" data-i18n="compareYearB">與</span>
+                <select id="pick-year-b"></select>
+              </div>
+            </div>
+            <div class="cards" id="year-cards"></div>
+            <p class="fineprint" data-i18n="interestFoot"></p>
+          </section>
+
+          <section class="section chart-section" id="chart-section" style="margin-top:28px" aria-labelledby="chart-title">
+            <div class="field-row chart-head">
+              <h2 class="section-title" id="chart-title" data-i18n="chartTitle">年期路徑</h2>
+              <div class="seg" role="group" id="chart-series">
+                <button type="button" data-series="profit-avr" aria-pressed="true" data-i18n="seriesProfitAvr">淨收益 + 回報</button>
+                <button type="button" data-series="sv" aria-pressed="false" data-i18n="seriesSv">退保價值</button>
+                <button type="button" data-series="interest" aria-pressed="false" data-i18n="seriesInterest">累計利息</button>
+              </div>
+            </div>
+            <div class="chart-wrap">
+              <div id="chart"></div>
+              <div class="chart-legend" id="chart-legend"></div>
+            </div>
+            <p class="fineprint" data-i18n="chartHint"></p>
+          </section>
+        </div>
+      </div>
+
+      <section class="section" id="how" aria-labelledby="how-title">
+        <h2 class="section-title" id="how-title" data-i18n="howTitle">計劃如何運作</h2>
+        <div class="steps">
+          <article class="step">
+            <div class="step-num">1</div>
+            <div>
+              <h3 data-i18n="howStep1Title"></h3>
+              <p data-i18n="howStep1"></p>
+            </div>
+          </article>
+          <article class="step">
+            <div class="step-num">2</div>
+            <div>
+              <h3 data-i18n="howStep2Title"></h3>
+              <p data-i18n="howStep2"></p>
+            </div>
+          </article>
+          <article class="step">
+            <div class="step-num">3</div>
+            <div>
+              <h3 data-i18n="howStep3Title"></h3>
+              <p data-i18n="howStep3"></p>
+            </div>
+          </article>
+        </div>
+        <p class="fineprint" data-i18n="howInterestNote"></p>
+      </section>
+
+      <section class="section" id="cashflow" aria-labelledby="cash-title">
+        <h2 class="section-title" id="cash-title" data-i18n="cashflowTitle">現金流時間線</h2>
+        <div class="timeline" id="timeline"></div>
+      </section>
+
+      <section class="section" id="versus" aria-labelledby="vs-title">
+        <div class="field-row">
+          <h2 class="section-title" id="vs-title" data-i18n="vsTitle">融資 vs 自資</h2>
+          <label class="micro vs-year-label">
+            <span data-i18n="holdYearLabel">對比持有年期</span>
+            <select id="vs-year"></select>
+          </label>
+        </div>
+        <div class="vs-grid" id="vs-grid"></div>
+        <p class="fineprint" data-i18n="vsReleasedNote"></p>
+        <p class="fineprint" data-i18n="vsHonestNote"></p>
+
+        <div id="reinvest-block" style="margin-top:16px">
+          <label style="display:flex;gap:8px;align-items:flex-start;font-size:0.92rem">
+            <input type="checkbox" id="inp-reinvest">
+            <span>
+              <strong data-i18n="reinvestToggle"></strong>
+              <span class="micro" style="display:block" data-i18n="reinvestNote"></span>
+            </span>
+          </label>
+          <div id="reinvest-rate-wrap" hidden style="margin-top:8px;max-width:16rem">
+            <label class="lbl" for="inp-reinvest-rate" data-i18n="reinvestRate"></label>
+            <input id="inp-reinvest-rate" class="text-input" type="number" step="0.1" min="0" max="30">
+          </div>
+          <div id="reinvest-readout" hidden style="margin-top:10px"></div>
+        </div>
+      </section>
+
+      <section class="section" id="sensitivity" aria-labelledby="sens-title">
+        <h2 class="section-title" id="sens-title" data-i18n="sensTitle">息率有變，收益會點？</h2>
+        <p class="section-lead" data-i18n="sensIntro"></p>
+        <div class="sens-controls">
+          <div class="seg" role="group" id="scenario-seg">
+            <button type="button" data-scenario="base" aria-pressed="true" data-i18n="sensBase"></button>
+            <button type="button" data-scenario="constant" aria-pressed="false" data-i18n="sensConstant"></button>
+            <button type="button" data-scenario="rise" aria-pressed="false" data-i18n="sensRise"></button>
+            <button type="button" data-scenario="fall" aria-pressed="false" data-i18n="sensFall"></button>
+          </div>
+          <div class="field" style="margin-top:0;min-width:8rem">
+            <label for="inp-rise-to" data-i18n="sensRiseTo">升至</label>
+            <div class="suffix-input">
+              <input id="inp-rise-to" class="text-input" type="number" step="0.05" min="0" max="20">
+              <span class="sfx">%</span>
+            </div>
+          </div>
+          <div class="field" style="margin-top:0;min-width:8rem">
+            <label for="inp-fall-to" data-i18n="sensFallTo">降至</label>
+            <div class="suffix-input">
+              <input id="inp-fall-to" class="text-input" type="number" step="0.05" min="0" max="20">
+              <span class="sfx">%</span>
+            </div>
+          </div>
+        </div>
+        <p class="micro" id="sens-unit-note"></p>
+        <p class="micro scroll-hint" data-i18n="scrollHint"></p>
+        <div class="table-wrap cardable" style="margin-top:8px">
+          <table class="data" id="sens-table"></table>
+        </div>
+        <p class="fineprint" data-i18n="sensTableFoot"></p>
+      </section>
+
+      <section class="section" id="table-section">
+        <button type="button" class="year-table-toggle" id="btn-table" aria-expanded="false" data-i18n="tableShow">展開年度明細</button>
+        <div class="year-table table-wrap" id="year-table" hidden>
+          <table class="data" id="detail-table"></table>
+        </div>
+      </section>
+
+      <section class="section" id="compare" aria-labelledby="cmp-title">
+        <h2 class="section-title" id="cmp-title" data-i18n="compareTitle">多計劃比較</h2>
+        <div class="cmp-controls">
+          <div class="seg" role="group" id="cmp-prem-mode">
+            <button type="button" data-premmode="default" aria-pressed="false" data-i18n="compareDefaultPrem"></button>
+            <button type="button" data-premmode="align-down" aria-pressed="true" data-i18n="compareAlignDown"></button>
+          </div>
+          <div id="align-wrap">
+            <label class="lbl" for="inp-target-down" data-i18n="compareTargetDown"></label>
+            <input id="inp-target-down" class="text-input" type="number" step="10000" min="10000" style="max-width:16rem">
+            <p class="fineprint" data-i18n="compareAlignNote"></p>
+          </div>
+          <div class="seg" role="group" id="cmp-year-mode">
+            <button type="button" data-yearmode="auto-later" aria-pressed="true" data-i18n="compareYearAuto"></button>
+            <button type="button" data-yearmode="fixed" aria-pressed="false" data-i18n="compareYearFixed"></button>
+          </div>
+          <label id="fixed-year-wrap" class="micro" hidden>
+            <span data-i18n="compareYearLabel">統一年期</span>
+            <select id="cmp-fixed-year"></select>
+          </label>
+        </div>
+        <p class="fineprint" data-i18n="compareRankHint"></p>
+        <p class="fineprint" id="cmp-assume-note"></p>
+        <p class="fineprint warn-note" id="cmp-mode-note" hidden></p>
+        <p class="micro scroll-hint" data-i18n="scrollHint"></p>
+        <div class="table-wrap cardable" style="margin-top:8px">
+          <table class="data" id="cmp-table"></table>
+        </div>
+      </section>
+
+      <section class="section notes" id="notes" aria-labelledby="notes-title">
+        <h2 class="section-title" id="notes-title" data-i18n="notesTitle">申請資料</h2>
+        <ol>
+          <li data-i18n="note1"></li>
+          <li data-i18n="note2"></li>
+          <li data-i18n="note3"></li>
+          <li data-i18n="note4"></li>
+          <li data-i18n="note5"></li>
+        </ol>
+      </section>
+
+      <section class="section faq" id="faq" aria-labelledby="faq-title">
+        <h2 class="section-title" id="faq-title" data-i18n="faqTitle">常見問題</h2>
+        <details>
+          <summary data-i18n="faq1q"></summary>
+          <p data-i18n="faq1a"></p>
+        </details>
+        <details>
+          <summary data-i18n="faq2q"></summary>
+          <p data-i18n="faq2a"></p>
+        </details>
+        <details>
+          <summary data-i18n="faq3q"></summary>
+          <p data-i18n="faq3a"></p>
+        </details>
+        <details>
+          <summary data-i18n="faq4q"></summary>
+          <p data-i18n="faq4a"></p>
+        </details>
+        <details>
+          <summary data-i18n="faq5q"></summary>
+          <p data-i18n="faq5a"></p>
+        </details>
+        <details>
+          <summary data-i18n="faq6q"></summary>
+          <p data-i18n="faq6a"></p>
+        </details>
+      </section>
+
+      <section class="disclaimer" aria-labelledby="disc-title">
+        <h2 id="disc-title" data-i18n="disclaimerTitle">重要聲明</h2>
+        <p data-i18n="disclaimerBody"></p>
+      </section>
+
+      <div class="export-row">
+        <button type="button" class="btn-primary" id="btn-print" data-i18n="exportProposal">匯出提案</button>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <p id="footer-contact"></p>
+      <p data-i18n="footerSource">數字源自顧問演示檔，僅供參考。</p>
+    </footer>
+  </div>
+
+  <div class="modal" id="settings-modal" hidden role="dialog" aria-modal="true" aria-labelledby="settings-title">
+    <div class="modal-card">
+      <h2 id="settings-title" data-i18n="settingsTitle">顧問資料</h2>
+      <p class="micro" data-i18n="settingsHint"></p>
+      <div class="field">
+        <label for="set-name" data-i18n="advisorName"></label>
+        <input id="set-name" class="text-input" type="text" maxlength="80">
+      </div>
+      <div class="field">
+        <label for="set-company" data-i18n="advisorCompany"></label>
+        <input id="set-company" class="text-input" type="text" maxlength="80">
+      </div>
+      <div class="field">
+        <label for="set-phone" data-i18n="advisorPhone"></label>
+        <input id="set-phone" class="text-input" type="text" maxlength="40">
+      </div>
+      <div class="modal-actions">
+        <button type="button" class="btn-ghost" id="btn-settings-close" data-i18n="settingsClose">關閉</button>
+        <button type="button" class="btn-primary" id="btn-settings-save" data-i18n="settingsSave">儲存</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/app.bundle.js" defer></script>
+</body>
+</html>
