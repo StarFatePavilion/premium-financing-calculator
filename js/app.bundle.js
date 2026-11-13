@@ -437,6 +437,1945 @@ const PLANS = [
   }
 ];
 
+/* ---- js/fulfillment-data.js ---- */
+/** Auto-generated from data/fulfillment-ratios.json — do not edit by hand.
+ * Contains only the official series mapped to calculator plan ids.
+ */
+const FULFILLMENT = {
+  "extractedAt": "2026-11-13",
+  "iaListUrl": "https://www.ia.org.hk/tc/fulfillment_ratio/list_of_insurer.html",
+  "iaMethodologyUrl": "https://www.ia.org.hk/tc/fulfillment_ratio/index.html",
+  "iaDisclaimer": "保監局不會對任何因與保險公司分紅實現率的網站列表中所顯示之披露分紅實現率的網站及更新次數和時間而引起或與之有關的錯誤、遺漏或不準確而導致的損失負責。",
+  "insurers": {
+    "bocgl": {
+      "id": "bocgl",
+      "legalName": {
+        "zhHant": "中銀集團人壽保險有限公司",
+        "zhHans": "中银集团人寿保险有限公司",
+        "en": "BOC Group Life Assurance Company Limited"
+      },
+      "sourceUrl": {
+        "zhHant": "https://www.boclife.com.hk/tc/support/financial-information/dividend-fulfillment-ratios.html",
+        "en": "https://www.boclife.com.hk/en/support/financial-information/dividend-fulfillment-ratios.html"
+      },
+      "reportingYear": 2025,
+      "reportingYearLabel": "2025年報告年度"
+    },
+    "ctf": {
+      "id": "ctf",
+      "legalName": {
+        "zhHant": "周大福人壽保險有限公司",
+        "zhHans": "周大福人寿保险有限公司",
+        "en": "Chow Tai Fook Life Insurance Company Limited"
+      },
+      "sourceUrl": {
+        "zhHant": "https://www.ctflife.com.hk/tc/support/important-information/fulfillment-ratios-dividends",
+        "en": "https://www.ctflife.com.hk/en/support/important-information/fulfillment-ratios-dividends"
+      },
+      "reportingYear": 2025,
+      "reportingYearLabel": "2025年度分紅實現率"
+    },
+    "fwd-bermuda": {
+      "id": "fwd-bermuda",
+      "legalName": {
+        "zhHant": "富衛人壽保險（百慕達）有限公司",
+        "zhHans": "富卫人寿保险（百慕达）有限公司",
+        "en": "FWD Life Insurance Company (Bermuda) Limited"
+      },
+      "sourceUrl": {
+        "zhHant": "https://www.fwd.com.hk/regulatory-disclosures/fulfillment-ratios/",
+        "en": "https://www.fwd.com.hk/en/regulatory-disclosures/fulfillment-ratios/"
+      },
+      "reportingYear": 2025,
+      "reportingYearLabel": "2025年度分紅實現率",
+      "naNotes": {
+        "1": "於本報告年度未有相關保單在相應保單週年終止。",
+        "2": "相關保單於保單銷售時所列舉之累積週年紅利及利息或特別紅利（列舉至本報告年度之相應保單週年）為零。",
+        "3": "產品尚未推出。",
+        "4": "產品已停售。",
+        "5": "於本報告年度之相應保單週年沒有任何有效保單。"
+      }
+    },
+    "hkl": {
+      "id": "hkl",
+      "legalName": {
+        "zhHant": "香港人壽保險有限公司",
+        "zhHans": "香港人寿保险有限公司",
+        "en": "Hong Kong Life Insurance Limited"
+      },
+      "sourceUrl": {
+        "zhHant": "https://www.hklife.com.hk/tc/customer-info/fulfillment-ratios",
+        "en": "https://www.hklife.com.hk/en/customer-info/fulfillment-ratios"
+      },
+      "reportingYear": 2025,
+      "reportingYearLabel": "2025 報告年度"
+    },
+    "sunlife": {
+      "id": "sunlife",
+      "legalName": {
+        "zhHant": "香港永明金融有限公司",
+        "zhHans": "香港永明金融有限公司",
+        "en": "Sun Life Hong Kong Limited"
+      },
+      "sourceUrl": {
+        "zhHant": "https://www.sunlife.com.hk/zh-hant/insurance/fulfillment-ratios-of-respective-products/",
+        "en": "https://www.sunlife.com.hk/en/insurance/fulfillment-ratios-of-respective-products/"
+      },
+      "reportingYear": 2025,
+      "reportingYearLabel": "2025 報告年度"
+    }
+  },
+  "officialNames": {
+    "bocgl-ggg": {
+      "zhHant": "薪火傳承環球終身保險計劃",
+      "en": "Glamorous Glow Global Whole Life Insurance Plan"
+    },
+    "ctf-es": {
+      "zhHant": "「榮耀世代」儲蓄保險計劃",
+      "en": "Ever Shine Savings Insurance Plan"
+    },
+    "ctf-pt": {
+      "zhHant": "「閃耀傳承」儲蓄保險計劃",
+      "en": "Prime Treasure Savings Insurance Plan"
+    },
+    "fwd-wis3-usd": {
+      "zhHant": "智盈匯聚(優越版) III壽險計劃",
+      "en": "Wealth ICON Supreme III Insurance Plan"
+    },
+    "fwd-wis3-hkd": {
+      "zhHant": "智盈匯聚(優越版) III壽險計劃",
+      "en": "Wealth ICON Supreme III Insurance Plan"
+    },
+    "fwd-wih-usd": {
+      "zhHant": "智盈 ‧ 超凡保險計劃",
+      "en": "Wealth ICON Horizon Insurance Plan"
+    },
+    "fwd-wih-hkd": {
+      "zhHant": "智盈 ‧ 超凡保險計劃",
+      "en": "Wealth ICON Horizon Insurance Plan"
+    },
+    "hkl-wp-usd": {
+      "zhHant": "「御富」儲蓄保險計劃",
+      "en": "Wealth Prestige Savings Insurance Plan"
+    },
+    "hkl-wp-hkd": {
+      "zhHant": "「御富」儲蓄保險計劃",
+      "en": "Wealth Prestige Savings Insurance Plan"
+    },
+    "sunlife-rf": {
+      "zhHant": "永譽傳承儲蓄計劃",
+      "en": "RoyalFortune Savings Insurance Plan"
+    }
+  },
+  "plans": {
+    "bocgl-ggg": {
+      "planId": "bocgl-ggg",
+      "insurerId": "bocgl",
+      "currency": null,
+      "officialName": {
+        "zhHant": "薪火傳承環球終身保險計劃",
+        "en": "GLAMOROUS GLOW GLOBAL WHOLE LIFE INSURANCE PLAN"
+      },
+      "displayName": {
+        "zhHant": "薪火傳承環球終身保險計劃",
+        "en": "Glamorous Glow Global Whole Life Insurance Plan"
+      },
+      "rename": null,
+      "productPageUrl": null,
+      "naCodes": [],
+      "series": {
+        "name": {
+          "zhHant": "薪火傳承環球終身保險計劃",
+          "en": "GLAMOROUS GLOW GLOBAL WHOLE LIFE INSURANCE PLAN"
+        },
+        "currency": null,
+        "currencyLabel": null,
+        "productType": "分紅終身壽險",
+        "status": "unknown",
+        "ratios": [
+          {
+            "dividendType": "annual",
+            "dividendTypeLabel": {
+              "zhHant": "週年紅利",
+              "en": "Annual Dividend"
+            },
+            "byPolicyYear": [
+              {
+                "policyYear": 1,
+                "issueYearLabel": "2024",
+                "value": null,
+                "display": "N/A"
+              },
+              {
+                "policyYear": 2,
+                "issueYearLabel": "2023",
+                "value": null,
+                "display": "N/A"
+              },
+              {
+                "policyYear": 3,
+                "issueYearLabel": "2022",
+                "value": null,
+                "display": "尚未推出"
+              },
+              {
+                "policyYear": 4,
+                "issueYearLabel": "2021",
+                "value": null,
+                "display": "尚未推出"
+              },
+              {
+                "policyYear": 5,
+                "issueYearLabel": "2020",
+                "value": null,
+                "display": "尚未推出"
+              },
+              {
+                "policyYear": 6,
+                "issueYearLabel": "2019",
+                "value": null,
+                "display": "尚未推出"
+              },
+              {
+                "policyYear": 7,
+                "issueYearLabel": "2018",
+                "value": null,
+                "display": "尚未推出"
+              },
+              {
+                "policyYear": 8,
+                "issueYearLabel": "2017",
+                "value": null,
+                "display": "尚未推出"
+              },
+              {
+                "policyYear": 9,
+                "issueYearLabel": "2016",
+                "value": null,
+                "display": "尚未推出"
+              },
+              {
+                "policyYear": 10,
+                "issueYearLabel": "2015",
+                "value": null,
+                "display": "尚未推出"
+              },
+              {
+                "policyYear": "10+",
+                "issueYearLabel": "2015之前",
+                "value": null,
+                "display": "尚未推出"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "ctf-es": {
+      "planId": "ctf-es",
+      "insurerId": "ctf",
+      "currency": "USD",
+      "officialName": {
+        "zhHant": "「榮耀世代」儲蓄保險計劃",
+        "en": "Ever Shine Savings Insurance Plan - Life insurance (participating)"
+      },
+      "displayName": {
+        "zhHant": "「榮耀世代」儲蓄保險計劃",
+        "en": "Ever Shine Savings Insurance Plan"
+      },
+      "rename": null,
+      "productPageUrl": null,
+      "naCodes": [],
+      "series": {
+        "name": {
+          "zhHant": "「榮耀世代」儲蓄保險計劃",
+          "en": "Ever Shine Savings Insurance Plan - Life insurance (participating)"
+        },
+        "currency": "USD",
+        "currencyLabel": "美元",
+        "productType": "分紅人壽保險",
+        "status": "unknown",
+        "ratios": [
+          {
+            "dividendType": "annual",
+            "dividendTypeLabel": {
+              "zhHant": "週年紅利",
+              "en": "Annual Dividend"
+            },
+            "byPolicyYear": [
+              {
+                "policyYear": 1,
+                "issueYearLabel": "2024",
+                "value": null,
+                "display": "*尚未有保單達至第一個保單週年日，所以未有分紅實現率顯示。"
+              },
+              {
+                "policyYear": 2,
+                "issueYearLabel": "2023",
+                "value": null,
+                "display": "*尚未有保單達至第一個保單週年日，所以未有分紅實現率顯示。"
+              },
+              {
+                "policyYear": 3,
+                "issueYearLabel": "2022",
+                "value": null,
+                "display": "*尚未有保單達至第一個保單週年日，所以未有分紅實現率顯示。"
+              },
+              {
+                "policyYear": 4,
+                "issueYearLabel": "2021",
+                "value": null,
+                "display": "*尚未有保單達至第一個保單週年日，所以未有分紅實現率顯示。"
+              },
+              {
+                "policyYear": 5,
+                "issueYearLabel": "2020",
+                "value": null,
+                "display": "*尚未有保單達至第一個保單週年日，所以未有分紅實現率顯示。"
+              },
+              {
+                "policyYear": 6,
+                "issueYearLabel": "2019",
+                "value": null,
+                "display": "*尚未有保單達至第一個保單週年日，所以未有分紅實現率顯示。"
+              },
+              {
+                "policyYear": 7,
+                "issueYearLabel": "2018",
+                "value": null,
+                "display": "*尚未有保單達至第一個保單週年日，所以未有分紅實現率顯示。"
+              },
+              {
+                "policyYear": 8,
+                "issueYearLabel": "2017",
+                "value": null,
+                "display": "*尚未有保單達至第一個保單週年日，所以未有分紅實現率顯示。"
+              },
+              {
+                "policyYear": 9,
+                "issueYearLabel": "2016",
+                "value": null,
+                "display": "*尚未有保單達至第一個保單週年日，所以未有分紅實現率顯示。"
+              },
+              {
+                "policyYear": 10,
+                "issueYearLabel": "2015",
+                "value": null,
+                "display": "*尚未有保單達至第一個保單週年日，所以未有分紅實現率顯示。"
+              },
+              {
+                "policyYear": "11+",
+                "issueYearLabel": "2014或之前",
+                "value": null,
+                "display": "*尚未有保單達至第一個保單週年日，所以未有分紅實現率顯示。"
+              }
+            ]
+          },
+          {
+            "dividendType": "terminal",
+            "dividendTypeLabel": {
+              "zhHant": "終期紅利",
+              "en": "Terminal Dividend"
+            },
+            "byPolicyYear": [
+              {
+                "policyYear": 1,
+                "issueYearLabel": "2024",
+                "value": null,
+                "display": "*尚未有保單達至第一個保單週年日，所以未有分紅實現率顯示。"
+              },
+              {
+                "policyYear": 2,
+                "issueYearLabel": "2023",
+                "value": null,
+                "display": "*尚未有保單達至第一個保單週年日，所以未有分紅實現率顯示。"
+              },
+              {
+                "policyYear": 3,
+                "issueYearLabel": "2022",
+                "value": null,
+                "display": "*尚未有保單達至第一個保單週年日，所以未有分紅實現率顯示。"
+              },
+              {
+                "policyYear": 4,
+                "issueYearLabel": "2021",
+                "value": null,
+                "display": "*尚未有保單達至第一個保單週年日，所以未有分紅實現率顯示。"
+              },
+              {
+                "policyYear": 5,
+                "issueYearLabel": "2020",
+                "value": null,
+                "display": "*尚未有保單達至第一個保單週年日，所以未有分紅實現率顯示。"
+              },
+              {
+                "policyYear": 6,
+                "issueYearLabel": "2019",
+                "value": null,
+                "display": "*尚未有保單達至第一個保單週年日，所以未有分紅實現率顯示。"
+              },
+              {
+                "policyYear": 7,
+                "issueYearLabel": "2018",
+                "value": null,
+                "display": "*尚未有保單達至第一個保單週年日，所以未有分紅實現率顯示。"
+              },
+              {
+                "policyYear": 8,
+                "issueYearLabel": "2017",
+                "value": null,
+                "display": "*尚未有保單達至第一個保單週年日，所以未有分紅實現率顯示。"
+              },
+              {
+                "policyYear": 9,
+                "issueYearLabel": "2016",
+                "value": null,
+                "display": "*尚未有保單達至第一個保單週年日，所以未有分紅實現率顯示。"
+              },
+              {
+                "policyYear": 10,
+                "issueYearLabel": "2015",
+                "value": null,
+                "display": "*尚未有保單達至第一個保單週年日，所以未有分紅實現率顯示。"
+              },
+              {
+                "policyYear": "11+",
+                "issueYearLabel": "2014或之前",
+                "value": null,
+                "display": "*尚未有保單達至第一個保單週年日，所以未有分紅實現率顯示。"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "ctf-pt": {
+      "planId": "ctf-pt",
+      "insurerId": "ctf",
+      "currency": "USD",
+      "officialName": {
+        "zhHant": "「閃耀傳承」儲蓄保險計劃",
+        "en": "Prime Treasure Savings Insurance Plan - Life insurance (participating)"
+      },
+      "displayName": {
+        "zhHant": "「閃耀傳承」儲蓄保險計劃",
+        "en": "Prime Treasure Savings Insurance Plan"
+      },
+      "rename": null,
+      "productPageUrl": null,
+      "naCodes": [],
+      "series": {
+        "name": {
+          "zhHant": "「閃耀傳承」儲蓄保險計劃",
+          "en": "Prime Treasure Savings Insurance Plan - Life insurance (participating)"
+        },
+        "currency": "USD",
+        "currencyLabel": "美元",
+        "productType": "分紅人壽保險",
+        "status": "unknown",
+        "ratios": [
+          {
+            "dividendType": "annual",
+            "dividendTypeLabel": {
+              "zhHant": "週年紅利",
+              "en": "Annual Dividend"
+            },
+            "byPolicyYear": [
+              {
+                "policyYear": 1,
+                "issueYearLabel": "2024",
+                "value": null,
+                "display": "沒有分紅"
+              },
+              {
+                "policyYear": 2,
+                "issueYearLabel": "2023",
+                "value": null,
+                "display": "未推出"
+              },
+              {
+                "policyYear": 3,
+                "issueYearLabel": "2022",
+                "value": null,
+                "display": "未推出"
+              },
+              {
+                "policyYear": 4,
+                "issueYearLabel": "2021",
+                "value": null,
+                "display": "未推出"
+              },
+              {
+                "policyYear": 5,
+                "issueYearLabel": "2020",
+                "value": null,
+                "display": "未推出"
+              },
+              {
+                "policyYear": 6,
+                "issueYearLabel": "2019",
+                "value": null,
+                "display": "未推出"
+              },
+              {
+                "policyYear": 7,
+                "issueYearLabel": "2018",
+                "value": null,
+                "display": "未推出"
+              },
+              {
+                "policyYear": 8,
+                "issueYearLabel": "2017",
+                "value": null,
+                "display": "未推出"
+              },
+              {
+                "policyYear": 9,
+                "issueYearLabel": "2016",
+                "value": null,
+                "display": "未推出"
+              },
+              {
+                "policyYear": 10,
+                "issueYearLabel": "2015",
+                "value": null,
+                "display": "未推出"
+              },
+              {
+                "policyYear": "11+",
+                "issueYearLabel": "2014或之前",
+                "value": null,
+                "display": "未推出"
+              }
+            ]
+          },
+          {
+            "dividendType": "terminal",
+            "dividendTypeLabel": {
+              "zhHant": "終期紅利",
+              "en": "Terminal Dividend"
+            },
+            "byPolicyYear": [
+              {
+                "policyYear": 1,
+                "issueYearLabel": "2024",
+                "value": 100,
+                "display": "100%"
+              },
+              {
+                "policyYear": 2,
+                "issueYearLabel": "2023",
+                "value": null,
+                "display": "未推出"
+              },
+              {
+                "policyYear": 3,
+                "issueYearLabel": "2022",
+                "value": null,
+                "display": "未推出"
+              },
+              {
+                "policyYear": 4,
+                "issueYearLabel": "2021",
+                "value": null,
+                "display": "未推出"
+              },
+              {
+                "policyYear": 5,
+                "issueYearLabel": "2020",
+                "value": null,
+                "display": "未推出"
+              },
+              {
+                "policyYear": 6,
+                "issueYearLabel": "2019",
+                "value": null,
+                "display": "未推出"
+              },
+              {
+                "policyYear": 7,
+                "issueYearLabel": "2018",
+                "value": null,
+                "display": "未推出"
+              },
+              {
+                "policyYear": 8,
+                "issueYearLabel": "2017",
+                "value": null,
+                "display": "未推出"
+              },
+              {
+                "policyYear": 9,
+                "issueYearLabel": "2016",
+                "value": null,
+                "display": "未推出"
+              },
+              {
+                "policyYear": 10,
+                "issueYearLabel": "2015",
+                "value": null,
+                "display": "未推出"
+              },
+              {
+                "policyYear": "11+",
+                "issueYearLabel": "2014或之前",
+                "value": null,
+                "display": "未推出"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "fwd-wis3-usd": {
+      "planId": "fwd-wis3-usd",
+      "insurerId": "fwd-bermuda",
+      "currency": "USD",
+      "officialName": {
+        "zhHant": "智盈匯聚(優越版) III壽險計劃",
+        "en": "Wealth ICON Supreme III Insurance Plan"
+      },
+      "displayName": {
+        "zhHant": "智盈匯聚(優越版) III壽險計劃",
+        "en": "Wealth ICON Supreme III Insurance Plan"
+      },
+      "rename": null,
+      "productPageUrl": "https://www.fwd.com.hk/zh/regulatory-disclosures/fulfillment-ratios/wealth-icon-supreme-iiI-insurance-plan/",
+      "naCodes": [
+        "2",
+        "3"
+      ],
+      "series": {
+        "name": {
+          "zhHant": "智盈匯聚(優越版) III壽險計劃",
+          "en": "Wealth ICON Supreme III Insurance Plan"
+        },
+        "currency": "USD",
+        "currencyLabel": "美金",
+        "productType": "分紅人壽保險",
+        "status": "unknown",
+        "ratios": [
+          {
+            "dividendType": "annual",
+            "dividendTypeLabel": {
+              "zhHant": "週年紅利",
+              "en": "Annual Dividend"
+            },
+            "byPolicyYear": [
+              {
+                "policyYear": 1,
+                "issueYearLabel": "2024",
+                "value": null,
+                "display": "不適用 (2)"
+              },
+              {
+                "policyYear": 2,
+                "issueYearLabel": "2023",
+                "value": null,
+                "display": "不適用 (2)"
+              },
+              {
+                "policyYear": 3,
+                "issueYearLabel": "2022",
+                "value": null,
+                "display": "不適用 (3)"
+              },
+              {
+                "policyYear": 4,
+                "issueYearLabel": "2021",
+                "value": null,
+                "display": "不適用 (3)"
+              },
+              {
+                "policyYear": 5,
+                "issueYearLabel": "2020",
+                "value": null,
+                "display": "不適用 (3)"
+              },
+              {
+                "policyYear": 6,
+                "issueYearLabel": "2019",
+                "value": null,
+                "display": "不適用 (3)"
+              },
+              {
+                "policyYear": 7,
+                "issueYearLabel": "2018",
+                "value": null,
+                "display": "不適用 (3)"
+              },
+              {
+                "policyYear": 8,
+                "issueYearLabel": "2017",
+                "value": null,
+                "display": "不適用 (3)"
+              },
+              {
+                "policyYear": 9,
+                "issueYearLabel": "2016",
+                "value": null,
+                "display": "不適用 (3)"
+              },
+              {
+                "policyYear": 10,
+                "issueYearLabel": "2015",
+                "value": null,
+                "display": "不適用 (3)"
+              },
+              {
+                "policyYear": "10+",
+                "issueYearLabel": "2010-2014",
+                "value": null,
+                "display": "不適用 (3)"
+              }
+            ]
+          },
+          {
+            "dividendType": "other",
+            "dividendTypeLabel": {
+              "zhHant": "特別紅利",
+              "en": "Special Bonus"
+            },
+            "byPolicyYear": [
+              {
+                "policyYear": 1,
+                "issueYearLabel": "2024",
+                "value": null,
+                "display": "不適用 (2)"
+              },
+              {
+                "policyYear": 2,
+                "issueYearLabel": "2023",
+                "value": null,
+                "display": "不適用 (2)"
+              },
+              {
+                "policyYear": 3,
+                "issueYearLabel": "2022",
+                "value": null,
+                "display": "不適用 (3)"
+              },
+              {
+                "policyYear": 4,
+                "issueYearLabel": "2021",
+                "value": null,
+                "display": "不適用 (3)"
+              },
+              {
+                "policyYear": 5,
+                "issueYearLabel": "2020",
+                "value": null,
+                "display": "不適用 (3)"
+              },
+              {
+                "policyYear": 6,
+                "issueYearLabel": "2019",
+                "value": null,
+                "display": "不適用 (3)"
+              },
+              {
+                "policyYear": 7,
+                "issueYearLabel": "2018",
+                "value": null,
+                "display": "不適用 (3)"
+              },
+              {
+                "policyYear": 8,
+                "issueYearLabel": "2017",
+                "value": null,
+                "display": "不適用 (3)"
+              },
+              {
+                "policyYear": 9,
+                "issueYearLabel": "2016",
+                "value": null,
+                "display": "不適用 (3)"
+              },
+              {
+                "policyYear": 10,
+                "issueYearLabel": "2015",
+                "value": null,
+                "display": "不適用 (3)"
+              },
+              {
+                "policyYear": "10+",
+                "issueYearLabel": "2010-2014",
+                "value": null,
+                "display": "不適用 (3)"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "fwd-wis3-hkd": {
+      "planId": "fwd-wis3-hkd",
+      "insurerId": "fwd-bermuda",
+      "currency": "HKD",
+      "officialName": {
+        "zhHant": "智盈匯聚(優越版) III壽險計劃",
+        "en": "Wealth ICON Supreme III Insurance Plan"
+      },
+      "displayName": {
+        "zhHant": "智盈匯聚(優越版) III壽險計劃",
+        "en": "Wealth ICON Supreme III Insurance Plan"
+      },
+      "rename": null,
+      "productPageUrl": "https://www.fwd.com.hk/zh/regulatory-disclosures/fulfillment-ratios/wealth-icon-supreme-iiI-insurance-plan/",
+      "naCodes": [
+        "2",
+        "3"
+      ],
+      "series": {
+        "name": {
+          "zhHant": "智盈匯聚(優越版) III壽險計劃",
+          "en": "Wealth ICON Supreme III Insurance Plan"
+        },
+        "currency": "HKD",
+        "currencyLabel": "港幣",
+        "productType": "分紅人壽保險",
+        "status": "unknown",
+        "ratios": [
+          {
+            "dividendType": "annual",
+            "dividendTypeLabel": {
+              "zhHant": "週年紅利",
+              "en": "Annual Dividend"
+            },
+            "byPolicyYear": [
+              {
+                "policyYear": 1,
+                "issueYearLabel": "2024",
+                "value": null,
+                "display": "不適用 (2)"
+              },
+              {
+                "policyYear": 2,
+                "issueYearLabel": "2023",
+                "value": null,
+                "display": "不適用 (2)"
+              },
+              {
+                "policyYear": 3,
+                "issueYearLabel": "2022",
+                "value": null,
+                "display": "不適用 (3)"
+              },
+              {
+                "policyYear": 4,
+                "issueYearLabel": "2021",
+                "value": null,
+                "display": "不適用 (3)"
+              },
+              {
+                "policyYear": 5,
+                "issueYearLabel": "2020",
+                "value": null,
+                "display": "不適用 (3)"
+              },
+              {
+                "policyYear": 6,
+                "issueYearLabel": "2019",
+                "value": null,
+                "display": "不適用 (3)"
+              },
+              {
+                "policyYear": 7,
+                "issueYearLabel": "2018",
+                "value": null,
+                "display": "不適用 (3)"
+              },
+              {
+                "policyYear": 8,
+                "issueYearLabel": "2017",
+                "value": null,
+                "display": "不適用 (3)"
+              },
+              {
+                "policyYear": 9,
+                "issueYearLabel": "2016",
+                "value": null,
+                "display": "不適用 (3)"
+              },
+              {
+                "policyYear": 10,
+                "issueYearLabel": "2015",
+                "value": null,
+                "display": "不適用 (3)"
+              },
+              {
+                "policyYear": "10+",
+                "issueYearLabel": "2010-2014",
+                "value": null,
+                "display": "不適用 (3)"
+              }
+            ]
+          },
+          {
+            "dividendType": "other",
+            "dividendTypeLabel": {
+              "zhHant": "特別紅利",
+              "en": "Special Bonus"
+            },
+            "byPolicyYear": [
+              {
+                "policyYear": 1,
+                "issueYearLabel": "2024",
+                "value": null,
+                "display": "不適用 (2)"
+              },
+              {
+                "policyYear": 2,
+                "issueYearLabel": "2023",
+                "value": null,
+                "display": "不適用 (2)"
+              },
+              {
+                "policyYear": 3,
+                "issueYearLabel": "2022",
+                "value": null,
+                "display": "不適用 (3)"
+              },
+              {
+                "policyYear": 4,
+                "issueYearLabel": "2021",
+                "value": null,
+                "display": "不適用 (3)"
+              },
+              {
+                "policyYear": 5,
+                "issueYearLabel": "2020",
+                "value": null,
+                "display": "不適用 (3)"
+              },
+              {
+                "policyYear": 6,
+                "issueYearLabel": "2019",
+                "value": null,
+                "display": "不適用 (3)"
+              },
+              {
+                "policyYear": 7,
+                "issueYearLabel": "2018",
+                "value": null,
+                "display": "不適用 (3)"
+              },
+              {
+                "policyYear": 8,
+                "issueYearLabel": "2017",
+                "value": null,
+                "display": "不適用 (3)"
+              },
+              {
+                "policyYear": 9,
+                "issueYearLabel": "2016",
+                "value": null,
+                "display": "不適用 (3)"
+              },
+              {
+                "policyYear": 10,
+                "issueYearLabel": "2015",
+                "value": null,
+                "display": "不適用 (3)"
+              },
+              {
+                "policyYear": "10+",
+                "issueYearLabel": "2010-2014",
+                "value": null,
+                "display": "不適用 (3)"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "fwd-wih-usd": {
+      "planId": "fwd-wih-usd",
+      "insurerId": "fwd-bermuda",
+      "currency": "USD",
+      "officialName": {
+        "zhHant": "智盈 ‧ 超凡保險計劃",
+        "en": "Wealth ICON Horizon Insurance Plan"
+      },
+      "displayName": {
+        "zhHant": "智盈 ‧ 超凡保險計劃",
+        "en": "Wealth ICON Horizon Insurance Plan"
+      },
+      "rename": null,
+      "productPageUrl": "https://www.fwd.com.hk/zh/regulatory-disclosures/fulfillment-ratios/wealth-icon-horizon-insurance-plan/",
+      "naCodes": [
+        "3"
+      ],
+      "series": {
+        "name": {
+          "zhHant": "智盈 ‧ 超凡保險計劃",
+          "en": "Wealth ICON Horizon Insurance Plan"
+        },
+        "currency": "USD",
+        "currencyLabel": "美金",
+        "productType": "分紅人壽保險",
+        "status": "unknown",
+        "ratios": [
+          {
+            "dividendType": "reversionary",
+            "dividendTypeLabel": {
+              "zhHant": "歸原紅利",
+              "en": "Reversionary Bonus"
+            },
+            "byPolicyYear": [
+              {
+                "policyYear": 1,
+                "issueYearLabel": "2024",
+                "value": null,
+                "display": "不適用 (3)"
+              },
+              {
+                "policyYear": 2,
+                "issueYearLabel": "2023",
+                "value": null,
+                "display": "不適用 (3)"
+              },
+              {
+                "policyYear": 3,
+                "issueYearLabel": "2022",
+                "value": null,
+                "display": "不適用 (3)"
+              },
+              {
+                "policyYear": 4,
+                "issueYearLabel": "2021",
+                "value": null,
+                "display": "不適用 (3)"
+              },
+              {
+                "policyYear": 5,
+                "issueYearLabel": "2020",
+                "value": null,
+                "display": "不適用 (3)"
+              },
+              {
+                "policyYear": 6,
+                "issueYearLabel": "2019",
+                "value": null,
+                "display": "不適用 (3)"
+              },
+              {
+                "policyYear": 7,
+                "issueYearLabel": "2018",
+                "value": null,
+                "display": "不適用 (3)"
+              },
+              {
+                "policyYear": 8,
+                "issueYearLabel": "2017",
+                "value": null,
+                "display": "不適用 (3)"
+              },
+              {
+                "policyYear": 9,
+                "issueYearLabel": "2016",
+                "value": null,
+                "display": "不適用 (3)"
+              },
+              {
+                "policyYear": 10,
+                "issueYearLabel": "2015",
+                "value": null,
+                "display": "不適用 (3)"
+              },
+              {
+                "policyYear": "10+",
+                "issueYearLabel": "2010-2014",
+                "value": null,
+                "display": "不適用 (3)"
+              }
+            ]
+          },
+          {
+            "dividendType": "other",
+            "dividendTypeLabel": {
+              "zhHant": "特別紅利",
+              "en": "Special Bonus"
+            },
+            "byPolicyYear": [
+              {
+                "policyYear": 1,
+                "issueYearLabel": "2024",
+                "value": null,
+                "display": "不適用 (3)"
+              },
+              {
+                "policyYear": 2,
+                "issueYearLabel": "2023",
+                "value": null,
+                "display": "不適用 (3)"
+              },
+              {
+                "policyYear": 3,
+                "issueYearLabel": "2022",
+                "value": null,
+                "display": "不適用 (3)"
+              },
+              {
+                "policyYear": 4,
+                "issueYearLabel": "2021",
+                "value": null,
+                "display": "不適用 (3)"
+              },
+              {
+                "policyYear": 5,
+                "issueYearLabel": "2020",
+                "value": null,
+                "display": "不適用 (3)"
+              },
+              {
+                "policyYear": 6,
+                "issueYearLabel": "2019",
+                "value": null,
+                "display": "不適用 (3)"
+              },
+              {
+                "policyYear": 7,
+                "issueYearLabel": "2018",
+                "value": null,
+                "display": "不適用 (3)"
+              },
+              {
+                "policyYear": 8,
+                "issueYearLabel": "2017",
+                "value": null,
+                "display": "不適用 (3)"
+              },
+              {
+                "policyYear": 9,
+                "issueYearLabel": "2016",
+                "value": null,
+                "display": "不適用 (3)"
+              },
+              {
+                "policyYear": 10,
+                "issueYearLabel": "2015",
+                "value": null,
+                "display": "不適用 (3)"
+              },
+              {
+                "policyYear": "10+",
+                "issueYearLabel": "2010-2014",
+                "value": null,
+                "display": "不適用 (3)"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "fwd-wih-hkd": {
+      "planId": "fwd-wih-hkd",
+      "insurerId": "fwd-bermuda",
+      "currency": "HKD",
+      "officialName": {
+        "zhHant": "智盈 ‧ 超凡保險計劃",
+        "en": "Wealth ICON Horizon Insurance Plan"
+      },
+      "displayName": {
+        "zhHant": "智盈 ‧ 超凡保險計劃",
+        "en": "Wealth ICON Horizon Insurance Plan"
+      },
+      "rename": null,
+      "productPageUrl": "https://www.fwd.com.hk/zh/regulatory-disclosures/fulfillment-ratios/wealth-icon-horizon-insurance-plan/",
+      "naCodes": [
+        "3"
+      ],
+      "series": {
+        "name": {
+          "zhHant": "智盈 ‧ 超凡保險計劃",
+          "en": "Wealth ICON Horizon Insurance Plan"
+        },
+        "currency": "HKD",
+        "currencyLabel": "港幣",
+        "productType": "分紅人壽保險",
+        "status": "unknown",
+        "ratios": [
+          {
+            "dividendType": "reversionary",
+            "dividendTypeLabel": {
+              "zhHant": "歸原紅利",
+              "en": "Reversionary Bonus"
+            },
+            "byPolicyYear": [
+              {
+                "policyYear": 1,
+                "issueYearLabel": "2024",
+                "value": null,
+                "display": "不適用 (3)"
+              },
+              {
+                "policyYear": 2,
+                "issueYearLabel": "2023",
+                "value": null,
+                "display": "不適用 (3)"
+              },
+              {
+                "policyYear": 3,
+                "issueYearLabel": "2022",
+                "value": null,
+                "display": "不適用 (3)"
+              },
+              {
+                "policyYear": 4,
+                "issueYearLabel": "2021",
+                "value": null,
+                "display": "不適用 (3)"
+              },
+              {
+                "policyYear": 5,
+                "issueYearLabel": "2020",
+                "value": null,
+                "display": "不適用 (3)"
+              },
+              {
+                "policyYear": 6,
+                "issueYearLabel": "2019",
+                "value": null,
+                "display": "不適用 (3)"
+              },
+              {
+                "policyYear": 7,
+                "issueYearLabel": "2018",
+                "value": null,
+                "display": "不適用 (3)"
+              },
+              {
+                "policyYear": 8,
+                "issueYearLabel": "2017",
+                "value": null,
+                "display": "不適用 (3)"
+              },
+              {
+                "policyYear": 9,
+                "issueYearLabel": "2016",
+                "value": null,
+                "display": "不適用 (3)"
+              },
+              {
+                "policyYear": 10,
+                "issueYearLabel": "2015",
+                "value": null,
+                "display": "不適用 (3)"
+              },
+              {
+                "policyYear": "10+",
+                "issueYearLabel": "2010-2014",
+                "value": null,
+                "display": "不適用 (3)"
+              }
+            ]
+          },
+          {
+            "dividendType": "other",
+            "dividendTypeLabel": {
+              "zhHant": "特別紅利",
+              "en": "Special Bonus"
+            },
+            "byPolicyYear": [
+              {
+                "policyYear": 1,
+                "issueYearLabel": "2024",
+                "value": null,
+                "display": "不適用 (3)"
+              },
+              {
+                "policyYear": 2,
+                "issueYearLabel": "2023",
+                "value": null,
+                "display": "不適用 (3)"
+              },
+              {
+                "policyYear": 3,
+                "issueYearLabel": "2022",
+                "value": null,
+                "display": "不適用 (3)"
+              },
+              {
+                "policyYear": 4,
+                "issueYearLabel": "2021",
+                "value": null,
+                "display": "不適用 (3)"
+              },
+              {
+                "policyYear": 5,
+                "issueYearLabel": "2020",
+                "value": null,
+                "display": "不適用 (3)"
+              },
+              {
+                "policyYear": 6,
+                "issueYearLabel": "2019",
+                "value": null,
+                "display": "不適用 (3)"
+              },
+              {
+                "policyYear": 7,
+                "issueYearLabel": "2018",
+                "value": null,
+                "display": "不適用 (3)"
+              },
+              {
+                "policyYear": 8,
+                "issueYearLabel": "2017",
+                "value": null,
+                "display": "不適用 (3)"
+              },
+              {
+                "policyYear": 9,
+                "issueYearLabel": "2016",
+                "value": null,
+                "display": "不適用 (3)"
+              },
+              {
+                "policyYear": 10,
+                "issueYearLabel": "2015",
+                "value": null,
+                "display": "不適用 (3)"
+              },
+              {
+                "policyYear": "10+",
+                "issueYearLabel": "2010-2014",
+                "value": null,
+                "display": "不適用 (3)"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "hkl-wp-usd": {
+      "planId": "hkl-wp-usd",
+      "insurerId": "hkl",
+      "currency": "USD",
+      "officialName": {
+        "zhHant": "「御富」儲蓄保險計劃",
+        "en": "Wealth Prestige Savings Insurance Plan"
+      },
+      "displayName": {
+        "zhHant": "「御富」儲蓄保險計劃",
+        "en": "Wealth Prestige Savings Insurance Plan"
+      },
+      "rename": null,
+      "productPageUrl": null,
+      "naCodes": [],
+      "series": {
+        "name": {
+          "zhHant": "「御富」儲蓄保險計劃",
+          "en": "Wealth Prestige Savings Insurance Plan"
+        },
+        "currency": "USD",
+        "currencyLabel": "美元",
+        "productType": "分紅終身人壽",
+        "status": "unknown",
+        "ratios": [
+          {
+            "dividendType": "annual_special_and_income",
+            "dividendTypeLabel": {
+              "zhHant": "週年紅利、特別紅利及非保證每月入息",
+              "en": "Annual Dividends, Special Dividends and Non-guaranteed Monthly Income"
+            },
+            "byPolicyYear": [
+              {
+                "policyYear": 1,
+                "issueYearLabel": "2024",
+                "value": null,
+                "display": "不適用"
+              },
+              {
+                "policyYear": 2,
+                "issueYearLabel": "2023",
+                "value": null,
+                "display": "不適用"
+              },
+              {
+                "policyYear": 3,
+                "issueYearLabel": "2022",
+                "value": null,
+                "display": "不適用"
+              },
+              {
+                "policyYear": 4,
+                "issueYearLabel": "2021",
+                "value": null,
+                "display": "不適用"
+              },
+              {
+                "policyYear": 5,
+                "issueYearLabel": "2020",
+                "value": null,
+                "display": "不適用"
+              },
+              {
+                "policyYear": 6,
+                "issueYearLabel": "2019",
+                "value": null,
+                "display": "不適用"
+              },
+              {
+                "policyYear": 7,
+                "issueYearLabel": "2018",
+                "value": null,
+                "display": "不適用"
+              },
+              {
+                "policyYear": 8,
+                "issueYearLabel": "2017",
+                "value": null,
+                "display": "不適用"
+              },
+              {
+                "policyYear": 9,
+                "issueYearLabel": "2016",
+                "value": null,
+                "display": "不適用"
+              },
+              {
+                "policyYear": 10,
+                "issueYearLabel": "2015",
+                "value": null,
+                "display": "不適用"
+              },
+              {
+                "policyYear": "10+",
+                "issueYearLabel": "2010 - 2014",
+                "value": null,
+                "display": "不適用"
+              }
+            ]
+          },
+          {
+            "dividendType": "terminal",
+            "dividendTypeLabel": {
+              "zhHant": "終期紅利",
+              "en": "Terminal Dividend"
+            },
+            "byPolicyYear": [
+              {
+                "policyYear": 1,
+                "issueYearLabel": "2024",
+                "value": null,
+                "display": "不適用"
+              },
+              {
+                "policyYear": 2,
+                "issueYearLabel": "2023",
+                "value": null,
+                "display": "不適用"
+              },
+              {
+                "policyYear": 3,
+                "issueYearLabel": "2022",
+                "value": null,
+                "display": "不適用"
+              },
+              {
+                "policyYear": 4,
+                "issueYearLabel": "2021",
+                "value": null,
+                "display": "不適用"
+              },
+              {
+                "policyYear": 5,
+                "issueYearLabel": "2020",
+                "value": null,
+                "display": "不適用"
+              },
+              {
+                "policyYear": 6,
+                "issueYearLabel": "2019",
+                "value": null,
+                "display": "不適用"
+              },
+              {
+                "policyYear": 7,
+                "issueYearLabel": "2018",
+                "value": null,
+                "display": "不適用"
+              },
+              {
+                "policyYear": 8,
+                "issueYearLabel": "2017",
+                "value": null,
+                "display": "不適用"
+              },
+              {
+                "policyYear": 9,
+                "issueYearLabel": "2016",
+                "value": null,
+                "display": "不適用"
+              },
+              {
+                "policyYear": 10,
+                "issueYearLabel": "2015",
+                "value": null,
+                "display": "不適用"
+              },
+              {
+                "policyYear": "10+",
+                "issueYearLabel": "2010 - 2014",
+                "value": null,
+                "display": "不適用"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "hkl-wp-hkd": {
+      "planId": "hkl-wp-hkd",
+      "insurerId": "hkl",
+      "currency": "HKD",
+      "officialName": {
+        "zhHant": "「御富」儲蓄保險計劃",
+        "en": "Wealth Prestige Savings Insurance Plan"
+      },
+      "displayName": {
+        "zhHant": "「御富」儲蓄保險計劃",
+        "en": "Wealth Prestige Savings Insurance Plan"
+      },
+      "rename": null,
+      "productPageUrl": null,
+      "naCodes": [],
+      "series": {
+        "name": {
+          "zhHant": "「御富」儲蓄保險計劃",
+          "en": "Wealth Prestige Savings Insurance Plan"
+        },
+        "currency": "HKD",
+        "currencyLabel": "港元",
+        "productType": "分紅終身人壽",
+        "status": "unknown",
+        "ratios": [
+          {
+            "dividendType": "annual_special_and_income",
+            "dividendTypeLabel": {
+              "zhHant": "週年紅利、特別紅利及非保證每月入息",
+              "en": "Annual Dividends, Special Dividends and Non-guaranteed Monthly Income"
+            },
+            "byPolicyYear": [
+              {
+                "policyYear": 1,
+                "issueYearLabel": "2024",
+                "value": null,
+                "display": "不適用"
+              },
+              {
+                "policyYear": 2,
+                "issueYearLabel": "2023",
+                "value": null,
+                "display": "不適用"
+              },
+              {
+                "policyYear": 3,
+                "issueYearLabel": "2022",
+                "value": null,
+                "display": "不適用"
+              },
+              {
+                "policyYear": 4,
+                "issueYearLabel": "2021",
+                "value": null,
+                "display": "不適用"
+              },
+              {
+                "policyYear": 5,
+                "issueYearLabel": "2020",
+                "value": null,
+                "display": "不適用"
+              },
+              {
+                "policyYear": 6,
+                "issueYearLabel": "2019",
+                "value": null,
+                "display": "不適用"
+              },
+              {
+                "policyYear": 7,
+                "issueYearLabel": "2018",
+                "value": null,
+                "display": "不適用"
+              },
+              {
+                "policyYear": 8,
+                "issueYearLabel": "2017",
+                "value": null,
+                "display": "不適用"
+              },
+              {
+                "policyYear": 9,
+                "issueYearLabel": "2016",
+                "value": null,
+                "display": "不適用"
+              },
+              {
+                "policyYear": 10,
+                "issueYearLabel": "2015",
+                "value": null,
+                "display": "不適用"
+              },
+              {
+                "policyYear": "10+",
+                "issueYearLabel": "2010 - 2014",
+                "value": null,
+                "display": "不適用"
+              }
+            ]
+          },
+          {
+            "dividendType": "terminal",
+            "dividendTypeLabel": {
+              "zhHant": "終期紅利",
+              "en": "Terminal Dividend"
+            },
+            "byPolicyYear": [
+              {
+                "policyYear": 1,
+                "issueYearLabel": "2024",
+                "value": null,
+                "display": "不適用"
+              },
+              {
+                "policyYear": 2,
+                "issueYearLabel": "2023",
+                "value": null,
+                "display": "不適用"
+              },
+              {
+                "policyYear": 3,
+                "issueYearLabel": "2022",
+                "value": null,
+                "display": "不適用"
+              },
+              {
+                "policyYear": 4,
+                "issueYearLabel": "2021",
+                "value": null,
+                "display": "不適用"
+              },
+              {
+                "policyYear": 5,
+                "issueYearLabel": "2020",
+                "value": null,
+                "display": "不適用"
+              },
+              {
+                "policyYear": 6,
+                "issueYearLabel": "2019",
+                "value": null,
+                "display": "不適用"
+              },
+              {
+                "policyYear": 7,
+                "issueYearLabel": "2018",
+                "value": null,
+                "display": "不適用"
+              },
+              {
+                "policyYear": 8,
+                "issueYearLabel": "2017",
+                "value": null,
+                "display": "不適用"
+              },
+              {
+                "policyYear": 9,
+                "issueYearLabel": "2016",
+                "value": null,
+                "display": "不適用"
+              },
+              {
+                "policyYear": 10,
+                "issueYearLabel": "2015",
+                "value": null,
+                "display": "不適用"
+              },
+              {
+                "policyYear": "10+",
+                "issueYearLabel": "2010 - 2014",
+                "value": null,
+                "display": "不適用"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "sunlife-rf": {
+      "planId": "sunlife-rf",
+      "insurerId": "sunlife",
+      "currency": null,
+      "officialName": {
+        "zhHant": "永譽傳承儲蓄計劃",
+        "en": "RoyalFortune Savings Insurance Plan"
+      },
+      "displayName": {
+        "zhHant": "永譽傳承儲蓄計劃",
+        "en": "RoyalFortune Savings Insurance Plan"
+      },
+      "rename": {
+        "from": "2026-11-01",
+        "currentZhHant": "永譽傳承儲蓄保險計劃"
+      },
+      "productPageUrl": null,
+      "naCodes": [],
+      "series": {
+        "name": {
+          "zhHant": "永譽傳承儲蓄計劃",
+          "en": "RoyalFortune Savings Insurance Plan"
+        },
+        "currency": null,
+        "currencyLabel": null,
+        "productType": "分紅終身人壽",
+        "status": "unknown",
+        "ratios": [
+          {
+            "dividendType": "reversionary",
+            "dividendTypeLabel": {
+              "zhHant": "歸原紅利",
+              "en": "Reversionary Bonuses"
+            },
+            "byPolicyYear": [
+              {
+                "policyYear": 1,
+                "issueYearLabel": "2024",
+                "value": null,
+                "display": "不適用"
+              },
+              {
+                "policyYear": 2,
+                "issueYearLabel": "2023",
+                "value": null,
+                "display": "尚未推出"
+              },
+              {
+                "policyYear": 3,
+                "issueYearLabel": "2022",
+                "value": null,
+                "display": "尚未推出"
+              },
+              {
+                "policyYear": 4,
+                "issueYearLabel": "2021",
+                "value": null,
+                "display": "尚未推出"
+              },
+              {
+                "policyYear": 5,
+                "issueYearLabel": "2020",
+                "value": null,
+                "display": "尚未推出"
+              },
+              {
+                "policyYear": 6,
+                "issueYearLabel": "2019",
+                "value": null,
+                "display": "尚未推出"
+              },
+              {
+                "policyYear": 7,
+                "issueYearLabel": "2018",
+                "value": null,
+                "display": "尚未推出"
+              },
+              {
+                "policyYear": 8,
+                "issueYearLabel": "2017",
+                "value": null,
+                "display": "尚未推出"
+              },
+              {
+                "policyYear": 9,
+                "issueYearLabel": "2016",
+                "value": null,
+                "display": "尚未推出"
+              },
+              {
+                "policyYear": 10,
+                "issueYearLabel": "2015",
+                "value": null,
+                "display": "尚未推出"
+              },
+              {
+                "policyYear": "10+",
+                "issueYearLabel": "2010年及 2014",
+                "value": null,
+                "display": "尚未推出"
+              }
+            ]
+          },
+          {
+            "dividendType": "other",
+            "dividendTypeLabel": {
+              "zhHant": "終期紅利或特別紅利",
+              "en": "Terminal Dividends/Bonuses or Special Bonuses"
+            },
+            "byPolicyYear": [
+              {
+                "policyYear": 1,
+                "issueYearLabel": "2024",
+                "value": null,
+                "display": "不適用"
+              },
+              {
+                "policyYear": 2,
+                "issueYearLabel": "2023",
+                "value": null,
+                "display": "尚未推出"
+              },
+              {
+                "policyYear": 3,
+                "issueYearLabel": "2022",
+                "value": null,
+                "display": "尚未推出"
+              },
+              {
+                "policyYear": 4,
+                "issueYearLabel": "2021",
+                "value": null,
+                "display": "尚未推出"
+              },
+              {
+                "policyYear": 5,
+                "issueYearLabel": "2020",
+                "value": null,
+                "display": "尚未推出"
+              },
+              {
+                "policyYear": 6,
+                "issueYearLabel": "2019",
+                "value": null,
+                "display": "尚未推出"
+              },
+              {
+                "policyYear": 7,
+                "issueYearLabel": "2018",
+                "value": null,
+                "display": "尚未推出"
+              },
+              {
+                "policyYear": 8,
+                "issueYearLabel": "2017",
+                "value": null,
+                "display": "尚未推出"
+              },
+              {
+                "policyYear": 9,
+                "issueYearLabel": "2016",
+                "value": null,
+                "display": "尚未推出"
+              },
+              {
+                "policyYear": 10,
+                "issueYearLabel": "2015",
+                "value": null,
+                "display": "尚未推出"
+              },
+              {
+                "policyYear": "10+",
+                "issueYearLabel": "2010年及 2014",
+                "value": null,
+                "display": "尚未推出"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+};
+
+/* ---- js/fulfillment.js ---- */
+
+function officialProductName(planId, lang) {
+  const names = FULFILLMENT.officialNames?.[planId];
+  if (!names) return null;
+  if (lang === "en") return names.en || names.zhHant;
+  return names.zhHant;
+}
+
+function officialDisclosureName(record, lang) {
+  if (!record?.officialName) return null;
+  if (lang === "en") return record.officialName.en || record.officialName.zhHant;
+  return record.officialName.zhHant;
+}
+
+function lookupFulfillment(planId) {
+  const rec = FULFILLMENT.plans?.[planId];
+  if (!rec) return { found: false, planId };
+  const insurer = FULFILLMENT.insurers?.[rec.insurerId] || null;
+  return {
+    found: true,
+    planId,
+    ...rec,
+    insurer,
+    extractedAt: FULFILLMENT.extractedAt,
+    iaListUrl: FULFILLMENT.iaListUrl,
+    iaMethodologyUrl: FULFILLMENT.iaMethodologyUrl,
+    iaDisclaimer: FULFILLMENT.iaDisclaimer,
+  };
+}
+
+function sourceUrlForLang(sourceUrl, lang) {
+  if (!sourceUrl) return null;
+  if (typeof sourceUrl === "string") return sourceUrl;
+  if (lang === "en") return sourceUrl.en || sourceUrl.zhHant || sourceUrl.zhHans || null;
+  if (lang === "zh-Hans") return sourceUrl.zhHans || sourceUrl.zhHant || sourceUrl.en || null;
+  return sourceUrl.zhHant || sourceUrl.zhHans || sourceUrl.en || null;
+}
+
+function legalNameForLang(legalName, lang) {
+  if (!legalName) return "";
+  if (lang === "en") return legalName.en || legalName.zhHant || "";
+  if (lang === "zh-Hans") return legalName.zhHans || legalName.zhHant || "";
+  return legalName.zhHant || legalName.zhHans || legalName.en || "";
+}
+
+function iaUrlsForLang(lang, meta = FULFILLMENT) {
+  const list = meta.iaListUrl;
+  const method = meta.iaMethodologyUrl;
+  if (lang === "en") {
+    return {
+      list: list?.replace("/tc/", "/en/") || list,
+      methodology: method?.replace("/tc/", "/en/") || method,
+    };
+  }
+  if (lang === "zh-Hans") {
+    return {
+      list: list?.replace("/tc/", "/sc/") || list,
+      methodology: method?.replace("/tc/", "/sc/") || method,
+    };
+  }
+  return { list, methodology: method };
+}
+
+function collectNaCodes(series) {
+  const codes = new Set();
+  for (const block of series?.ratios || []) {
+    for (const cell of block.byPolicyYear || []) {
+      const parts = String(cell.display || "").match(/不適用\s*\((\d)\)/g) || [];
+      for (const part of parts) {
+        const n = part.match(/(\d)/);
+        if (n) codes.add(n[1]);
+      }
+    }
+  }
+  return [...codes].sort();
+}
+
+function hasNumericValue(series) {
+  return (series?.ratios || []).some((block) =>
+    (block.byPolicyYear || []).some(
+      (cell) => cell.value != null && Number.isFinite(Number(cell.value))
+    )
+  );
+}
+
+
 /* ---- js/calc.js ---- */
 /**
  * Pure premium-financing calculation engine.
@@ -1344,6 +3283,40 @@ const STRINGS = {
     holdYears: "持有 {n} 年",
     and: "與",
     insurerGroup: "保險公司",
+    frTitle: "分紅實現率",
+    frReportingYear: "報告年度 {year}",
+    frInsurer: "保險公司",
+    frSeries: "官方產品系列",
+    frCurrency: "保單貨幣",
+    frColType: "紅利類別",
+    frPolicyYear: "第 {n} 年",
+    frPolicyYearPlus: "第 {n} 年或以上",
+    frIssueYear: "對應簽發年度",
+    frNoData: "此計劃在本報告年度的官方披露中未有對應產品系列，故未有分紅實現率可顯示。",
+    frNoteHistory: "過往分紅實現率並不代表將來的紅利或表現。",
+    frNoteAllYears: "請同時參閱各個保單年度的數字或說明，不宜只看單一年度。",
+    frNoteAverage: "已公布的百分比為相關保單的平均比率，並非個別保單的實際數字。",
+    frNoteNotSole: "分紅實現率只供參考，不應作為選購計劃的唯一考慮因素。",
+    frDisclaimerCondensed: "保監局不會對保險公司披露網站或其更新所引起的錯誤、遺漏或不準確而導致的損失負責。",
+    frSources: "資料來源",
+    frSourceIaList: "保監局保險公司分紅實現率網站列表",
+    frSourceIaMethod: "保監局分紅實現率說明",
+    frSourceInsurer: "保險公司官方披露頁",
+    frSourcePlanPage: "本系列官方披露頁",
+    frNaLegend: "「不適用」代碼說明",
+    frNaLegendLink: "完整說明見保險公司官方披露頁。",
+    frNa1: "於本報告年度未有相關保單在相應保單週年終止。",
+    frNa2: "相關保單於保單銷售時所列舉之累積週年紅利及利息或特別紅利（列舉至本報告年度之相應保單週年）為零。",
+    frNa3: "產品尚未推出。",
+    frNa4: "產品已停售。",
+    frNa5: "於本報告年度之相應保單週年沒有任何有效保單。",
+    frSunlifeRename: "本產品由 2026 年 11 月 1 日起的現行官方名稱為「永譽傳承儲蓄保險計劃」。此處採用 2025 報告年度披露所用名稱「永譽傳承儲蓄計劃」。",
+    frSameTextAllYears: "官方披露對所有已列保單年度均刊出同一說明：",
+    frCompareNote: "比較表按演示淨收益排列，並未使用分紅實現率作排名。所選計劃的官方分紅實現率見「分紅實現率」一節。",
+    frExtractedAt: "披露擷取日期：{date}",
+    frNoCurrencySplit: "官方披露未按保單貨幣分列。",
+    faq7q: "甚麼是分紅實現率？為甚麼有些計劃沒有百分比？",
+    faq7a: "分紅實現率是保險公司按保監局指引，在其網站披露的過往紅利實際派發相對銷售時說明文件的平均比率。新推出或尚未有相關保單達到該保單年度的計劃，官方表可能顯示「尚未推出」、「不適用」或「沒有分紅」等文字，而不是百分比。過往數字不代表將來表現，亦不是選購的唯一考慮。本頁只抄錄官方披露，不會自行估算或填補數字。",
   },
   "zh-Hans": {
     appTitle: "保费融资计算器",
@@ -1542,6 +3515,40 @@ const STRINGS = {
     holdYears: "持有 {n} 年",
     and: "与",
     insurerGroup: "保险公司",
+    frTitle: "分红实现率",
+    frReportingYear: "报告年度 {year}",
+    frInsurer: "保险公司",
+    frSeries: "官方产品系列",
+    frCurrency: "保单货币",
+    frColType: "红利类别",
+    frPolicyYear: "第 {n} 年",
+    frPolicyYearPlus: "第 {n} 年或以上",
+    frIssueYear: "对应签发年度",
+    frNoData: "此计划在本报告年度的官方披露中未有对应产品系列，故未有分红实现率可显示。",
+    frNoteHistory: "过往分红实现率并不代表将来的红利或表现。",
+    frNoteAllYears: "请同时参阅各个保单年度的数字或说明，不宜只看单一年度。",
+    frNoteAverage: "已公布的百分比为相关保单的平均比率，并非个别保单的实际数字。",
+    frNoteNotSole: "分红实现率只供参考，不应作为选购计划的唯一考虑因素。",
+    frDisclaimerCondensed: "保监局不会对保险公司披露网站或其更新所引起的错误、遗漏或不准确而导致的损失负责。",
+    frSources: "资料来源",
+    frSourceIaList: "保监局保险公司分红实现率网站列表",
+    frSourceIaMethod: "保监局分红实现率说明",
+    frSourceInsurer: "保险公司官方披露页",
+    frSourcePlanPage: "本系列官方披露页",
+    frNaLegend: "「不适用」代码说明",
+    frNaLegendLink: "完整说明见保险公司官方披露页。",
+    frNa1: "于本报告年度未有相关保单在相应保单周年终止。",
+    frNa2: "相关保单于保单销售时所列举之累积周年红利及利息或特别红利（列举至本报告年度之相应保单周年）为零。",
+    frNa3: "产品尚未推出。",
+    frNa4: "产品已停售。",
+    frNa5: "于本报告年度之相应保单周年没有任何有效保单。",
+    frSunlifeRename: "本产品由 2026 年 11 月 1 日起的现行官方名称为「永譽傳承儲蓄保險計劃」。此处采用 2025 报告年度披露所用名称「永譽傳承儲蓄計劃」。",
+    frSameTextAllYears: "官方披露对所有已列保单年度均刊出同一说明：",
+    frCompareNote: "比较表按演示净收益排列，并未使用分红实现率作排名。所选计划的官方分红实现率见「分红实现率」一节。",
+    frExtractedAt: "披露撷取日期：{date}",
+    frNoCurrencySplit: "官方披露未按保单货币分列。",
+    faq7q: "什么是分红实现率？为什么有些计划没有百分比？",
+    faq7a: "分红实现率是保险公司按保监局指引，在其网站披露的过往红利实际派发相对销售时说明文件的平均比率。新推出或尚未有相关保单达到该保单年度的计划，官方表可能显示「尚未推出」、「不適用」或「沒有分紅」等文字，而不是百分比。过往数字不代表将来表现，也不是选购的唯一考虑。本页只抄录官方披露，不会自行估算或填补数字。",
   },
   en: {
     appTitle: "Premium Financing Calculator",
@@ -1740,6 +3747,40 @@ const STRINGS = {
     holdYears: "{n}-year hold",
     and: "and",
     insurerGroup: "Insurer",
+    frTitle: "Dividend fulfillment ratios",
+    frReportingYear: "Reporting year {year}",
+    frInsurer: "Insurer",
+    frSeries: "Official product series",
+    frCurrency: "Policy currency",
+    frColType: "Dividend type",
+    frPolicyYear: "Year {n}",
+    frPolicyYearPlus: "Year {n}+",
+    frIssueYear: "Corresponding issue year",
+    frNoData: "This plan is not in this reporting year’s official disclosure, so no fulfillment ratio is shown.",
+    frNoteHistory: "Past fulfillment ratios are not an indicator of future dividends or performance.",
+    frNoteAllYears: "Read the figures or official wording for every policy year; do not rely on a single year.",
+    frNoteAverage: "Published percentages are averages across the relevant policies, not the result of any one policy.",
+    frNoteNotSole: "Fulfillment ratios are for reference only and should not be the sole factor in choosing a plan.",
+    frDisclaimerCondensed: "The Insurance Authority is not liable for loss arising from errors, omissions or inaccuracies in the insurers’ fulfillment-ratio websites, or in their update timing, as listed on the IA website list.",
+    frSources: "Sources",
+    frSourceIaList: "IA list of insurer fulfillment-ratio websites",
+    frSourceIaMethod: "IA explanation of fulfillment ratios",
+    frSourceInsurer: "Insurer’s official disclosure page",
+    frSourcePlanPage: "Official disclosure page for this series",
+    frNaLegend: "Meaning of “不適用” codes",
+    frNaLegendLink: "See the insurer’s official page for the full notes.",
+    frNa1: "No relevant policies terminated at the corresponding policy anniversary in the reporting year.",
+    frNa2: "The illustrated accumulated dividends and interest, or special bonus, to the corresponding policy anniversary was zero.",
+    frNa3: "The product had not yet been launched.",
+    frNa4: "The product had been discontinued.",
+    frNa5: "There were no in-force policies at the corresponding policy anniversary in the reporting year.",
+    frSunlifeRename: "From 1 November 2026 the current official product name is 永譽傳承儲蓄保險計劃 (RoyalFortune Savings Insurance Plan). This section uses the name published in the 2025 reporting-year disclosure, 永譽傳承儲蓄計劃.",
+    frSameTextAllYears: "The official disclosure gives the same wording for every listed policy year:",
+    frCompareNote: "This table is ranked by illustrated net profit. Fulfillment ratios are not used for ranking. Official ratios for the selected plan are in the fulfillment-ratio section.",
+    frExtractedAt: "Disclosures captured on {date}",
+    frNoCurrencySplit: "The official disclosure is not split by policy currency.",
+    faq7q: "What is a fulfillment ratio, and why do some plans show wording instead of a percentage?",
+    faq7a: "A fulfillment ratio is the insurer’s disclosure, under the Insurance Authority’s guidance, of how actual past dividends compared with the amounts illustrated at sale, as an average across relevant policies. For a newly launched plan, or where no relevant policies have reached that policy year, the official table may show wording such as “尚未推出”, “不適用” or “沒有分紅” rather than a percentage. Past figures are not a guide to the future, and should not be the only factor in a purchase. This page copies the official disclosure and does not estimate or fill in figures.",
   },
 };
 
@@ -1823,6 +3864,7 @@ function applyStaticI18n(root, lang) {
 
 
 
+
 const LANG_KEY = "pfcal-lang";
 const ADVISOR_KEY = "pfcal-advisor";
 const PLAN_KEY = "pfcal-plan";
@@ -1886,12 +3928,28 @@ function insurerName(plan, lang = state.lang) {
   return plan.insurer[langKey(lang)] || plan.insurer.zhHant;
 }
 
+function officialName(plan, lang = state.lang) {
+  return officialProductName(plan.id, lang) || plan.planCode;
+}
+
 function planShort(plan, lang = state.lang) {
   return `${plan.planCode} · ${plan.currency}`;
 }
 
 function planFull(plan, lang = state.lang) {
-  return `${insurerName(plan, lang)} · ${plan.planCode} (${plan.currency})`;
+  const name = officialName(plan, lang);
+  if (lang === "en") {
+    return `${insurerName(plan, lang)} · ${name} (${plan.planCode} · ${plan.currency})`;
+  }
+  return `${insurerName(plan, lang)} · ${name}（${plan.planCode} · ${plan.currency}）`;
+}
+
+function escapeHtml(s) {
+  return String(s ?? "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
 }
 
 function localeFor(lang) {
@@ -2052,29 +4110,53 @@ function renderPlanPicker() {
     const lab = document.createElement("span");
     lab.className = "insurer-label";
     lab.textContent = group.insurer[langKey(state.lang)];
-    const chips = document.createElement("div");
-    chips.className = "plan-chips";
-    chips.setAttribute("role", "list");
-    for (const plan of group.plans) {
-      const btn = document.createElement("button");
-      btn.type = "button";
-      btn.className = "plan-chip";
-      btn.setAttribute("role", "listitem");
-      btn.setAttribute("aria-pressed", plan.id === state.planId ? "true" : "false");
-      if (plan.id === state.planId) btn.classList.add("is-current");
-      btn.textContent = planShort(plan);
-      btn.addEventListener("click", () => {
-        if (plan.id === state.planId) return;
-        state.planId = plan.id;
-        try { localStorage.setItem(PLAN_KEY, plan.id); } catch { /* ignore */ }
-        applyPlanDefaults(plan);
-        syncInputs();
-        render();
-      });
-      chips.appendChild(btn);
-    }
     block.appendChild(lab);
-    block.appendChild(chips);
+
+    const seriesBuckets = [];
+    const seen = new Set();
+    for (const plan of group.plans) {
+      const key = officialProductName(plan.id, "zh-Hant") || plan.planCode;
+      if (seen.has(key)) continue;
+      seen.add(key);
+      seriesBuckets.push({
+        name: officialName(plan),
+        plans: group.plans.filter(
+          (item) => (officialProductName(item.id, "zh-Hant") || item.planCode) === key
+        ),
+      });
+    }
+
+    for (const series of seriesBuckets) {
+      const wrap = document.createElement("div");
+      wrap.className = "plan-series";
+      const title = document.createElement("p");
+      title.className = "plan-series-name";
+      title.textContent = series.name;
+      const chips = document.createElement("div");
+      chips.className = "plan-chips";
+      chips.setAttribute("role", "list");
+      for (const plan of series.plans) {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "plan-chip";
+        btn.setAttribute("role", "listitem");
+        btn.setAttribute("aria-pressed", plan.id === state.planId ? "true" : "false");
+        if (plan.id === state.planId) btn.classList.add("is-current");
+        btn.textContent = planShort(plan);
+        btn.addEventListener("click", () => {
+          if (plan.id === state.planId) return;
+          state.planId = plan.id;
+          try { localStorage.setItem(PLAN_KEY, plan.id); } catch { /* ignore */ }
+          applyPlanDefaults(plan);
+          syncInputs();
+          render();
+        });
+        chips.appendChild(btn);
+      }
+      wrap.appendChild(title);
+      wrap.appendChild(chips);
+      block.appendChild(wrap);
+    }
     host.appendChild(block);
   }
 }
@@ -2728,6 +4810,139 @@ function renderDetailTable(result) {
   btn.textContent = t(lang, state.tableOpen ? "tableHide" : "tableShow");
 }
 
+
+function policyYearLabel(year, lang) {
+  const s = String(year);
+  if (s.endsWith("+")) {
+    return t(lang, "frPolicyYearPlus", { n: s.slice(0, -1) });
+  }
+  return t(lang, "frPolicyYear", { n: s });
+}
+
+function formatCapturedDate(iso, lang) {
+  if (!iso) return "";
+  const d = new Date(`${iso}T12:00:00+08:00`);
+  return new Intl.DateTimeFormat(localeFor(lang), {
+    dateStyle: "long",
+    timeZone: "Asia/Hong_Kong",
+  }).format(d);
+}
+
+function dividendTypeLabel(block, lang) {
+  const labels = block.dividendTypeLabel || {};
+  if (lang === "en") return labels.en || labels.zhHant || block.dividendType;
+  return labels.zhHant || labels.en || block.dividendType;
+}
+
+function allSameDisplay(block) {
+  const cells = block.byPolicyYear || [];
+  if (!cells.length) return false;
+  return cells.every((cell) => cell.display === cells[0].display && cell.value == null);
+}
+
+function renderFulfillment() {
+  const lang = state.lang;
+  const host = document.getElementById("fulfillment-body");
+  if (!host) return;
+  const rec = lookupFulfillment(state.planId);
+  if (!rec.found) {
+    host.innerHTML = `<p class="fr-note">${escapeHtml(t(lang, "frNoData"))}</p>`;
+    return;
+  }
+
+  const legal = legalNameForLang(rec.insurer?.legalName, lang);
+  const seriesName = officialDisclosureName(rec, lang) || officialName(currentPlan(), lang);
+  const year = rec.insurer?.reportingYear || 2025;
+  const meta = [
+    `<p><span class="fr-series-name">${escapeHtml(seriesName)}</span></p>`,
+    `<p>${escapeHtml(t(lang, "frInsurer"))}：${escapeHtml(legal)}</p>`,
+    `<p>${escapeHtml(t(lang, "frReportingYear", { year }))}</p>`,
+  ];
+  if (rec.series.currency) {
+    const ccyText = rec.series.currencyLabel && lang !== "en"
+      ? `${rec.series.currency}（${rec.series.currencyLabel}）`
+      : rec.series.currency;
+    meta.push(`<p>${escapeHtml(t(lang, "frCurrency"))}：${escapeHtml(ccyText)}</p>`);
+  } else {
+    meta.push(`<p>${escapeHtml(t(lang, "frNoCurrencySplit"))}</p>`);
+  }
+
+  const rename = rec.rename
+    ? `<p class="fr-note">${escapeHtml(t(lang, "frSunlifeRename"))}</p>`
+    : "";
+
+  const ratios = rec.series.ratios || [];
+  const uniformShared = ratios.length
+    && ratios.every(allSameDisplay)
+    && ratios.every((block) => block.byPolicyYear[0].display === ratios[0].byPolicyYear[0].display);
+
+  let tables = "";
+  if (uniformShared) {
+    tables = `<div class="fr-uniform"><p>${escapeHtml(t(lang, "frSameTextAllYears"))}</p><p class="fr-official-text">${escapeHtml(ratios[0].byPolicyYear[0].display)}</p></div>`;
+  } else if (ratios.length) {
+    const years = ratios[0].byPolicyYear || [];
+    const head = `<thead><tr><th>${escapeHtml(t(lang, "frColType"))}</th>${years.map((cell) => {
+      const sub = cell.issueYearLabel
+        ? `<span class="fr-year-sub">${escapeHtml(t(lang, "frIssueYear"))} ${escapeHtml(cell.issueYearLabel)}</span>`
+        : "";
+      return `<th>${escapeHtml(policyYearLabel(cell.policyYear, lang))}${sub}</th>`;
+    }).join("")}</tr></thead>`;
+    const body = ratios.map((block) => {
+      const cells = (block.byPolicyYear || []).map((cell) => {
+        const label = cell.issueYearLabel
+          ? `${policyYearLabel(cell.policyYear, lang)} · ${cell.issueYearLabel}`
+          : policyYearLabel(cell.policyYear, lang);
+        const numeric = cell.value != null && Number.isFinite(Number(cell.value));
+        const cls = numeric ? "fr-numeric" : "fr-text-cell";
+        let text = cell.display;
+        if (text == null || String(text) === "") {
+          text = numeric ? `${cell.value}%` : "—";
+        }
+        return `<td class="${cls}" data-label="${escapeHtml(label)}">${escapeHtml(text)}</td>`;
+      }).join("");
+      return `<tr><th scope="row">${escapeHtml(dividendTypeLabel(block, lang))}</th>${cells}</tr>`;
+    }).join("");
+    tables = `<div class="fr-table-wrap table-wrap"><table class="data fr-table">${head}<tbody>${body}</tbody></table></div><p class="micro scroll-hint">${escapeHtml(t(lang, "scrollHint"))}</p>`;
+  }
+
+  let legend = "";
+  if (rec.insurerId === "fwd-bermuda" && rec.naCodes?.length) {
+    const items = rec.naCodes.map((code) => {
+      const official = rec.insurer?.naNotes?.[code];
+      const meaning = lang === "zh-Hant" && official ? official : t(lang, `frNa${code}`);
+      return `<li><strong>不適用 (${escapeHtml(code)})</strong>：${escapeHtml(meaning)}</li>`;
+    }).join("");
+    legend = `<div class="fr-legend"><h3>${escapeHtml(t(lang, "frNaLegend"))}</h3><ul>${items}</ul><p class="micro">${escapeHtml(t(lang, "frNaLegendLink"))}</p></div>`;
+  }
+
+  const caveats = `<ul class="fr-caveats">
+    <li>${escapeHtml(t(lang, "frNoteHistory"))}</li>
+    <li>${escapeHtml(t(lang, "frNoteAllYears"))}</li>
+    <li>${escapeHtml(t(lang, "frNoteAverage"))}</li>
+    <li>${escapeHtml(t(lang, "frNoteNotSole"))}</li>
+    <li>${escapeHtml(t(lang, "frDisclaimerCondensed"))}</li>
+  </ul>`;
+
+  const ia = iaUrlsForLang(lang);
+  const insurerUrl = sourceUrlForLang(rec.insurer?.sourceUrl, lang);
+  const sources = [
+    `<li><a href="${escapeHtml(ia.list)}" target="_blank" rel="noopener noreferrer">${escapeHtml(t(lang, "frSourceIaList"))}</a></li>`,
+    `<li><a href="${escapeHtml(ia.methodology)}" target="_blank" rel="noopener noreferrer">${escapeHtml(t(lang, "frSourceIaMethod"))}</a></li>`,
+  ];
+  if (insurerUrl) {
+    sources.push(`<li><a href="${escapeHtml(insurerUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(t(lang, "frSourceInsurer"))} — ${escapeHtml(legal)}</a></li>`);
+  }
+  if (rec.productPageUrl) {
+    sources.push(`<li><a href="${escapeHtml(rec.productPageUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(t(lang, "frSourcePlanPage"))}</a></li>`);
+  }
+
+  const captured = rec.extractedAt
+    ? `<p class="fineprint fr-captured">${escapeHtml(t(lang, "frExtractedAt", { date: formatCapturedDate(rec.extractedAt, lang) }))}</p>`
+    : "";
+
+  host.innerHTML = `<div class="fr-meta">${meta.join("")}</div>${rename}${tables}${legend}${caveats}<div class="fr-sources"><h3>${escapeHtml(t(lang, "frSources"))}</h3><ul>${sources.join("")}</ul></div>${captured}`;
+}
+
 function renderCompare() {
   const lang = state.lang;
   const src = inputsFromState(currentPlan());
@@ -2759,7 +4974,8 @@ function renderCompare() {
       const pHkd = toHkd(row.profit, row.plan.currency, row.result.fx);
       const dHkd = row.downPaymentHkd;
       const pcls = pHkd < 0 ? "neg" : "";
-      const name = `${insurerName(row.plan, lang)} ${row.plan.planCode} · ${row.plan.currency}${isCur ? " · " + t(lang, "compareCurrent") : ""}`;
+      const current = isCur ? " · " + t(lang, "compareCurrent") : "";
+      const name = `<span class="cmp-plan-name">${escapeHtml(officialName(row.plan, lang))}</span><span class="cmp-plan-meta">${escapeHtml(insurerName(row.plan, lang))} · ${escapeHtml(row.plan.planCode)} · ${escapeHtml(row.plan.currency)}${escapeHtml(current)}</span>`;
       return `<tr class="${isCur ? "is-current" : ""}">
         <th>${name}</th>
         <td data-label="${t(lang, "compareColYear")}">${row.year}</td>
@@ -2927,6 +5143,7 @@ function render() {
 
   renderHero(result);
   renderYearCards(result);
+  renderFulfillment();
   renderChart(result);
   renderTimeline(result);
   renderVs(result);

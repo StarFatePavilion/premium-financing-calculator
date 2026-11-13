@@ -303,6 +303,18 @@ h1, h2, h3, .serif {
   border-color: var(--green-mid);
 }
 
+.plan-series + .plan-series {
+  margin-top: 10px;
+}
+
+.plan-series-name {
+  margin: 0 0 6px;
+  font-size: 0.86rem;
+  font-weight: 650;
+  color: var(--ink);
+  line-height: 1.35;
+}
+
 /* Fields */
 .field { display: grid; gap: 6px; margin-top: 16px; }
 .field[hidden],
@@ -1245,6 +1257,189 @@ table.data tr.is-current { outline: 2px solid var(--green-mid); outline-offset: 
   .scroll-hint { display: none; }
 }
 
+/* Fulfillment ratios */
+.fulfillment-section {
+  margin-top: 28px;
+}
+
+.fr-meta {
+  margin: 0 0 12px;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  line-height: 1.55;
+}
+
+.fr-meta p { margin: 0 0 4px; }
+
+.fr-series-name {
+  font-weight: 650;
+  color: var(--ink);
+}
+
+.fr-note {
+  margin: 0 0 8px;
+  color: var(--ink-soft);
+  font-size: 0.88rem;
+}
+
+.fr-uniform {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  margin: 0 0 14px;
+}
+
+.fr-uniform p { margin: 0 0 6px; }
+.fr-uniform p:last-child { margin-bottom: 0; }
+
+.fr-official-text {
+  color: var(--ink);
+  font-weight: 600;
+  line-height: 1.55;
+}
+
+.fr-table-wrap {
+  margin: 10px 0 14px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.fr-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.fr-table th,
+.fr-table td {
+  border-bottom: 1px solid var(--line);
+  padding: 8px 8px;
+  text-align: center;
+  vertical-align: bottom;
+  color: var(--ink);
+}
+
+.fr-table th:first-child,
+.fr-table td:first-child {
+  text-align: left;
+  font-weight: 650;
+  white-space: nowrap;
+}
+
+.fr-table thead th {
+  color: var(--ink-soft);
+  font-weight: 650;
+  font-size: 0.75rem;
+}
+
+.fr-year-sub {
+  display: block;
+  margin-top: 2px;
+  font-weight: 500;
+  font-size: 0.68rem;
+  color: var(--muted);
+}
+
+.fr-numeric {
+  font-weight: 650;
+}
+
+.fr-text-cell {
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.fr-legend,
+.fr-sources,
+.fr-caveats {
+  margin: 0 0 12px;
+  padding: 0;
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+}
+
+.fr-legend h3,
+.fr-sources h3 {
+  margin: 0 0 6px;
+  font-size: 0.82rem;
+  font-weight: 650;
+  color: var(--ink);
+}
+
+.fr-legend li,
+.fr-sources li,
+.fr-caveats li {
+  margin: 0 0 4px;
+}
+
+.fr-sources a {
+  color: var(--green-text);
+  text-underline-offset: 2px;
+}
+
+.fr-captured {
+  margin: 0;
+  color: var(--muted);
+}
+
+.cmp-plan-name {
+  display: block;
+  font-weight: 650;
+  line-height: 1.35;
+}
+
+.cmp-plan-meta {
+  display: block;
+  margin-top: 2px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+@media (max-width: 640px) {
+  .fr-table thead { display: none; }
+  .fr-table,
+  .fr-table tbody,
+  .fr-table tr,
+  .fr-table th,
+  .fr-table td {
+    display: block;
+    width: 100%;
+  }
+  .fr-table tr {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 10px 12px;
+    margin-bottom: 10px;
+  }
+  .fr-table th:first-child,
+  .fr-table td:first-child {
+    white-space: normal;
+    border-bottom: 0;
+    padding-bottom: 6px;
+  }
+  .fr-table td {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    text-align: right;
+    border-bottom: 1px dashed var(--line);
+    white-space: normal;
+  }
+  .fr-table td:last-child { border-bottom: 0; }
+  .fr-table td::before {
+    content: attr(data-label);
+    text-align: left;
+    font-weight: 650;
+    color: var(--ink-soft);
+    flex: 1 1 auto;
+  }
+  .fr-text-cell { white-space: normal; }
+}
+
 /* Print / PDF proposal */
 @media print {
   :root { --bg: #fff; }
@@ -1355,6 +1550,40 @@ table.data tr.is-current { outline: 2px solid var(--green-mid); outline-offset: 
   .vs-grid { grid-template-columns: 1fr 1fr; }
   .disclaimer { break-inside: avoid; }
   a { text-decoration: none; color: inherit; }
+
+  .fulfillment-section {
+    break-inside: auto;
+    overflow: visible !important;
+  }
+  .fr-table-wrap,
+  #fulfillment .table-wrap {
+    overflow: visible !important;
+  }
+  .fr-table thead { display: table-header-group; }
+  .fr-table,
+  .fr-table tbody,
+  .fr-table tr,
+  .fr-table th,
+  .fr-table td {
+    display: revert;
+    width: auto;
+  }
+  .fr-table td {
+    text-align: center;
+    white-space: nowrap;
+  }
+  .fr-table th:first-child,
+  .fr-table td:first-child {
+    text-align: left;
+    white-space: normal;
+  }
+  .fr-table td::before { content: none; }
+  .fr-sources a[href]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.72em;
+    word-break: break-all;
+    color: var(--muted);
+  }
 
   @page {
     size: A4;
