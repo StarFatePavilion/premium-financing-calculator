@@ -1896,13 +1896,16 @@ details.fr-strip-disclosure > .fr-compare-strip {
   z-index: -1;
   pointer-events: none;
 }
-.proposal-export-sheet {
+.proposal-export-sheet,
+.proposal-export-page {
   width: 794px;
+  height: 1123px;
   box-sizing: border-box;
-  padding: 36px 44px 48px;
+  padding: 28px 36px 28px;
   background: #f4efe6;
   color: var(--ink);
   color-scheme: only light;
+  overflow: hidden;
 }
 .proposal-export .print-only,
 .proposal-export .print-premium,
@@ -1923,8 +1926,8 @@ details.fr-strip-disclosure > .fr-compare-strip {
 .proposal-export-topbar {
   display: flex;
   align-items: center;
-  padding: 0 0 12px;
-  margin: 0 0 16px;
+  padding: 0 0 8px;
+  margin: 0 0 10px;
   color: var(--ink);
   border-bottom: 1px solid #6e5630;
 }
@@ -1940,25 +1943,40 @@ details.fr-strip-disclosure > .fr-compare-strip {
   color: var(--ink-soft) !important;
 }
 .proposal-export #print-head {
-  margin: 0 0 14px;
+  margin: 0 0 8px;
 }
 .proposal-export #print-head h1 {
   font-family: var(--serif);
-  font-size: 1.55rem;
-  margin: 0 0 6px;
+  font-size: 1.32rem;
+  margin: 0 0 4px;
+}
+.proposal-export #print-assumptions,
+.proposal-export #print-meta {
+  font-size: 0.78rem;
+  line-height: 1.35;
+}
+.proposal-export-ident .kicker {
+  display: none !important;
+}
+.proposal-export #plan-heading {
+  font-size: 1.08rem;
+  line-height: 1.3;
+  margin: 0 0 2px;
 }
 .proposal-export .print-premium {
-  margin: 0 0 8px;
-  font-size: 0.95rem;
+  margin: 0 0 2px;
+  font-size: 0.88rem;
   font-weight: 650;
   font-variant-numeric: tabular-nums;
 }
 .proposal-export .hero {
   display: grid !important;
-  grid-template-columns: 1fr 1.2fr 1.15fr !important;
-  gap: 10px 16px !important;
+  grid-template-columns: 1fr 1.15fr 1.2fr !important;
+  gap: 6px 12px !important;
   overflow: visible !important;
   align-items: start;
+  margin: 6px 0 8px !important;
+  padding: 4px 0 6px !important;
 }
 .proposal-export #hero-rate,
 .proposal-export #hero-monthly,
@@ -1970,14 +1988,17 @@ details.fr-strip-disclosure > .fr-compare-strip {
 .proposal-export .hero .value,
 .proposal-export .monthly-phases,
 .proposal-export .print-rates {
-  font-size: 1.12rem !important;
+  font-size: 1.02rem !important;
 }
+.proposal-export .monthly-phases { gap: 2px; }
+.proposal-export .metric .lbl { margin-bottom: 2px; }
+.proposal-export .metric .sub { font-size: 0.65rem; margin-top: 2px; }
 .proposal-export .print-rates {
   font-variant-numeric: tabular-nums;
   font-weight: 650;
   letter-spacing: -0.02em;
-  line-height: 1.25;
-  white-space: nowrap;
+  line-height: 1.3;
+  white-space: normal;
   color: var(--num-cost);
 }
 .proposal-export #hero-down-val,
@@ -1989,36 +2010,96 @@ details.fr-strip-disclosure > .fr-compare-strip {
 }
 .proposal-export .cards,
 .proposal-export .cards[data-count="3"],
-.proposal-export .cards[data-count="4"] {
+.proposal-export .cards[data-count="4"],
+.proposal-export .cards[data-count="8"] {
+  display: grid;
   grid-template-columns: 1fr 1fr;
+  gap: 7px;
 }
 .proposal-export .vs-grid {
   grid-template-columns: 1fr 1fr;
+  gap: 10px;
 }
+/* html2canvas 1.4.1 paints inset box-shadow as a full-card fill.
+   Use an explicit hex fill and a solid left border instead. */
 .proposal-export .year-card,
 .proposal-export .vs-card {
-  background: var(--cream-deep);
-  color: var(--ink);
-  border: 1px solid var(--line-strong);
+  background: #ebe4d8;
+  color: #1c1b16;
+  border: 1px solid #cfc6b4;
   box-shadow: none;
+  padding: 8px 10px 8px;
+  min-height: 0;
+  border-radius: 12px;
 }
 .proposal-export .year-card.is-featured,
 .proposal-export .vs-card.is-financing {
-  background: var(--green-soft);
-  color: var(--ink);
-  border-color: var(--line-strong);
-  box-shadow: inset 4px 0 0 var(--green);
+  background: #e6efe9;
+  color: #1c1b16;
+  border: 1px solid #cfc6b4;
+  border-left: 4px solid #1c4a3a;
+  box-shadow: none;
 }
 .proposal-export .year-card.is-loss {
-  background: var(--loss-bg);
-  color: var(--ink);
-  border-color: var(--loss-line);
+  background: #f6e7e3;
+  color: #1c1b16;
+  border: 1px solid #e4c4bd;
+  box-shadow: none;
 }
 .proposal-export .year-card.is-featured.is-loss {
-  background: var(--loss-bg);
-  color: var(--ink);
-  border-color: var(--loss-line);
-  box-shadow: inset 4px 0 0 var(--loss);
+  background: #f6e7e3;
+  color: #1c1b16;
+  border: 1px solid #e4c4bd;
+  border-left: 4px solid #8f3328;
+  box-shadow: none;
+}
+.proposal-export .year-card.is-other {
+  background: #ebe4d8;
+  color: #1c1b16;
+  border: 1px solid #cfc6b4;
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.proposal-export .year-card .reason {
+  margin: 0 0 4px;
+  font-size: 0.74rem;
+}
+.proposal-export .year-card .profit-lbl,
+.proposal-export .year-card .avr-lbl {
+  font-size: 0.68rem;
+}
+.proposal-export .year-card .profit-num {
+  font-size: 1.22rem;
+}
+.proposal-export .year-card .avr-block {
+  margin-top: 4px;
+}
+.proposal-export .year-card .avr-num {
+  font-size: 0.95rem;
+}
+.proposal-export .year-card .exact,
+.proposal-export .year-card .avr-spread {
+  font-size: 0.66rem;
+}
+.proposal-export .year-card .avr-note,
+.proposal-export .year-card .avr-spread {
+  display: none;
+}
+.proposal-export .year-card .loss-badge {
+  margin-top: 4px;
+  font-size: 0.68rem;
+}
+.proposal-export .year-card .other-note {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.45;
+  color: #3d3a34;
+}
+.proposal-export .fineprint {
+  margin-top: 8px;
+  font-size: 0.7rem;
 }
 .proposal-export .year-card .profit-num,
 .proposal-export .year-card .avr-num,
@@ -2043,9 +2124,13 @@ details.fr-strip-disclosure > .fr-compare-strip {
   color: var(--ink);
 }
 .proposal-export .disclaimer {
-  background: var(--cream-deep);
+  background: #ebe4d8;
+  box-shadow: none;
 }
-.proposal-export .section { margin-top: 16px; }
+.proposal-export .section { margin-top: 10px; }
+.proposal-export .year-compare { margin-top: 8px; }
+.proposal-export .section-title { margin: 0 0 4px; }
+.proposal-export .section-lead { margin: 0 0 6px; font-size: 0.78rem; }
 
 /* Print / PDF proposal — cream stationery paper.
    html.is-printing covers mobile WebViews that apply @media print colours unreliably. */

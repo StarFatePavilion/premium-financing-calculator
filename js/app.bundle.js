@@ -1947,6 +1947,9 @@ const STRINGS = {
     exportPreparing: "正在產生 PDF…",
     exportFailed: "未能產生 PDF，請再試或改用列印。",
     exportShareFallback: "未能分享，已改為下載 PDF。",
+    exportYearCompareHint: "下列為第 4 至 10 年的演示收益，其餘年份請自行參考網站。",
+    exportOtherYear: "其他",
+    exportOtherYearNote: "請自行參考網站",
     footerSource: "數字源自顧問演示檔，僅供參考。",
     contactWhatsApp: "WhatsApp",
     downNegative: "以目前假設，首期為零或負數，回報率無法計算。請調低貸款成數或檢查折扣。",
@@ -2200,6 +2203,9 @@ const STRINGS = {
     exportPreparing: "正在生成 PDF…",
     exportFailed: "未能生成 PDF，请再试或改用打印。",
     exportShareFallback: "未能分享，已改为下载 PDF。",
+    exportYearCompareHint: "下列为第 4 至 10 年的演示收益，其余年份请自行参考网站。",
+    exportOtherYear: "其他",
+    exportOtherYearNote: "请自行参考网站",
     footerSource: "数字源自顾问演示档，仅供参考。",
     contactWhatsApp: "WhatsApp",
     downNegative: "以目前假设，首期为零或负数，回报率无法计算。请调低贷款成数或检查折扣。",
@@ -2453,6 +2459,9 @@ const STRINGS = {
     exportPreparing: "Preparing PDF…",
     exportFailed: "The PDF could not be created. Try again, or print instead.",
     exportShareFallback: "Sharing was unavailable, so the PDF was downloaded.",
+    exportYearCompareHint: "Illustrated results for years 4 to 10 are shown below. For other years, please refer to the website.",
+    exportOtherYear: "Other",
+    exportOtherYearNote: "Please refer to the website",
     footerSource: "Figures are from the advisor’s illustration file and are for reference only.",
     contactWhatsApp: "WhatsApp",
     downNegative: "With the current assumptions the initial outlay is zero or negative, so rates of return cannot be calculated. Lower the LTV or check the discount.",
@@ -2821,6 +2830,7 @@ function featuredYear(result) {
 }
 
 function reasonText(card) {
+  if (card.reason === "year-unit") return t(state.lang, "yearUnit", { n: card.year });
   const map = {
     breakeven: "reasonBreakeven",
     stepup: "reasonStepup",
@@ -2833,6 +2843,72 @@ function reasonText(card) {
     manual: "reasonManual",
   };
   return t(state.lang, map[card.reason] || "reasonManual", { n: card.year });
+}
+
+function yearAvrSpread(result, cards) {
+  const featured = cards.find((c) => c.featured);
+  const featuredRow = featured ? result.years[featured.year - 1] : null;
+  return !!(
+    featured &&
+    featuredRow &&
+    featuredRow.avr != null &&
+    cards.some((c) => {
+      const row = result.years[c.year - 1];
+      return c.year < featured.year && row.avr != null && row.avr > featuredRow.avr + 1e-12;
+    })
+  );
+}
+
+function yearCardHtml(card, result, { avrSpread = false } = {}) {
+  const lang = state.lang;
+  const plan = currentPlan();
+  const row = result.years[card.year - 1];
+  const wan = displayPrimaryHkd(row.profit, plan.currency, result.fx, lang);
+  const exact = bothCcy(row.profit, plan.currency, result.fx, lang);
+  const loss = row.profit < 0;
+  const feat = card.featured ? " is-featured" : "";
+  const lossCls = loss ? " is-loss" : "";
+  const badge = loss ? `<span class="loss-badge">${t(lang, "stillLoss")}</span>` : "";
+  const spread = card.featured && avrSpread
+    ? `<p class="avr-spread">${t(lang, "avrSpreadNote")}</p>`
+    : "";
+  return `<article class="year-card${feat}${lossCls}">
+        <p class="reason">${reasonText(card)}</p>
+        <div class="profit-lbl">${t(lang, "netProfit")}</div>
+        <div class="profit-line">
+          <span class="profit-num tabular">${wan.main}</span>
+          ${wan.unit ? `<span class="profit-unit">${wan.unit}</span>` : ""}
+        </div>
+        <div class="exact">${t(lang, "exactFigure")}：${exact}</div>
+        <div class="avr-block">
+          <div class="avr-lbl">${t(lang, "avrLabel")}</div>
+          <div class="avr-num tabular">${fmtPct(row.avr, 1)}</div>
+          <div class="avr-note">${t(lang, "avrSimpleNote")}</div>
+        </div>
+        ${spread}
+        ${badge}
+      </article>`;
+}
+
+function exportOtherYearCardHtml() {
+  const lang = state.lang;
+  return `<article class="year-card is-other">
+        <p class="reason">${t(lang, "exportOtherYear")}</p>
+        <p class="other-note">${t(lang, "exportOtherYearNote")}</p>
+      </article>`;
+}
+
+function exportYearCardsHtml(result) {
+  const highlights = highlightCards(result);
+  const byYear = new Map(highlights.map((c) => [c.year, c]));
+  const highlightSpread = yearAvrSpread(result, highlights);
+  const cards = [];
+  for (let year = 4; year <= 10; year++) {
+    cards.push(byYear.get(year) || { year, reason: "year-unit", featured: false });
+  }
+  return cards
+    .map((card) => yearCardHtml(card, result, { avrSpread: card.featured && highlightSpread }))
+    .join("") + exportOtherYearCardHtml();
 }
 
 function applyPlanDefaults(plan, { keepPremium = false } = {}) {
@@ -3165,52 +3241,13 @@ function renderHero(result) {
 }
 
 function renderYearCards(result) {
-  const lang = state.lang;
-  const plan = currentPlan();
   const cards = highlightCards(result);
   const host = document.getElementById("year-cards");
   host.dataset.count = String(cards.length);
-  const featured = cards.find((c) => c.featured);
-  const featuredRow = featured ? result.years[featured.year - 1] : null;
-  const avrSpread = !!(
-    featured &&
-    featuredRow &&
-    featuredRow.avr != null &&
-    cards.some((c) => {
-      const row = result.years[c.year - 1];
-      return c.year < featured.year && row.avr != null && row.avr > featuredRow.avr + 1e-12;
-    })
-  );
+  const avrSpread = yearAvrSpread(result, cards);
 
   host.innerHTML = cards
-    .map((card) => {
-      const row = result.years[card.year - 1];
-      const wan = displayPrimaryHkd(row.profit, plan.currency, result.fx, lang);
-      const exact = bothCcy(row.profit, plan.currency, result.fx, lang);
-      const loss = row.profit < 0;
-      const feat = card.featured ? " is-featured" : "";
-      const lossCls = loss ? " is-loss" : "";
-      const badge = loss ? `<span class="loss-badge">${t(lang, "stillLoss")}</span>` : "";
-      const spread = card.featured && avrSpread
-        ? `<p class="avr-spread">${t(lang, "avrSpreadNote")}</p>`
-        : "";
-      return `<article class="year-card${feat}${lossCls}">
-        <p class="reason">${reasonText(card)}</p>
-        <div class="profit-lbl">${t(lang, "netProfit")}</div>
-        <div class="profit-line">
-          <span class="profit-num tabular">${wan.main}</span>
-          ${wan.unit ? `<span class="profit-unit">${wan.unit}</span>` : ""}
-        </div>
-        <div class="exact">${t(lang, "exactFigure")}：${exact}</div>
-        <div class="avr-block">
-          <div class="avr-lbl">${t(lang, "avrLabel")}</div>
-          <div class="avr-num tabular">${fmtPct(row.avr, 1)}</div>
-          <div class="avr-note">${t(lang, "avrSimpleNote")}</div>
-        </div>
-        ${spread}
-        ${badge}
-      </article>`;
-    })
+    .map((card) => yearCardHtml(card, result, { avrSpread }))
     .join("");
 
   document.getElementById("btn-years-auto").setAttribute("aria-pressed", state.yearLock ? "false" : "true");
@@ -4385,6 +4422,12 @@ function bind() {
     return el ? el.cloneNode(true) : null;
   }
 
+  function makeExportPage() {
+    const page = document.createElement("div");
+    page.className = "proposal-export-sheet proposal-export-page";
+    return page;
+  }
+
   function buildProposalExportRoot() {
     const existing = document.querySelector(".proposal-export");
     if (existing) existing.remove();
@@ -4393,20 +4436,20 @@ function bind() {
     root.className = "proposal-export";
     root.setAttribute("aria-hidden", "true");
 
-    const sheet = document.createElement("div");
-    sheet.className = "proposal-export-sheet";
+    const page1 = makeExportPage();
+    page1.dataset.page = "1";
 
     const topbar = document.createElement("header");
     topbar.className = "proposal-export-topbar";
     const brand = document.querySelector(".topbar .brand");
     if (brand) topbar.appendChild(brand.cloneNode(true));
-    sheet.appendChild(topbar);
+    page1.appendChild(topbar);
 
     const printHead = cloneForExport(document.getElementById("print-head"));
     if (printHead) {
       printHead.classList.remove("print-only");
       printHead.hidden = false;
-      sheet.appendChild(printHead);
+      page1.appendChild(printHead);
     }
 
     const ident = document.createElement("div");
@@ -4421,7 +4464,7 @@ function bind() {
       prem.classList.remove("print-only");
       ident.appendChild(prem);
     }
-    sheet.appendChild(ident);
+    page1.appendChild(ident);
 
     const hero = cloneForExport(document.getElementById("hero"));
     if (hero) {
@@ -4431,53 +4474,63 @@ function bind() {
         printRates.classList.remove("print-only");
         printRates.hidden = false;
       }
-      sheet.appendChild(hero);
+      page1.appendChild(hero);
     }
 
     const yearSection = cloneForExport(document.querySelector(".year-compare"));
     if (yearSection) {
       yearSection.querySelectorAll(".year-toolbar").forEach((n) => n.remove());
-      sheet.appendChild(yearSection);
+      const hint = yearSection.querySelector(".section-lead, [data-i18n='yearCompareHint']");
+      if (hint) hint.textContent = t(state.lang, "exportYearCompareHint");
+      const host = yearSection.querySelector("#year-cards, .cards");
+      if (host) {
+        host.removeAttribute("id");
+        host.dataset.count = "8";
+        host.innerHTML = exportYearCardsHtml(compute());
+      }
+      page1.appendChild(yearSection);
     }
+
+    const page2 = makeExportPage();
+    page2.dataset.page = "2";
 
     const versus = cloneForExport(document.getElementById("versus"));
     if (versus) {
       versus.querySelectorAll(".vs-year-label, #reinvest-block").forEach((n) => n.remove());
-      sheet.appendChild(versus);
+      page2.appendChild(versus);
     }
 
     const disc = cloneForExport(document.querySelector("section.disclaimer, .disclaimer"));
-    if (disc) sheet.appendChild(disc);
+    if (disc) page2.appendChild(disc);
 
-    root.appendChild(sheet);
+    root.appendChild(page1);
+    root.appendChild(page2);
     document.body.appendChild(root);
     return root;
   }
 
-  function canvasToPdfBlob(canvas) {
+  function canvasesToPdfBlob(canvases) {
+    const list = (Array.isArray(canvases) ? canvases : [canvases]).filter(Boolean);
     const JsPDF = jsPdfConstructor();
     const pdf = new JsPDF({ unit: "mm", format: "a4", orientation: "portrait", compress: true });
     const pageW = pdf.internal.pageSize.getWidth();
     const pageH = pdf.internal.pageSize.getHeight();
-    const imgW = pageW;
-    const imgH = (canvas.height * pageW) / canvas.width;
-    const imgData = canvas.toDataURL("image/png");
     const fillCream = () => {
       pdf.setFillColor(244, 239, 230);
       pdf.rect(0, 0, pageW, pageH, "F");
     };
-    let y = 0;
-    let remaining = imgH;
-    fillCream();
-    pdf.addImage(imgData, "PNG", 0, y, imgW, imgH, undefined, "FAST");
-    remaining -= pageH;
-    while (remaining > 0.8) {
-      y -= pageH;
-      pdf.addPage();
+    list.forEach((canvas, i) => {
+      if (i > 0) pdf.addPage();
       fillCream();
-      pdf.addImage(imgData, "PNG", 0, y, imgW, imgH, undefined, "FAST");
-      remaining -= pageH;
-    }
+      const imgW = pageW;
+      const imgH = (canvas.height * pageW) / canvas.width;
+      const scale = imgH > pageH ? pageH / imgH : 1;
+      const drawW = imgW * scale;
+      const drawH = imgH * scale;
+      const x = (pageW - drawW) / 2;
+      const y = 0;
+      pdf.addImage(canvas.toDataURL("image/png"), "PNG", x, y, drawW, drawH, undefined, "FAST");
+    });
     return pdf.output("blob");
   }
 
@@ -4537,31 +4590,43 @@ function bind() {
     const root = buildProposalExportRoot();
     try {
       await waitForExportPaint();
-      const sheet = root.querySelector(".proposal-export-sheet");
-      const canvas = await window.html2canvas(sheet, {
-        backgroundColor: CREAM_PAPER,
-        scale: 2,
-        useCORS: true,
-        logging: false,
-        windowWidth: 794,
-        onclone: (clonedDoc) => {
-          const wrap = clonedDoc.querySelector(".proposal-export");
-          const paper = clonedDoc.querySelector(".proposal-export-sheet");
-          if (wrap) {
-            wrap.style.position = "static";
-            wrap.style.left = "auto";
-            wrap.style.background = CREAM_PAPER;
-            wrap.style.colorScheme = "only light";
-          }
-          if (paper) {
-            paper.style.background = CREAM_PAPER;
-            paper.style.colorScheme = "only light";
-          }
-          clonedDoc.documentElement.style.background = CREAM_PAPER;
-          clonedDoc.body.style.background = CREAM_PAPER;
-        },
-      });
-      return canvasToPdfBlob(canvas);
+      const pages = [...root.querySelectorAll(".proposal-export-page")];
+      const canvases = [];
+      for (const page of pages) {
+        const canvas = await window.html2canvas(page, {
+          backgroundColor: CREAM_PAPER,
+          scale: 2,
+          useCORS: true,
+          logging: false,
+          width: 794,
+          height: 1123,
+          windowWidth: 794,
+          windowHeight: 1123,
+          onclone: (clonedDoc) => {
+            const wrap = clonedDoc.querySelector(".proposal-export");
+            if (wrap) {
+              wrap.style.position = "static";
+              wrap.style.left = "auto";
+              wrap.style.background = CREAM_PAPER;
+              wrap.style.colorScheme = "only light";
+            }
+            clonedDoc.querySelectorAll(".proposal-export-sheet, .proposal-export-page").forEach((paper) => {
+              paper.style.background = CREAM_PAPER;
+              paper.style.colorScheme = "only light";
+              paper.style.width = "794px";
+              paper.style.height = "1123px";
+              paper.style.boxShadow = "none";
+            });
+            clonedDoc.querySelectorAll(".proposal-export .year-card, .proposal-export .vs-card").forEach((card) => {
+              card.style.boxShadow = "none";
+            });
+            clonedDoc.documentElement.style.background = CREAM_PAPER;
+            clonedDoc.body.style.background = CREAM_PAPER;
+          },
+        });
+        canvases.push(canvas);
+      }
+      return canvasesToPdfBlob(canvases);
     } finally {
       root.remove();
     }
