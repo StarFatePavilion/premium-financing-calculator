@@ -154,8 +154,10 @@
           </section>
 
           <section class="section fulfillment-section" id="fulfillment" aria-labelledby="fr-title">
-            <h2 class="section-title" id="fr-title" data-i18n="frTitle">保險公司分紅實現率比較（10Life）</h2>
-            <div id="fulfillment-body"></div>
+            <details class="fr-disclosure" id="fr-disclosure">
+              <summary class="fr-disclosure-summary section-title" id="fr-title" data-i18n="frTitle">保險公司分紅實現率比較（10Life）</summary>
+              <div id="fulfillment-body"></div>
+            </details>
           </section>
 
           <section class="section chart-section" id="chart-section" style="margin-top:28px" aria-labelledby="chart-title">
@@ -306,7 +308,10 @@
         <div class="table-wrap cardable" style="margin-top:8px">
           <table class="data" id="cmp-table"></table>
         </div>
-        <div class="fr-compare-strip" id="fr-compare-strip"></div>
+        <details class="fr-strip-disclosure" id="fr-strip-disclosure">
+          <summary class="fr-strip-summary" data-i18n="frCompareStripTitle">本計算器相關公司的 10Life 整體平均</summary>
+          <div class="fr-compare-strip" id="fr-compare-strip"></div>
+        </details>
       </section>
 
       <section class="section notes" id="notes" aria-labelledby="notes-title">

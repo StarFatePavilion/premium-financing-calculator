@@ -1262,6 +1262,69 @@ table.data tr.is-current { outline: 2px solid var(--green-mid); outline-offset: 
   margin-top: 28px;
 }
 
+details.fr-disclosure,
+details.fr-strip-disclosure {
+  border-top: 1px solid var(--line);
+  padding-top: 12px;
+}
+
+details.fr-strip-disclosure {
+  margin-top: 22px;
+  padding: 12px 16px 10px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  border-top: 1px solid var(--line);
+}
+
+details.fr-disclosure > summary.fr-disclosure-summary,
+details.fr-strip-disclosure > summary.fr-strip-summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  font-weight: 650;
+  color: var(--ink);
+}
+
+details.fr-disclosure > summary.fr-disclosure-summary {
+  margin: 0;
+  font-size: 1.22rem;
+}
+
+details.fr-strip-disclosure > summary.fr-strip-summary {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+details.fr-disclosure > summary::-webkit-details-marker,
+details.fr-strip-disclosure > summary::-webkit-details-marker {
+  display: none;
+}
+
+details.fr-disclosure > summary::after,
+details.fr-strip-disclosure > summary::after {
+  content: "＋";
+  color: var(--faint);
+  font-weight: 500;
+  flex: 0 0 auto;
+}
+
+details.fr-disclosure[open] > summary::after,
+details.fr-strip-disclosure[open] > summary::after {
+  content: "－";
+}
+
+details.fr-disclosure > #fulfillment-body {
+  margin-top: 12px;
+}
+
+details.fr-strip-disclosure > .fr-compare-strip {
+  margin-top: 10px;
+}
+
 .fr-lead {
   margin: 0 0 10px;
 }
@@ -1408,11 +1471,11 @@ table.data tr.is-current { outline: 2px solid var(--green-mid); outline-offset: 
 }
 
 .fr-compare-strip {
-  margin-top: 22px;
-  padding: 16px 16px 12px;
-  background: var(--paper);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-sm);
+  margin-top: 0;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
 }
 
 .fr-strip-title {
@@ -1644,6 +1707,16 @@ table.data tr.is-current { outline: 2px solid var(--green-mid); outline-offset: 
   .fulfillment-section {
     break-inside: auto;
     overflow: visible !important;
+  }
+  details.fr-disclosure,
+  details.fr-strip-disclosure {
+    border: 0;
+    padding: 0;
+    background: transparent;
+  }
+  details.fr-disclosure > summary::after,
+  details.fr-strip-disclosure > summary::after {
+    display: none;
   }
   .fr-table-wrap,
   #fulfillment .table-wrap {

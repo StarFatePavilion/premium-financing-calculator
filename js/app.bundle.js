@@ -962,6 +962,9 @@ const FULFILLMENT = {
 
 const METRICS = ["overall", "terminal", "annual", "reversionary"];
 
+/** UI disclosures for the 10Life comparison start collapsed on every load. */
+const FULFILLMENT_DISCLOSURE_DEFAULT_OPEN = false;
+
 const CALCULATOR_INSURER_IDS = FULFILLMENT.calculatorInsurerIds || [
   "boc-life",
   "ctf-life",
@@ -1974,7 +1977,7 @@ const STRINGS = {
     frNoteAbove70: "「高於 70%」指嚴格大於 70% 的數據點佔比；百分比由 10Life 四捨五入至整數。",
     frSources: "資料來源",
     frSourceTenlife: "10Life：比較各保險公司儲蓄保險分紅實現率",
-    frSourceEnStale: "10Life 英文版同一網址目前仍為較舊的 2024 報告年度文章；本頁英文字幕所載數字仍以 2025 報告年度（繁中原文）為準。",
+    frSourceEnStale: "10Life 英文版同一網址目前仍為較舊的 2024 報告年度文章；本頁英文界面所載數字仍以 2025 報告年度（繁中原文）為準。",
     frCompareNote: "比較表按演示淨收益排列，並未使用分紅實現率或 10Life 公司平均作排名。公司級比較見上方「保險公司分紅實現率比較（10Life）」一節。",
     frCompareStripTitle: "本計算器相關公司的 10Life 整體平均",
     frCompareStripLead: "以下只列出本計算器有收錄計劃的公司，數字為 10Life 2025 報告年度的公司整體平均，不是個別計劃的實現率，亦不用來排列上表。",
@@ -2203,7 +2206,7 @@ const STRINGS = {
     frNoteAbove70: "「高于 70%」指严格大于 70% 的数据点占比；百分比由 10Life 四舍五入至整数。",
     frSources: "资料来源",
     frSourceTenlife: "10Life：比较各保险公司储蓄保险分红实现率",
-    frSourceEnStale: "10Life 英文版同一网址目前仍为较旧的 2024 报告年度文章；本页英文字幕所载数字仍以 2025 报告年度（繁中原文）为准。",
+    frSourceEnStale: "10Life 英文版同一网址目前仍为较旧的 2024 报告年度文章；本页英文界面所载数字仍以 2025 报告年度（繁中原文）为准。",
     frCompareNote: "比较表按演示净收益排列，并未使用分红实现率或 10Life 公司平均作排名。公司级比较见上方「保险公司分红实现率比较（10Life）」一节。",
     frCompareStripTitle: "本计算器相关公司的 10Life 整体平均",
     frCompareStripLead: "以下只列出本计算器有收录计划的公司，数字为 10Life 2025 报告年度的公司整体平均，不是个别计划的实现率，也不用来排列上表。",
@@ -3595,6 +3598,16 @@ function renderFulfillment() {
 
 
 
+function ensureFulfillmentDisclosuresCollapsedOnLoad() {
+  // Native <details> omit [open] in HTML; this helper documents the contract for tests
+  // and re-asserts the default if a caller ever sets open before first paint.
+  if (FULFILLMENT_DISCLOSURE_DEFAULT_OPEN) return;
+  const main = document.getElementById("fr-disclosure");
+  const strip = document.getElementById("fr-strip-disclosure");
+  if (main && !main.dataset.userToggled) main.open = false;
+  if (strip && !strip.dataset.userToggled) strip.open = false;
+}
+
 function renderFrCompareStrip() {
   const lang = state.lang;
   const host = document.getElementById("fr-compare-strip");
@@ -3612,7 +3625,6 @@ function renderFrCompareStrip() {
     })
     .join("");
   host.innerHTML = `
-    <h3 class="fr-strip-title">${escapeHtml(t(lang, "frCompareStripTitle"))}</h3>
     <p class="fr-note">${escapeHtml(t(lang, "frCompareStripLead"))}</p>
     <ul class="fr-chip-list">${items}</ul>
     <p class="fr-strip-link"><a href="#fulfillment">${escapeHtml(t(lang, "frCompareStripLink"))}</a></p>
@@ -4062,6 +4074,28 @@ function bind() {
     renderFulfillment();
   });
 
+  const frDisclosure = document.getElementById("fr-disclosure");
+  if (frDisclosure) {
+    frDisclosure.addEventListener("toggle", () => {
+      frDisclosure.dataset.userToggled = "1";
+    });
+  }
+  const frStripDisclosure = document.getElementById("fr-strip-disclosure");
+  if (frStripDisclosure) {
+    frStripDisclosure.addEventListener("toggle", () => {
+      frStripDisclosure.dataset.userToggled = "1";
+    });
+  }
+  document.getElementById("fr-compare-strip").addEventListener("click", (e) => {
+    const a = e.target.closest('a[href="#fulfillment"]');
+    if (!a) return;
+    const main = document.getElementById("fr-disclosure");
+    if (main) {
+      main.open = true;
+      main.dataset.userToggled = "1";
+    }
+  });
+
   document.getElementById("cmp-prem-mode").addEventListener("click", (e) => {
     const btn = e.target.closest("button[data-premmode]");
     if (!btn) return;
@@ -4161,6 +4195,7 @@ function init() {
   applyUrlParams();
   applyPlanDefaults(currentPlan(), { keepPremium: false });
   bind();
+  ensureFulfillmentDisclosuresCollapsedOnLoad();
   render();
 }
 
