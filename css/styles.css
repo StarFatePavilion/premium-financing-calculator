@@ -2296,6 +2296,174 @@ details.fr-strip-disclosure > .fr-compare-strip {
 .proposal-export .disclaimer {
   margin-top: 16px;
 }
+.proposal-export .export-story + .disclaimer {
+  margin-top: 14px;
+}
+.proposal-export .export-story {
+  margin-top: 2px;
+}
+.proposal-export .export-story-title {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 10px;
+  margin: 0 0 6px;
+  color: #1c1b16;
+}
+.proposal-export .export-story-title-text {
+  font-weight: 700;
+}
+.proposal-export .export-story .section-lead {
+  margin: 0 0 10px;
+  font-size: 0.78rem;
+  color: #3d3a34;
+}
+.proposal-export .export-story-caption {
+  margin: 8px 0 6px;
+  font-size: 0.78rem;
+  font-weight: 650;
+  color: #6e5630;
+}
+.proposal-export .export-story-row {
+  display: grid;
+  grid-template-columns: 1fr 28px 1fr 28px 1fr;
+  gap: 8px;
+  align-items: stretch;
+  margin: 0 0 4px;
+}
+.proposal-export .export-story-op {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: #8a7348;
+  line-height: 1;
+}
+.proposal-export .export-story-panel {
+  background: #faf7f1;
+  color: #1c1b16;
+  border: 1px solid #cfc6b4;
+  border-left: 4px solid #8a7348;
+  box-shadow: none;
+  border-radius: 12px;
+  padding: 10px 12px 11px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+}
+.proposal-export .export-story-panel.is-outlay,
+.proposal-export .export-story-panel.is-cost,
+.proposal-export .export-story-panel.is-total {
+  border-left-color: #6e5630;
+}
+.proposal-export .export-story-panel.is-total {
+  background: #f3ead6;
+}
+.proposal-export .export-story-panel.is-surrender {
+  border-left-color: #8a7348;
+  background: #faf7f1;
+}
+.proposal-export .export-story-panel.is-cash,
+.proposal-export .export-story-panel.is-featured {
+  background: #e6efe9;
+  border-left-color: #1c4a3a;
+}
+.proposal-export .export-story-panel.is-loss {
+  background: #f6e7e3;
+  border-left-color: #8f3328;
+}
+.proposal-export .export-story-icon {
+  margin: 0 0 4px;
+}
+.proposal-export .export-story-icon svg {
+  display: block;
+  width: 44px;
+  height: 44px;
+  background: transparent;
+}
+.proposal-export .export-story-step {
+  margin: 0 0 2px;
+  font-size: 0.72rem;
+  font-weight: 650;
+  color: #3d3a34;
+  line-height: 1.3;
+}
+.proposal-export .export-story-panel .k {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #1c1b16;
+  margin: 0 0 4px;
+  line-height: 1.3;
+}
+.proposal-export .export-story-panel .v {
+  font-size: 1.22rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+}
+.proposal-export .export-story-panel .unit {
+  font-size: 0.78rem;
+  font-weight: 650;
+  margin-left: 3px;
+}
+.proposal-export .export-story-panel .micro {
+  margin-top: 3px;
+  font-size: 0.66rem;
+  color: #3d3a34;
+  line-height: 1.35;
+}
+.proposal-export .export-story-note {
+  margin: 5px 0 0;
+  font-size: 0.66rem;
+  line-height: 1.4;
+  color: #5a564e;
+}
+.proposal-export .export-story-panel .v.is-outlay,
+.proposal-export .export-story-panel .v.is-outlay .unit {
+  color: #6e5630;
+}
+.proposal-export .export-story-panel .v.is-cost,
+.proposal-export .export-story-panel .v.is-cost .unit {
+  color: #7a6140;
+}
+.proposal-export .export-story-panel .v.is-profit,
+.proposal-export .export-story-panel .v.is-profit .unit {
+  color: #154734;
+}
+.proposal-export .export-story-panel .v.is-loss,
+.proposal-export .export-story-panel .v.is-loss .unit {
+  color: #8f3328;
+}
+.proposal-export .export-story-panel .loss-badge {
+  margin-top: 6px;
+  display: inline-block;
+  font-size: 0.66rem;
+  font-weight: 650;
+  color: #8f3328;
+  background: #f6e7e3;
+  border: 1px solid #e4c4bd;
+  border-radius: 999px;
+  padding: 1px 7px;
+}
+.proposal-export .export-story-formula {
+  margin: 10px 0 0;
+  padding: 8px 12px;
+  background: #e6efe9;
+  border: 1px solid #cfc6b4;
+  border-left: 4px solid #1c4a3a;
+  box-shadow: none;
+  border-radius: 12px;
+  font-size: 0.78rem;
+  line-height: 1.5;
+  color: #1c1b16;
+}
+.proposal-export .export-story.is-loss .export-story-formula {
+  background: #f6e7e3;
+  border-left-color: #8f3328;
+}
 
 /* Print / PDF proposal — cream stationery paper.
    html.is-printing covers mobile WebViews that apply @media print colours unreliably. */

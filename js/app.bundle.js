@@ -1955,6 +1955,28 @@ const STRINGS = {
     exportLoanLabel: "貸款金額",
     exportChartTitle: "預計淨收益（第 1 至 10 年）",
     exportChartHint: "曲線為融資與自資的演示淨收益。五年期以較大標記標示；零軸以下表示虧損。",
+    exportStoryTitle: "五年期退保說明",
+    exportStoryHint: "以下圖示說明五年期退保的資金去向：先支付第一年首期，加上五年內的借貸利息作為總成本；第五年退保須償還銀行貸款，一次過收回的現金減去總成本，即為演示淨收益。",
+    exportStoryCostsCaption: "① 先計算總成本",
+    exportStoryExitCaption: "② 第五年退保，一次過收回",
+    exportStoryNetCaption: "③ 到手現金減去總成本",
+    exportStoryDownStep: "交首期",
+    exportStoryDownLabel: "第一年首期",
+    exportStoryInterestStep: "五年支付利息",
+    exportStoryInterestLabel: "五年借貸成本",
+    exportStoryInterestNote: "五年累計利息，並非貸款本金",
+    exportStoryTotalCostLabel: "總成本",
+    exportStoryTotalCostNote: "首期 + 五年利息",
+    exportStorySurrenderStep: "第五年退保",
+    exportStorySurrenderLabel: "第五年退保價值",
+    exportStoryRepayLabel: "償還貸款",
+    exportStoryRepayNote: "退保時須還走銀行貸款",
+    exportStoryCashStep: "到手現金",
+    exportStoryCashLabel: "一次過收回",
+    exportStoryCashNote: "退保價值 − 償還貸款",
+    exportStoryNetStep: "淨賺",
+    exportStoryNetNote: "到手現金 − 總成本",
+    exportStoryFormula: "一次過收回 {cash}，減去總成本 {cost}（首期 {down} + 五年利息 {interest}），等於預計淨收益 {profit}。",
     footerSource: "數字源自顧問演示檔，僅供參考。",
     contactWhatsApp: "WhatsApp",
     downNegative: "以目前假設，首期為零或負數，回報率無法計算。請調低貸款成數或檢查折扣。",
@@ -2216,6 +2238,28 @@ const STRINGS = {
     exportLoanLabel: "贷款金额",
     exportChartTitle: "预计净收益（第 1 至 10 年）",
     exportChartHint: "曲线为融资与自资的演示净收益。五年期以较大标记标示；零轴以下表示亏损。",
+    exportStoryTitle: "五年期退保说明",
+    exportStoryHint: "以下图示说明五年期退保的资金去向：先支付第一年首期，加上五年内的借贷利息作为总成本；第五年退保须偿还银行贷款，一次性收回的现金减去总成本，即为演示净收益。",
+    exportStoryCostsCaption: "① 先计算总成本",
+    exportStoryExitCaption: "② 第五年退保，一次性收回",
+    exportStoryNetCaption: "③ 到手现金减去总成本",
+    exportStoryDownStep: "交首期",
+    exportStoryDownLabel: "第一年首期",
+    exportStoryInterestStep: "五年支付利息",
+    exportStoryInterestLabel: "五年借贷成本",
+    exportStoryInterestNote: "五年累计利息，并非贷款本金",
+    exportStoryTotalCostLabel: "总成本",
+    exportStoryTotalCostNote: "首期 + 五年利息",
+    exportStorySurrenderStep: "第五年退保",
+    exportStorySurrenderLabel: "第五年退保价值",
+    exportStoryRepayLabel: "偿还贷款",
+    exportStoryRepayNote: "退保时须偿还银行贷款",
+    exportStoryCashStep: "到手现金",
+    exportStoryCashLabel: "一次性收回",
+    exportStoryCashNote: "退保价值 − 偿还贷款",
+    exportStoryNetStep: "净赚",
+    exportStoryNetNote: "到手现金 − 总成本",
+    exportStoryFormula: "一次性收回 {cash}，减去总成本 {cost}（首期 {down} + 五年利息 {interest}），等于预计净收益 {profit}。",
     footerSource: "数字源自顾问演示档，仅供参考。",
     contactWhatsApp: "WhatsApp",
     downNegative: "以目前假设，首期为零或负数，回报率无法计算。请调低贷款成数或检查折扣。",
@@ -2477,6 +2521,28 @@ const STRINGS = {
     exportLoanLabel: "Loan amount",
     exportChartTitle: "Illustrated net profit (years 1–10)",
     exportChartHint: "The curves show illustrated net profit for financing and self-funding. The five-year term is marked; values below the zero line are losses.",
+    exportStoryTitle: "Five-year surrender at a glance",
+    exportStoryHint: "This illustrated path shows a five-year surrender: the year-1 down payment plus five years of loan interest is the total cost. On surrender in year 5 the bank loan is repaid, and cash received minus total cost is the illustrated net profit.",
+    exportStoryCostsCaption: "1. First work out the total cost",
+    exportStoryExitCaption: "2. Surrender in year 5 and receive cash once",
+    exportStoryNetCaption: "3. Cash received minus total cost",
+    exportStoryDownStep: "Pay the down payment",
+    exportStoryDownLabel: "Year-1 down payment",
+    exportStoryInterestStep: "Pay interest over five years",
+    exportStoryInterestLabel: "Five-year borrowing cost",
+    exportStoryInterestNote: "Accumulated interest, not the loan principal",
+    exportStoryTotalCostLabel: "Total cost",
+    exportStoryTotalCostNote: "Down payment + five-year interest",
+    exportStorySurrenderStep: "Surrender in year 5",
+    exportStorySurrenderLabel: "Year-5 surrender value",
+    exportStoryRepayLabel: "Loan repaid",
+    exportStoryRepayNote: "The bank loan is repaid on surrender",
+    exportStoryCashStep: "Cash in hand",
+    exportStoryCashLabel: "Cash received",
+    exportStoryCashNote: "Surrender value − loan repaid",
+    exportStoryNetStep: "Net profit",
+    exportStoryNetNote: "Cash received − total cost",
+    exportStoryFormula: "Cash received {cash}, less total cost {cost} (down payment {down} + five-year interest {interest}), equals illustrated net profit {profit}.",
     footerSource: "Figures are from the advisor’s illustration file and are for reference only.",
     contactWhatsApp: "WhatsApp",
     downNegative: "With the current assumptions the initial outlay is zero or negative, so rates of return cannot be calculated. Lower the LTV or check the discount.",
@@ -3091,6 +3157,137 @@ function exportProfitChartHtml(result, lang = state.lang) {
         ${body}
         ${xLabels}
       </svg>
+    </section>`;
+}
+
+function exportSurrenderStoryFigures(result, year = EXPORT_CROWN_YEAR) {
+  const row = result.years[year - 1];
+  const downPayment = result.downPayment;
+  const accInterest = row.accInterest;
+  const sv = row.sv;
+  const loan = result.loan;
+  const cashReceived = sv - loan;
+  const totalCost = downPayment + accInterest;
+  const netProfit = cashReceived - totalCost;
+  return {
+    year,
+    downPayment,
+    accInterest,
+    sv,
+    loan,
+    cashReceived,
+    totalCost,
+    netProfit,
+    profit: row.profit,
+  };
+}
+
+function exportStoryIcon(name) {
+  const common = `xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="44" height="44" aria-hidden="true" focusable="false"`;
+  const icons = {
+    wallet: `<svg ${common}><rect x="6" y="16" width="36" height="22" rx="4" fill="#f3ead6" stroke="#6e5630" stroke-width="1.4"/><path d="M10 16 V12.2 A4 4 0 0 1 14 8.2 H30 A4 4 0 0 1 34 12.2 V16" fill="#ebe4d8" stroke="#6e5630" stroke-width="1.4"/><circle cx="34" cy="27" r="5.2" fill="#8a7348" stroke="#6e5630" stroke-width="1.2"/><circle cx="34" cy="27" r="2.1" fill="#f4efe6"/></svg>`,
+    calendar: `<svg ${common}><rect x="8" y="12" width="32" height="28" rx="4" fill="#faf7f1" stroke="#6e5630" stroke-width="1.4"/><path d="M8 16.5 A4 4 0 0 1 12 12 H36 A4 4 0 0 1 40 16.5 V20 H8 Z" fill="#e6efe9" stroke="#6e5630" stroke-width="1.4"/><line x1="16" y1="8" x2="16" y2="16" stroke="#6e5630" stroke-width="1.6" stroke-linecap="round"/><line x1="32" y1="8" x2="32" y2="16" stroke="#6e5630" stroke-width="1.6" stroke-linecap="round"/><circle cx="17" cy="28" r="2" fill="#8a7348"/><circle cx="24" cy="28" r="2" fill="#8a7348"/><circle cx="31" cy="28" r="2" fill="#8a7348"/><circle cx="17" cy="34.5" r="2" fill="#8a7348"/><circle cx="24" cy="34.5" r="2" fill="#8a7348"/></svg>`,
+    coins: `<svg ${common}><ellipse cx="18" cy="17" rx="9" ry="9" fill="#8a7348" stroke="#6e5630" stroke-width="1.3"/><ellipse cx="18" cy="17" rx="4.8" ry="4.8" fill="#f3ead6"/><ellipse cx="29" cy="27" rx="11" ry="11" fill="#8a7348" stroke="#6e5630" stroke-width="1.3"/><ellipse cx="29" cy="27" rx="5.6" ry="5.6" fill="#f3ead6"/></svg>`,
+    receipt: `<svg ${common}><path d="M14 7 H34 V41 L31 39 L28 41 L24 39 L20 41 L17 39 L14 41 Z" fill="#f3ead6" stroke="#6e5630" stroke-width="1.4" stroke-linejoin="round"/><line x1="19" y1="15" x2="29" y2="15" stroke="#6e5630" stroke-width="1.3" stroke-linecap="round"/><line x1="19" y1="21" x2="29" y2="21" stroke="#8a7348" stroke-width="1.3" stroke-linecap="round"/><line x1="19" y1="27" x2="26" y2="27" stroke="#8a7348" stroke-width="1.3" stroke-linecap="round"/></svg>`,
+    policy: `<svg ${common}><path d="M12 8 H28 L36 16 V40 H12 Z" fill="#faf7f1" stroke="#6e5630" stroke-width="1.4" stroke-linejoin="round"/><path d="M28 8 V16 H36" fill="#f3ead6" stroke="#6e5630" stroke-width="1.4" stroke-linejoin="round"/><line x1="18" y1="22" x2="30" y2="22" stroke="#8a7348" stroke-width="1.3" stroke-linecap="round"/><line x1="18" y1="27" x2="30" y2="27" stroke="#cfc6b4" stroke-width="1.3" stroke-linecap="round"/><line x1="18" y1="32" x2="26" y2="32" stroke="#cfc6b4" stroke-width="1.3" stroke-linecap="round"/><circle cx="18.5" cy="14" r="3" fill="#8a7348" stroke="#6e5630" stroke-width="0.8"/></svg>`,
+    repay: `<svg ${common}><rect x="6" y="14" width="24" height="20" rx="3.5" fill="#f3ead6" stroke="#6e5630" stroke-width="1.3"/><circle cx="18" cy="24" r="5" fill="#8a7348" stroke="#6e5630" stroke-width="1.1"/><circle cx="18" cy="24" r="2" fill="#f4efe6"/><path d="M28 24 H40 M34.5 18.5 L40 24 L34.5 29.5" fill="none" stroke="#6e5630" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+    sack: `<svg ${common}><path d="M16 18 C12 22 10 28 10 34 C10 40 16 42 24 42 C32 42 38 40 38 34 C38 28 36 22 32 18 Z" fill="#e6efe9" stroke="#1c4a3a" stroke-width="1.4" stroke-linejoin="round"/><path d="M16 18 Q24 14 32 18" fill="#f4efe6" stroke="#1c4a3a" stroke-width="1.4"/><path d="M20 14 Q24 8 28 14" fill="none" stroke="#6e5630" stroke-width="1.5" stroke-linecap="round"/><circle cx="24" cy="32" r="5" fill="#8a7348" stroke="#6e5630" stroke-width="1.1"/><circle cx="24" cy="32" r="2" fill="#f3ead6"/></svg>`,
+    profit: `<svg ${common}><circle cx="19" cy="31" r="9" fill="#8a7348" stroke="#6e5630" stroke-width="1.3"/><circle cx="19" cy="31" r="4.8" fill="#f3ead6"/><path d="M27 27 C36 18 35 11 27 9 C27 17 23 21 19 23 C24 25 27 23 27 27 Z" fill="#e6efe9" stroke="#1c4a3a" stroke-width="1.3" stroke-linejoin="round"/><path d="M27 27 C23 21 22 15 27 9" fill="none" stroke="#1c4a3a" stroke-width="1.1"/></svg>`,
+  };
+  return icons[name] || "";
+}
+
+function exportStoryOp(kind) {
+  const label = kind === "plus" ? "+" : kind === "minus" ? "−" : "=";
+  return `<span class="export-story-op" aria-hidden="true">${label}</span>`;
+}
+
+function exportStoryAmountHtml(amount, result, lang, valueClass) {
+  const plan = currentPlan();
+  const wan = displayPrimaryHkd(amount, plan.currency, result.fx, lang);
+  const exact = bothCcy(amount, plan.currency, result.fx, lang);
+  const unit = wan.unit ? `<span class="unit">${escapeHtml(wan.unit)}</span>` : "";
+  return `<div class="v ${valueClass} tabular">${escapeHtml(wan.main)}${unit}</div>
+          <div class="micro">${escapeHtml(exact)}</div>`;
+}
+
+function exportStoryWanLabel(amount, result, lang) {
+  const plan = currentPlan();
+  const wan = displayPrimaryHkd(amount, plan.currency, result.fx, lang);
+  return wan.unit ? `${wan.main} ${wan.unit}` : wan.main;
+}
+
+function exportStoryPanel({
+  icon,
+  step,
+  label,
+  amountHtml,
+  note,
+  extra,
+  tone,
+}) {
+  const toneCls = tone ? ` ${tone}` : "";
+  const noteHtml = note ? `<p class="export-story-note">${escapeHtml(note)}</p>` : "";
+  const stepHtml = step ? `<p class="export-story-step">${escapeHtml(step)}</p>` : "";
+  return `<article class="export-story-panel${toneCls}">
+        <div class="export-story-icon">${icon}</div>
+        ${stepHtml}
+        <div class="k">${escapeHtml(label)}</div>
+        ${amountHtml}
+        ${extra || ""}
+        ${noteHtml}
+      </article>`;
+}
+
+function exportSurrenderStoryHtml(result, lang = state.lang) {
+  const fig = exportSurrenderStoryFigures(result);
+  const loss = fig.netProfit < 0;
+  const profitCls = loss ? "is-loss" : "is-profit";
+  const netTone = loss ? "is-loss" : "is-featured";
+  const downAmt = exportStoryAmountHtml(fig.downPayment, result, lang, "is-outlay");
+  const interestAmt = exportStoryAmountHtml(fig.accInterest, result, lang, "is-cost");
+  const costAmt = exportStoryAmountHtml(fig.totalCost, result, lang, "is-outlay");
+  const svAmt = exportStoryAmountHtml(fig.sv, result, lang, "is-outlay");
+  const loanAmt = exportStoryAmountHtml(fig.loan, result, lang, "is-cost");
+  const cashAmt = exportStoryAmountHtml(fig.cashReceived, result, lang, "is-profit");
+  const netAmt = exportStoryAmountHtml(fig.netProfit, result, lang, profitCls);
+  const lossBadge = loss ? `<span class="loss-badge">${escapeHtml(t(lang, "stillLoss"))}</span>` : "";
+  const formula = t(lang, "exportStoryFormula", {
+    cash: exportStoryWanLabel(fig.cashReceived, result, lang),
+    cost: exportStoryWanLabel(fig.totalCost, result, lang),
+    down: exportStoryWanLabel(fig.downPayment, result, lang),
+    interest: exportStoryWanLabel(fig.accInterest, result, lang),
+    profit: exportStoryWanLabel(fig.netProfit, result, lang),
+  });
+  const title = escapeHtml(t(lang, "exportStoryTitle"));
+  return `<section class="export-story${loss ? " is-loss" : ""}" data-export-story="1" data-year="${fig.year}" data-down="${fig.downPayment}" data-interest="${fig.accInterest}" data-sv="${fig.sv}" data-loan="${fig.loan}" data-cash="${fig.cashReceived}" data-cost="${fig.totalCost}" data-net="${fig.netProfit}">
+      <h2 class="section-title export-story-title">${exportCrownMark(lang)}<span class="export-story-title-text">${title}</span><span class="export-vs-horizon">${escapeHtml(t(lang, "exportVsHorizon"))}</span></h2>
+      <p class="section-lead">${escapeHtml(t(lang, "exportStoryHint"))}</p>
+      <p class="export-story-caption">${escapeHtml(t(lang, "exportStoryCostsCaption"))}</p>
+      <div class="export-story-row">
+        ${exportStoryPanel({ icon: exportStoryIcon("wallet"), step: t(lang, "exportStoryDownStep"), label: t(lang, "exportStoryDownLabel"), amountHtml: downAmt, tone: "is-outlay" })}
+        ${exportStoryOp("plus")}
+        ${exportStoryPanel({ icon: exportStoryIcon("calendar"), step: t(lang, "exportStoryInterestStep"), label: t(lang, "exportStoryInterestLabel"), amountHtml: interestAmt, note: t(lang, "exportStoryInterestNote"), tone: "is-cost" })}
+        ${exportStoryOp("equals")}
+        ${exportStoryPanel({ icon: exportStoryIcon("receipt"), step: t(lang, "exportStoryTotalCostLabel"), label: t(lang, "exportStoryTotalCostNote"), amountHtml: costAmt, tone: "is-total" })}
+      </div>
+      <p class="export-story-caption">${escapeHtml(t(lang, "exportStoryExitCaption"))}</p>
+      <div class="export-story-row">
+        ${exportStoryPanel({ icon: exportStoryIcon("policy"), step: t(lang, "exportStorySurrenderStep"), label: t(lang, "exportStorySurrenderLabel"), amountHtml: svAmt, note: t(lang, "exportStoryRepayNote"), tone: "is-surrender" })}
+        ${exportStoryOp("minus")}
+        ${exportStoryPanel({ icon: exportStoryIcon("repay"), step: t(lang, "exportStoryRepayLabel"), label: t(lang, "exportLoanLabel"), amountHtml: loanAmt, note: t(lang, "exportStoryRepayNote"), tone: "is-cost" })}
+        ${exportStoryOp("equals")}
+        ${exportStoryPanel({ icon: exportStoryIcon("sack"), step: t(lang, "exportStoryCashStep"), label: t(lang, "exportStoryCashLabel"), amountHtml: cashAmt, note: t(lang, "exportStoryCashNote"), tone: "is-cash" })}
+      </div>
+      <p class="export-story-caption">${escapeHtml(t(lang, "exportStoryNetCaption"))}</p>
+      <div class="export-story-row export-story-row-net">
+        ${exportStoryPanel({ icon: exportStoryIcon("sack"), step: t(lang, "exportStoryCashStep"), label: t(lang, "exportStoryCashLabel"), amountHtml: cashAmt, tone: "is-cash" })}
+        ${exportStoryOp("minus")}
+        ${exportStoryPanel({ icon: exportStoryIcon("receipt"), step: t(lang, "exportStoryTotalCostLabel"), label: t(lang, "exportStoryTotalCostNote"), amountHtml: costAmt, tone: "is-total" })}
+        ${exportStoryOp("equals")}
+        ${exportStoryPanel({ icon: exportStoryIcon("profit"), step: t(lang, "exportStoryNetStep"), label: t(lang, "netProfit"), amountHtml: netAmt, extra: lossBadge, note: t(lang, "exportStoryNetNote"), tone: netTone })}
+      </div>
+      <p class="export-story-formula">${escapeHtml(formula)}</p>
     </section>`;
 }
 
@@ -4735,12 +4932,22 @@ function bind() {
     const proof = proofWrap.firstElementChild;
     if (proof) page3.appendChild(proof);
 
+    const page4 = makeExportPage();
+    page4.dataset.page = "4";
+    page4.appendChild(exportContinuationBar());
+
+    const storyWrap = document.createElement("div");
+    storyWrap.innerHTML = exportSurrenderStoryHtml(result, lang);
+    const story = storyWrap.firstElementChild;
+    if (story) page4.appendChild(story);
+
     const disc = cloneForExport(document.querySelector("section.disclaimer, .disclaimer"));
-    if (disc) page3.appendChild(disc);
+    if (disc) page4.appendChild(disc);
 
     root.appendChild(page1);
     root.appendChild(page2);
     root.appendChild(page3);
+    root.appendChild(page4);
     document.body.appendChild(root);
     return root;
   }
