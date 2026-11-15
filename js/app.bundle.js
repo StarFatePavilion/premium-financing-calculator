@@ -3128,7 +3128,26 @@ function exportPlanProfileHtml(plan, result, lang) {
     </section>`;
 }
 
+/* ---- js/export-rec-label.js ---- */
+/**
+ * Recommendation ink label for PDF page 1 only.
+ *
+ * Keys match the live rec cards in index.html. HKD WIS3 shares the
+ * guaranteed-return mark with the USD rec card. Other plans have no mark.
+ */
+const EXPORT_REC_LABEL_KEYS = {
+  "bocgl-ggg": "recBrandLabel",
+  "fwd-wis3-usd": "recGuaranteedLabel",
+  "fwd-wis3-hkd": "recGuaranteedLabel",
+  "ctf-es": "recIllustratedLabel",
+};
+
+function exportRecLabelKey(planId) {
+  return EXPORT_REC_LABEL_KEYS[planId] || null;
+}
+
 /* ---- js/app.js ---- */
+
 
 
 
@@ -5291,6 +5310,13 @@ function bind() {
     topbar.className = "proposal-export-topbar";
     const brand = document.querySelector(".topbar .brand");
     if (brand) topbar.appendChild(brand.cloneNode(true));
+    const recKey = exportRecLabelKey(currentPlan().id);
+    if (recKey) {
+      const recMark = document.createElement("p");
+      recMark.className = "proposal-export-rec-ink";
+      recMark.textContent = t(lang, recKey);
+      topbar.appendChild(recMark);
+    }
     page1.appendChild(topbar);
 
     const printHead = cloneForExport(document.getElementById("print-head"));
