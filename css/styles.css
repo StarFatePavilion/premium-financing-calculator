@@ -2018,7 +2018,7 @@ details.fr-strip-disclosure > .fr-compare-strip {
 .proposal-export .cards[data-count="8"] {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 7px;
+  gap: 5px;
 }
 .proposal-export .vs-grid {
   grid-template-columns: 1fr 1fr;
@@ -2032,7 +2032,7 @@ details.fr-strip-disclosure > .fr-compare-strip {
   color: #1c1b16;
   border: 1px solid #cfc6b4;
   box-shadow: none;
-  padding: 8px 10px 8px;
+  padding: 6px 10px 6px;
   min-height: 0;
   border-radius: 12px;
 }
@@ -2067,7 +2067,7 @@ details.fr-strip-disclosure > .fr-compare-strip {
   justify-content: center;
 }
 .proposal-export .year-card .reason {
-  margin: 0 0 4px;
+  margin: 0 0 2px;
   font-size: 0.74rem;
 }
 .proposal-export .year-card .profit-lbl,
@@ -2078,7 +2078,7 @@ details.fr-strip-disclosure > .fr-compare-strip {
   font-size: 1.22rem;
 }
 .proposal-export .year-card .avr-block {
-  margin-top: 4px;
+  margin-top: 2px;
 }
 .proposal-export .year-card .avr-num {
   font-size: 0.95rem;
@@ -2092,7 +2092,7 @@ details.fr-strip-disclosure > .fr-compare-strip {
   display: none;
 }
 .proposal-export .year-card .loss-badge {
-  margin-top: 4px;
+  margin-top: 2px;
   font-size: 0.68rem;
 }
 .proposal-export .year-card .other-note {
@@ -2102,7 +2102,7 @@ details.fr-strip-disclosure > .fr-compare-strip {
   color: #3d3a34;
 }
 .proposal-export .fineprint {
-  margin-top: 8px;
+  margin-top: 4px;
   font-size: 0.7rem;
 }
 .proposal-export .year-card .profit-num,
@@ -2133,7 +2133,7 @@ details.fr-strip-disclosure > .fr-compare-strip {
   padding: 12px 16px 12px;
 }
 .proposal-export .section { margin-top: 10px; }
-.proposal-export .year-compare { margin-top: 8px; }
+.proposal-export .year-compare { margin-top: 4px; }
 .proposal-export .section-title { margin: 0 0 4px; }
 .proposal-export .section-lead { margin: 0 0 6px; font-size: 0.78rem; }
 .proposal-export .export-crown {

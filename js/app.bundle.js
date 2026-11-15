@@ -1950,25 +1950,25 @@ const STRINGS = {
     exportYearCompareHint: "下列為第 4 至 10 年的演示收益，其餘年份請自行參考網站。",
     exportOtherYear: "其他",
     exportOtherYearNote: "請自行參考網站",
-    exportVsHorizon: "五年期",
-    exportCrownLabel: "五年期",
+    exportVsHorizon: "{term}",
+    exportCrownLabel: "{term}",
     exportLoanLabel: "貸款金額",
     exportChartTitle: "預計淨收益（第 1 至 10 年）",
-    exportChartHint: "曲線為融資與自資的演示淨收益。五年期以較大標記標示；零軸以下表示虧損。",
-    exportStoryTitle: "五年期退保說明",
-    exportStoryHint: "以下圖示說明五年期退保的資金去向：先支付第一年首期，加上五年內的借貸利息作為總成本；第五年退保須償還銀行貸款，一次過收回的現金減去總成本，即為演示淨收益。",
+    exportChartHint: "曲線為融資與自資的演示淨收益。{term}以較大標記標示；零軸以下表示虧損。",
+    exportStoryTitle: "{term}退保說明",
+    exportStoryHint: "以下圖示說明{term}退保的資金去向：先支付第一年首期，加上{span}內的借貸利息作為總成本；{ordinal}退保須償還銀行貸款，一次過收回的現金減去總成本，即為演示淨收益。",
     exportStoryCostsCaption: "① 先計算總成本",
-    exportStoryExitCaption: "② 第五年退保，一次過收回",
+    exportStoryExitCaption: "② {ordinal}退保，一次過收回",
     exportStoryNetCaption: "③ 到手現金減去總成本",
     exportStoryDownStep: "交首期",
     exportStoryDownLabel: "第一年首期",
-    exportStoryInterestStep: "五年支付利息",
-    exportStoryInterestLabel: "五年借貸成本",
-    exportStoryInterestNote: "五年累計利息，並非貸款本金",
+    exportStoryInterestStep: "{span}支付利息",
+    exportStoryInterestLabel: "{span}借貸成本",
+    exportStoryInterestNote: "{span}累計利息，並非貸款本金",
     exportStoryTotalCostLabel: "總成本",
-    exportStoryTotalCostNote: "首期 + 五年利息",
-    exportStorySurrenderStep: "第五年退保",
-    exportStorySurrenderLabel: "第五年退保價值",
+    exportStoryTotalCostNote: "首期 + {span}利息",
+    exportStorySurrenderStep: "{ordinal}退保",
+    exportStorySurrenderLabel: "{ordinal}退保價值",
     exportStoryRepayLabel: "償還貸款",
     exportStoryRepayNote: "退保時須還走銀行貸款",
     exportStoryCashStep: "到手現金",
@@ -1976,7 +1976,7 @@ const STRINGS = {
     exportStoryCashNote: "退保價值 − 償還貸款",
     exportStoryNetStep: "淨賺",
     exportStoryNetNote: "到手現金 − 總成本",
-    exportStoryFormula: "一次過收回 {cash}，減去總成本 {cost}（首期 {down} + 五年利息 {interest}），等於預計淨收益 {profit}。",
+    exportStoryFormula: "一次過收回 {cash}，減去總成本 {cost}（首期 {down} + {span}利息 {interest}），等於預計淨收益 {profit}。",
     exportStoryLiquidity: "同時，這筆融資釋放了{amount}流動資金。該筆資金不再佔用於繳付保費，既可留作不時之需，亦可另行投資。",
     footerSource: "數字源自顧問演示檔，僅供參考。",
     contactWhatsApp: "WhatsApp",
@@ -2061,16 +2061,16 @@ const STRINGS = {
     exportAssetProofIntro: "本頁貸款金額按本計算器的融資假設估算。實際批核時，銀行亦會以客戶資產評估可支持的貸款額。以下為常見計法，僅供說明，實際以批核銀行當時準則為準。",
     exportProfileFulfillment: "10Life {year} 報告年度，{company}的公司整體平均分紅實現率為 {avg}%（{rankPhrase}）。此為公司級簡單平均（文章日期 {articleDate}），並非保監局產品級披露，亦不是本計劃本身的實現率；過往數字不代表將來表現，也不是投資回報率。",
     exportProfileFulfillmentHigher: "10Life {year} 報告年度，{company}的公司整體平均分紅實現率為 {avg}%（{rankPhrase}），屬該表較高的數字之一。此為公司級簡單平均（文章日期 {articleDate}），並非保監局產品級披露，亦不是本計劃本身的實現率；過往數字不代表將來表現，也不是投資回報率。",
-    exportProfileGggSuit: "在本計算器三個重點推薦計劃（GGG、WIS3 及「榮耀世代」）之中，此計劃於第五年的演示融資結果較強，較適合考慮約於第五年取用資金的人士。演示數字並非保證。",
+    exportProfileGggSuit: "在本計算器三個重點推薦計劃（GGG、WIS3 及「榮耀世代」）之中，此計劃於{ordinal}的演示融資結果較強，較適合考慮約於{ordinal}取用資金的人士。演示數字並非保證。",
     exportProfileWis3Rec: "本計算器以此計劃作為「保證回報最高」的推薦方向。",
-    exportProfileWis3Suit: "第五年過後，GGG 的演示路徑相對較為平坦，而此計劃與「榮耀世代」其後較為靠前，故較適合考慮稍長持有期（例如約從第六年起）的人士。演示數字並非保證。",
+    exportProfileWis3Suit: "第五年過後，GGG 的演示路徑相對較為平坦，而此計劃與「榮耀世代」其後較為靠前，故較適合考慮稍長持有期（例如約從{ordinal}起）的人士。演示數字並非保證。",
     exportProfileWis3Fulfillment: "富衛香港 2025 報告年度官方分紅實現率摘要顯示，智盈匯聚（優越版）及 II 自推出以來平均分紅實現率為 100%；其社交媒體亦曾以智盈匯聚（優越版）（並非 III）標示連續 3 年。本提案計劃為智盈匯聚(優越版) III（2023 年推出），同一份摘要列明相應保單週年尚未派發紅利，故 III 本身尚未有已公布的分紅實現率。該系列說明稱系列內產品自推出以來分紅實現率均維持 100%，惟此並不改變 III 尚未派發的事實。以上為富衛自行披露的產品系列數字，只供參考，過往表現不代表將來，亦不是 10Life 的公司平均。",
-    exportProfileEsSuit: "本計算器以此計劃作為「預期回報最高」的推薦方向。在本計算器三個重點推薦計劃（GGG、WIS3 及「榮耀世代」）之中，此計劃於較長持有期（例如第十年）的演示融資結果較強，較適合計劃持有至約十年左右的人士。演示數字並非保證。",
-    exportProfileWihUsdSuit: "在本計算器中，此計劃於第五年及第十年的演示融資路徑均相對穩健，可適合考慮中期或較長持有期的人士。演示數字並非保證。",
-    exportProfileWihHkdSuit: "請按本提案的逐年演示數字閱讀此計劃的融資路徑。演示數字並非保證，較早或較後年期的結果須一併考慮。",
-    exportProfileWpSuit: "此計劃於較早年期的演示融資結果較為溫和，部分假設下第五年或仍為虧損，較適合考慮較長持有期（例如約第十年）的人士。演示數字並非保證。",
-    exportProfilePtSuit: "此計劃於較早年期的演示融資結果較為溫和，較適合考慮較長持有期的人士。演示數字並非保證。",
-    exportProfileRfSuit: "此計劃於較早年期的演示融資結果較為溫和，較適合看重永明品牌並考慮較長持有期的人士。演示數字並非保證。",
+    exportProfileEsSuit: "本計算器以此計劃作為「預期回報最高」的推薦方向。在本計算器三個重點推薦計劃（GGG、WIS3 及「榮耀世代」）之中，此計劃於較長持有期（例如{ordinal}）的演示融資結果較強，較適合計劃持有至約{span}左右的人士。演示數字並非保證。",
+    exportProfileWihUsdSuit: "在本計算器中，此計劃於第五年及第十年的演示融資路徑均相對穩健，可適合考慮中期或較長持有期的人士。本提案以{ordinal}作為分析年份。演示數字並非保證。",
+    exportProfileWihHkdSuit: "請按本提案的逐年演示數字閱讀此計劃的融資路徑。本提案以{ordinal}作為分析年份。演示數字並非保證，較早或較後年期的結果須一併考慮。",
+    exportProfileWpSuit: "此計劃於較早年期的演示融資結果較為溫和，部分假設下第五年或仍為虧損，較適合考慮較長持有期（例如約{ordinal}）的人士。演示數字並非保證。",
+    exportProfilePtSuit: "此計劃於較早年期的演示融資結果較為溫和，較適合考慮較長持有期（例如約{ordinal}）的人士。演示數字並非保證。",
+    exportProfileRfSuit: "此計劃於較早年期的演示融資結果較為溫和，較適合看重永明品牌並考慮較長持有期（例如約{ordinal}）的人士。演示數字並非保證。",
   },
   "zh-Hans": {
     appTitle: "保费融资计算器",
@@ -2264,25 +2264,25 @@ const STRINGS = {
     exportYearCompareHint: "下列为第 4 至 10 年的演示收益，其余年份请自行参考网站。",
     exportOtherYear: "其他",
     exportOtherYearNote: "请自行参考网站",
-    exportVsHorizon: "五年期",
-    exportCrownLabel: "五年期",
+    exportVsHorizon: "{term}",
+    exportCrownLabel: "{term}",
     exportLoanLabel: "贷款金额",
     exportChartTitle: "预计净收益（第 1 至 10 年）",
-    exportChartHint: "曲线为融资与自资的演示净收益。五年期以较大标记标示；零轴以下表示亏损。",
-    exportStoryTitle: "五年期退保说明",
-    exportStoryHint: "以下图示说明五年期退保的资金去向：先支付第一年首期，加上五年内的借贷利息作为总成本；第五年退保须偿还银行贷款，一次性收回的现金减去总成本，即为演示净收益。",
+    exportChartHint: "曲线为融资与自资的演示净收益。{term}以较大标记标示；零轴以下表示亏损。",
+    exportStoryTitle: "{term}退保说明",
+    exportStoryHint: "以下图示说明{term}退保的资金去向：先支付第一年首期，加上{span}内的借贷利息作为总成本；{ordinal}退保须偿还银行贷款，一次性收回的现金减去总成本，即为演示净收益。",
     exportStoryCostsCaption: "① 先计算总成本",
-    exportStoryExitCaption: "② 第五年退保，一次性收回",
+    exportStoryExitCaption: "② {ordinal}退保，一次性收回",
     exportStoryNetCaption: "③ 到手现金减去总成本",
     exportStoryDownStep: "交首期",
     exportStoryDownLabel: "第一年首期",
-    exportStoryInterestStep: "五年支付利息",
-    exportStoryInterestLabel: "五年借贷成本",
-    exportStoryInterestNote: "五年累计利息，并非贷款本金",
+    exportStoryInterestStep: "{span}支付利息",
+    exportStoryInterestLabel: "{span}借贷成本",
+    exportStoryInterestNote: "{span}累计利息，并非贷款本金",
     exportStoryTotalCostLabel: "总成本",
-    exportStoryTotalCostNote: "首期 + 五年利息",
-    exportStorySurrenderStep: "第五年退保",
-    exportStorySurrenderLabel: "第五年退保价值",
+    exportStoryTotalCostNote: "首期 + {span}利息",
+    exportStorySurrenderStep: "{ordinal}退保",
+    exportStorySurrenderLabel: "{ordinal}退保价值",
     exportStoryRepayLabel: "偿还贷款",
     exportStoryRepayNote: "退保时须偿还银行贷款",
     exportStoryCashStep: "到手现金",
@@ -2290,7 +2290,7 @@ const STRINGS = {
     exportStoryCashNote: "退保价值 − 偿还贷款",
     exportStoryNetStep: "净赚",
     exportStoryNetNote: "到手现金 − 总成本",
-    exportStoryFormula: "一次性收回 {cash}，减去总成本 {cost}（首期 {down} + 五年利息 {interest}），等于预计净收益 {profit}。",
+    exportStoryFormula: "一次性收回 {cash}，减去总成本 {cost}（首期 {down} + {span}利息 {interest}），等于预计净收益 {profit}。",
     exportStoryLiquidity: "同时，这笔融资释放了{amount}流动资金。该笔资金不再占用于缴付保费，既可留作不时之需，亦可另行投资。",
     footerSource: "数字源自顾问演示档，仅供参考。",
     contactWhatsApp: "WhatsApp",
@@ -2375,16 +2375,16 @@ const STRINGS = {
     exportAssetProofIntro: "本页贷款金额按本计算器的融资假设估算。实际审批时，银行亦会以客户资产评估可支持的贷款额。以下为常见计法，仅供说明，实际以审批银行当时准则为准。",
     exportProfileFulfillment: "10Life {year} 报告年度，{company}的公司整体平均分红实现率为 {avg}%（{rankPhrase}）。此为公司级简单平均（文章日期 {articleDate}），并非保监局产品级披露，也不是本计划本身的实现率；过往数字不代表将来表现，也不是投资回报率。",
     exportProfileFulfillmentHigher: "10Life {year} 报告年度，{company}的公司整体平均分红实现率为 {avg}%（{rankPhrase}），属该表较高的数字之一。此为公司级简单平均（文章日期 {articleDate}），并非保监局产品级披露，也不是本计划本身的实现率；过往数字不代表将来表现，也不是投资回报率。",
-    exportProfileGggSuit: "在本计算器三个重点推荐计划（GGG、WIS3 及「榮耀世代」）之中，此计划于第五年的演示融资结果较强，较适合考虑约于第五年取用资金的人士。演示数字并非保证。",
+    exportProfileGggSuit: "在本计算器三个重点推荐计划（GGG、WIS3 及「榮耀世代」）之中，此计划于{ordinal}的演示融资结果较强，较适合考虑约于{ordinal}取用资金的人士。演示数字并非保证。",
     exportProfileWis3Rec: "本计算器以此计划作为「保证回报最高」的推荐方向。",
-    exportProfileWis3Suit: "第五年过后，GGG 的演示路径相对较为平坦，而此计划与「榮耀世代」其后较为靠前，故较适合考虑稍长持有期（例如约从第六年起）的人士。演示数字并非保证。",
+    exportProfileWis3Suit: "第五年过后，GGG 的演示路径相对较为平坦，而此计划与「榮耀世代」其后较为靠前，故较适合考虑稍长持有期（例如约从{ordinal}起）的人士。演示数字并非保证。",
     exportProfileWis3Fulfillment: "富卫香港 2025 报告年度官方分红实现率摘要显示，智盈匯聚（優越版）及 II 自推出以来平均分红实现率为 100%；其社交媒体亦曾以智盈匯聚（優越版）（并非 III）标示连续 3 年。本提案计划为智盈匯聚(優越版) III（2023 年推出），同一份摘要列明相应保单周年尚未派发红利，故 III 本身尚未有已公布的分红实现率。该系列说明称系列内产品自推出以来分红实现率均维持 100%，惟此并不改变 III 尚未派发的事实。以上为富卫自行披露的产品系列数字，只供参考，过往表现不代表将来，也不是 10Life 的公司平均。",
-    exportProfileEsSuit: "本计算器以此计划作为「预期回报最高」的推荐方向。在本计算器三个重点推荐计划（GGG、WIS3 及「榮耀世代」）之中，此计划于较长持有期（例如第十年）的演示融资结果较强，较适合计划持有至约十年左右的人士。演示数字并非保证。",
-    exportProfileWihUsdSuit: "在本计算器中，此计划于第五年及第十年的演示融资路径均相对稳健，可适合考虑中期或较长持有期的人士。演示数字并非保证。",
-    exportProfileWihHkdSuit: "请按本提案的逐年演示数字阅读此计划的融资路径。演示数字并非保证，较早或较后年期的结果须一并考虑。",
-    exportProfileWpSuit: "此计划于较早年期的演示融资结果较为温和，部分假设下第五年或仍为亏损，较适合考虑较长持有期（例如约第十年）的人士。演示数字并非保证。",
-    exportProfilePtSuit: "此计划于较早年期的演示融资结果较为温和，较适合考虑较长持有期的人士。演示数字并非保证。",
-    exportProfileRfSuit: "此计划于较早年期的演示融资结果较为温和，较适合看重永明品牌并考虑较长持有期的人士。演示数字并非保证。",
+    exportProfileEsSuit: "本计算器以此计划作为「预期回报最高」的推荐方向。在本计算器三个重点推荐计划（GGG、WIS3 及「榮耀世代」）之中，此计划于较长持有期（例如{ordinal}）的演示融资结果较强，较适合计划持有至约{span}左右的人士。演示数字并非保证。",
+    exportProfileWihUsdSuit: "在本计算器中，此计划于第五年及第十年的演示融资路径均相对稳健，可适合考虑中期或较长持有期的人士。本提案以{ordinal}作为分析年份。演示数字并非保证。",
+    exportProfileWihHkdSuit: "请按本提案的逐年演示数字阅读此计划的融资路径。本提案以{ordinal}作为分析年份。演示数字并非保证，较早或较后年期的结果须一并考虑。",
+    exportProfileWpSuit: "此计划于较早年期的演示融资结果较为温和，部分假设下第五年或仍为亏损，较适合考虑较长持有期（例如约{ordinal}）的人士。演示数字并非保证。",
+    exportProfilePtSuit: "此计划于较早年期的演示融资结果较为温和，较适合考虑较长持有期（例如约{ordinal}）的人士。演示数字并非保证。",
+    exportProfileRfSuit: "此计划于较早年期的演示融资结果较为温和，较适合看重永明品牌并考虑较长持有期（例如约{ordinal}）的人士。演示数字并非保证。",
   },
   en: {
     appTitle: "Premium Financing Calculator",
@@ -2578,25 +2578,25 @@ const STRINGS = {
     exportYearCompareHint: "Illustrated results for years 4 to 10 are shown below. For other years, please refer to the website.",
     exportOtherYear: "Other",
     exportOtherYearNote: "Please refer to the website",
-    exportVsHorizon: "Five-year term",
-    exportCrownLabel: "Five-year term",
+    exportVsHorizon: "{term}",
+    exportCrownLabel: "{term}",
     exportLoanLabel: "Loan amount",
     exportChartTitle: "Illustrated net profit (years 1–10)",
-    exportChartHint: "The curves show illustrated net profit for financing and self-funding. The five-year term is marked; values below the zero line are losses.",
-    exportStoryTitle: "Five-year surrender at a glance",
-    exportStoryHint: "This illustrated path shows a five-year surrender: the year-1 down payment plus five years of loan interest is the total cost. On surrender in year 5 the bank loan is repaid, and cash received minus total cost is the illustrated net profit.",
+    exportChartHint: "The curves show illustrated net profit for financing and self-funding. The {term} is marked; values below the zero line are losses.",
+    exportStoryTitle: "{spanAdjCap} surrender at a glance",
+    exportStoryHint: "This illustrated path shows a {spanAdj} surrender: the year-1 down payment plus {span} of loan interest is the total cost. On surrender in {ordinal} the bank loan is repaid, and cash received minus total cost is the illustrated net profit.",
     exportStoryCostsCaption: "1. First work out the total cost",
-    exportStoryExitCaption: "2. Surrender in year 5 and receive cash once",
+    exportStoryExitCaption: "2. Surrender in {ordinal} and receive cash once",
     exportStoryNetCaption: "3. Cash received minus total cost",
     exportStoryDownStep: "Pay the down payment",
     exportStoryDownLabel: "Year-1 down payment",
-    exportStoryInterestStep: "Pay interest over five years",
-    exportStoryInterestLabel: "Five-year borrowing cost",
+    exportStoryInterestStep: "Pay interest over {span}",
+    exportStoryInterestLabel: "{spanAdjCap} borrowing cost",
     exportStoryInterestNote: "Accumulated interest, not the loan principal",
     exportStoryTotalCostLabel: "Total cost",
-    exportStoryTotalCostNote: "Down payment + five-year interest",
-    exportStorySurrenderStep: "Surrender in year 5",
-    exportStorySurrenderLabel: "Year-5 surrender value",
+    exportStoryTotalCostNote: "Down payment + {spanAdj} interest",
+    exportStorySurrenderStep: "Surrender in {ordinal}",
+    exportStorySurrenderLabel: "{yearAdj} surrender value",
     exportStoryRepayLabel: "Loan repaid",
     exportStoryRepayNote: "The bank loan is repaid on surrender",
     exportStoryCashStep: "Cash in hand",
@@ -2604,7 +2604,7 @@ const STRINGS = {
     exportStoryCashNote: "Surrender value − loan repaid",
     exportStoryNetStep: "Net profit",
     exportStoryNetNote: "Cash received − total cost",
-    exportStoryFormula: "Cash received {cash}, less total cost {cost} (down payment {down} + five-year interest {interest}), equals illustrated net profit {profit}.",
+    exportStoryFormula: "Cash received {cash}, less total cost {cost} (down payment {down} + {spanAdj} interest {interest}), equals illustrated net profit {profit}.",
     exportStoryLiquidity: "This financing also releases {amount} in liquidity. That capital is no longer tied up in paying the premium, and can be kept for when it is needed, or used for other investments.",
     footerSource: "Figures are from the advisor’s illustration file and are for reference only.",
     contactWhatsApp: "WhatsApp",
@@ -2689,16 +2689,16 @@ const STRINGS = {
     exportAssetProofIntro: "The loan shown on this page is estimated from this calculator’s financing assumptions. In a live approval, the bank also assesses how much lending the client’s assets can support. The treatment below is a common reference for illustration only; the lending bank’s then-current criteria apply.",
     exportProfileFulfillment: "For the {year} reporting year, 10Life’s company-level average fulfillment ratio for {company} is {avg}% ({rankPhrase}). This is a company-level simple average (article dated {articleDate}), not an Insurance Authority product-level disclosure, and not this plan’s own ratio. Past figures are not a guide to future performance and are not an investment return.",
     exportProfileFulfillmentHigher: "For the {year} reporting year, 10Life’s company-level average fulfillment ratio for {company} is {avg}% ({rankPhrase}), among the higher figures in that table. This is a company-level simple average (article dated {articleDate}), not an Insurance Authority product-level disclosure, and not this plan’s own ratio. Past figures are not a guide to future performance and are not an investment return.",
-    exportProfileGggSuit: "Among the three featured recommendation plans in this calculator (GGG, WIS3 and Ever Shine), this plan has the stronger illustrated financing result at year 5, so it may better suit someone considering a withdrawal around year 5. Illustrated figures are not guaranteed.",
+    exportProfileGggSuit: "Among the three featured recommendation plans in this calculator (GGG, WIS3 and Ever Shine), this plan has the stronger illustrated financing result at {ordinal}, so it may better suit someone considering a withdrawal around {ordinal}. Illustrated figures are not guaranteed.",
     exportProfileWis3Rec: "This calculator presents this plan as the “highest guaranteed return” recommendation.",
-    exportProfileWis3Suit: "After year 5, GGG’s illustrated path is relatively flatter, while this plan and Ever Shine tend to move ahead later, so it may better suit a longer hold, for example from around year 6. Illustrated figures are not guaranteed.",
+    exportProfileWis3Suit: "After year 5, GGG’s illustrated path is relatively flatter, while this plan and Ever Shine tend to move ahead later, so it may better suit a longer hold, for example from around {ordinal}. Illustrated figures are not guaranteed.",
     exportProfileWis3Fulfillment: "FWD Hong Kong’s official 2025 reporting-year fulfillment-ratio highlight shows that Wealth ICON Supreme and Wealth ICON Supreme II have averaged 100% fulfillment since launch; a FWD social post also referred to Wealth ICON Supreme (not III) as having 100% for three consecutive years. This proposal’s plan is Wealth ICON Supreme III (launched in 2023). The same official highlight states that corresponding policy anniversaries have not yet declared dividends, so III itself does not yet have a published fulfillment ratio. FWD also notes that products in the series have maintained 100% since launch, which does not change the fact that III has not yet declared. These are FWD’s own product-series figures, for reference only; past performance is not a guide to the future, and they are not 10Life’s company-level average.",
-    exportProfileEsSuit: "This calculator presents this plan as the “highest illustrated return” recommendation. Among the three featured recommendation plans in this calculator (GGG, WIS3 and Ever Shine), this plan has the stronger illustrated longer-horizon result (for example at year 10), and may better suit someone planning to hold towards about 10 years. Illustrated figures are not guaranteed.",
-    exportProfileWihUsdSuit: "In this calculator, this plan’s illustrated financing path is comparatively strong at both year 5 and year 10, so it may suit someone looking at a medium or a longer hold. Illustrated figures are not guaranteed.",
-    exportProfileWihHkdSuit: "Please read this plan’s financing path against the year-by-year illustrated figures in this proposal. Illustrated figures are not guaranteed; earlier and later years should be considered together.",
-    exportProfileWpSuit: "This plan’s illustrated financing result in the earlier years is more modest, and under some assumptions year 5 may still be a loss, so it may better suit someone considering a longer hold, for example around year 10. Illustrated figures are not guaranteed.",
-    exportProfilePtSuit: "This plan’s illustrated financing result in the earlier years is more modest, so it may better suit someone considering a longer hold. Illustrated figures are not guaranteed.",
-    exportProfileRfSuit: "This plan’s illustrated financing result in the earlier years is more modest, so it may better suit someone who values the Sun Life brand and is considering a longer hold. Illustrated figures are not guaranteed.",
+    exportProfileEsSuit: "This calculator presents this plan as the “highest illustrated return” recommendation. Among the three featured recommendation plans in this calculator (GGG, WIS3 and Ever Shine), this plan has the stronger illustrated longer-horizon result (for example at {ordinal}), and may better suit someone planning to hold towards about {n} years. Illustrated figures are not guaranteed.",
+    exportProfileWihUsdSuit: "In this calculator, this plan’s illustrated financing path is comparatively strong at both year 5 and year 10, so it may suit someone looking at a medium or a longer hold. This proposal uses {ordinal} as the analysis year. Illustrated figures are not guaranteed.",
+    exportProfileWihHkdSuit: "Please read this plan’s financing path against the year-by-year illustrated figures in this proposal. This proposal uses {ordinal} as the analysis year. Illustrated figures are not guaranteed; earlier and later years should be considered together.",
+    exportProfileWpSuit: "This plan’s illustrated financing result in the earlier years is more modest, and under some assumptions year 5 may still be a loss, so it may better suit someone considering a longer hold, for example around {ordinal}. Illustrated figures are not guaranteed.",
+    exportProfilePtSuit: "This plan’s illustrated financing result in the earlier years is more modest, so it may better suit someone considering a longer hold, for example around {ordinal}. Illustrated figures are not guaranteed.",
+    exportProfileRfSuit: "This plan’s illustrated financing result in the earlier years is more modest, so it may better suit someone who values the Sun Life brand and is considering a longer hold, for example around {ordinal}. Illustrated figures are not guaranteed.",
   },
 };
 
@@ -2818,7 +2818,134 @@ function buildProposalFileName({ title, planCode, currency, originalPremium }) {
   return [safeTitle, short, premium].filter(Boolean).join("-") + ".pdf";
 }
 
+/* ---- js/export-featured-year.js ---- */
+/**
+ * Plan-specific featured / crown year for the PDF proposal only.
+ *
+ * “最好” is the year the plan is best suited for a financing withdrawal,
+ * from its illustrated path plus Ken’s positioning — not the year with the
+ * highest AVR in years 1–10.
+ *
+ * 1. Overrides: bocgl-ggg → 5; fwd-wis3-usd / fwd-wis3-hkd → 6.
+ * 2. Else, among years 5–10, if year 5 is profitable and AVR(10) − AVR(5)
+ *    is at most EXPORT_FEATURED_MODEST_AVR_LIFT (3 percentage points, in
+ *    the same modest range as GGG’s ~0.5 pp lift), featured year = 5.
+ * 3. Else if the path climbs substantially toward year 10, featured year = 10.
+ * 4. Never feature a year whose illustrated financing profit is ≤ 0.
+ */
+
+/** 3 percentage points, expressed as a decimal AVR difference. */
+const EXPORT_FEATURED_MODEST_AVR_LIFT = 0.03;
+
+const CN_SPAN = { 5: "五年", 6: "六年", 10: "十年" };
+const CN_ORDINAL = { 5: "第五年", 6: "第六年", 10: "第十年" };
+const CN_TERM = { 5: "五年期", 6: "六年期", 10: "十年期" };
+const EN_SPAN = { 5: "five years", 6: "six years", 10: "ten years" };
+const EN_SPAN_ADJ = { 5: "five-year", 6: "six-year", 10: "ten-year" };
+const EN_TERM = { 5: "Five-year term", 6: "Six-year term", 10: "Ten-year term" };
+const EN_ORDINAL = { 5: "year 5", 6: "year 6", 10: "year 10" };
+const EN_YEAR_ADJ = { 5: "Year-5", 6: "Year-6", 10: "Year-10" };
+
+function yearRow(result, year) {
+  return result?.years?.[year - 1] || null;
+}
+
+function profitOf(result, year) {
+  const row = yearRow(result, year);
+  return row == null ? null : row.profit;
+}
+
+function avrOf(result, year) {
+  const row = yearRow(result, year);
+  return row == null || row.avr == null ? null : row.avr;
+}
+
+function isExportYearProfitable(result, year) {
+  const profit = profitOf(result, year);
+  return profit != null && profit > 0;
+}
+
+function fallbackProfitableYear(result, preferred) {
+  if (isExportYearProfitable(result, preferred)) return preferred;
+  for (let year = 10; year >= 5; year--) {
+    if (isExportYearProfitable(result, year)) return year;
+  }
+  let best = preferred;
+  let bestProfit = -Infinity;
+  for (let year = 5; year <= 10; year++) {
+    const profit = profitOf(result, year);
+    if (profit != null && profit >= bestProfit) {
+      bestProfit = profit;
+      best = year;
+    }
+  }
+  return best;
+}
+
+/**
+ * @param {{ id?: string }} plan
+ * @param {{ years?: Array<{ year: number, profit: number, avr?: number }> }} result
+ * @returns {number}
+ */
+function exportFeaturedYear(plan, result) {
+  const id = plan?.id;
+  let year;
+  if (id === "bocgl-ggg") {
+    year = 5;
+  } else if (id === "fwd-wis3-usd" || id === "fwd-wis3-hkd") {
+    year = 6;
+  } else {
+    const avr5 = avrOf(result, 5);
+    const avr10 = avrOf(result, 10);
+    const lift = avr5 != null && avr10 != null ? avr10 - avr5 : Number.POSITIVE_INFINITY;
+    if (isExportYearProfitable(result, 5) && lift <= EXPORT_FEATURED_MODEST_AVR_LIFT) {
+      year = 5;
+    } else {
+      year = 10;
+    }
+  }
+  return fallbackProfitableYear(result, year);
+}
+
+function capFirst(s) {
+  const text = String(s || "");
+  return text ? text.charAt(0).toUpperCase() + text.slice(1) : text;
+}
+
+/**
+ * Interpolation vars for export crown / horizon / storyboard copy.
+ * Official product names are not involved here.
+ */
+function exportTermVars(lang, year) {
+  const n = Number(year);
+  if (lang === "en") {
+    const spanAdj = EN_SPAN_ADJ[n] || `${n}-year`;
+    return {
+      n: String(n),
+      term: EN_TERM[n] || `${capFirst(spanAdj)} term`,
+      ordinal: EN_ORDINAL[n] || `year ${n}`,
+      span: EN_SPAN[n] || `${n} years`,
+      spanAdj,
+      spanAdjCap: capFirst(spanAdj),
+      yearAdj: EN_YEAR_ADJ[n] || `Year-${n}`,
+    };
+  }
+  const span = CN_SPAN[n] || `${n}年`;
+  const ordinal = CN_ORDINAL[n] || `第${n}年`;
+  const term = CN_TERM[n] || `${n}年期`;
+  return {
+    n: String(n),
+    term,
+    ordinal,
+    span,
+    spanAdj: term,
+    spanAdjCap: term,
+    yearAdj: ordinal,
+  };
+}
+
 /* ---- js/export-plan-profile.js ---- */
+
 
 
 function escapeHtml(s) {
@@ -2974,16 +3101,17 @@ function fulfillmentSentence(plan, lang, variant, companyKey) {
  * for PDF proposal page 3. Not used by the live on-page UI.
  */
 function exportPlanProfileHtml(plan, result, lang) {
-  void result;
   const safeLang = lang || "zh-Hant";
   const family = exportProfileFamily(plan?.id);
   const companyKey = COMPANY_KEY[family] || COMPANY_KEY.generic;
   const companyVars = { insurer: plan?.insurer?.zhHant || plan?.insurer?.en || "" };
   const company = interpolate(safeLang, companyKey, companyVars);
+  const featuredN = exportFeaturedYear(plan, result);
+  const term = exportTermVars(safeLang, featuredN);
   const tenlife = tenlifeVars(plan, safeLang, family);
   const items = profilePoints(family)
     .map((item) => {
-      const vars = { ...tenlife, ...(item.vars || {}) };
+      const vars = { ...term, ...tenlife, ...(item.vars || {}) };
       if (item.companyKey) vars.company = interpolate(safeLang, item.companyKey);
       return interpolate(safeLang, item.key, vars);
     })
@@ -3001,6 +3129,7 @@ function exportPlanProfileHtml(plan, result, lang) {
 }
 
 /* ---- js/app.js ---- */
+
 
 
 
@@ -3257,12 +3386,16 @@ function yearAvrSpread(result, cards) {
   );
 }
 
-const EXPORT_FEATURED_YEARS = new Set([5]);
-const EXPORT_CROWN_YEAR = 5;
-const EXPORT_VS_YEAR = 5;
+function exportYearN(plan, result) {
+  return exportFeaturedYear(plan, result);
+}
 
-function exportCrownMark(lang = state.lang) {
-  const label = t(lang, "exportCrownLabel");
+function exportHorizonVars(lang, year) {
+  return exportTermVars(lang, year);
+}
+
+function exportCrownMark(lang = state.lang, year) {
+  const label = t(lang, "exportCrownLabel", year != null ? exportHorizonVars(lang, year) : {});
   return `<span class="export-crown" role="img" aria-label="${escapeHtml(label)}"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 18" width="15" height="11" aria-hidden="true" focusable="false"><path fill="#8a7348" stroke="#6e5630" stroke-width="0.85" stroke-linejoin="round" stroke-linecap="round" d="M3.8 13.6 L3.8 8.1 L8.5 11.2 L12 4 L15.5 11.2 L20.2 8.1 L20.2 13.6 Z"/><path fill="#8a7348" stroke="#6e5630" stroke-width="0.8" d="M3.2 13.4 h17.6 v2.3 H3.2 Z"/><circle cx="3.8" cy="7.4" r="1.25" fill="#8a7348" stroke="#6e5630" stroke-width="0.7"/><circle cx="12" cy="3.15" r="1.35" fill="#8a7348" stroke="#6e5630" stroke-width="0.7"/><circle cx="20.2" cy="7.4" r="1.25" fill="#8a7348" stroke="#6e5630" stroke-width="0.7"/></svg></span>`;
 }
 
@@ -3280,7 +3413,7 @@ function yearCardHtml(card, result, { avrSpread = false, crown = false } = {}) {
   const spread = card.featured && avrSpread
     ? `<p class="avr-spread">${t(lang, "avrSpreadNote")}</p>`
     : "";
-  const crownMark = crown ? exportCrownMark(lang) : "";
+  const crownMark = crown ? exportCrownMark(lang, card.year) : "";
   return `<article class="year-card${feat}${lossCls}${crownCls}">
         <p class="reason">${crownMark}${reasonText(card)}</p>
         <div class="profit-lbl">${t(lang, "netProfit")}</div>
@@ -3307,7 +3440,7 @@ function exportOtherYearCardHtml() {
       </article>`;
 }
 
-function exportYearCardsHtml(result) {
+function exportYearCardsHtml(result, yearN = exportYearN(currentPlan(), result)) {
   const highlights = highlightCards(result);
   const byYear = new Map(highlights.map((c) => [c.year, c]));
   const cards = [];
@@ -3316,8 +3449,8 @@ function exportYearCardsHtml(result) {
     cards.push({
       ...base,
       year,
-      featured: EXPORT_FEATURED_YEARS.has(year),
-      crown: year === EXPORT_CROWN_YEAR,
+      featured: year === yearN,
+      crown: year === yearN,
     });
   }
   return cards
@@ -3362,7 +3495,7 @@ function exportLoanProofHtml(result, lang = state.lang) {
     </section>`;
 }
 
-function exportProfitChartHtml(result, lang = state.lang) {
+function exportProfitChartHtml(result, lang = state.lang, yearN = exportYearN(currentPlan(), result)) {
   const plan = currentPlan();
   const fx = result.fx;
   const W = 700;
@@ -3432,14 +3565,14 @@ function exportProfitChartHtml(result, lang = state.lang) {
   const zero = y(0);
   const xLabels = years
     .map((row) => {
-      const featured = row.year === EXPORT_CROWN_YEAR;
+      const featured = row.year === yearN;
       return `<text x="${x(row.year).toFixed(1)}" y="${H - 12}" text-anchor="middle" font-size="11" fill="${featured ? "#6e5630" : "#6b675e"}" font-weight="${featured ? 700 : 500}" font-family="Noto Sans TC, Noto Sans, sans-serif">${row.year}</text>`;
     })
     .join("");
 
   const areas = posNegAreas(finVals);
-  const year5x = x(EXPORT_CROWN_YEAR);
-  const year5Label = escapeHtml(t(lang, "exportVsHorizon"));
+  const year5x = x(yearN);
+  const year5Label = escapeHtml(t(lang, "exportVsHorizon", exportHorizonVars(lang, yearN)));
   let body = "";
   body += `<line x1="${year5x.toFixed(1)}" x2="${year5x.toFixed(1)}" y1="${pad.t}" y2="${(pad.t + ih).toFixed(1)}" stroke="#8a7348" stroke-width="1.1" stroke-dasharray="3 4"/>`;
   body += `<text x="${year5x.toFixed(1)}" y="${pad.t - 2}" text-anchor="middle" font-size="10" fill="#6e5630" font-weight="700" font-family="Noto Sans TC, Noto Sans, sans-serif">${year5Label}</text>`;
@@ -3450,7 +3583,7 @@ function exportProfitChartHtml(result, lang = state.lang) {
   body += `<line x1="${pad.l}" x2="${W - pad.r}" y1="${zero.toFixed(1)}" y2="${zero.toFixed(1)}" stroke="#a39c90" stroke-width="1.1"/>`;
 
   for (const row of years) {
-    const featured = row.year === EXPORT_CROWN_YEAR;
+    const featured = row.year === yearN;
     const fin = finVals[row.year - 1];
     const self = selfVals[row.year - 1];
     const finFill = fin < 0 ? "#8f3328" : "#1c4a3a";
@@ -3463,7 +3596,7 @@ function exportProfitChartHtml(result, lang = state.lang) {
   const title = escapeHtml(t(lang, "exportChartTitle"));
   return `<section class="export-chart">
       <h2 class="section-title">${title}</h2>
-      <p class="section-lead">${escapeHtml(t(lang, "exportChartHint"))}</p>
+      <p class="section-lead">${escapeHtml(t(lang, "exportChartHint", exportHorizonVars(lang, yearN)))}</p>
       <div class="export-chart-legend">
         <span><i class="export-swatch export-swatch-fin"></i>${escapeHtml(t(lang, "vsFinancing"))}</span>
         <span><i class="export-swatch export-swatch-self"></i>${escapeHtml(t(lang, "vsSelf"))}</span>
@@ -3477,7 +3610,7 @@ function exportProfitChartHtml(result, lang = state.lang) {
     </section>`;
 }
 
-function exportSurrenderStoryFigures(result, year = EXPORT_CROWN_YEAR) {
+function exportSurrenderStoryFigures(result, year = exportYearN(currentPlan(), result)) {
   const row = result.years[year - 1];
   const downPayment = result.downPayment;
   const accInterest = row.accInterest;
@@ -3564,8 +3697,10 @@ function exportStoryPanel({
       </article>`;
 }
 
-function exportSurrenderStoryHtml(result, lang = state.lang) {
-  const fig = exportSurrenderStoryFigures(result);
+function exportSurrenderStoryHtml(result, lang = state.lang, yearN = exportYearN(currentPlan(), result)) {
+  const fig = exportSurrenderStoryFigures(result, yearN);
+  const term = exportHorizonVars(lang, fig.year);
+  const storyT = (key, extra) => t(lang, key, { ...term, ...(extra || {}) });
   const loss = fig.netProfit < 0;
   const profitCls = loss ? "is-loss" : "is-profit";
   const netTone = loss ? "is-loss" : "is-featured";
@@ -3577,31 +3712,31 @@ function exportSurrenderStoryHtml(result, lang = state.lang) {
   const cashAmt = exportStoryAmountHtml(fig.cashReceived, result, lang, "is-profit");
   const netAmt = exportStoryAmountHtml(fig.netProfit, result, lang, profitCls);
   const lossBadge = loss ? `<span class="loss-badge">${escapeHtml(t(lang, "stillLoss"))}</span>` : "";
-  const formula = t(lang, "exportStoryFormula", {
+  const formula = storyT("exportStoryFormula", {
     cash: exportStoryWanLabel(fig.cashReceived, result, lang),
     cost: exportStoryWanLabel(fig.totalCost, result, lang),
     down: exportStoryWanLabel(fig.downPayment, result, lang),
     interest: exportStoryWanLabel(fig.accInterest, result, lang),
     profit: exportStoryWanLabel(fig.netProfit, result, lang),
   });
-  const liquidity = t(lang, "exportStoryLiquidity", {
+  const liquidity = storyT("exportStoryLiquidity", {
     amount: exportStoryAmountPhrase(fig.loan, result, lang),
   });
-  const title = escapeHtml(t(lang, "exportStoryTitle"));
+  const title = escapeHtml(storyT("exportStoryTitle"));
   return `<section class="export-story${loss ? " is-loss" : ""}" data-export-story="1" data-year="${fig.year}" data-down="${fig.downPayment}" data-interest="${fig.accInterest}" data-sv="${fig.sv}" data-loan="${fig.loan}" data-cash="${fig.cashReceived}" data-cost="${fig.totalCost}" data-net="${fig.netProfit}">
-      <h2 class="section-title export-story-title">${exportCrownMark(lang)}<span class="export-story-title-text">${title}</span><span class="export-vs-horizon">${escapeHtml(t(lang, "exportVsHorizon"))}</span></h2>
-      <p class="section-lead">${escapeHtml(t(lang, "exportStoryHint"))}</p>
-      <p class="export-story-caption">${escapeHtml(t(lang, "exportStoryCostsCaption"))}</p>
+      <h2 class="section-title export-story-title">${exportCrownMark(lang, fig.year)}<span class="export-story-title-text">${title}</span><span class="export-vs-horizon">${escapeHtml(storyT("exportVsHorizon"))}</span></h2>
+      <p class="section-lead">${escapeHtml(storyT("exportStoryHint"))}</p>
+      <p class="export-story-caption">${escapeHtml(storyT("exportStoryCostsCaption"))}</p>
       <div class="export-story-row">
         ${exportStoryPanel({ icon: exportStoryIcon("wallet"), step: t(lang, "exportStoryDownStep"), label: t(lang, "exportStoryDownLabel"), amountHtml: downAmt, tone: "is-outlay" })}
         ${exportStoryOp("plus")}
-        ${exportStoryPanel({ icon: exportStoryIcon("calendar"), step: t(lang, "exportStoryInterestStep"), label: t(lang, "exportStoryInterestLabel"), amountHtml: interestAmt, note: t(lang, "exportStoryInterestNote"), tone: "is-cost" })}
+        ${exportStoryPanel({ icon: exportStoryIcon("calendar"), step: storyT("exportStoryInterestStep"), label: storyT("exportStoryInterestLabel"), amountHtml: interestAmt, note: storyT("exportStoryInterestNote"), tone: "is-cost" })}
         ${exportStoryOp("equals")}
-        ${exportStoryPanel({ icon: exportStoryIcon("receipt"), step: t(lang, "exportStoryTotalCostLabel"), label: t(lang, "exportStoryTotalCostNote"), amountHtml: costAmt, tone: "is-total" })}
+        ${exportStoryPanel({ icon: exportStoryIcon("receipt"), step: t(lang, "exportStoryTotalCostLabel"), label: storyT("exportStoryTotalCostNote"), amountHtml: costAmt, tone: "is-total" })}
       </div>
-      <p class="export-story-caption">${escapeHtml(t(lang, "exportStoryExitCaption"))}</p>
+      <p class="export-story-caption">${escapeHtml(storyT("exportStoryExitCaption"))}</p>
       <div class="export-story-row">
-        ${exportStoryPanel({ icon: exportStoryIcon("policy"), step: t(lang, "exportStorySurrenderStep"), label: t(lang, "exportStorySurrenderLabel"), amountHtml: svAmt, note: t(lang, "exportStoryRepayNote"), tone: "is-surrender" })}
+        ${exportStoryPanel({ icon: exportStoryIcon("policy"), step: storyT("exportStorySurrenderStep"), label: storyT("exportStorySurrenderLabel"), amountHtml: svAmt, note: t(lang, "exportStoryRepayNote"), tone: "is-surrender" })}
         ${exportStoryOp("minus")}
         ${exportStoryPanel({ icon: exportStoryIcon("repay"), step: t(lang, "exportStoryRepayLabel"), label: t(lang, "exportLoanLabel"), amountHtml: loanAmt, note: t(lang, "exportStoryRepayNote"), tone: "is-cost" })}
         ${exportStoryOp("equals")}
@@ -3611,7 +3746,7 @@ function exportSurrenderStoryHtml(result, lang = state.lang) {
       <div class="export-story-row export-story-row-net">
         ${exportStoryPanel({ icon: exportStoryIcon("sack"), step: t(lang, "exportStoryCashStep"), label: t(lang, "exportStoryCashLabel"), amountHtml: cashAmt, tone: "is-cash" })}
         ${exportStoryOp("minus")}
-        ${exportStoryPanel({ icon: exportStoryIcon("receipt"), step: t(lang, "exportStoryTotalCostLabel"), label: t(lang, "exportStoryTotalCostNote"), amountHtml: costAmt, tone: "is-total" })}
+        ${exportStoryPanel({ icon: exportStoryIcon("receipt"), step: t(lang, "exportStoryTotalCostLabel"), label: storyT("exportStoryTotalCostNote"), amountHtml: costAmt, tone: "is-total" })}
         ${exportStoryOp("equals")}
         ${exportStoryPanel({ icon: exportStoryIcon("profit"), step: t(lang, "exportStoryNetStep"), label: t(lang, "netProfit"), amountHtml: netAmt, extra: lossBadge, note: t(lang, "exportStoryNetNote"), tone: netTone })}
       </div>
@@ -5144,6 +5279,7 @@ function bind() {
 
     const result = compute();
     const lang = state.lang;
+    const featuredN = exportYearN(currentPlan(), result);
     const root = document.createElement("div");
     root.className = "proposal-export";
     root.setAttribute("aria-hidden", "true");
@@ -5205,7 +5341,7 @@ function bind() {
       if (host) {
         host.removeAttribute("id");
         host.dataset.count = "8";
-        host.innerHTML = exportYearCardsHtml(result);
+        host.innerHTML = exportYearCardsHtml(result, featuredN);
       }
       page1.appendChild(yearSection);
     }
@@ -5222,18 +5358,18 @@ function bind() {
       if (title) {
         title.removeAttribute("id");
         title.classList.add("export-vs-title");
-        title.innerHTML = `${exportCrownMark()}<span class="export-vs-title-text">${t(lang, "vsTitle")}</span><span class="export-vs-horizon">${t(lang, "exportVsHorizon")}</span>`;
+        title.innerHTML = `${exportCrownMark(lang, featuredN)}<span class="export-vs-title-text">${t(lang, "vsTitle")}</span><span class="export-vs-horizon">${t(lang, "exportVsHorizon", exportHorizonVars(lang, featuredN))}</span>`;
       }
       const grid = versus.querySelector("#vs-grid, .vs-grid");
       if (grid) {
         grid.removeAttribute("id");
-        grid.innerHTML = vsGridHtml(result, EXPORT_VS_YEAR);
+        grid.innerHTML = vsGridHtml(result, featuredN);
       }
       page2.appendChild(versus);
     }
 
     const chartWrap = document.createElement("div");
-    chartWrap.innerHTML = exportProfitChartHtml(result, lang);
+    chartWrap.innerHTML = exportProfitChartHtml(result, lang, featuredN);
     const chart = chartWrap.firstElementChild;
     if (chart) page2.appendChild(chart);
 
@@ -5256,7 +5392,7 @@ function bind() {
     page4.appendChild(exportContinuationBar());
 
     const storyWrap = document.createElement("div");
-    storyWrap.innerHTML = exportSurrenderStoryHtml(result, lang);
+    storyWrap.innerHTML = exportSurrenderStoryHtml(result, lang, featuredN);
     const story = storyWrap.firstElementChild;
     if (story) page4.appendChild(story);
 
