@@ -3434,22 +3434,27 @@ function renderVs(result) {
   fillYearSelect(sel, year);
   sel.value = String(year);
   const row = result.years[year - 1];
-  const money = (amt) => {
+  const money = (amt, tone) => {
     const w = displayPrimaryHkd(amt, plan.currency, result.fx, lang);
     const exact = bothCcy(amt, plan.currency, result.fx, lang);
-    return `<div class="v tabular">${w.main}${w.unit ? " " + w.unit : ""}</div><div class="micro" style="text-align:right">${exact}</div>`;
+    const toneCls = tone ? ` ${tone}` : "";
+    return `<div class="v tabular${toneCls}">${w.main}${w.unit ? " " + w.unit : ""}</div><div class="micro" style="text-align:right">${exact}</div>`;
   };
-  const pct = (v) => `<div class="v tabular">${fmtPct(v, 1)}</div>`;
+  const profitTone = (v) => (v < 0 ? "is-loss" : "is-profit");
+  const pct = (v, tone) => {
+    const toneCls = tone ? ` ${tone}` : "";
+    return `<div class="v tabular${toneCls}">${fmtPct(v, 1)}</div>`;
+  };
 
   const finRows = [
-    [t(lang, "vsOutlay"), money(result.downPayment)],
-    [t(lang, "vsProfit"), money(row.profit)],
-    [t(lang, "vsAvr"), pct(row.avr)],
+    [t(lang, "vsOutlay"), money(result.downPayment, "is-outlay")],
+    [t(lang, "vsProfit"), money(row.profit, profitTone(row.profit))],
+    [t(lang, "vsAvr"), pct(row.avr, profitTone(row.avr))],
   ];
   const selfRows = [
-    [t(lang, "vsOutlay"), money(result.premiumAfterDiscount)],
-    [t(lang, "vsProfit"), money(row.selfFundedProfit)],
-    [t(lang, "vsAvr"), pct(row.selfFundedAvr)],
+    [t(lang, "vsOutlay"), money(result.premiumAfterDiscount, "is-outlay")],
+    [t(lang, "vsProfit"), money(row.selfFundedProfit, profitTone(row.selfFundedProfit))],
+    [t(lang, "vsAvr"), pct(row.selfFundedAvr, profitTone(row.selfFundedAvr))],
   ];
 
   const released = displayPrimaryHkd(result.loan, plan.currency, result.fx, lang);
@@ -3460,7 +3465,7 @@ function renderVs(result) {
       ${finRows.map(([k, v]) => `<div class="vs-row"><span>${k}</span><div>${v}</div></div>`).join("")}
       <div class="released-pill">
         <div class="k">${t(lang, "vsReleased")}</div>
-        <div class="v">${released.main}${released.unit ? " " + released.unit : ""}</div>
+        <div class="v is-outlay">${released.main}${released.unit ? " " + released.unit : ""}</div>
         <div class="micro">${bothCcy(result.loan, plan.currency, result.fx, lang)}</div>
       </div>
     </article>
@@ -3513,7 +3518,7 @@ function renderSensitivity(result) {
       .map((y) => {
         const row = r.years[y - 1];
         const wan = wanParts(toHkd(row.profit, plan.currency, r.fx), "HKD", lang);
-        const cls = row.profit < 0 ? "neg" : "";
+        const cls = row.profit < 0 ? "neg" : "pos";
         let label;
         if (lang === "en") label = wan.main;
         else if (wan.wan) label = `${wan.main}${t(lang, "wanShort")}`;
@@ -3550,7 +3555,7 @@ function renderDetailTable(result) {
         marks.has(row.year) ? "is-active" : "",
         row.profit < 0 ? "" : "",
       ].join(" ");
-      const pcls = row.profit < 0 ? "neg" : "";
+      const pcls = row.profit < 0 ? "neg" : "pos";
       const moneyCell = (amt, extraCls = "") => {
         const primary = fmtMoney(amt, plan.currency, lang);
         if (plan.currency === "HKD") return `<td class="${extraCls}">${primary}</td>`;

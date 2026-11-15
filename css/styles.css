@@ -22,6 +22,10 @@
   --loss: #8f3328;
   --loss-bg: #f6e7e3;
   --loss-line: #e4c4bd;
+  --num-profit: #154734;
+  --num-loss: var(--loss);
+  --num-outlay: #6e5630;
+  --num-cost: #7a6140;
   --white: #fffdf8;
   --shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
   --radius: 28px;
@@ -671,6 +675,15 @@ input[type="number"], input[type="text"], select, .text-input {
   color: var(--ink);
 }
 
+#hero-down-val,
+#hero-down-val .unit {
+  color: var(--num-outlay);
+}
+
+#hero-monthly-val {
+  color: var(--num-cost);
+}
+
 .metric .unit {
   display: inline;
   margin-left: 3px;
@@ -767,7 +780,7 @@ input.rate-input {
   background: transparent;
   padding: 0 2px 1px;
   border-radius: 0;
-  color: var(--ink);
+  color: var(--num-cost);
   text-align: right;
   margin: 0;
 }
@@ -794,7 +807,7 @@ input.rate-input:focus {
 .rate-suffix {
   font-weight: 650;
   font-size: 0.95em;
-  color: var(--ink);
+  color: var(--num-cost);
 }
 
 .rate-arrow {
@@ -872,9 +885,10 @@ input.rate-input:focus {
 }
 
 .year-card.is-featured {
-  background: var(--green);
+  background: var(--green-soft);
   border-color: var(--green);
-  color: var(--cream);
+  color: var(--ink);
+  box-shadow: inset 4px 0 0 var(--green);
 }
 
 .year-card .reason {
@@ -882,10 +896,9 @@ input.rate-input:focus {
   font-weight: 650;
   margin: 0 0 10px;
   letter-spacing: 0.02em;
+  color: var(--ink-soft);
 }
-
-.year-card:not(.is-featured) .reason { color: var(--ink-soft); }
-.year-card.is-featured .reason { color: #dce8e2; }
+.year-card.is-featured .reason { color: var(--green-deep); }
 
 .year-card .profit-lbl {
   font-size: 0.75rem;
@@ -906,6 +919,7 @@ input.rate-input:focus {
   font-size: 2.05rem;
   letter-spacing: -0.03em;
   line-height: 1;
+  color: var(--num-profit);
 }
 
 .year-card .profit-unit {
@@ -935,6 +949,7 @@ input.rate-input:focus {
   font-variant-numeric: tabular-nums;
   font-weight: 700;
   font-size: 1.15rem;
+  color: var(--num-profit);
 }
 .year-card .avr-note,
 .year-card .avr-spread {
@@ -944,16 +959,17 @@ input.rate-input:focus {
   opacity: 0.82;
 }
 
-.year-card.is-loss:not(.is-featured) {
+.year-card.is-loss {
   background: var(--loss-bg);
   border-color: var(--loss-line);
 }
-.year-card.is-loss:not(.is-featured) .profit-num,
-.year-card.is-loss:not(.is-featured) .avr-num { color: var(--loss); }
+.year-card.is-loss .profit-num,
+.year-card.is-loss .avr-num { color: var(--num-loss); }
 
 .year-card.is-featured.is-loss {
-  background: #5c2b24;
-  border-color: #5c2b24;
+  background: var(--loss-bg);
+  border-color: var(--loss-line);
+  box-shadow: inset 4px 0 0 var(--loss);
 }
 
 .loss-badge {
@@ -967,8 +983,8 @@ input.rate-input:focus {
   color: var(--loss);
 }
 .year-card.is-featured .loss-badge {
-  background: rgba(255, 255, 255, 0.14);
-  color: #f3d4ce;
+  background: var(--loss-bg);
+  color: var(--num-loss);
 }
 
 .fineprint {
@@ -1116,9 +1132,10 @@ input.rate-input:focus {
 }
 
 .vs-card.is-financing {
-  background: var(--green);
+  background: var(--green-soft);
   border-color: var(--green);
-  color: var(--cream);
+  color: var(--ink);
+  box-shadow: inset 4px 0 0 var(--green);
 }
 
 .vs-card h3 {
@@ -1136,12 +1153,25 @@ input.rate-input:focus {
   border-top: 1px solid rgba(28, 27, 22, 0.08);
   font-size: 0.9rem;
 }
-.vs-card.is-financing .vs-row { border-top-color: rgba(244, 239, 230, 0.16); }
+.vs-card.is-financing .vs-row { border-top-color: rgba(28, 27, 22, 0.08); }
 
 .vs-row .v {
   font-variant-numeric: tabular-nums;
   font-weight: 650;
   text-align: right;
+}
+
+.vs-row .v.is-profit,
+.released-pill .v.is-profit {
+  color: var(--num-profit);
+}
+.vs-row .v.is-loss,
+.released-pill .v.is-loss {
+  color: var(--num-loss);
+}
+.vs-row .v.is-outlay,
+.released-pill .v.is-outlay {
+  color: var(--num-outlay);
 }
 
 .released-pill {
@@ -1152,8 +1182,8 @@ input.rate-input:focus {
   padding: 10px 12px;
 }
 .vs-card.is-financing .released-pill {
-  background: rgba(255, 255, 255, 0.1);
-  color: var(--cream);
+  background: var(--gold-soft);
+  color: var(--ink);
 }
 .released-pill .k { font-size: 0.75rem; opacity: 0.8; }
 .released-pill .v {
@@ -1211,7 +1241,8 @@ table.data tbody tr:last-child td { border-bottom: 0; }
 table.data tr.is-active td,
 table.data tr.is-active th { background: var(--green-soft); }
 
-table.data .neg { color: var(--loss); font-weight: 650; }
+table.data .pos { color: var(--num-profit); font-weight: 650; }
+table.data .neg { color: var(--num-loss); font-weight: 650; }
 table.data tr.is-current { outline: 2px solid var(--green-mid); outline-offset: -2px; }
 
 .year-table-toggle {
@@ -1848,6 +1879,7 @@ details.fr-strip-disclosure > .fr-compare-strip {
   #plan-recs, details.assumptions, #asset-proof, .year-toolbar,
   #chart-section, .chart-wrap, #chart-series, .chart-head,
   #how, #cashflow, #compare, #faq,
+  #fulfillment, #fr-strip-disclosure, #sensitivity, #notes,
   .year-table-toggle, #year-table, .export-row, .site-footer,
   .modal, .stepper, button.linkish, #reinvest-block,
   .sens-controls, .cmp-controls, .vs-year-label, #vs-year,
@@ -1883,6 +1915,7 @@ details.fr-strip-disclosure > .fr-compare-strip {
     letter-spacing: -0.02em;
     line-height: 1.25;
     white-space: nowrap;
+    color: var(--num-cost);
   }
 
   .page {
@@ -1898,6 +1931,7 @@ details.fr-strip-disclosure > .fr-compare-strip {
   .mark { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
 
   .stage {
+    background: #fff;
     box-shadow: none;
     border-radius: 0;
     padding: 8px 0 0;
@@ -1937,7 +1971,62 @@ details.fr-strip-disclosure > .fr-compare-strip {
     box-shadow: none !important;
   }
 
-  .hero, .year-card, .vs-card, .disclaimer, table.data thead th, .released-pill {
+  .year-card,
+  .vs-card {
+    background: var(--paper);
+    color: var(--ink);
+    border-color: var(--line-strong);
+    box-shadow: none;
+  }
+  .year-card.is-featured,
+  .vs-card.is-financing {
+    background: var(--green-soft);
+    color: var(--ink);
+    border-color: var(--green);
+    box-shadow: inset 4px 0 0 var(--green);
+  }
+  .year-card.is-loss {
+    background: var(--loss-bg);
+    color: var(--ink);
+    border-color: var(--loss-line);
+  }
+  .year-card.is-featured.is-loss {
+    background: var(--loss-bg);
+    color: var(--ink);
+    border-color: var(--loss-line);
+    box-shadow: inset 4px 0 0 var(--loss);
+  }
+  .year-card.is-featured .reason { color: var(--green-deep); }
+  .year-card.is-featured .loss-badge {
+    background: var(--loss-bg);
+    color: var(--num-loss);
+  }
+  .vs-card.is-financing .vs-row { border-top-color: rgba(28, 27, 22, 0.08); }
+  .vs-card.is-financing .released-pill,
+  .released-pill {
+    background: var(--gold-soft);
+    color: var(--ink);
+  }
+
+  /* Light tints and key number colours should print in colour, not as grey ink. */
+  .hero,
+  .stage,
+  .year-card,
+  .vs-card,
+  .released-pill,
+  .disclaimer,
+  table.data thead th,
+  #hero-down-val,
+  #hero-monthly-val,
+  .print-rates,
+  input.rate-input,
+  .year-card .profit-num,
+  .year-card .avr-num,
+  table.data .pos,
+  table.data .neg,
+  .vs-row .v.is-profit,
+  .vs-row .v.is-loss,
+  .vs-row .v.is-outlay {
     print-color-adjust: exact;
     -webkit-print-color-adjust: exact;
   }
