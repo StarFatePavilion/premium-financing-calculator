@@ -1771,6 +1771,8 @@ const STRINGS = {
     settingsClose: "關閉",
     settingsHint: "會顯示於頁首、頁末及列印提案，僅儲存在此裝置。",
     planSelector: "選擇計劃",
+    planChange: "更改計劃",
+    planPickerBack: "返回",
     premiumLabel: "原保費（保單貨幣）",
     premiumReset: "還原示例保費",
     assumptions: "假設與參數",
@@ -2015,6 +2017,8 @@ const STRINGS = {
     settingsClose: "关闭",
     settingsHint: "会显示于页首、页末及打印提案，仅储存在此装置。",
     planSelector: "选择计划",
+    planChange: "更改计划",
+    planPickerBack: "返回",
     premiumLabel: "原保费（保单货币）",
     premiumReset: "还原示例保费",
     assumptions: "假设与参数",
@@ -2259,6 +2263,8 @@ const STRINGS = {
     settingsClose: "Close",
     settingsHint: "Shown in the header, footer and printed proposal. Stored only on this device.",
     planSelector: "Choose a plan",
+    planChange: "Change plan",
+    planPickerBack: "Back",
     premiumLabel: "Original premium (policy currency)",
     premiumReset: "Reset to sample premium",
     assumptions: "Assumptions",
@@ -2821,7 +2827,13 @@ function applyPlanDefaults(plan, { keepPremium = false } = {}) {
   if (!state.yearLock) state.vsYear = null;
 }
 
+function closePlanPicker() {
+  const el = document.getElementById("plan-picker-disclosure");
+  if (el) el.open = false;
+}
+
 function selectPlan(plan) {
+  closePlanPicker();
   if (!plan || plan.id === state.planId) return;
   state.planId = plan.id;
   try { localStorage.setItem(PLAN_KEY, plan.id); } catch { /* ignore */ }

@@ -342,6 +342,65 @@ h1, h2, h3, .serif {
   font-size: 0.92rem;
 }
 
+/* Plan picker disclosure: 更改計劃 / 返回 */
+.plan-picker-disclosure {
+  margin-top: 14px;
+}
+
+.plan-picker-disclosure > .plan-picker-summary {
+  list-style: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  min-height: 44px;
+  min-width: 7.5em;
+  padding: 8px 16px;
+  border: 1px solid var(--line-strong);
+  background: var(--paper);
+  color: var(--green-text);
+  border-radius: 999px;
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  font-weight: 650;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.plan-picker-disclosure > .plan-picker-summary::-webkit-details-marker {
+  display: none;
+}
+
+.plan-picker-disclosure > .plan-picker-summary::marker {
+  content: none;
+  display: none;
+}
+
+.plan-picker-disclosure > .plan-picker-summary:hover {
+  border-color: var(--green-mid);
+  background: var(--white);
+  color: var(--green-deep);
+}
+
+.plan-picker-disclosure > .plan-picker-summary:focus-visible {
+  outline: 2px solid var(--green-mid);
+  outline-offset: 2px;
+}
+
+.plan-picker-toggle-back { display: none; }
+.plan-picker-disclosure[open] > .plan-picker-summary .plan-picker-toggle-change { display: none; }
+.plan-picker-disclosure[open] > .plan-picker-summary .plan-picker-toggle-back { display: inline; }
+
+.plan-picker-disclosure[open] > .plan-picker-summary {
+  margin-bottom: 2px;
+}
+
+.plan-picker-disclosure > .field {
+  margin-top: 12px;
+}
+
 /* Plan picker */
 .plan-groups {
   display: grid;
@@ -1792,6 +1851,7 @@ details.fr-strip-disclosure > .fr-compare-strip {
   .year-table-toggle, #year-table, .export-row, .site-footer,
   .modal, .stepper, button.linkish, #reinvest-block,
   .sens-controls, .cmp-controls, .vs-year-label, #vs-year,
+  #plan-picker-disclosure, .plan-picker-disclosure, .plan-picker-summary,
   #plan-picker, .plan-groups, .plan-chips,
   .premium-box, #live-hint, .scroll-hint, #premium-hint,
   .field:has(#inp-premium) .field-row {

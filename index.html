@@ -74,10 +74,16 @@
           <p class="kicker" data-i18n="appSubtitle">保費融資　｜　增值參考</p>
           <h2 class="section-title" style="margin-top:10px" id="plan-heading"></h2>
 
-          <div class="field">
-            <span class="lbl" data-i18n="planSelector">選擇計劃</span>
-            <div id="plan-picker" class="plan-groups" role="list"></div>
-          </div>
+          <details id="plan-picker-disclosure" class="plan-picker-disclosure">
+            <summary class="plan-picker-summary">
+              <span class="plan-picker-toggle-change" data-i18n="planChange">更改計劃</span>
+              <span class="plan-picker-toggle-back" data-i18n="planPickerBack">返回</span>
+            </summary>
+            <div class="field">
+              <span class="lbl" data-i18n="planSelector">選擇計劃</span>
+              <div id="plan-picker" class="plan-groups" role="list"></div>
+            </div>
+          </details>
 
           <div class="field">
             <div class="field-row">
