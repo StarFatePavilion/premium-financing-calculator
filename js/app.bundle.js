@@ -1952,6 +1952,9 @@ const STRINGS = {
     exportOtherYearNote: "請自行參考網站",
     exportVsHorizon: "五年期",
     exportCrownLabel: "五年期",
+    exportLoanLabel: "貸款金額",
+    exportChartTitle: "預計淨收益（第 1 至 10 年）",
+    exportChartHint: "曲線為融資與自資的演示淨收益。五年期以較大標記標示；零軸以下表示虧損。",
     footerSource: "數字源自顧問演示檔，僅供參考。",
     contactWhatsApp: "WhatsApp",
     downNegative: "以目前假設，首期為零或負數，回報率無法計算。請調低貸款成數或檢查折扣。",
@@ -2210,6 +2213,9 @@ const STRINGS = {
     exportOtherYearNote: "请自行参考网站",
     exportVsHorizon: "五年期",
     exportCrownLabel: "五年期",
+    exportLoanLabel: "贷款金额",
+    exportChartTitle: "预计净收益（第 1 至 10 年）",
+    exportChartHint: "曲线为融资与自资的演示净收益。五年期以较大标记标示；零轴以下表示亏损。",
     footerSource: "数字源自顾问演示档，仅供参考。",
     contactWhatsApp: "WhatsApp",
     downNegative: "以目前假设，首期为零或负数，回报率无法计算。请调低贷款成数或检查折扣。",
@@ -2468,6 +2474,9 @@ const STRINGS = {
     exportOtherYearNote: "Please refer to the website",
     exportVsHorizon: "Five-year term",
     exportCrownLabel: "Five-year term",
+    exportLoanLabel: "Loan amount",
+    exportChartTitle: "Illustrated net profit (years 1–10)",
+    exportChartHint: "The curves show illustrated net profit for financing and self-funding. The five-year term is marked; values below the zero line are losses.",
     footerSource: "Figures are from the advisor’s illustration file and are for reference only.",
     contactWhatsApp: "WhatsApp",
     downNegative: "With the current assumptions the initial outlay is zero or negative, so rates of return cannot be calculated. Lower the LTV or check the discount.",
@@ -2865,7 +2874,7 @@ function yearAvrSpread(result, cards) {
   );
 }
 
-const EXPORT_FEATURED_YEARS = new Set([5, 10]);
+const EXPORT_FEATURED_YEARS = new Set([5]);
 const EXPORT_CROWN_YEAR = 5;
 const EXPORT_VS_YEAR = 5;
 
@@ -2932,6 +2941,167 @@ function exportYearCardsHtml(result) {
     .map((card) => yearCardHtml(card, result, { crown: card.crown }))
     .join("") + exportOtherYearCardHtml();
 }
+
+function exportHeroLoanMetricHtml(result, lang = state.lang) {
+  const plan = currentPlan();
+  const wan = displayPrimaryHkd(result.loan, plan.currency, result.fx, lang);
+  const exact = bothCcy(result.loan, plan.currency, result.fx, lang);
+  const unit = wan.unit ? `<span class="unit">${escapeHtml(wan.unit)}</span>` : "";
+  return `<span class="lbl">${escapeHtml(t(lang, "exportLoanLabel"))}</span>
+      <div class="value tabular">${escapeHtml(wan.main)}${unit}</div>
+      <div class="sub">${escapeHtml(exact)}</div>`;
+}
+
+function exportLoanProofHtml(result, lang = state.lang) {
+  const plan = currentPlan();
+  const wan = displayPrimaryHkd(result.loan, plan.currency, result.fx, lang);
+  const exact = bothCcy(result.loan, plan.currency, result.fx, lang);
+  const unit = wan.unit ? `<span class="unit">${escapeHtml(wan.unit)}</span>` : "";
+  return `<section class="export-loan-proof">
+      <h2 class="section-title">${escapeHtml(t(lang, "assetProofTitle"))}</h2>
+      <div class="export-loan-proof-grid">
+        <div class="export-loan-figure">
+          <div class="k">${escapeHtml(t(lang, "exportLoanLabel"))}</div>
+          <div class="v is-outlay tabular">${escapeHtml(wan.main)}${unit}</div>
+          <div class="micro">${escapeHtml(exact)}</div>
+        </div>
+        <div class="export-loan-proof-rules">
+          <p class="export-asset-proof-intro">${escapeHtml(t(lang, "assetProofIntro"))}</p>
+          <ul class="export-asset-proof-list">
+            <li>${escapeHtml(t(lang, "assetProofDeposits"))}</li>
+            <li>${escapeHtml(t(lang, "assetProofEquities"))}</li>
+            <li>${escapeHtml(t(lang, "assetProofHkProperty"))}</li>
+            <li>${escapeHtml(t(lang, "assetProofCnProperty"))}</li>
+          </ul>
+          <p class="export-asset-proof-caveat">${escapeHtml(t(lang, "assetProofCaveat"))}</p>
+        </div>
+      </div>
+    </section>`;
+}
+
+function exportProfitChartHtml(result, lang = state.lang) {
+  const plan = currentPlan();
+  const fx = result.fx;
+  const W = 700;
+  const H = 318;
+  const pad = { l: 54, r: 14, t: 26, b: 38 };
+  const iw = W - pad.l - pad.r;
+  const ih = H - pad.t - pad.b;
+  const years = result.years;
+  const toPlot = (amt) => toHkd(amt, plan.currency, fx);
+  const finVals = years.map((row) => toPlot(row.profit));
+  const selfVals = years.map((row) => toPlot(row.selfFundedProfit));
+  const minV = Math.min(0, ...finVals, ...selfVals);
+  const maxV = Math.max(0, ...finVals, ...selfVals);
+  const yMin = minV < 0 ? -niceMax(-minV) : 0;
+  const yMax = maxV > 0 ? niceMax(maxV) || 1 : 1;
+  const x = (year) => pad.l + ((year - 1) / 9) * iw;
+  const y = (v) => pad.t + ((yMax - v) / (yMax - yMin || 1)) * ih;
+
+  function linePath(vals) {
+    return vals
+      .map((v, i) => `${i ? "L" : "M"}${x(i + 1).toFixed(1)},${y(v).toFixed(1)}`)
+      .join(" ");
+  }
+
+  function posNegAreas(vals) {
+    let pos = "";
+    let neg = "";
+    for (let i = 0; i < vals.length - 1; i++) {
+      const x1 = x(i + 1);
+      const x2 = x(i + 2);
+      const v1 = vals[i];
+      const v2 = vals[i + 1];
+      const y1 = y(v1);
+      const y2 = y(v2);
+      const z = y(0);
+      if (v1 >= 0 && v2 >= 0) {
+        pos += `M${x1},${z} L${x1},${y1} L${x2},${y2} L${x2},${z} Z `;
+      } else if (v1 <= 0 && v2 <= 0) {
+        neg += `M${x1},${z} L${x1},${y1} L${x2},${y2} L${x2},${z} Z `;
+      } else {
+        const t0 = v1 / (v1 - v2);
+        const xc = x1 + (x2 - x1) * t0;
+        if (v1 > 0) {
+          pos += `M${x1},${z} L${x1},${y1} L${xc},${z} Z `;
+          neg += `M${xc},${z} L${x2},${y2} L${x2},${z} Z `;
+        } else {
+          neg += `M${x1},${z} L${x1},${y1} L${xc},${z} Z `;
+          pos += `M${xc},${z} L${x2},${y2} L${x2},${z} Z `;
+        }
+      }
+    }
+    return { pos, neg };
+  }
+
+  const ticks = 4;
+  const grid = [];
+  for (let i = 0; i <= ticks; i++) {
+    const v = yMin + ((yMax - yMin) * i) / ticks;
+    const yy = y(v);
+    const label = axisWanLabel(v, lang);
+    grid.push(`<line x1="${pad.l}" x2="${W - pad.r}" y1="${yy.toFixed(1)}" y2="${yy.toFixed(1)}" stroke="#ddd5c6" stroke-width="1"/>
+      <text x="${pad.l - 8}" y="${(yy + 4).toFixed(1)}" text-anchor="end" font-size="10" fill="#5a564e" font-family="Noto Sans TC, Noto Sans, sans-serif">${label}</text>`);
+  }
+  const axisUnit = lang === "en" ? "HKD" : t(lang, "wanHkd");
+  grid.push(`<text x="${pad.l}" y="${pad.t - 10}" font-size="9" fill="#5a564e" font-family="Noto Sans TC, Noto Sans, sans-serif">${escapeHtml(axisUnit)}</text>`);
+
+  const zero = y(0);
+  const xLabels = years
+    .map((row) => {
+      const featured = row.year === EXPORT_CROWN_YEAR;
+      return `<text x="${x(row.year).toFixed(1)}" y="${H - 12}" text-anchor="middle" font-size="11" fill="${featured ? "#6e5630" : "#6b675e"}" font-weight="${featured ? 700 : 500}" font-family="Noto Sans TC, Noto Sans, sans-serif">${row.year}</text>`;
+    })
+    .join("");
+
+  const areas = posNegAreas(finVals);
+  const year5x = x(EXPORT_CROWN_YEAR);
+  const year5Label = escapeHtml(t(lang, "exportVsHorizon"));
+  let body = "";
+  body += `<line x1="${year5x.toFixed(1)}" x2="${year5x.toFixed(1)}" y1="${pad.t}" y2="${(pad.t + ih).toFixed(1)}" stroke="#8a7348" stroke-width="1.1" stroke-dasharray="3 4"/>`;
+  body += `<text x="${year5x.toFixed(1)}" y="${pad.t - 2}" text-anchor="middle" font-size="10" fill="#6e5630" font-weight="700" font-family="Noto Sans TC, Noto Sans, sans-serif">${year5Label}</text>`;
+  if (areas.pos) body += `<path d="${areas.pos}" fill="#d7e3db"/>`;
+  if (areas.neg) body += `<path d="${areas.neg}" fill="#f0d9d5"/>`;
+  body += `<path d="${linePath(finVals)}" fill="none" stroke="#1c4a3a" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>`;
+  body += `<path d="${linePath(selfVals)}" fill="none" stroke="#8a7348" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="5 4"/>`;
+  body += `<line x1="${pad.l}" x2="${W - pad.r}" y1="${zero.toFixed(1)}" y2="${zero.toFixed(1)}" stroke="#a39c90" stroke-width="1.1"/>`;
+
+  for (const row of years) {
+    const featured = row.year === EXPORT_CROWN_YEAR;
+    const fin = finVals[row.year - 1];
+    const self = selfVals[row.year - 1];
+    const finFill = fin < 0 ? "#8f3328" : "#1c4a3a";
+    const rFin = featured ? 5.5 : 3;
+    const rSelf = featured ? 4.5 : 2.5;
+    body += `<circle cx="${x(row.year).toFixed(1)}" cy="${y(fin).toFixed(1)}" r="${rFin}" fill="${finFill}" stroke="${finFill}" stroke-width="1"/>`;
+    body += `<circle cx="${x(row.year).toFixed(1)}" cy="${y(self).toFixed(1)}" r="${rSelf}" fill="${featured ? "#8a7348" : "#f4efe6"}" stroke="#8a7348" stroke-width="1.5"/>`;
+  }
+
+  const title = escapeHtml(t(lang, "exportChartTitle"));
+  return `<section class="export-chart">
+      <h2 class="section-title">${title}</h2>
+      <p class="section-lead">${escapeHtml(t(lang, "exportChartHint"))}</p>
+      <div class="export-chart-legend">
+        <span><i class="export-swatch export-swatch-fin"></i>${escapeHtml(t(lang, "vsFinancing"))}</span>
+        <span><i class="export-swatch export-swatch-self"></i>${escapeHtml(t(lang, "vsSelf"))}</span>
+      </div>
+      <svg class="export-chart-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" aria-label="${title}">
+        <rect x="0" y="0" width="${W}" height="${H}" fill="#f4efe6"/>
+        ${grid.join("")}
+        ${body}
+        ${xLabels}
+      </svg>
+    </section>`;
+}
+
+function exportContinuationBar() {
+  const bar = document.createElement("header");
+  bar.className = "proposal-export-contbar";
+  const brand = document.querySelector(".topbar .brand");
+  if (brand) bar.appendChild(brand.cloneNode(true));
+  return bar;
+}
+
 
 function applyPlanDefaults(plan, { keepPremium = false } = {}) {
   if (!keepPremium) state.originalPremium = plan.defaultOriginalPremium;
@@ -4461,6 +4631,8 @@ function bind() {
     const existing = document.querySelector(".proposal-export");
     if (existing) existing.remove();
 
+    const result = compute();
+    const lang = state.lang;
     const root = document.createElement("div");
     root.className = "proposal-export";
     root.setAttribute("aria-hidden", "true");
@@ -4503,6 +4675,13 @@ function bind() {
         printRates.classList.remove("print-only");
         printRates.hidden = false;
       }
+      const loanMetric = document.createElement("div");
+      loanMetric.className = "metric export-hero-loan";
+      loanMetric.id = "export-hero-loan";
+      loanMetric.innerHTML = exportHeroLoanMetricHtml(result, lang);
+      const monthly = hero.querySelector("#hero-monthly");
+      if (monthly) hero.insertBefore(loanMetric, monthly);
+      else hero.appendChild(loanMetric);
       page1.appendChild(hero);
     }
 
@@ -4515,13 +4694,14 @@ function bind() {
       if (host) {
         host.removeAttribute("id");
         host.dataset.count = "8";
-        host.innerHTML = exportYearCardsHtml(compute());
+        host.innerHTML = exportYearCardsHtml(result);
       }
       page1.appendChild(yearSection);
     }
 
     const page2 = makeExportPage();
     page2.dataset.page = "2";
+    page2.appendChild(exportContinuationBar());
 
     const versus = cloneForExport(document.getElementById("versus"));
     if (versus) {
@@ -4531,21 +4711,36 @@ function bind() {
       if (title) {
         title.removeAttribute("id");
         title.classList.add("export-vs-title");
-        title.innerHTML = `${exportCrownMark()}<span class="export-vs-title-text">${t(state.lang, "vsTitle")}</span><span class="export-vs-horizon">${t(state.lang, "exportVsHorizon")}</span>`;
+        title.innerHTML = `${exportCrownMark()}<span class="export-vs-title-text">${t(lang, "vsTitle")}</span><span class="export-vs-horizon">${t(lang, "exportVsHorizon")}</span>`;
       }
       const grid = versus.querySelector("#vs-grid, .vs-grid");
       if (grid) {
         grid.removeAttribute("id");
-        grid.innerHTML = vsGridHtml(compute(), EXPORT_VS_YEAR);
+        grid.innerHTML = vsGridHtml(result, EXPORT_VS_YEAR);
       }
       page2.appendChild(versus);
     }
 
+    const chartWrap = document.createElement("div");
+    chartWrap.innerHTML = exportProfitChartHtml(result, lang);
+    const chart = chartWrap.firstElementChild;
+    if (chart) page2.appendChild(chart);
+
+    const page3 = makeExportPage();
+    page3.dataset.page = "3";
+    page3.appendChild(exportContinuationBar());
+
+    const proofWrap = document.createElement("div");
+    proofWrap.innerHTML = exportLoanProofHtml(result, lang);
+    const proof = proofWrap.firstElementChild;
+    if (proof) page3.appendChild(proof);
+
     const disc = cloneForExport(document.querySelector("section.disclaimer, .disclaimer"));
-    if (disc) page2.appendChild(disc);
+    if (disc) page3.appendChild(disc);
 
     root.appendChild(page1);
     root.appendChild(page2);
+    root.appendChild(page3);
     document.body.appendChild(root);
     return root;
   }
