@@ -2538,6 +2538,10 @@ const LANG_KEY = "pfcal-lang";
 const ADVISOR_KEY = "pfcal-advisor";
 const PLAN_KEY = "pfcal-plan";
 
+/** Site/UI default financing rates in percent; independent of Excel Interest Power Up. */
+const DEFAULT_UI_PROMO_PCT = 3;
+const DEFAULT_UI_POST_PCT = 3.5;
+
 const INSURER_ORDER = [
   "bocgl-ggg",
   "ctf-es",
@@ -2709,12 +2713,12 @@ function inputsFromState(plan = currentPlan()) {
     originalPremium: state.originalPremium,
     fx: state.fx,
     ltv: (state.ltvPct ?? plan.defaultLtv * 100) / 100,
-    promoRate: (state.promoPct ?? defaultPromoRate(plan) * 100) / 100,
-    postRate: (state.postPct ?? defaultPostRate(plan) * 100) / 100,
-    midRate: (state.midPct ?? defaultMidRate(plan) * 100) / 100,
+    promoRate: (state.promoPct ?? DEFAULT_UI_PROMO_PCT) / 100,
+    postRate: (state.postPct ?? DEFAULT_UI_POST_PCT) / 100,
+    midRate: (state.midPct ?? DEFAULT_UI_POST_PCT) / 100,
     scenario: state.scenario,
-    riseTo: (state.riseToPct ?? defaultPostRate(plan) * 100 + DEFAULT_RISE_DELTA * 100) / 100,
-    fallTo: (state.fallToPct ?? defaultPostRate(plan) * 100 + DEFAULT_FALL_DELTA * 100) / 100,
+    riseTo: (state.riseToPct ?? DEFAULT_UI_POST_PCT + DEFAULT_RISE_DELTA * 100) / 100,
+    fallTo: (state.fallToPct ?? DEFAULT_UI_POST_PCT + DEFAULT_FALL_DELTA * 100) / 100,
     reinvest: state.reinvest,
     reinvestRate: state.reinvestRatePct / 100,
   };
@@ -2768,9 +2772,9 @@ function reasonText(card) {
 function applyPlanDefaults(plan, { keepPremium = false } = {}) {
   if (!keepPremium) state.originalPremium = plan.defaultOriginalPremium;
   state.ltvPct = plan.defaultLtv * 100;
-  state.promoPct = defaultPromoRate(plan) * 100;
-  state.postPct = defaultPostRate(plan) * 100;
-  state.midPct = defaultMidRate(plan) * 100;
+  state.promoPct = DEFAULT_UI_PROMO_PCT;
+  state.postPct = DEFAULT_UI_POST_PCT;
+  state.midPct = DEFAULT_UI_POST_PCT;
   if (!state.riseTouched) state.riseToPct = state.postPct + DEFAULT_RISE_DELTA * 100;
   if (!state.fallTouched) state.fallToPct = state.postPct + DEFAULT_FALL_DELTA * 100;
   state.discountMode = "auto";
