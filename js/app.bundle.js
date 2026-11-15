@@ -1950,6 +1950,8 @@ const STRINGS = {
     exportYearCompareHint: "下列為第 4 至 10 年的演示收益，其餘年份請自行參考網站。",
     exportOtherYear: "其他",
     exportOtherYearNote: "請自行參考網站",
+    exportVsHorizon: "五年期",
+    exportCrownLabel: "五年期",
     footerSource: "數字源自顧問演示檔，僅供參考。",
     contactWhatsApp: "WhatsApp",
     downNegative: "以目前假設，首期為零或負數，回報率無法計算。請調低貸款成數或檢查折扣。",
@@ -2206,6 +2208,8 @@ const STRINGS = {
     exportYearCompareHint: "下列为第 4 至 10 年的演示收益，其余年份请自行参考网站。",
     exportOtherYear: "其他",
     exportOtherYearNote: "请自行参考网站",
+    exportVsHorizon: "五年期",
+    exportCrownLabel: "五年期",
     footerSource: "数字源自顾问演示档，仅供参考。",
     contactWhatsApp: "WhatsApp",
     downNegative: "以目前假设，首期为零或负数，回报率无法计算。请调低贷款成数或检查折扣。",
@@ -2462,6 +2466,8 @@ const STRINGS = {
     exportYearCompareHint: "Illustrated results for years 4 to 10 are shown below. For other years, please refer to the website.",
     exportOtherYear: "Other",
     exportOtherYearNote: "Please refer to the website",
+    exportVsHorizon: "Five-year term",
+    exportCrownLabel: "Five-year term",
     footerSource: "Figures are from the advisor’s illustration file and are for reference only.",
     contactWhatsApp: "WhatsApp",
     downNegative: "With the current assumptions the initial outlay is zero or negative, so rates of return cannot be calculated. Lower the LTV or check the discount.",
@@ -2859,7 +2865,16 @@ function yearAvrSpread(result, cards) {
   );
 }
 
-function yearCardHtml(card, result, { avrSpread = false } = {}) {
+const EXPORT_FEATURED_YEARS = new Set([5, 10]);
+const EXPORT_CROWN_YEAR = 5;
+const EXPORT_VS_YEAR = 5;
+
+function exportCrownMark(lang = state.lang) {
+  const label = t(lang, "exportCrownLabel");
+  return `<span class="export-crown" role="img" aria-label="${escapeHtml(label)}"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 18" width="15" height="11" aria-hidden="true" focusable="false"><path fill="#8a7348" stroke="#6e5630" stroke-width="0.85" stroke-linejoin="round" stroke-linecap="round" d="M3.8 13.6 L3.8 8.1 L8.5 11.2 L12 4 L15.5 11.2 L20.2 8.1 L20.2 13.6 Z"/><path fill="#8a7348" stroke="#6e5630" stroke-width="0.8" d="M3.2 13.4 h17.6 v2.3 H3.2 Z"/><circle cx="3.8" cy="7.4" r="1.25" fill="#8a7348" stroke="#6e5630" stroke-width="0.7"/><circle cx="12" cy="3.15" r="1.35" fill="#8a7348" stroke="#6e5630" stroke-width="0.7"/><circle cx="20.2" cy="7.4" r="1.25" fill="#8a7348" stroke="#6e5630" stroke-width="0.7"/></svg></span>`;
+}
+
+function yearCardHtml(card, result, { avrSpread = false, crown = false } = {}) {
   const lang = state.lang;
   const plan = currentPlan();
   const row = result.years[card.year - 1];
@@ -2868,12 +2883,14 @@ function yearCardHtml(card, result, { avrSpread = false } = {}) {
   const loss = row.profit < 0;
   const feat = card.featured ? " is-featured" : "";
   const lossCls = loss ? " is-loss" : "";
+  const crownCls = crown ? " is-crowned" : "";
   const badge = loss ? `<span class="loss-badge">${t(lang, "stillLoss")}</span>` : "";
   const spread = card.featured && avrSpread
     ? `<p class="avr-spread">${t(lang, "avrSpreadNote")}</p>`
     : "";
-  return `<article class="year-card${feat}${lossCls}">
-        <p class="reason">${reasonText(card)}</p>
+  const crownMark = crown ? exportCrownMark(lang) : "";
+  return `<article class="year-card${feat}${lossCls}${crownCls}">
+        <p class="reason">${crownMark}${reasonText(card)}</p>
         <div class="profit-lbl">${t(lang, "netProfit")}</div>
         <div class="profit-line">
           <span class="profit-num tabular">${wan.main}</span>
@@ -2901,13 +2918,18 @@ function exportOtherYearCardHtml() {
 function exportYearCardsHtml(result) {
   const highlights = highlightCards(result);
   const byYear = new Map(highlights.map((c) => [c.year, c]));
-  const highlightSpread = yearAvrSpread(result, highlights);
   const cards = [];
   for (let year = 4; year <= 10; year++) {
-    cards.push(byYear.get(year) || { year, reason: "year-unit", featured: false });
+    const base = byYear.get(year) || { year, reason: "year-unit", featured: false };
+    cards.push({
+      ...base,
+      year,
+      featured: EXPORT_FEATURED_YEARS.has(year),
+      crown: year === EXPORT_CROWN_YEAR,
+    });
   }
   return cards
-    .map((card) => yearCardHtml(card, result, { avrSpread: card.featured && highlightSpread }))
+    .map((card) => yearCardHtml(card, result, { crown: card.crown }))
     .join("") + exportOtherYearCardHtml();
 }
 
@@ -3478,13 +3500,9 @@ function fillYearSelect(sel, current) {
   sel.value = String(prev || 8);
 }
 
-function renderVs(result) {
+function vsGridHtml(result, year) {
   const lang = state.lang;
   const plan = currentPlan();
-  const sel = document.getElementById("vs-year");
-  const year = state.vsYear || featuredYear(result);
-  fillYearSelect(sel, year);
-  sel.value = String(year);
   const row = result.years[year - 1];
   const money = (amt, tone) => {
     const w = displayPrimaryHkd(amt, plan.currency, result.fx, lang);
@@ -3511,7 +3529,7 @@ function renderVs(result) {
 
   const released = displayPrimaryHkd(result.loan, plan.currency, result.fx, lang);
 
-  document.getElementById("vs-grid").innerHTML = `
+  return `
     <article class="vs-card is-financing">
       <h3>${t(lang, "vsFinancing")}</h3>
       ${finRows.map(([k, v]) => `<div class="vs-row"><span>${k}</span><div>${v}</div></div>`).join("")}
@@ -3525,11 +3543,22 @@ function renderVs(result) {
       <h3>${t(lang, "vsSelf")}</h3>
       ${selfRows.map(([k, v]) => `<div class="vs-row"><span>${k}</span><div>${v}</div></div>`).join("")}
     </article>`;
+}
+
+function renderVs(result) {
+  const sel = document.getElementById("vs-year");
+  const year = state.vsYear || featuredYear(result);
+  fillYearSelect(sel, year);
+  sel.value = String(year);
+  document.getElementById("vs-grid").innerHTML = vsGridHtml(result, year);
 
   const wrap = document.getElementById("reinvest-rate-wrap");
   const readout = document.getElementById("reinvest-readout");
   wrap.hidden = !state.reinvest;
   if (state.reinvest) {
+    const lang = state.lang;
+    const plan = currentPlan();
+    const row = result.years[year - 1];
     readout.hidden = false;
     const gain = displayPrimaryHkd(row.reinvestmentGain, plan.currency, result.fx, lang);
     const tot = displayPrimaryHkd(row.profitWithReinvestment, plan.currency, result.fx, lang);
@@ -4496,7 +4525,19 @@ function bind() {
 
     const versus = cloneForExport(document.getElementById("versus"));
     if (versus) {
-      versus.querySelectorAll(".vs-year-label, #reinvest-block").forEach((n) => n.remove());
+      versus.querySelectorAll(".vs-year-label, #reinvest-block, #vs-year").forEach((n) => n.remove());
+      versus.removeAttribute("id");
+      const title = versus.querySelector("#vs-title, .section-title");
+      if (title) {
+        title.removeAttribute("id");
+        title.classList.add("export-vs-title");
+        title.innerHTML = `${exportCrownMark()}<span class="export-vs-title-text">${t(state.lang, "vsTitle")}</span><span class="export-vs-horizon">${t(state.lang, "exportVsHorizon")}</span>`;
+      }
+      const grid = versus.querySelector("#vs-grid, .vs-grid");
+      if (grid) {
+        grid.removeAttribute("id");
+        grid.innerHTML = vsGridHtml(compute(), EXPORT_VS_YEAR);
+      }
       page2.appendChild(versus);
     }
 

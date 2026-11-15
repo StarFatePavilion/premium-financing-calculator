@@ -2131,6 +2131,38 @@ details.fr-strip-disclosure > .fr-compare-strip {
 .proposal-export .year-compare { margin-top: 8px; }
 .proposal-export .section-title { margin: 0 0 4px; }
 .proposal-export .section-lead { margin: 0 0 6px; font-size: 0.78rem; }
+.proposal-export .export-crown {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  line-height: 0;
+  color: #8a7348;
+  vertical-align: middle;
+}
+.proposal-export .export-crown svg {
+  display: block;
+  width: 15px;
+  height: 11px;
+  overflow: visible;
+}
+.proposal-export .year-card.is-crowned .reason {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.proposal-export .export-vs-title {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px 8px;
+}
+.proposal-export .export-vs-horizon {
+  font-size: 0.86rem;
+  font-weight: 650;
+  color: #6e5630;
+  letter-spacing: 0.02em;
+}
 
 /* Print / PDF proposal — cream stationery paper.
    html.is-printing covers mobile WebViews that apply @media print colours unreliably. */
