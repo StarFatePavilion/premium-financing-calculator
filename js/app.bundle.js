@@ -2685,7 +2685,48 @@ function applyStaticI18n(root, lang) {
   document.documentElement.dataset.lang = lang;
 }
 
+/* ---- js/proposal-filename.js ---- */
+/** Filesystem-safe PDF filename helpers for the proposal export. */
+
+function safeFilePart(value) {
+  return String(value ?? "")
+    .replace(/[\\/:*?"<>|\u0000-\u001f]+/g, "")
+    .replace(/[·•／]/g, "-")
+    .replace(/\s+/g, "")
+    .replace(/-+/g, "-")
+    .replace(/^-|-$/g, "");
+}
+
+/**
+ * Format the client's original premium for a filename.
+ * Uses en-US grouping (commas) so the figure is readable at a glance,
+ * never scientific notation, and keeps non-integer precision.
+ */
+function formatPremiumForFileName(amount) {
+  if (amount == null || amount === "") return "";
+  const n = Number(amount);
+  if (!Number.isFinite(n)) return "";
+  return new Intl.NumberFormat("en-US", {
+    useGrouping: true,
+    maximumFractionDigits: 10,
+  })
+    .format(n)
+    .replace(/\u2212/g, "-");
+}
+
+/**
+ * Build the download/share filename:
+ * `{localized title}-{planCode}-{currency}-{original premium}.pdf`
+ */
+function buildProposalFileName({ title, planCode, currency, originalPremium }) {
+  const safeTitle = safeFilePart(title) || "proposal";
+  const short = safeFilePart(`${planCode ?? ""}-${currency ?? ""}`);
+  const premium = safeFilePart(formatPremiumForFileName(originalPremium));
+  return [safeTitle, short, premium].filter(Boolean).join("-") + ".pdf";
+}
+
 /* ---- js/app.js ---- */
+
 
 
 
@@ -4785,29 +4826,14 @@ function bind() {
     }
   }
 
-  function safeFilePart(value) {
-    return String(value ?? "")
-      .replace(/[\\/:*?"<>|\u0000-\u001f]+/g, "")
-      .replace(/[·•／]/g, "-")
-      .replace(/\s+/g, "")
-      .replace(/-+/g, "-")
-      .replace(/^-|-$/g, "");
-  }
-
-  function proposalStampDate() {
-    return new Intl.DateTimeFormat("en-CA", {
-      timeZone: "Asia/Hong_Kong",
-      year: "numeric",
-      month: "2-digit",
-      day: "2-digit",
-    }).format(new Date());
-  }
-
   function proposalFileName() {
-    const title = safeFilePart(t(state.lang, "printDocTitle")) || "proposal";
     const plan = currentPlan();
-    const short = safeFilePart(`${plan.planCode}-${plan.currency}`);
-    return `${title}-${short}-${proposalStampDate()}.pdf`;
+    return buildProposalFileName({
+      title: t(state.lang, "printDocTitle"),
+      planCode: plan.planCode,
+      currency: plan.currency,
+      originalPremium: state.originalPremium,
+    });
   }
 
   function proposalShareCopy() {
