@@ -4258,7 +4258,18 @@ function bind() {
     render();
   });
 
+  const beginPrint = () => document.documentElement.classList.add("is-printing");
+  const endPrint = () => document.documentElement.classList.remove("is-printing");
+  window.addEventListener("beforeprint", beginPrint);
+  window.addEventListener("afterprint", endPrint);
+  if (window.matchMedia) {
+    const printMq = window.matchMedia("print");
+    const onPrintMq = (e) => { if (e.matches) beginPrint(); else endPrint(); };
+    if (printMq.addEventListener) printMq.addEventListener("change", onPrintMq);
+    else if (printMq.addListener) printMq.addListener(onPrintMq);
+  }
   document.getElementById("btn-print").addEventListener("click", () => {
+    beginPrint();
     window.print();
   });
 

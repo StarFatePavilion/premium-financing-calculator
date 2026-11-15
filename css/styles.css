@@ -1867,12 +1867,56 @@ details.fr-strip-disclosure > .fr-compare-strip {
   .fr-badge { margin: 4px 6px 0 0; }
 }
 
-/* Print / PDF proposal */
+/* Print / PDF proposal — cream stationery paper.
+   html.is-printing covers mobile WebViews that apply @media print colours unreliably. */
+html.is-printing,
+html.is-printing body,
+html.is-printing .page,
+html.is-printing .topbar,
+html.is-printing .stage,
+html.is-printing #main,
+html.is-printing main {
+  background: #f4efe6 !important;
+  background-image: none !important;
+  color: var(--ink) !important;
+  color-scheme: only light !important;
+  print-color-adjust: exact;
+  -webkit-print-color-adjust: exact;
+}
+html.is-printing .topbar,
+html.is-printing .brand-title,
+html.is-printing .brand-advisor,
+html.is-printing .kicker,
+html.is-printing #print-head,
+html.is-printing #print-head h1,
+html.is-printing #print-meta,
+html.is-printing #print-assumptions {
+  color: var(--ink) !important;
+}
+html.is-printing .brand-advisor {
+  color: var(--ink-soft) !important;
+}
+html.is-printing .stage::before {
+  height: 1px !important;
+  background: #6e5630 !important;
+  background-image: none !important;
+}
+
 @media print {
-  :root { --bg: #fff; }
-  body {
-    background: #fff;
-    color: #111;
+  :root { --bg: #f4efe6; }
+  html,
+  body,
+  .page,
+  .topbar,
+  .stage,
+  #main,
+  main {
+    background: #f4efe6 !important;
+    background-image: none !important;
+    color: var(--ink) !important;
+    color-scheme: only light !important;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
   }
 
   .skip, .top-actions, .icon-btn, .lang-switch,
@@ -1924,20 +1968,36 @@ details.fr-strip-disclosure > .fr-compare-strip {
     padding: 0;
   }
   .topbar {
-    color: var(--ink);
+    color: var(--ink) !important;
     padding: 0 0 8px;
   }
-  .brand-title, .brand-advisor { color: var(--ink); }
+  .brand-title,
+  .kicker,
+  #print-head,
+  #print-head h1,
+  #print-meta {
+    color: var(--ink) !important;
+  }
+  .brand-advisor,
+  #print-assumptions {
+    color: var(--ink-soft) !important;
+  }
   .mark { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
 
   .stage {
-    background: #fff;
     box-shadow: none;
     border-radius: 0;
     padding: 8px 0 0;
     overflow: visible !important;
   }
-  .stage::before { height: 5px; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  /* Thin stationery rule instead of the dark green screen strip. */
+  .stage::before {
+    height: 1px !important;
+    background: #6e5630 !important;
+    background-image: none !important;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
 
   .top-grid { display: block; }
   .section { margin-top: 16px; break-inside: avoid; }
@@ -1973,28 +2033,28 @@ details.fr-strip-disclosure > .fr-compare-strip {
 
   .year-card,
   .vs-card {
-    background: var(--paper);
-    color: var(--ink);
-    border-color: var(--line-strong);
-    box-shadow: none;
+    background: var(--cream-deep) !important;
+    color: var(--ink) !important;
+    border: 1px solid var(--line-strong) !important;
+    box-shadow: none !important;
   }
   .year-card.is-featured,
   .vs-card.is-financing {
-    background: var(--green-soft);
-    color: var(--ink);
-    border-color: var(--green);
-    box-shadow: inset 4px 0 0 var(--green);
+    background: var(--green-soft) !important;
+    color: var(--ink) !important;
+    border-color: var(--line-strong) !important;
+    box-shadow: inset 4px 0 0 var(--green) !important;
   }
   .year-card.is-loss {
-    background: var(--loss-bg);
-    color: var(--ink);
-    border-color: var(--loss-line);
+    background: var(--loss-bg) !important;
+    color: var(--ink) !important;
+    border-color: var(--loss-line) !important;
   }
   .year-card.is-featured.is-loss {
-    background: var(--loss-bg);
-    color: var(--ink);
-    border-color: var(--loss-line);
-    box-shadow: inset 4px 0 0 var(--loss);
+    background: var(--loss-bg) !important;
+    color: var(--ink) !important;
+    border-color: var(--loss-line) !important;
+    box-shadow: inset 4px 0 0 var(--loss) !important;
   }
   .year-card.is-featured .reason { color: var(--green-deep); }
   .year-card.is-featured .loss-badge {
@@ -2086,6 +2146,7 @@ details.fr-strip-disclosure > .fr-compare-strip {
   @page {
     size: A4;
     margin: 12mm 12mm 14mm;
+    background: #f4efe6;
   }
 }
 
