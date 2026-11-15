@@ -1942,6 +1942,11 @@ const STRINGS = {
     printDocTitle: "保費融資參考提案",
     printPrepared: "擬備",
     printDate: "日期",
+    downloadPdf: "下載 PDF",
+    printProposal: "列印",
+    exportPreparing: "正在產生 PDF…",
+    exportFailed: "未能產生 PDF，請再試或改用列印。",
+    exportShareFallback: "未能分享，已改為下載 PDF。",
     footerSource: "數字源自顧問演示檔，僅供參考。",
     contactWhatsApp: "WhatsApp",
     downNegative: "以目前假設，首期為零或負數，回報率無法計算。請調低貸款成數或檢查折扣。",
@@ -2190,6 +2195,11 @@ const STRINGS = {
     printDocTitle: "保费融资参考提案",
     printPrepared: "拟备",
     printDate: "日期",
+    downloadPdf: "下载 PDF",
+    printProposal: "打印",
+    exportPreparing: "正在生成 PDF…",
+    exportFailed: "未能生成 PDF，请再试或改用打印。",
+    exportShareFallback: "未能分享，已改为下载 PDF。",
     footerSource: "数字源自顾问演示档，仅供参考。",
     contactWhatsApp: "WhatsApp",
     downNegative: "以目前假设，首期为零或负数，回报率无法计算。请调低贷款成数或检查折扣。",
@@ -2438,6 +2448,11 @@ const STRINGS = {
     printDocTitle: "Premium financing illustration",
     printPrepared: "Prepared by",
     printDate: "Date",
+    downloadPdf: "Download PDF",
+    printProposal: "Print",
+    exportPreparing: "Preparing PDF…",
+    exportFailed: "The PDF could not be created. Try again, or print instead.",
+    exportShareFallback: "Sharing was unavailable, so the PDF was downloaded.",
     footerSource: "Figures are from the advisor’s illustration file and are for reference only.",
     contactWhatsApp: "WhatsApp",
     downNegative: "With the current assumptions the initial outlay is zero or negative, so rates of return cannot be calculated. Lower the LTV or check the discount.",
@@ -4268,10 +4283,332 @@ function bind() {
     if (printMq.addEventListener) printMq.addEventListener("change", onPrintMq);
     else if (printMq.addListener) printMq.addListener(onPrintMq);
   }
+
+  const PDF_VENDOR_HTML2CANVAS = "js/vendor/html2canvas.min.js";
+  const PDF_VENDOR_JSPDF = "js/vendor/jspdf.umd.min.js";
+  const CREAM_PAPER = "#f4efe6";
+  const vendorScriptPromises = new Map();
+
+  function loadVendorScript(relPath) {
+    if (vendorScriptPromises.has(relPath)) return vendorScriptPromises.get(relPath);
+    const promise = new Promise((resolve, reject) => {
+      const src = new URL(relPath, document.baseURI).href;
+      const done = document.querySelector(`script[data-pdf-vendor="${relPath}"]`);
+      if (done && done.dataset.loaded === "1") {
+        resolve();
+        return;
+      }
+      const script = document.createElement("script");
+      script.src = src;
+      script.async = true;
+      script.dataset.pdfVendor = relPath;
+      script.onload = () => {
+        script.dataset.loaded = "1";
+        resolve();
+      };
+      script.onerror = () => reject(new Error("vendor-load"));
+      document.head.appendChild(script);
+    });
+    vendorScriptPromises.set(relPath, promise);
+    return promise;
+  }
+
+  function jsPdfConstructor() {
+    return window.jspdf?.jsPDF || window.jsPDF || null;
+  }
+
+  async function loadPdfLibraries() {
+    if (typeof window.html2canvas !== "function" || !jsPdfConstructor()) {
+      await loadVendorScript(PDF_VENDOR_HTML2CANVAS);
+      await loadVendorScript(PDF_VENDOR_JSPDF);
+    }
+    if (typeof window.html2canvas !== "function" || !jsPdfConstructor()) {
+      throw new Error("pdf-libs");
+    }
+  }
+
+  function setExportStatus(msg) {
+    const el = document.getElementById("export-status");
+    if (!el) return;
+    if (!msg) {
+      el.hidden = true;
+      el.textContent = "";
+      return;
+    }
+    el.hidden = false;
+    el.textContent = msg;
+  }
+
+  function setExportBusy(busy) {
+    const ids = ["btn-print", "btn-download-pdf", "btn-print-page"];
+    for (const id of ids) {
+      const btn = document.getElementById(id);
+      if (!btn) continue;
+      btn.disabled = busy;
+      if (id === "btn-print") {
+        if (busy) btn.setAttribute("aria-busy", "true");
+        else btn.removeAttribute("aria-busy");
+      }
+    }
+  }
+
+  function safeFilePart(value) {
+    return String(value ?? "")
+      .replace(/[\\/:*?"<>|\u0000-\u001f]+/g, "")
+      .replace(/[·•／]/g, "-")
+      .replace(/\s+/g, "")
+      .replace(/-+/g, "-")
+      .replace(/^-|-$/g, "");
+  }
+
+  function proposalStampDate() {
+    return new Intl.DateTimeFormat("en-CA", {
+      timeZone: "Asia/Hong_Kong",
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+    }).format(new Date());
+  }
+
+  function proposalFileName() {
+    const title = safeFilePart(t(state.lang, "printDocTitle")) || "proposal";
+    const plan = currentPlan();
+    const short = safeFilePart(`${plan.planCode}-${plan.currency}`);
+    return `${title}-${short}-${proposalStampDate()}.pdf`;
+  }
+
+  function proposalShareCopy() {
+    return `${t(state.lang, "printDocTitle")} — ${planFull(currentPlan())}`;
+  }
+
+  function cloneForExport(el) {
+    return el ? el.cloneNode(true) : null;
+  }
+
+  function buildProposalExportRoot() {
+    const existing = document.querySelector(".proposal-export");
+    if (existing) existing.remove();
+
+    const root = document.createElement("div");
+    root.className = "proposal-export";
+    root.setAttribute("aria-hidden", "true");
+
+    const sheet = document.createElement("div");
+    sheet.className = "proposal-export-sheet";
+
+    const topbar = document.createElement("header");
+    topbar.className = "proposal-export-topbar";
+    const brand = document.querySelector(".topbar .brand");
+    if (brand) topbar.appendChild(brand.cloneNode(true));
+    sheet.appendChild(topbar);
+
+    const printHead = cloneForExport(document.getElementById("print-head"));
+    if (printHead) {
+      printHead.classList.remove("print-only");
+      printHead.hidden = false;
+      sheet.appendChild(printHead);
+    }
+
+    const ident = document.createElement("div");
+    ident.className = "proposal-export-ident";
+    const kicker = document.querySelector("#main .kicker, main .kicker");
+    const heading = document.getElementById("plan-heading");
+    const premium = document.getElementById("print-premium");
+    if (kicker) ident.appendChild(kicker.cloneNode(true));
+    if (heading) ident.appendChild(heading.cloneNode(true));
+    if (premium) {
+      const prem = premium.cloneNode(true);
+      prem.classList.remove("print-only");
+      ident.appendChild(prem);
+    }
+    sheet.appendChild(ident);
+
+    const hero = cloneForExport(document.getElementById("hero"));
+    if (hero) {
+      hero.querySelectorAll("#hero-rate-edit, .rate-edit, .metric .lbl .hint").forEach((n) => n.remove());
+      const printRates = hero.querySelector("#hero-rate-print, .print-rates");
+      if (printRates) {
+        printRates.classList.remove("print-only");
+        printRates.hidden = false;
+      }
+      sheet.appendChild(hero);
+    }
+
+    const yearSection = cloneForExport(document.querySelector(".year-compare"));
+    if (yearSection) {
+      yearSection.querySelectorAll(".year-toolbar").forEach((n) => n.remove());
+      sheet.appendChild(yearSection);
+    }
+
+    const versus = cloneForExport(document.getElementById("versus"));
+    if (versus) {
+      versus.querySelectorAll(".vs-year-label, #reinvest-block").forEach((n) => n.remove());
+      sheet.appendChild(versus);
+    }
+
+    const disc = cloneForExport(document.querySelector("section.disclaimer, .disclaimer"));
+    if (disc) sheet.appendChild(disc);
+
+    root.appendChild(sheet);
+    document.body.appendChild(root);
+    return root;
+  }
+
+  function canvasToPdfBlob(canvas) {
+    const JsPDF = jsPdfConstructor();
+    const pdf = new JsPDF({ unit: "mm", format: "a4", orientation: "portrait", compress: true });
+    const pageW = pdf.internal.pageSize.getWidth();
+    const pageH = pdf.internal.pageSize.getHeight();
+    const imgW = pageW;
+    const imgH = (canvas.height * pageW) / canvas.width;
+    const imgData = canvas.toDataURL("image/png");
+    const fillCream = () => {
+      pdf.setFillColor(244, 239, 230);
+      pdf.rect(0, 0, pageW, pageH, "F");
+    };
+    let y = 0;
+    let remaining = imgH;
+    fillCream();
+    pdf.addImage(imgData, "PNG", 0, y, imgW, imgH, undefined, "FAST");
+    remaining -= pageH;
+    while (remaining > 0.8) {
+      y -= pageH;
+      pdf.addPage();
+      fillCream();
+      pdf.addImage(imgData, "PNG", 0, y, imgW, imgH, undefined, "FAST");
+      remaining -= pageH;
+    }
+    return pdf.output("blob");
+  }
+
+  function downloadPdfBlob(blob, filename) {
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = filename;
+    a.rel = "noopener";
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 4000);
+  }
+
+  function canSharePdfFile(file) {
+    try {
+      return !!(navigator.share && typeof navigator.canShare === "function" && navigator.canShare({ files: [file] }));
+    } catch {
+      return false;
+    }
+  }
+
+  async function shareOrDownloadPdf(blob, filename) {
+    const file = new File([blob], filename, { type: "application/pdf" });
+    if (canSharePdfFile(file)) {
+      try {
+        await navigator.share({
+          files: [file],
+          title: t(state.lang, "printDocTitle"),
+          text: proposalShareCopy(),
+        });
+        return "shared";
+      } catch (err) {
+        if (err && err.name === "AbortError") return "cancelled";
+        downloadPdfBlob(blob, filename);
+        setExportStatus(t(state.lang, "exportShareFallback"));
+        return "downloaded";
+      }
+    }
+    downloadPdfBlob(blob, filename);
+    return "downloaded";
+  }
+
+  async function waitForExportPaint() {
+    if (document.fonts && document.fonts.ready) {
+      try { await document.fonts.ready; } catch { /* use fallback fonts */ }
+    }
+    await new Promise((resolve) => {
+      requestAnimationFrame(() => requestAnimationFrame(resolve));
+    });
+  }
+
+  async function generateProposalPdfBlob() {
+    await loadPdfLibraries();
+    await waitForExportPaint();
+    const root = buildProposalExportRoot();
+    try {
+      await waitForExportPaint();
+      const sheet = root.querySelector(".proposal-export-sheet");
+      const canvas = await window.html2canvas(sheet, {
+        backgroundColor: CREAM_PAPER,
+        scale: 2,
+        useCORS: true,
+        logging: false,
+        windowWidth: 794,
+        onclone: (clonedDoc) => {
+          const wrap = clonedDoc.querySelector(".proposal-export");
+          const paper = clonedDoc.querySelector(".proposal-export-sheet");
+          if (wrap) {
+            wrap.style.position = "static";
+            wrap.style.left = "auto";
+            wrap.style.background = CREAM_PAPER;
+            wrap.style.colorScheme = "only light";
+          }
+          if (paper) {
+            paper.style.background = CREAM_PAPER;
+            paper.style.colorScheme = "only light";
+          }
+          clonedDoc.documentElement.style.background = CREAM_PAPER;
+          clonedDoc.body.style.background = CREAM_PAPER;
+        },
+      });
+      return canvasToPdfBlob(canvas);
+    } finally {
+      root.remove();
+    }
+  }
+
+  async function exportProposalPdf({ forceDownload = false } = {}) {
+    const primary = document.getElementById("btn-print");
+    setExportBusy(true);
+    setExportStatus(t(state.lang, "exportPreparing"));
+    if (primary) primary.textContent = t(state.lang, "exportPreparing");
+    try {
+      const blob = await generateProposalPdfBlob();
+      const filename = proposalFileName();
+      if (forceDownload) {
+        downloadPdfBlob(blob, filename);
+        setExportStatus("");
+      } else {
+        const outcome = await shareOrDownloadPdf(blob, filename);
+        const statusEl = document.getElementById("export-status");
+        const preparing = t(state.lang, "exportPreparing");
+        if (outcome === "shared" || outcome === "cancelled") setExportStatus("");
+        else if (!statusEl || statusEl.textContent === preparing) setExportStatus("");
+      }
+    } catch {
+      setExportStatus(t(state.lang, "exportFailed"));
+    } finally {
+      setExportBusy(false);
+      if (primary) primary.textContent = t(state.lang, "exportProposal");
+    }
+  }
+
   document.getElementById("btn-print").addEventListener("click", () => {
-    beginPrint();
-    window.print();
+    exportProposalPdf();
   });
+  const downloadBtn = document.getElementById("btn-download-pdf");
+  if (downloadBtn) {
+    downloadBtn.addEventListener("click", () => {
+      exportProposalPdf({ forceDownload: true });
+    });
+  }
+  const printPageBtn = document.getElementById("btn-print-page");
+  if (printPageBtn) {
+    printPageBtn.addEventListener("click", () => {
+      beginPrint();
+      window.print();
+    });
+  }
 
   const modal = document.getElementById("settings-modal");
   const openSettings = () => {

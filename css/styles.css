@@ -1348,6 +1348,17 @@ table.data tr.is-current { outline: 2px solid var(--green-mid); outline-offset: 
   font-weight: 600;
   font-size: 0.86rem;
 }
+.btn-primary:disabled,
+.btn-ghost:disabled {
+  opacity: 0.62;
+  cursor: wait;
+}
+.export-status {
+  margin: 0;
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  flex: 1 1 12rem;
+}
 
 .site-footer {
   color: #b7b0a4;
@@ -1866,6 +1877,175 @@ details.fr-strip-disclosure > .fr-compare-strip {
   .fr-bar { width: 6rem; }
   .fr-badge { margin: 4px 6px 0 0; }
 }
+
+
+/* Off-screen cream stationery for client-side PDF export.
+   Styles live on .proposal-export itself so the PDF never depends on
+   @media print or on Android print colour inversion. */
+.proposal-export {
+  position: fixed;
+  left: -12000px;
+  top: 0;
+  width: 794px;
+  margin: 0;
+  padding: 0;
+  background: #f4efe6;
+  color: var(--ink);
+  color-scheme: only light;
+  font-family: var(--sans);
+  z-index: -1;
+  pointer-events: none;
+}
+.proposal-export-sheet {
+  width: 794px;
+  box-sizing: border-box;
+  padding: 36px 44px 48px;
+  background: #f4efe6;
+  color: var(--ink);
+  color-scheme: only light;
+}
+.proposal-export .print-only,
+.proposal-export .print-premium,
+.proposal-export .print-rates,
+.proposal-export #hero-rate-print {
+  display: block !important;
+}
+.proposal-export #hero-rate-edit,
+.proposal-export .rate-edit,
+.proposal-export .year-toolbar,
+.proposal-export .vs-year-label,
+.proposal-export #vs-year,
+.proposal-export #reinvest-block,
+.proposal-export .stepper,
+.proposal-export .metric .lbl .hint {
+  display: none !important;
+}
+.proposal-export-topbar {
+  display: flex;
+  align-items: center;
+  padding: 0 0 12px;
+  margin: 0 0 16px;
+  color: var(--ink);
+  border-bottom: 1px solid #6e5630;
+}
+.proposal-export-topbar .brand-title,
+.proposal-export-topbar .brand-advisor,
+.proposal-export #print-head,
+.proposal-export #print-head h1,
+.proposal-export #print-meta {
+  color: var(--ink) !important;
+}
+.proposal-export-topbar .brand-advisor,
+.proposal-export #print-assumptions {
+  color: var(--ink-soft) !important;
+}
+.proposal-export #print-head {
+  margin: 0 0 14px;
+}
+.proposal-export #print-head h1 {
+  font-family: var(--serif);
+  font-size: 1.55rem;
+  margin: 0 0 6px;
+}
+.proposal-export .print-premium {
+  margin: 0 0 8px;
+  font-size: 0.95rem;
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
+}
+.proposal-export .hero {
+  display: grid !important;
+  grid-template-columns: 1fr 1.2fr 1.15fr !important;
+  gap: 10px 16px !important;
+  overflow: visible !important;
+  align-items: start;
+}
+.proposal-export #hero-rate,
+.proposal-export #hero-monthly,
+.proposal-export #hero-down {
+  justify-self: stretch;
+  max-width: none !important;
+  grid-column: auto !important;
+}
+.proposal-export .hero .value,
+.proposal-export .monthly-phases,
+.proposal-export .print-rates {
+  font-size: 1.12rem !important;
+}
+.proposal-export .print-rates {
+  font-variant-numeric: tabular-nums;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  white-space: nowrap;
+  color: var(--num-cost);
+}
+.proposal-export #hero-down-val,
+.proposal-export #hero-down-val .unit {
+  color: var(--num-outlay);
+}
+.proposal-export #hero-monthly-val {
+  color: var(--num-cost);
+}
+.proposal-export .cards,
+.proposal-export .cards[data-count="3"],
+.proposal-export .cards[data-count="4"] {
+  grid-template-columns: 1fr 1fr;
+}
+.proposal-export .vs-grid {
+  grid-template-columns: 1fr 1fr;
+}
+.proposal-export .year-card,
+.proposal-export .vs-card {
+  background: var(--cream-deep);
+  color: var(--ink);
+  border: 1px solid var(--line-strong);
+  box-shadow: none;
+}
+.proposal-export .year-card.is-featured,
+.proposal-export .vs-card.is-financing {
+  background: var(--green-soft);
+  color: var(--ink);
+  border-color: var(--line-strong);
+  box-shadow: inset 4px 0 0 var(--green);
+}
+.proposal-export .year-card.is-loss {
+  background: var(--loss-bg);
+  color: var(--ink);
+  border-color: var(--loss-line);
+}
+.proposal-export .year-card.is-featured.is-loss {
+  background: var(--loss-bg);
+  color: var(--ink);
+  border-color: var(--loss-line);
+  box-shadow: inset 4px 0 0 var(--loss);
+}
+.proposal-export .year-card .profit-num,
+.proposal-export .year-card .avr-num,
+.proposal-export .vs-row .v.is-profit {
+  color: var(--num-profit);
+}
+.proposal-export .year-card.is-loss .profit-num,
+.proposal-export .year-card.is-loss .avr-num,
+.proposal-export .vs-row .v.is-loss {
+  color: var(--num-loss);
+}
+.proposal-export .vs-row .v.is-outlay {
+  color: var(--num-outlay);
+}
+.proposal-export .year-card.is-featured .reason { color: var(--green-deep); }
+.proposal-export .year-card.is-featured .loss-badge {
+  background: var(--loss-bg);
+  color: var(--num-loss);
+}
+.proposal-export .released-pill {
+  background: var(--gold-soft);
+  color: var(--ink);
+}
+.proposal-export .disclaimer {
+  background: var(--cream-deep);
+}
+.proposal-export .section { margin-top: 16px; }
 
 /* Print / PDF proposal — cream stationery paper.
    html.is-printing covers mobile WebViews that apply @media print colours unreliably. */
