@@ -3639,6 +3639,8 @@ const SECONDARY_DISCLOSURE_IDS = [
   "sensitivity-disclosure",
   "notes-disclosure",
   "faq-disclosure",
+  "asset-proof",
+  "compare-disclosure",
 ];
 
 function ensureSecondaryDisclosuresCollapsedOnLoad() {

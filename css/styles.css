@@ -410,21 +410,13 @@ details.assumptions > summary::after {
 }
 details.assumptions[open] > summary::after { content: "－"; }
 
-.asset-proof {
+#asset-proof.section-disclosure {
   margin-top: 14px;
-  background: var(--paper);
-  border: 1px solid var(--line-strong);
-  border-radius: var(--radius-sm);
   padding: 12px 14px;
-  color: var(--ink);
 }
 
-.asset-proof-title {
-  margin: 0 0 6px;
-  font-family: var(--sans);
+#asset-proof.section-disclosure > summary.section-disclosure-summary {
   font-size: 0.95rem;
-  font-weight: 650;
-  color: var(--ink);
   line-height: 1.35;
 }
 
@@ -1709,7 +1701,7 @@ details.fr-strip-disclosure > .fr-compare-strip {
   }
 
   .skip, .top-actions, .icon-btn, .lang-switch,
-  details.assumptions, .asset-proof, .year-toolbar,
+  details.assumptions, #asset-proof, .year-toolbar,
   #chart-section, .chart-wrap, #chart-series, .chart-head,
   #how, #cashflow, #compare, #faq,
   .year-table-toggle, #year-table, .export-row, .site-footer,

@@ -127,8 +127,9 @@
             </div>
           </details>
 
-          <aside class="asset-proof" id="asset-proof" aria-labelledby="asset-proof-title">
-            <h3 class="asset-proof-title" id="asset-proof-title" data-i18n="assetProofTitle">貸款與資產證明</h3>
+          <details class="section-disclosure" id="asset-proof">
+            <summary class="section-disclosure-summary"><span class="disclosure-label" data-i18n="assetProofTitle">貸款與資產證明</span><span class="disclosure-toggle" aria-hidden="true"><span class="disclosure-toggle-expand" data-i18n="disclosureExpand">展開</span><span class="disclosure-toggle-collapse" data-i18n="disclosureCollapse">收起</span></span></summary>
+            <div class="disclosure-body">
             <p class="asset-proof-intro" data-i18n="assetProofIntro">本頁貸款金額按保單首日退保價值 × 貸款成數估算。實際批核時，銀行亦會以客戶資產評估可支持的貸款額。以下為常見計法，僅供說明，實際以批核銀行當時準則為準。</p>
             <ul class="asset-proof-list">
               <li data-i18n="assetProofDeposits">香港及內地銀行存款：須提供足夠流水證明，按金額計足（100%）</li>
@@ -137,7 +138,8 @@
               <li data-i18n="assetProofCnProperty">內地物業：不計算在內</li>
             </ul>
             <p class="asset-proof-caveat" data-i18n="assetProofCaveat">並非任何銀行的官方貸款條款或批核承諾，個別銀行可能採用不同標準。</p>
-          </aside>
+            </div>
+          </details>
 
           <div class="warning" id="down-warning" hidden></div>
         </div>
@@ -308,7 +310,9 @@
       </section>
 
       <section class="section" id="compare" aria-labelledby="cmp-title">
-        <h2 class="section-title" id="cmp-title" data-i18n="compareTitle">多計劃比較</h2>
+        <details class="section-disclosure" id="compare-disclosure">
+          <summary class="section-disclosure-summary section-title" id="cmp-title"><span class="disclosure-label" data-i18n="compareTitle">多計劃比較</span><span class="disclosure-toggle" aria-hidden="true"><span class="disclosure-toggle-expand" data-i18n="disclosureExpand">展開</span><span class="disclosure-toggle-collapse" data-i18n="disclosureCollapse">收起</span></span></summary>
+          <div class="disclosure-body">
         <div class="cmp-controls">
           <div class="seg" role="group" id="cmp-prem-mode">
             <button type="button" data-premmode="default" aria-pressed="false" data-i18n="compareDefaultPrem"></button>
@@ -339,6 +343,8 @@
         <details class="fr-strip-disclosure" id="fr-strip-disclosure">
           <summary class="fr-strip-summary"><span class="disclosure-label" data-i18n="frCompareStripTitle">本計算器相關公司的 10Life 整體平均</span><span class="disclosure-toggle" aria-hidden="true"><span class="disclosure-toggle-expand" data-i18n="disclosureExpand">展開</span><span class="disclosure-toggle-collapse" data-i18n="disclosureCollapse">收起</span></span></summary>
           <div class="fr-compare-strip" id="fr-compare-strip"></div>
+        </details>
+          </div>
         </details>
       </section>
 
