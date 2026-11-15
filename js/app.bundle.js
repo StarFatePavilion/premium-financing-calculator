@@ -1977,6 +1977,7 @@ const STRINGS = {
     exportStoryNetStep: "淨賺",
     exportStoryNetNote: "到手現金 − 總成本",
     exportStoryFormula: "一次過收回 {cash}，減去總成本 {cost}（首期 {down} + 五年利息 {interest}），等於預計淨收益 {profit}。",
+    exportStoryLiquidity: "同時，這筆融資釋放了{amount}流動資金。該筆資金不再佔用於繳付保費，既可留作不時之需，亦可另行投資。",
     footerSource: "數字源自顧問演示檔，僅供參考。",
     contactWhatsApp: "WhatsApp",
     downNegative: "以目前假設，首期為零或負數，回報率無法計算。請調低貸款成數或檢查折扣。",
@@ -2260,6 +2261,7 @@ const STRINGS = {
     exportStoryNetStep: "净赚",
     exportStoryNetNote: "到手现金 − 总成本",
     exportStoryFormula: "一次性收回 {cash}，减去总成本 {cost}（首期 {down} + 五年利息 {interest}），等于预计净收益 {profit}。",
+    exportStoryLiquidity: "同时，这笔融资释放了{amount}流动资金。该笔资金不再占用于缴付保费，既可留作不时之需，亦可另行投资。",
     footerSource: "数字源自顾问演示档，仅供参考。",
     contactWhatsApp: "WhatsApp",
     downNegative: "以目前假设，首期为零或负数，回报率无法计算。请调低贷款成数或检查折扣。",
@@ -2543,6 +2545,7 @@ const STRINGS = {
     exportStoryNetStep: "Net profit",
     exportStoryNetNote: "Cash received − total cost",
     exportStoryFormula: "Cash received {cash}, less total cost {cost} (down payment {down} + five-year interest {interest}), equals illustrated net profit {profit}.",
+    exportStoryLiquidity: "This financing also releases {amount} in liquidity. That capital is no longer tied up in paying the premium, and can be kept for when it is needed, or used for other investments.",
     footerSource: "Figures are from the advisor’s illustration file and are for reference only.",
     contactWhatsApp: "WhatsApp",
     downNegative: "With the current assumptions the initial outlay is zero or negative, so rates of return cannot be calculated. Lower the LTV or check the discount.",
@@ -3258,6 +3261,14 @@ function exportStoryWanLabel(amount, result, lang) {
   return wan.unit ? `${wan.main} ${wan.unit}` : wan.main;
 }
 
+function exportStoryAmountPhrase(amount, result, lang) {
+  const plan = currentPlan();
+  const wan = displayPrimaryHkd(amount, plan.currency, result.fx, lang);
+  const exact = bothCcy(amount, plan.currency, result.fx, lang);
+  if (wan.unit) return `${wan.main} ${wan.unit}（${exact}）`;
+  return exact;
+}
+
 function exportStoryPanel({
   icon,
   step,
@@ -3300,6 +3311,9 @@ function exportSurrenderStoryHtml(result, lang = state.lang) {
     interest: exportStoryWanLabel(fig.accInterest, result, lang),
     profit: exportStoryWanLabel(fig.netProfit, result, lang),
   });
+  const liquidity = t(lang, "exportStoryLiquidity", {
+    amount: exportStoryAmountPhrase(fig.loan, result, lang),
+  });
   const title = escapeHtml(t(lang, "exportStoryTitle"));
   return `<section class="export-story${loss ? " is-loss" : ""}" data-export-story="1" data-year="${fig.year}" data-down="${fig.downPayment}" data-interest="${fig.accInterest}" data-sv="${fig.sv}" data-loan="${fig.loan}" data-cash="${fig.cashReceived}" data-cost="${fig.totalCost}" data-net="${fig.netProfit}">
       <h2 class="section-title export-story-title">${exportCrownMark(lang)}<span class="export-story-title-text">${title}</span><span class="export-vs-horizon">${escapeHtml(t(lang, "exportVsHorizon"))}</span></h2>
@@ -3329,6 +3343,7 @@ function exportSurrenderStoryHtml(result, lang = state.lang) {
         ${exportStoryPanel({ icon: exportStoryIcon("profit"), step: t(lang, "exportStoryNetStep"), label: t(lang, "netProfit"), amountHtml: netAmt, extra: lossBadge, note: t(lang, "exportStoryNetNote"), tone: netTone })}
       </div>
       <p class="export-story-formula">${escapeHtml(formula)}</p>
+      <p class="export-story-liquidity">${escapeHtml(liquidity)}</p>
     </section>`;
 }
 

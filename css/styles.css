@@ -2130,6 +2130,7 @@ details.fr-strip-disclosure > .fr-compare-strip {
 .proposal-export .disclaimer {
   background: #ebe4d8;
   box-shadow: none;
+  padding: 12px 16px 12px;
 }
 .proposal-export .section { margin-top: 10px; }
 .proposal-export .year-compare { margin-top: 8px; }
@@ -2170,8 +2171,8 @@ details.fr-strip-disclosure > .fr-compare-strip {
 .proposal-export-contbar {
   display: flex;
   align-items: center;
-  padding: 0 0 6px;
-  margin: 0 0 12px;
+  padding: 0 0 4px;
+  margin: 0 0 8px;
   color: var(--ink);
   border-bottom: 1px solid #8a7348;
 }
@@ -2297,7 +2298,7 @@ details.fr-strip-disclosure > .fr-compare-strip {
   margin-top: 16px;
 }
 .proposal-export .export-story + .disclaimer {
-  margin-top: 14px;
+  margin-top: 10px;
 }
 .proposal-export .export-story {
   margin-top: 2px;
@@ -2314,12 +2315,12 @@ details.fr-strip-disclosure > .fr-compare-strip {
   font-weight: 700;
 }
 .proposal-export .export-story .section-lead {
-  margin: 0 0 10px;
+  margin: 0 0 6px;
   font-size: 0.78rem;
   color: #3d3a34;
 }
 .proposal-export .export-story-caption {
-  margin: 8px 0 6px;
+  margin: 6px 0 4px;
   font-size: 0.78rem;
   font-weight: 650;
   color: #6e5630;
@@ -2329,7 +2330,7 @@ details.fr-strip-disclosure > .fr-compare-strip {
   grid-template-columns: 1fr 28px 1fr 28px 1fr;
   gap: 8px;
   align-items: stretch;
-  margin: 0 0 4px;
+  margin: 0 0 2px;
 }
 .proposal-export .export-story-op {
   display: flex;
@@ -2347,7 +2348,7 @@ details.fr-strip-disclosure > .fr-compare-strip {
   border-left: 4px solid #8a7348;
   box-shadow: none;
   border-radius: 12px;
-  padding: 10px 12px 11px;
+  padding: 8px 12px 9px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -2379,8 +2380,8 @@ details.fr-strip-disclosure > .fr-compare-strip {
 }
 .proposal-export .export-story-icon svg {
   display: block;
-  width: 44px;
-  height: 44px;
+  width: 40px;
+  height: 40px;
   background: transparent;
 }
 .proposal-export .export-story-step {
@@ -2449,8 +2450,8 @@ details.fr-strip-disclosure > .fr-compare-strip {
   padding: 1px 7px;
 }
 .proposal-export .export-story-formula {
-  margin: 10px 0 0;
-  padding: 8px 12px;
+  margin: 8px 0 0;
+  padding: 6px 12px;
   background: #e6efe9;
   border: 1px solid #cfc6b4;
   border-left: 4px solid #1c4a3a;
@@ -2463,6 +2464,18 @@ details.fr-strip-disclosure > .fr-compare-strip {
 .proposal-export .export-story.is-loss .export-story-formula {
   background: #f6e7e3;
   border-left-color: #8f3328;
+}
+.proposal-export .export-story-liquidity {
+  margin: 6px 0 0;
+  padding: 6px 12px;
+  background: #faf7f1;
+  border: 1px solid #cfc6b4;
+  border-left: 4px solid #8a7348;
+  box-shadow: none;
+  border-radius: 12px;
+  font-size: 0.78rem;
+  line-height: 1.55;
+  color: #1c1b16;
 }
 
 /* Print / PDF proposal — cream stationery paper.
