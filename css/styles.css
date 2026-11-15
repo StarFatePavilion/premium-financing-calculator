@@ -243,6 +243,90 @@ h1, h2, h3, .serif {
   gap: 28px;
 }
 
+/* Top-of-page product recommendations */
+.plan-recs {
+  margin: 0 0 28px;
+}
+
+.plan-recs .section-title {
+  margin: 0 0 6px;
+}
+
+.plan-recs .section-lead {
+  margin: 0 0 14px;
+  color: var(--ink-soft);
+}
+
+.plan-recs-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.plan-rec-card {
+  appearance: none;
+  display: grid;
+  gap: 4px;
+  width: 100%;
+  text-align: left;
+  padding: 14px 16px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-sm);
+  background: var(--paper);
+  color: var(--ink);
+  transition: background 0.15s, border-color 0.15s, color 0.15s, box-shadow 0.15s;
+}
+
+.plan-rec-kicker {
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  color: var(--green-deep);
+  line-height: 1.3;
+}
+
+.plan-rec-insurer {
+  font-size: 0.82rem;
+  font-weight: 650;
+  color: var(--ink-soft);
+}
+
+.plan-rec-name {
+  font-family: var(--serif);
+  font-size: 1rem;
+  font-weight: 650;
+  color: var(--ink);
+  line-height: 1.35;
+}
+
+.plan-rec-card:hover:not([aria-pressed="true"]) {
+  border-color: var(--green-mid);
+}
+
+.plan-rec-card[aria-pressed="true"],
+.plan-rec-card.is-current {
+  border-color: var(--green);
+  background: var(--green-soft);
+  box-shadow: inset 0 0 0 1px var(--green);
+}
+
+.plan-rec-card[aria-pressed="true"] .plan-rec-kicker,
+.plan-rec-card.is-current .plan-rec-kicker {
+  color: var(--green-deep);
+}
+
+.plan-rec-card[aria-pressed="true"] .plan-rec-insurer,
+.plan-rec-card.is-current .plan-rec-insurer,
+.plan-rec-card[aria-pressed="true"] .plan-rec-name,
+.plan-rec-card.is-current .plan-rec-name {
+  color: var(--ink);
+}
+
+.plan-recs-note {
+  margin: 10px 0 0;
+  color: var(--ink-soft);
+}
+
 .section {
   margin-top: 36px;
 }
@@ -1219,6 +1303,7 @@ table.data tr.is-current { outline: 2px solid var(--green-mid); outline-offset: 
 }
 
 @media (min-width: 720px) {
+  .plan-recs-grid { grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
   .page { width: min(1160px, calc(100% - 40px)); padding-top: 22px; }
   .stage { padding: 36px 40px 48px; }
   .hero .value, input.rate-input { font-size: 1.45rem; }
@@ -1701,7 +1786,7 @@ details.fr-strip-disclosure > .fr-compare-strip {
   }
 
   .skip, .top-actions, .icon-btn, .lang-switch,
-  details.assumptions, #asset-proof, .year-toolbar,
+  #plan-recs, details.assumptions, #asset-proof, .year-toolbar,
   #chart-section, .chart-wrap, #chart-series, .chart-head,
   #how, #cashflow, #compare, #faq,
   .year-table-toggle, #year-table, .export-row, .site-footer,

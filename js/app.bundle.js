@@ -1995,6 +1995,12 @@ const STRINGS = {
     frReversionaryOnly: "歸原紅利一欄只顯示 10Life 有有效數據的 8 家公司。",
     faq7q: "甚麼是分紅實現率？本頁的數字從哪來？",
     faq7a: "分紅實現率反映保險公司過往實際派發紅利相對銷售時說明文件的平均比率。本頁以 10Life 在 2026-11-13 發表、涵蓋 2025 報告年度的公司級研究作由高至低比較，並非保監局產品系列官方表，亦不是本頁個別計劃的實現率。公司平均、產品組合與數據點數量各異，排序只為方便對照；過往數字不代表將來表現，也不是投資回報率或選購的唯一考慮。",
+    recsTitle: "產品推薦",
+    recsLead: "可按你最看重的方向，先睇一隻計劃。",
+    recBrandLabel: "品牌信譽",
+    recGuaranteedLabel: "保證回報最高",
+    recIllustratedLabel: "預期回報最高",
+    recsNote: "預期回報為演示數字，並非保證；保證價值以計劃說明書為準。",
   },
   "zh-Hans": {
     appTitle: "保费融资计算器",
@@ -2233,6 +2239,12 @@ const STRINGS = {
     frReversionaryOnly: "归原红利一栏只显示 10Life 有有效数据的 8 家公司。",
     faq7q: "什么是分红实现率？本页的数字从哪来？",
     faq7a: "分红实现率反映保险公司过往实际派发红利相对销售时说明文件的平均比率。本页以 10Life 在 2026-11-13 发表、涵盖 2025 报告年度的公司级研究作由高到低比较，并非保监局产品系列官方表，也不是本页个别计划的实现率。公司平均、产品组合与数据点数量各异，排序只为方便对照；过往数字不代表将来表现，也不是投资回报率或选购的唯一考虑。",
+    recsTitle: "产品推荐",
+    recsLead: "可按你最看重的方向，先看一只计划。",
+    recBrandLabel: "品牌信誉",
+    recGuaranteedLabel: "保证回报最高",
+    recIllustratedLabel: "预期回报最高",
+    recsNote: "预期回报为演示数字，并非保证；保证价值以计划说明书为准。",
   },
   en: {
     appTitle: "Premium Financing Calculator",
@@ -2471,6 +2483,12 @@ const STRINGS = {
     frReversionaryOnly: "The reversionary tab lists only the eight insurers for which 10Life published valid data points.",
     faq7q: "What is a fulfillment ratio, and where do these figures come from?",
     faq7a: "A fulfillment ratio compares actual past dividends with the amounts illustrated at sale, as an average. This page shows 10Life’s company-level research for the 2025 reporting year (article dated 13 Nov 2026), sorted high to low for convenience. It is not the Insurance Authority’s product-series tables, and it is not the fulfillment ratio of any single plan in this calculator. Company averages, product mixes and sample sizes differ; past figures are not a guide to the future, not an investment return rate, and not the only factor in a purchase.",
+    recsTitle: "Product recommendations",
+    recsLead: "Start with the plan that best matches what you value most.",
+    recBrandLabel: "Brand reputation",
+    recGuaranteedLabel: "Highest guaranteed return",
+    recIllustratedLabel: "Highest illustrated return",
+    recsNote: "Illustrated figures are not guaranteed. Guaranteed values follow the plan’s offering documents.",
   },
 };
 
@@ -2803,6 +2821,33 @@ function applyPlanDefaults(plan, { keepPremium = false } = {}) {
   if (!state.yearLock) state.vsYear = null;
 }
 
+function selectPlan(plan) {
+  if (!plan || plan.id === state.planId) return;
+  state.planId = plan.id;
+  try { localStorage.setItem(PLAN_KEY, plan.id); } catch { /* ignore */ }
+  applyPlanDefaults(plan);
+  syncInputs();
+  render();
+}
+
+function renderPlanRecs() {
+  const host = document.getElementById("plan-recs");
+  if (!host) return;
+  host.querySelectorAll(".plan-rec-card[data-plan-id]").forEach((btn) => {
+    const id = btn.dataset.planId;
+    const plan = planById(id);
+    const insurerEl = btn.querySelector(".plan-rec-insurer");
+    const nameEl = btn.querySelector(".plan-rec-name");
+    if (plan.id === id) {
+      if (insurerEl) insurerEl.textContent = insurerName(plan);
+      if (nameEl) nameEl.textContent = officialName(plan);
+    }
+    const isCurrent = id === state.planId;
+    btn.setAttribute("aria-pressed", isCurrent ? "true" : "false");
+    btn.classList.toggle("is-current", isCurrent);
+  });
+}
+
 /* ---------- renderers ---------- */
 
 function renderPlanPicker() {
@@ -2847,12 +2892,7 @@ function renderPlanPicker() {
         if (plan.id === state.planId) btn.classList.add("is-current");
         btn.textContent = planShort(plan);
         btn.addEventListener("click", () => {
-          if (plan.id === state.planId) return;
-          state.planId = plan.id;
-          try { localStorage.setItem(PLAN_KEY, plan.id); } catch { /* ignore */ }
-          applyPlanDefaults(plan);
-          syncInputs();
-          render();
+          selectPlan(plan);
         });
         chips.appendChild(btn);
       }
@@ -3852,6 +3892,7 @@ function render() {
     b.setAttribute("aria-pressed", b.dataset.lang === state.lang ? "true" : "false");
   });
   renderPlanPicker();
+  renderPlanRecs();
   renderHeading();
   syncInputs();
 
@@ -3907,6 +3948,20 @@ function bind() {
       render();
     });
   });
+
+  const recs = document.getElementById("plan-recs");
+  if (recs) {
+    recs.addEventListener("click", (e) => {
+      const btn = e.target.closest(".plan-rec-card[data-plan-id]");
+      if (!btn || !recs.contains(btn)) return;
+      const id = btn.dataset.planId;
+      const plan = planById(id);
+      if (!id || plan.id !== id) return;
+      selectPlan(plan);
+      const target = document.getElementById("hero") || document.getElementById("plan-heading");
+      if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  }
 
   const hero = document.getElementById("hero");
   hero.addEventListener("input", (e) => {
