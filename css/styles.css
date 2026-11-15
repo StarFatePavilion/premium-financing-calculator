@@ -410,6 +410,60 @@ details.assumptions > summary::after {
 }
 details.assumptions[open] > summary::after { content: "－"; }
 
+.asset-proof {
+  margin-top: 14px;
+  background: var(--paper);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  color: var(--ink);
+}
+
+.asset-proof-title {
+  margin: 0 0 6px;
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  font-weight: 650;
+  color: var(--ink);
+  line-height: 1.35;
+}
+
+.asset-proof-intro {
+  margin: 0 0 8px;
+  font-size: 0.78rem;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+
+.asset-proof-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.asset-proof-list li {
+  margin: 0;
+  padding: 6px 0;
+  border-top: 1px solid var(--line);
+  font-size: 0.8rem;
+  line-height: 1.45;
+  color: var(--ink);
+}
+
+.asset-proof-list li:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.asset-proof-caveat {
+  margin: 8px 0 0;
+  padding-top: 8px;
+  border-top: 1px solid var(--line);
+  font-size: 0.74rem;
+  line-height: 1.45;
+  color: var(--muted);
+}
+
 .assume-grid {
   display: grid;
   gap: 12px;
@@ -1655,7 +1709,7 @@ details.fr-strip-disclosure > .fr-compare-strip {
   }
 
   .skip, .top-actions, .icon-btn, .lang-switch,
-  details.assumptions, .year-toolbar,
+  details.assumptions, .asset-proof, .year-toolbar,
   #chart-section, .chart-wrap, #chart-series, .chart-head,
   #how, #cashflow, #compare, #faq,
   .year-table-toggle, #year-table, .export-row, .site-footer,
