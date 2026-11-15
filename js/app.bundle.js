@@ -2002,6 +2002,8 @@ const STRINGS = {
     recBrandLabel: "品牌信譽",
     recGuaranteedLabel: "保證回報最高",
     recIllustratedLabel: "預期回報最高",
+    recOtherLabel: "其他計劃",
+    recOtherHint: "查看其餘可選計劃。",
     recsNote: "預期回報為演示數字，並非保證；保證價值以計劃說明書為準。",
   },
   "zh-Hans": {
@@ -2248,6 +2250,8 @@ const STRINGS = {
     recBrandLabel: "品牌信誉",
     recGuaranteedLabel: "保证回报最高",
     recIllustratedLabel: "预期回报最高",
+    recOtherLabel: "其他计划",
+    recOtherHint: "查看其余可选计划。",
     recsNote: "预期回报为演示数字，并非保证；保证价值以计划说明书为准。",
   },
   en: {
@@ -2494,6 +2498,8 @@ const STRINGS = {
     recBrandLabel: "Brand reputation",
     recGuaranteedLabel: "Highest guaranteed return",
     recIllustratedLabel: "Highest illustrated return",
+    recOtherLabel: "Other plans",
+    recOtherHint: "See the other plans available.",
     recsNote: "Illustrated figures are not guaranteed. Guaranteed values follow the plan’s offering documents.",
   },
 };
@@ -2858,6 +2864,11 @@ function renderPlanRecs() {
     btn.setAttribute("aria-pressed", isCurrent ? "true" : "false");
     btn.classList.toggle("is-current", isCurrent);
   });
+  const otherBtn = host.querySelector('.plan-rec-card[data-rec="other"]');
+  if (otherBtn) {
+    const picker = document.getElementById("plan-picker-disclosure");
+    otherBtn.setAttribute("aria-expanded", picker && picker.open ? "true" : "false");
+  }
 }
 
 /* ---------- renderers ---------- */
@@ -3964,6 +3975,14 @@ function bind() {
   const recs = document.getElementById("plan-recs");
   if (recs) {
     recs.addEventListener("click", (e) => {
+      const other = e.target.closest('.plan-rec-card[data-rec="other"]');
+      if (other && recs.contains(other)) {
+        const picker = document.getElementById("plan-picker-disclosure");
+        if (picker) picker.open = true;
+        const target = picker || document.getElementById("plan-heading");
+        if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+        return;
+      }
       const btn = e.target.closest(".plan-rec-card[data-plan-id]");
       if (!btn || !recs.contains(btn)) return;
       const id = btn.dataset.planId;
@@ -3972,6 +3991,16 @@ function bind() {
       selectPlan(plan);
       const target = document.getElementById("hero") || document.getElementById("plan-heading");
       if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  }
+
+  const pickerDisclosure = document.getElementById("plan-picker-disclosure");
+  if (pickerDisclosure) {
+    pickerDisclosure.addEventListener("toggle", () => {
+      const otherBtn = document.querySelector('#plan-recs .plan-rec-card[data-rec="other"]');
+      if (otherBtn) {
+        otherBtn.setAttribute("aria-expanded", pickerDisclosure.open ? "true" : "false");
+      }
     });
   }
 

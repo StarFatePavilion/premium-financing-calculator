@@ -1362,7 +1362,7 @@ table.data tr.is-current { outline: 2px solid var(--green-mid); outline-offset: 
 }
 
 @media (min-width: 720px) {
-  .plan-recs-grid { grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+  .plan-recs-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
   .page { width: min(1160px, calc(100% - 40px)); padding-top: 22px; }
   .stage { padding: 36px 40px 48px; }
   .hero .value, input.rate-input { font-size: 1.45rem; }
