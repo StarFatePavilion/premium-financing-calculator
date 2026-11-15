@@ -1257,46 +1257,24 @@ table.data tr.is-current { outline: 2px solid var(--green-mid); outline-offset: 
   .scroll-hint { display: none; }
 }
 
-/* Fulfillment ratios */
+/* Fulfillment ratios — 10Life company comparison */
 .fulfillment-section {
   margin-top: 28px;
 }
 
-.fr-meta {
-  margin: 0 0 12px;
-  font-size: 0.9rem;
-  color: var(--ink-soft);
-  line-height: 1.55;
-}
-
-.fr-meta p { margin: 0 0 4px; }
-
-.fr-series-name {
-  font-weight: 650;
-  color: var(--ink);
+.fr-lead {
+  margin: 0 0 10px;
 }
 
 .fr-note {
-  margin: 0 0 8px;
+  margin: 0 0 10px;
   color: var(--ink-soft);
   font-size: 0.88rem;
 }
 
-.fr-uniform {
-  background: var(--paper);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-sm);
-  padding: 12px 14px;
-  margin: 0 0 14px;
-}
-
-.fr-uniform p { margin: 0 0 6px; }
-.fr-uniform p:last-child { margin-bottom: 0; }
-
-.fr-official-text {
-  color: var(--ink);
-  font-weight: 600;
-  line-height: 1.55;
+.fr-metric-tabs {
+  margin: 0 0 12px;
+  flex-wrap: wrap;
 }
 
 .fr-table-wrap {
@@ -1316,16 +1294,16 @@ table.data tr.is-current { outline: 2px solid var(--green-mid); outline-offset: 
 .fr-table td {
   border-bottom: 1px solid var(--line);
   padding: 8px 8px;
-  text-align: center;
-  vertical-align: bottom;
+  text-align: right;
+  vertical-align: middle;
   color: var(--ink);
 }
 
-.fr-table th:first-child,
-.fr-table td:first-child {
+.fr-company-table thead th:nth-child(1),
+.fr-company-table tbody td:nth-child(1),
+.fr-company-table thead th:nth-child(2),
+.fr-company-table tbody th[scope="row"] {
   text-align: left;
-  font-weight: 650;
-  white-space: nowrap;
 }
 
 .fr-table thead th {
@@ -1334,24 +1312,66 @@ table.data tr.is-current { outline: 2px solid var(--green-mid); outline-offset: 
   font-size: 0.75rem;
 }
 
-.fr-year-sub {
-  display: block;
-  margin-top: 2px;
-  font-weight: 500;
-  font-size: 0.68rem;
-  color: var(--muted);
-}
-
-.fr-numeric {
+.fr-insurer-name {
+  display: inline;
   font-weight: 650;
 }
 
-.fr-text-cell {
-  font-weight: 500;
+.fr-avg-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.fr-bar {
+  display: block;
+  width: 7.5rem;
+  max-width: 100%;
+  height: 6px;
+  background: var(--cream-deep);
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.fr-bar-fill {
+  display: block;
+  height: 100%;
+  background: var(--green-mid);
+  border-radius: 99px;
+}
+
+.fr-in-calculator {
+  background: var(--green-soft);
+}
+
+.fr-in-calculator th,
+.fr-in-calculator td {
+  border-bottom-color: #c5d6cc;
+}
+
+.fr-selected-insurer {
+  box-shadow: inset 3px 0 0 var(--green);
+}
+
+.fr-badge {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 1px 7px;
+  border-radius: 99px;
+  background: var(--green);
+  color: var(--cream);
+  font-size: 0.68rem;
+  font-weight: 650;
+  letter-spacing: 0.01em;
+  vertical-align: middle;
   white-space: nowrap;
 }
 
-.fr-legend,
+.fr-badge-selected {
+  background: var(--green-deep);
+}
+
 .fr-sources,
 .fr-caveats {
   margin: 0 0 12px;
@@ -1360,7 +1380,6 @@ table.data tr.is-current { outline: 2px solid var(--green-mid); outline-offset: 
   color: var(--ink-soft);
 }
 
-.fr-legend h3,
 .fr-sources h3 {
   margin: 0 0 6px;
   font-size: 0.82rem;
@@ -1368,20 +1387,85 @@ table.data tr.is-current { outline: 2px solid var(--green-mid); outline-offset: 
   color: var(--ink);
 }
 
-.fr-legend li,
 .fr-sources li,
 .fr-caveats li {
-  margin: 0 0 4px;
+  margin: 0 0 6px;
 }
 
-.fr-sources a {
+.fr-sources a,
+.fr-strip-link a {
   color: var(--green-text);
   text-underline-offset: 2px;
+}
+
+.fr-en-stale {
+  word-break: break-word;
 }
 
 .fr-captured {
   margin: 0;
   color: var(--muted);
+}
+
+.fr-compare-strip {
+  margin-top: 22px;
+  padding: 16px 16px 12px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+}
+
+.fr-strip-title {
+  margin: 0 0 6px;
+  font-size: 0.95rem;
+  font-weight: 650;
+  color: var(--ink);
+}
+
+.fr-chip-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 10px 0 8px;
+  padding: 0;
+}
+
+.fr-chip {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 8px 12px;
+  border: 1px solid #c5d6cc;
+  background: var(--green-soft);
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.fr-chip.is-selected {
+  border-color: var(--green);
+  box-shadow: inset 0 0 0 1px var(--green);
+}
+
+.fr-chip-rank {
+  color: var(--muted);
+  font-weight: 650;
+}
+
+.fr-chip-name {
+  font-weight: 650;
+  color: var(--ink);
+}
+
+.fr-chip strong {
+  font-weight: 700;
+  color: var(--green-text);
+}
+
+.fr-strip-link {
+  margin: 4px 0 0;
+  font-size: 0.82rem;
 }
 
 .cmp-plan-name {
@@ -1415,15 +1499,19 @@ table.data tr.is-current { outline: 2px solid var(--green-mid); outline-offset: 
     padding: 10px 12px;
     margin-bottom: 10px;
   }
-  .fr-table th:first-child,
-  .fr-table td:first-child {
+  .fr-in-calculator {
+    background: var(--green-soft);
+  }
+  .fr-table th[scope="row"] {
     white-space: normal;
     border-bottom: 0;
     padding-bottom: 6px;
+    text-align: left;
   }
   .fr-table td {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     gap: 12px;
     text-align: right;
     border-bottom: 1px dashed var(--line);
@@ -1437,7 +1525,9 @@ table.data tr.is-current { outline: 2px solid var(--green-mid); outline-offset: 
     color: var(--ink-soft);
     flex: 1 1 auto;
   }
-  .fr-text-cell { white-space: normal; }
+  .fr-avg-cell { align-items: flex-end; }
+  .fr-bar { width: 6rem; }
+  .fr-badge { margin: 4px 6px 0 0; }
 }
 
 /* Print / PDF proposal */
