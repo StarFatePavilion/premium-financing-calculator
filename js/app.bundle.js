@@ -2041,6 +2041,36 @@ const STRINGS = {
     recOtherLabel: "其他計劃",
     recOtherHint: "查看其餘可選計劃。",
     recsNote: "預期回報為演示數字，並非保證；保證價值以計劃說明書為準。",
+    exportProfileTitle: "公司背景及產品特點",
+    exportProfileCompanyBoc: "中銀集團人壽屬中國銀行集團成員。本計算器以此計劃作為「品牌信譽」的推薦方向。",
+    exportProfileCompanyFwd: "富衛人壽保險（百慕達）有限公司屬富衛集團，品牌信譽良好。",
+    exportProfileCompanyCtf: "周大福人壽屬周大福集團。",
+    exportProfileCompanyHkl: "香港人壽為香港的人壽保險公司。",
+    exportProfileCompanySun: "香港永明金融屬永明金融集團。",
+    exportProfileCompanyGeneric: "{insurer}為本提案所示計劃的承保公司。",
+    exportProfileNameCtf: "周大福人壽",
+    exportProfileNameHkl: "香港人壽",
+    exportProfileNameSun: "香港永明金融",
+    exportProfileNameBoc: "中銀人壽",
+    exportProfileGggFulfillment: "中銀人壽官方分紅實現率表（2025 報告年度）顯示，薪火傳承環球終身保險計劃的週年紅利及終期紅利均尚未有已公布的實現率數字（列為不適用或尚未推出）；此並非較早推出的「薪火傳承終身壽險計劃」。以上為中銀人壽自行披露的產品級資料，只供參考，過往表現不代表將來。另，10Life {year} 報告年度{company}的公司整體平均為 {avg}%（{rankPhrase}），屬公司級簡單平均（文章日期 {articleDate}），並非本計劃本身的實現率。",
+    exportProfileEsFulfillment: "周大福人壽官方分紅實現率表（2025 年度）顯示，「榮耀世代」尚未有保單達至第一個保單週年日，故未有本計劃的分紅實現率數字。另，10Life {year} 報告年度{company}的公司整體平均為 {avg}%（{rankPhrase}），屬該表較高的數字之一。此為公司級簡單平均（文章日期 {articleDate}），並非保監局產品級披露，亦不是本計劃本身的實現率；過往數字不代表將來表現，也不是投資回報率。",
+    exportProfilePtFulfillment: "周大福人壽官方分紅實現率表（2025 年度）顯示，「閃耀傳承」美元保單於第 1 個保單年度（2024 年生效）的終期紅利實現率為 100%，週年紅利則列為「沒有分紅」；較早年期列為未推出。此僅為首個保單年度的有限資料，只供參考，過往表現不代表將來，亦不是 10Life 的公司平均。另，10Life {year} 報告年度{company}的公司整體平均為 {avg}%（{rankPhrase}），屬該表較高的數字之一，為公司級簡單平均（文章日期 {articleDate}），並非本計劃本身的實現率。",
+    exportProfileWihFulfillment: "富衛香港官方分紅實現率表（2025 年度）顯示，智盈 ‧ 超凡保險計劃各保單年度的歸原紅利及特別紅利均列為不適用（產品尚未推出），故本計劃尚未有已公布的分紅實現率。此為富衛自行披露的產品級資料，只供參考，過往表現不代表將來，並不是 10Life 的公司平均，亦不可與智盈匯聚（優越版）系列的數字混為一談。",
+    exportProfileWpFulfillment: "香港人壽官方分紅實現率表（2025 報告年度）顯示，「御富」的週年紅利／特別紅利及終期紅利，於所列保單年度及貨幣均為不適用，故本計劃尚未有已公布的實現率數字。此為香港人壽自行披露的產品級資料，只供參考，過往表現不代表將來，亦不是 10Life 的公司平均。另，10Life {year} 報告年度{company}的公司整體平均為 {avg}%（{rankPhrase}），屬該表較高的數字之一，為公司級簡單平均（文章日期 {articleDate}），並非本計劃本身的實現率。",
+    exportProfileRfFulfillment: "香港永明金融官方分紅實現率表（2025 報告年度）顯示，永譽傳承儲蓄計劃第 1 個保單年度列為不適用，較早年期列為尚未推出，故本計劃尚未有已公布的實現率數字。此為永明自行披露的產品級資料，只供參考，過往表現不代表將來，亦不是 10Life 的公司平均。另，10Life {year} 報告年度{company}的公司整體平均為 {avg}%（{rankPhrase}），為公司級簡單平均（文章日期 {articleDate}），並非本計劃本身的實現率。",
+    exportAssetProofIntro: "本頁貸款金額按本計算器的融資假設估算。實際批核時，銀行亦會以客戶資產評估可支持的貸款額。以下為常見計法，僅供說明，實際以批核銀行當時準則為準。",
+    exportProfileFulfillment: "10Life {year} 報告年度，{company}的公司整體平均分紅實現率為 {avg}%（{rankPhrase}）。此為公司級簡單平均（文章日期 {articleDate}），並非保監局產品級披露，亦不是本計劃本身的實現率；過往數字不代表將來表現，也不是投資回報率。",
+    exportProfileFulfillmentHigher: "10Life {year} 報告年度，{company}的公司整體平均分紅實現率為 {avg}%（{rankPhrase}），屬該表較高的數字之一。此為公司級簡單平均（文章日期 {articleDate}），並非保監局產品級披露，亦不是本計劃本身的實現率；過往數字不代表將來表現，也不是投資回報率。",
+    exportProfileGggSuit: "在本計算器三個重點推薦計劃（GGG、WIS3 及「榮耀世代」）之中，此計劃於第五年的演示融資結果較強，較適合考慮約於第五年取用資金的人士。演示數字並非保證。",
+    exportProfileWis3Rec: "本計算器以此計劃作為「保證回報最高」的推薦方向。",
+    exportProfileWis3Suit: "第五年過後，GGG 的演示路徑相對較為平坦，而此計劃與「榮耀世代」其後較為靠前，故較適合考慮稍長持有期（例如約從第六年起）的人士。演示數字並非保證。",
+    exportProfileWis3Fulfillment: "富衛香港 2025 報告年度官方分紅實現率摘要顯示，智盈匯聚（優越版）及 II 自推出以來平均分紅實現率為 100%；其社交媒體亦曾以智盈匯聚（優越版）（並非 III）標示連續 3 年。本提案計劃為智盈匯聚(優越版) III（2023 年推出），同一份摘要列明相應保單週年尚未派發紅利，故 III 本身尚未有已公布的分紅實現率。該系列說明稱系列內產品自推出以來分紅實現率均維持 100%，惟此並不改變 III 尚未派發的事實。以上為富衛自行披露的產品系列數字，只供參考，過往表現不代表將來，亦不是 10Life 的公司平均。",
+    exportProfileEsSuit: "本計算器以此計劃作為「預期回報最高」的推薦方向。在本計算器三個重點推薦計劃（GGG、WIS3 及「榮耀世代」）之中，此計劃於較長持有期（例如第十年）的演示融資結果較強，較適合計劃持有至約十年左右的人士。演示數字並非保證。",
+    exportProfileWihUsdSuit: "在本計算器中，此計劃於第五年及第十年的演示融資路徑均相對穩健，可適合考慮中期或較長持有期的人士。演示數字並非保證。",
+    exportProfileWihHkdSuit: "請按本提案的逐年演示數字閱讀此計劃的融資路徑。演示數字並非保證，較早或較後年期的結果須一併考慮。",
+    exportProfileWpSuit: "此計劃於較早年期的演示融資結果較為溫和，部分假設下第五年或仍為虧損，較適合考慮較長持有期（例如約第十年）的人士。演示數字並非保證。",
+    exportProfilePtSuit: "此計劃於較早年期的演示融資結果較為溫和，較適合考慮較長持有期的人士。演示數字並非保證。",
+    exportProfileRfSuit: "此計劃於較早年期的演示融資結果較為溫和，較適合看重永明品牌並考慮較長持有期的人士。演示數字並非保證。",
   },
   "zh-Hans": {
     appTitle: "保费融资计算器",
@@ -2325,6 +2355,36 @@ const STRINGS = {
     recOtherLabel: "其他计划",
     recOtherHint: "查看其余可选计划。",
     recsNote: "预期回报为演示数字，并非保证；保证价值以计划说明书为准。",
+    exportProfileTitle: "公司背景及产品特点",
+    exportProfileCompanyBoc: "中银集团人寿属中国银行集团成员。本计算器以此计划作为「品牌信誉」的推荐方向。",
+    exportProfileCompanyFwd: "富卫人寿保险（百慕大）有限公司属富卫集团，品牌信誉良好。",
+    exportProfileCompanyCtf: "周大福人寿属周大福集团。",
+    exportProfileCompanyHkl: "香港人寿为香港的人寿保险公司。",
+    exportProfileCompanySun: "香港永明金融属永明金融集团。",
+    exportProfileCompanyGeneric: "{insurer}为本提案所示计划的承保公司。",
+    exportProfileNameCtf: "周大福人寿",
+    exportProfileNameHkl: "香港人寿",
+    exportProfileNameSun: "香港永明金融",
+    exportProfileNameBoc: "中银人寿",
+    exportProfileGggFulfillment: "中银人寿官方分红实现率表（2025 报告年度）显示，薪火傳承環球終身保險計劃的周年红利及终期红利均尚未有已公布的实现率数字（列为不适用或尚未推出）；此并非较早推出的「薪火傳承終身壽險計劃」。以上为中银人寿自行披露的产品级资料，只供参考，过往表现不代表将来。另，10Life {year} 报告年度{company}的公司整体平均为 {avg}%（{rankPhrase}），属公司级简单平均（文章日期 {articleDate}），并非本计划本身的实现率。",
+    exportProfileEsFulfillment: "周大福人寿官方分红实现率表（2025 年度）显示，「榮耀世代」尚未有保单达至第一个保单周年日，故未有本计划的分红实现率数字。另，10Life {year} 报告年度{company}的公司整体平均为 {avg}%（{rankPhrase}），属该表较高的数字之一。此为公司级简单平均（文章日期 {articleDate}），并非保监局产品级披露，也不是本计划本身的实现率；过往数字不代表将来表现，也不是投资回报率。",
+    exportProfilePtFulfillment: "周大福人寿官方分红实现率表（2025 年度）显示，「閃耀傳承」美元保单于第 1 个保单年度（2024 年生效）的终期红利实现率为 100%，周年红利则列为「没有分红」；较早年期列为未推出。此仅为首个保单年度的有限资料，只供参考，过往表现不代表将来，也不是 10Life 的公司平均。另，10Life {year} 报告年度{company}的公司整体平均为 {avg}%（{rankPhrase}），属该表较高的数字之一，为公司级简单平均（文章日期 {articleDate}），并非本计划本身的实现率。",
+    exportProfileWihFulfillment: "富卫香港官方分红实现率表（2025 年度）显示，智盈 ‧ 超凡保險計劃各保单年度的归原红利及特别红利均列为不适用（产品尚未推出），故本计划尚未有已公布的分红实现率。此为富卫自行披露的产品级资料，只供参考，过往表现不代表将来，并不是 10Life 的公司平均，也不可与智盈匯聚（優越版）系列的数字混为一谈。",
+    exportProfileWpFulfillment: "香港人寿官方分红实现率表（2025 报告年度）显示，「御富」的周年红利／特别红利及终期红利，于所列保单年度及货币均为不适用，故本计划尚未有已公布的实现率数字。此为香港人寿自行披露的产品级资料，只供参考，过往表现不代表将来，也不是 10Life 的公司平均。另，10Life {year} 报告年度{company}的公司整体平均为 {avg}%（{rankPhrase}），属该表较高的数字之一，为公司级简单平均（文章日期 {articleDate}），并非本计划本身的实现率。",
+    exportProfileRfFulfillment: "香港永明金融官方分红实现率表（2025 报告年度）显示，永譽傳承儲蓄計劃第 1 个保单年度列为不适用，较早年期列为尚未推出，故本计划尚未有已公布的实现率数字。此为永明自行披露的产品级资料，只供参考，过往表现不代表将来，也不是 10Life 的公司平均。另，10Life {year} 报告年度{company}的公司整体平均为 {avg}%（{rankPhrase}），为公司级简单平均（文章日期 {articleDate}），并非本计划本身的实现率。",
+    exportAssetProofIntro: "本页贷款金额按本计算器的融资假设估算。实际审批时，银行亦会以客户资产评估可支持的贷款额。以下为常见计法，仅供说明，实际以审批银行当时准则为准。",
+    exportProfileFulfillment: "10Life {year} 报告年度，{company}的公司整体平均分红实现率为 {avg}%（{rankPhrase}）。此为公司级简单平均（文章日期 {articleDate}），并非保监局产品级披露，也不是本计划本身的实现率；过往数字不代表将来表现，也不是投资回报率。",
+    exportProfileFulfillmentHigher: "10Life {year} 报告年度，{company}的公司整体平均分红实现率为 {avg}%（{rankPhrase}），属该表较高的数字之一。此为公司级简单平均（文章日期 {articleDate}），并非保监局产品级披露，也不是本计划本身的实现率；过往数字不代表将来表现，也不是投资回报率。",
+    exportProfileGggSuit: "在本计算器三个重点推荐计划（GGG、WIS3 及「榮耀世代」）之中，此计划于第五年的演示融资结果较强，较适合考虑约于第五年取用资金的人士。演示数字并非保证。",
+    exportProfileWis3Rec: "本计算器以此计划作为「保证回报最高」的推荐方向。",
+    exportProfileWis3Suit: "第五年过后，GGG 的演示路径相对较为平坦，而此计划与「榮耀世代」其后较为靠前，故较适合考虑稍长持有期（例如约从第六年起）的人士。演示数字并非保证。",
+    exportProfileWis3Fulfillment: "富卫香港 2025 报告年度官方分红实现率摘要显示，智盈匯聚（優越版）及 II 自推出以来平均分红实现率为 100%；其社交媒体亦曾以智盈匯聚（優越版）（并非 III）标示连续 3 年。本提案计划为智盈匯聚(優越版) III（2023 年推出），同一份摘要列明相应保单周年尚未派发红利，故 III 本身尚未有已公布的分红实现率。该系列说明称系列内产品自推出以来分红实现率均维持 100%，惟此并不改变 III 尚未派发的事实。以上为富卫自行披露的产品系列数字，只供参考，过往表现不代表将来，也不是 10Life 的公司平均。",
+    exportProfileEsSuit: "本计算器以此计划作为「预期回报最高」的推荐方向。在本计算器三个重点推荐计划（GGG、WIS3 及「榮耀世代」）之中，此计划于较长持有期（例如第十年）的演示融资结果较强，较适合计划持有至约十年左右的人士。演示数字并非保证。",
+    exportProfileWihUsdSuit: "在本计算器中，此计划于第五年及第十年的演示融资路径均相对稳健，可适合考虑中期或较长持有期的人士。演示数字并非保证。",
+    exportProfileWihHkdSuit: "请按本提案的逐年演示数字阅读此计划的融资路径。演示数字并非保证，较早或较后年期的结果须一并考虑。",
+    exportProfileWpSuit: "此计划于较早年期的演示融资结果较为温和，部分假设下第五年或仍为亏损，较适合考虑较长持有期（例如约第十年）的人士。演示数字并非保证。",
+    exportProfilePtSuit: "此计划于较早年期的演示融资结果较为温和，较适合考虑较长持有期的人士。演示数字并非保证。",
+    exportProfileRfSuit: "此计划于较早年期的演示融资结果较为温和，较适合看重永明品牌并考虑较长持有期的人士。演示数字并非保证。",
   },
   en: {
     appTitle: "Premium Financing Calculator",
@@ -2609,6 +2669,36 @@ const STRINGS = {
     recOtherLabel: "Other plans",
     recOtherHint: "See the other plans available.",
     recsNote: "Illustrated figures are not guaranteed. Guaranteed values follow the plan’s offering documents.",
+    exportProfileTitle: "Company background and product features",
+    exportProfileCompanyBoc: "BOC Group Life is a member of the Bank of China group. This calculator presents this plan as the “brand reputation” recommendation.",
+    exportProfileCompanyFwd: "FWD Life Insurance Company (Bermuda) Limited is part of the FWD Group, a well-established brand.",
+    exportProfileCompanyCtf: "CTF Life is part of the Chow Tai Fook group.",
+    exportProfileCompanyHkl: "Hong Kong Life is a life insurer in Hong Kong.",
+    exportProfileCompanySun: "Sun Life Hong Kong is part of the Sun Life group.",
+    exportProfileCompanyGeneric: "{insurer} is the insurer of the plan shown in this proposal.",
+    exportProfileNameCtf: "CTF Life",
+    exportProfileNameHkl: "Hong Kong Life",
+    exportProfileNameSun: "Sun Life Hong Kong",
+    exportProfileNameBoc: "BOC Life",
+    exportProfileGggFulfillment: "BOC Life’s official 2025 reporting-year fulfillment-ratio table shows that Glamorous Glow Global Whole Life Insurance Plan does not yet have a published fulfillment ratio (shown as N/A or not yet launched). This is not a figure for the earlier sibling plan 薪火傳承終身壽險計劃. These are BOC Life’s own product-level figures, for reference only; past performance is not a guide to the future. Separately, 10Life’s {year} company-level average for {company} is {avg}% ({rankPhrase}), a company-level simple average (article dated {articleDate}), not this plan’s own ratio.",
+    exportProfileEsFulfillment: "CTF Life’s official 2025 fulfillment-ratio table shows that Ever Shine does not yet have a published ratio, because no policy has reached its first policy anniversary. Separately, 10Life’s {year} company-level average for {company} is {avg}% ({rankPhrase}), among the higher figures in that table. This is a company-level simple average (article dated {articleDate}), not an Insurance Authority product-level disclosure, and not this plan’s own ratio. Past figures are not a guide to future performance and are not an investment return.",
+    exportProfilePtFulfillment: "CTF Life’s official 2025 fulfillment-ratio table shows that, for Prime Treasure USD policies in policy year 1 (issued in 2024), the terminal-dividend fulfillment ratio is 100%, while the annual-dividend ratio is shown as “no dividend”; earlier years are shown as not yet launched. This is limited first-year data only, for reference only; past performance is not a guide to the future, and it is not 10Life’s company-level average. Separately, 10Life’s {year} company-level average for {company} is {avg}% ({rankPhrase}), among the higher figures in that table, and is a company-level simple average (article dated {articleDate}), not this plan’s own ratio.",
+    exportProfileWihFulfillment: "FWD Hong Kong’s official 2025 fulfillment-ratio table shows Wealth ICON Horizon’s reversionary and special bonuses as “not applicable (3)” — product not yet launched — for every listed policy year, so this plan does not yet have a published fulfillment ratio. These are FWD’s own product-level figures, for reference only; past performance is not a guide to the future, they are not 10Life’s company-level average, and they should not be confused with figures for the Wealth ICON Supreme series.",
+    exportProfileWpFulfillment: "Hong Kong Life’s official 2025 reporting-year fulfillment-ratio table shows Wealth Prestige as “not applicable” for annual/special and terminal dividends across the listed policy years and currencies, so this plan does not yet have a published fulfillment ratio. These are Hong Kong Life’s own product-level figures, for reference only; past performance is not a guide to the future, and they are not 10Life’s company-level average. Separately, 10Life’s {year} company-level average for {company} is {avg}% ({rankPhrase}), among the higher figures in that table, and is a company-level simple average (article dated {articleDate}), not this plan’s own ratio.",
+    exportProfileRfFulfillment: "Sun Life Hong Kong’s official 2025 reporting-year fulfillment-ratio table shows RoyalFortune as “not applicable” for policy year 1 and “not yet launched” for earlier years, so this plan does not yet have a published fulfillment ratio. These are Sun Life’s own product-level figures, for reference only; past performance is not a guide to the future, and they are not 10Life’s company-level average. Separately, 10Life’s {year} company-level average for {company} is {avg}% ({rankPhrase}), a company-level simple average (article dated {articleDate}), not this plan’s own ratio.",
+    exportAssetProofIntro: "The loan shown on this page is estimated from this calculator’s financing assumptions. In a live approval, the bank also assesses how much lending the client’s assets can support. The treatment below is a common reference for illustration only; the lending bank’s then-current criteria apply.",
+    exportProfileFulfillment: "For the {year} reporting year, 10Life’s company-level average fulfillment ratio for {company} is {avg}% ({rankPhrase}). This is a company-level simple average (article dated {articleDate}), not an Insurance Authority product-level disclosure, and not this plan’s own ratio. Past figures are not a guide to future performance and are not an investment return.",
+    exportProfileFulfillmentHigher: "For the {year} reporting year, 10Life’s company-level average fulfillment ratio for {company} is {avg}% ({rankPhrase}), among the higher figures in that table. This is a company-level simple average (article dated {articleDate}), not an Insurance Authority product-level disclosure, and not this plan’s own ratio. Past figures are not a guide to future performance and are not an investment return.",
+    exportProfileGggSuit: "Among the three featured recommendation plans in this calculator (GGG, WIS3 and Ever Shine), this plan has the stronger illustrated financing result at year 5, so it may better suit someone considering a withdrawal around year 5. Illustrated figures are not guaranteed.",
+    exportProfileWis3Rec: "This calculator presents this plan as the “highest guaranteed return” recommendation.",
+    exportProfileWis3Suit: "After year 5, GGG’s illustrated path is relatively flatter, while this plan and Ever Shine tend to move ahead later, so it may better suit a longer hold, for example from around year 6. Illustrated figures are not guaranteed.",
+    exportProfileWis3Fulfillment: "FWD Hong Kong’s official 2025 reporting-year fulfillment-ratio highlight shows that Wealth ICON Supreme and Wealth ICON Supreme II have averaged 100% fulfillment since launch; a FWD social post also referred to Wealth ICON Supreme (not III) as having 100% for three consecutive years. This proposal’s plan is Wealth ICON Supreme III (launched in 2023). The same official highlight states that corresponding policy anniversaries have not yet declared dividends, so III itself does not yet have a published fulfillment ratio. FWD also notes that products in the series have maintained 100% since launch, which does not change the fact that III has not yet declared. These are FWD’s own product-series figures, for reference only; past performance is not a guide to the future, and they are not 10Life’s company-level average.",
+    exportProfileEsSuit: "This calculator presents this plan as the “highest illustrated return” recommendation. Among the three featured recommendation plans in this calculator (GGG, WIS3 and Ever Shine), this plan has the stronger illustrated longer-horizon result (for example at year 10), and may better suit someone planning to hold towards about 10 years. Illustrated figures are not guaranteed.",
+    exportProfileWihUsdSuit: "In this calculator, this plan’s illustrated financing path is comparatively strong at both year 5 and year 10, so it may suit someone looking at a medium or a longer hold. Illustrated figures are not guaranteed.",
+    exportProfileWihHkdSuit: "Please read this plan’s financing path against the year-by-year illustrated figures in this proposal. Illustrated figures are not guaranteed; earlier and later years should be considered together.",
+    exportProfileWpSuit: "This plan’s illustrated financing result in the earlier years is more modest, and under some assumptions year 5 may still be a loss, so it may better suit someone considering a longer hold, for example around year 10. Illustrated figures are not guaranteed.",
+    exportProfilePtSuit: "This plan’s illustrated financing result in the earlier years is more modest, so it may better suit someone considering a longer hold. Illustrated figures are not guaranteed.",
+    exportProfileRfSuit: "This plan’s illustrated financing result in the earlier years is more modest, so it may better suit someone who values the Sun Life brand and is considering a longer hold. Illustrated figures are not guaranteed.",
   },
 };
 
@@ -2728,7 +2818,190 @@ function buildProposalFileName({ title, planCode, currency, originalPremium }) {
   return [safeTitle, short, premium].filter(Boolean).join("-") + ".pdf";
 }
 
+/* ---- js/export-plan-profile.js ---- */
+
+
+function escapeHtml(s) {
+  return String(s ?? "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
+
+function englishOrdinal(n) {
+  const v = Number(n);
+  const mod100 = v % 100;
+  if (mod100 >= 11 && mod100 <= 13) return `${v}th`;
+  switch (v % 10) {
+    case 1:
+      return `${v}st`;
+    case 2:
+      return `${v}nd`;
+    case 3:
+      return `${v}rd`;
+    default:
+      return `${v}th`;
+  }
+}
+
+function fulfillmentOverallForPlan(planId) {
+  const insurerId = tenlifeInsurerIdForPlan(planId);
+  if (!insurerId) return null;
+  const ranked = rankedInsurers("overall");
+  const row = ranked.find((item) => item.id === insurerId);
+  if (!row) return null;
+  const sameRank = ranked.filter((item) => item.rank === row.rank).length;
+  const meta = fulfillmentMeta() || {};
+  return {
+    insurerId,
+    average: row.metric.average,
+    rank: row.rank,
+    count: ranked.length,
+    tied: sameRank > 1,
+    reportingYear: meta.reportingYear,
+    articleDate: meta.articleDate,
+  };
+}
+
+function fulfillmentRankPhrase(info, lang) {
+  if (!info) return "";
+  const { rank, count, tied } = info;
+  if (lang === "en") {
+    return tied ? `joint ${englishOrdinal(rank)} of ${count}` : `rank ${rank} of ${count}`;
+  }
+  return tied ? `${count} 家中並列第 ${rank}` : `${count} 家中排第 ${rank}`;
+}
+
+function exportProfileFamily(planId) {
+  if (planId === "bocgl-ggg") return "ggg";
+  if (planId === "ctf-es") return "es";
+  if (planId === "ctf-pt") return "pt";
+  if (String(planId).startsWith("fwd-wis3")) return "wis3";
+  if (planId === "fwd-wih-usd") return "wih-usd";
+  if (planId === "fwd-wih-hkd") return "wih-hkd";
+  if (String(planId).startsWith("fwd-wih")) return "wih-usd";
+  if (String(planId).startsWith("hkl-wp")) return "wp";
+  if (planId === "sunlife-rf") return "rf";
+  return "generic";
+}
+
+const COMPANY_KEY = {
+  ggg: "exportProfileCompanyBoc",
+  wis3: "exportProfileCompanyFwd",
+  "wih-usd": "exportProfileCompanyFwd",
+  "wih-hkd": "exportProfileCompanyFwd",
+  es: "exportProfileCompanyCtf",
+  pt: "exportProfileCompanyCtf",
+  wp: "exportProfileCompanyHkl",
+  rf: "exportProfileCompanySun",
+  generic: "exportProfileCompanyGeneric",
+};
+
+function profilePoints(family) {
+  switch (family) {
+    case "ggg":
+      return [
+        { key: "exportProfileGggFulfillment", companyKey: "exportProfileNameBoc" },
+        { key: "exportProfileGggSuit" },
+      ];
+    case "wis3":
+      return [
+        { key: "exportProfileWis3Rec" },
+        { key: "exportProfileWis3Fulfillment" },
+        { key: "exportProfileWis3Suit" },
+      ];
+    case "es":
+      return [
+        { key: "exportProfileEsFulfillment", companyKey: "exportProfileNameCtf" },
+        { key: "exportProfileEsSuit" },
+      ];
+    case "wih-usd":
+      return [{ key: "exportProfileWihFulfillment" }, { key: "exportProfileWihUsdSuit" }];
+    case "wih-hkd":
+      return [{ key: "exportProfileWihFulfillment" }, { key: "exportProfileWihHkdSuit" }];
+    case "wp":
+      return [
+        { key: "exportProfileWpFulfillment", companyKey: "exportProfileNameHkl" },
+        { key: "exportProfileWpSuit" },
+      ];
+    case "pt":
+      return [
+        { key: "exportProfilePtFulfillment", companyKey: "exportProfileNameCtf" },
+        { key: "exportProfilePtSuit" },
+      ];
+    case "rf":
+      return [
+        { key: "exportProfileRfFulfillment", companyKey: "exportProfileNameSun" },
+        { key: "exportProfileRfSuit" },
+      ];
+    default:
+      return [];
+  }
+}
+
+function tenlifeVars(plan, lang, family) {
+  const info = fulfillmentOverallForPlan(plan?.id);
+  if (!info) return {};
+  return {
+    avg: String(info.average),
+    rankPhrase: fulfillmentRankPhrase(info, lang),
+    year: String(info.reportingYear ?? ""),
+    articleDate: lang === "en" ? "13 Nov 2026" : String(info.articleDate ?? ""),
+  };
+}
+
+function interpolate(lang, key, vars) {
+  return t(lang, key, vars);
+}
+
+function fulfillmentSentence(plan, lang, variant, companyKey) {
+  const info = fulfillmentOverallForPlan(plan.id);
+  if (!info) return "";
+  const key = variant === "higher" ? "exportProfileFulfillmentHigher" : "exportProfileFulfillment";
+  return interpolate(lang, key, {
+    company: interpolate(lang, companyKey),
+    avg: String(info.average),
+    rankPhrase: fulfillmentRankPhrase(info, lang),
+    year: String(info.reportingYear ?? ""),
+    articleDate: lang === "en" ? "13 Nov 2026" : String(info.articleDate ?? ""),
+  });
+}
+
+/**
+ * Cream-stationery company background and product-features block
+ * for PDF proposal page 3. Not used by the live on-page UI.
+ */
+function exportPlanProfileHtml(plan, result, lang) {
+  void result;
+  const safeLang = lang || "zh-Hant";
+  const family = exportProfileFamily(plan?.id);
+  const companyKey = COMPANY_KEY[family] || COMPANY_KEY.generic;
+  const companyVars = { insurer: plan?.insurer?.zhHant || plan?.insurer?.en || "" };
+  const company = interpolate(safeLang, companyKey, companyVars);
+  const tenlife = tenlifeVars(plan, safeLang, family);
+  const items = profilePoints(family)
+    .map((item) => {
+      const vars = { ...tenlife, ...(item.vars || {}) };
+      if (item.companyKey) vars.company = interpolate(safeLang, item.companyKey);
+      return interpolate(safeLang, item.key, vars);
+    })
+    .map((text) => String(text || "").trim())
+    .filter(Boolean);
+
+  const lis = items.map((text) => `<li>${escapeHtml(text)}</li>`).join("");
+  const list = lis ? `<ul class="export-profile-points">${lis}</ul>` : "";
+  const title = interpolate(safeLang, "exportProfileTitle");
+  return `<section class="export-plan-profile" data-export-profile="1" data-plan-id="${escapeHtml(plan?.id || "")}">
+      <h2 class="section-title">${escapeHtml(title)}</h2>
+      <p class="export-profile-company">${escapeHtml(company)}</p>
+      ${list}
+    </section>`;
+}
+
 /* ---- js/app.js ---- */
+
 
 
 
@@ -3076,7 +3349,7 @@ function exportLoanProofHtml(result, lang = state.lang) {
           <div class="micro">${escapeHtml(exact)}</div>
         </div>
         <div class="export-loan-proof-rules">
-          <p class="export-asset-proof-intro">${escapeHtml(t(lang, "assetProofIntro"))}</p>
+          <p class="export-asset-proof-intro">${escapeHtml(t(lang, "exportAssetProofIntro"))}</p>
           <ul class="export-asset-proof-list">
             <li>${escapeHtml(t(lang, "assetProofDeposits"))}</li>
             <li>${escapeHtml(t(lang, "assetProofEquities"))}</li>
@@ -4972,6 +5245,11 @@ function bind() {
     proofWrap.innerHTML = exportLoanProofHtml(result, lang);
     const proof = proofWrap.firstElementChild;
     if (proof) page3.appendChild(proof);
+
+    const profileWrap = document.createElement("div");
+    profileWrap.innerHTML = exportPlanProfileHtml(currentPlan(), result, lang);
+    const profile = profileWrap.firstElementChild;
+    if (profile) page3.appendChild(profile);
 
     const page4 = makeExportPage();
     page4.dataset.page = "4";

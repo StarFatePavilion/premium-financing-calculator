@@ -2293,6 +2293,46 @@ details.fr-strip-disclosure > .fr-compare-strip {
   margin: 0;
   color: #3d3a34;
 }
+.proposal-export-page[data-page="3"] {
+  display: flex;
+  flex-direction: column;
+}
+.proposal-export .export-plan-profile {
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px solid #8a7348;
+}
+.proposal-export .export-plan-profile .section-title {
+  margin: 0 0 6px;
+  font-size: 1.02rem;
+}
+.proposal-export .export-profile-company,
+.proposal-export .export-profile-points {
+  font-size: 0.76rem;
+  line-height: 1.42;
+  color: #1c1b16;
+}
+.proposal-export .export-profile-company {
+  margin: 0 0 6px;
+}
+.proposal-export .export-profile-points {
+  margin: 0;
+  padding: 0 0 0 1.15em;
+}
+.proposal-export .export-profile-points li {
+  margin: 0 0 4px;
+}
+.proposal-export .export-profile-points li:last-child {
+  margin-bottom: 0;
+}
+html[lang="en"] .proposal-export .export-profile-company,
+html[lang="en"] .proposal-export .export-profile-points,
+html[data-lang="en"] .proposal-export .export-profile-company,
+html[data-lang="en"] .proposal-export .export-profile-points {
+  font-size: 0.7rem;
+  line-height: 1.38;
+}
+
 .proposal-export .export-loan-proof + .disclaimer,
 .proposal-export .disclaimer {
   margin-top: 16px;
