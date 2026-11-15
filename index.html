@@ -154,32 +154,38 @@
           </section>
 
           <section class="section fulfillment-section" id="fulfillment" aria-labelledby="fr-title">
-            <details class="fr-disclosure" id="fr-disclosure">
-              <summary class="fr-disclosure-summary section-title" id="fr-title" data-i18n="frTitle">保險公司分紅實現率比較（10Life）</summary>
+            <details class="section-disclosure fr-disclosure" id="fr-disclosure">
+              <summary class="section-disclosure-summary fr-disclosure-summary section-title" id="fr-title" data-i18n="frTitle">保險公司分紅實現率比較（10Life）</summary>
               <div id="fulfillment-body"></div>
             </details>
           </section>
 
           <section class="section chart-section" id="chart-section" style="margin-top:28px" aria-labelledby="chart-title">
-            <div class="field-row chart-head">
-              <h2 class="section-title" id="chart-title" data-i18n="chartTitle">年期路徑</h2>
-              <div class="seg" role="group" id="chart-series">
-                <button type="button" data-series="profit-avr" aria-pressed="true" data-i18n="seriesProfitAvr">淨收益 + 回報</button>
-                <button type="button" data-series="sv" aria-pressed="false" data-i18n="seriesSv">退保價值</button>
-                <button type="button" data-series="interest" aria-pressed="false" data-i18n="seriesInterest">累計利息</button>
+            <details class="section-disclosure" id="chart-disclosure">
+              <summary class="section-disclosure-summary section-title" id="chart-title" data-i18n="chartTitle">年期路徑</summary>
+              <div class="disclosure-body">
+                <div class="field-row chart-head">
+                  <div class="seg" role="group" id="chart-series">
+                    <button type="button" data-series="profit-avr" aria-pressed="true" data-i18n="seriesProfitAvr">淨收益 + 回報</button>
+                    <button type="button" data-series="sv" aria-pressed="false" data-i18n="seriesSv">退保價值</button>
+                    <button type="button" data-series="interest" aria-pressed="false" data-i18n="seriesInterest">累計利息</button>
+                  </div>
+                </div>
+                <div class="chart-wrap">
+                  <div id="chart"></div>
+                  <div class="chart-legend" id="chart-legend"></div>
+                </div>
+                <p class="fineprint" data-i18n="chartHint"></p>
               </div>
-            </div>
-            <div class="chart-wrap">
-              <div id="chart"></div>
-              <div class="chart-legend" id="chart-legend"></div>
-            </div>
-            <p class="fineprint" data-i18n="chartHint"></p>
+            </details>
           </section>
         </div>
       </div>
 
       <section class="section" id="how" aria-labelledby="how-title">
-        <h2 class="section-title" id="how-title" data-i18n="howTitle">計劃如何運作</h2>
+        <details class="section-disclosure" id="how-disclosure">
+          <summary class="section-disclosure-summary section-title" id="how-title" data-i18n="howTitle">計劃如何運作</summary>
+          <div class="disclosure-body">
         <div class="steps">
           <article class="step">
             <div class="step-num">1</div>
@@ -204,11 +210,17 @@
           </article>
         </div>
         <p class="fineprint" data-i18n="howInterestNote"></p>
+          </div>
+        </details>
       </section>
 
       <section class="section" id="cashflow" aria-labelledby="cash-title">
-        <h2 class="section-title" id="cash-title" data-i18n="cashflowTitle">現金流時間線</h2>
-        <div class="timeline" id="timeline"></div>
+        <details class="section-disclosure" id="cashflow-disclosure">
+          <summary class="section-disclosure-summary section-title" id="cash-title" data-i18n="cashflowTitle">現金流時間線</summary>
+          <div class="disclosure-body">
+            <div class="timeline" id="timeline"></div>
+          </div>
+        </details>
       </section>
 
       <section class="section" id="versus" aria-labelledby="vs-title">
@@ -240,7 +252,9 @@
       </section>
 
       <section class="section" id="sensitivity" aria-labelledby="sens-title">
-        <h2 class="section-title" id="sens-title" data-i18n="sensTitle">息率有變，收益會點？</h2>
+        <details class="section-disclosure" id="sensitivity-disclosure">
+          <summary class="section-disclosure-summary section-title" id="sens-title" data-i18n="sensTitle">息率有變，收益會點？</summary>
+          <div class="disclosure-body">
         <p class="section-lead" data-i18n="sensIntro"></p>
         <div class="sens-controls">
           <div class="seg" role="group" id="scenario-seg">
@@ -270,6 +284,8 @@
           <table class="data" id="sens-table"></table>
         </div>
         <p class="fineprint" data-i18n="sensTableFoot"></p>
+          </div>
+        </details>
       </section>
 
       <section class="section" id="table-section">
@@ -315,7 +331,9 @@
       </section>
 
       <section class="section notes" id="notes" aria-labelledby="notes-title">
-        <h2 class="section-title" id="notes-title" data-i18n="notesTitle">申請資料</h2>
+        <details class="section-disclosure" id="notes-disclosure">
+          <summary class="section-disclosure-summary section-title" id="notes-title" data-i18n="notesTitle">申請資料</summary>
+          <div class="disclosure-body">
         <ol>
           <li data-i18n="note1"></li>
           <li data-i18n="note2"></li>
@@ -323,10 +341,14 @@
           <li data-i18n="note4"></li>
           <li data-i18n="note5"></li>
         </ol>
+          </div>
+        </details>
       </section>
 
       <section class="section faq" id="faq" aria-labelledby="faq-title">
-        <h2 class="section-title" id="faq-title" data-i18n="faqTitle">常見問題</h2>
+        <details class="section-disclosure" id="faq-disclosure">
+          <summary class="section-disclosure-summary section-title" id="faq-title" data-i18n="faqTitle">常見問題</summary>
+          <div class="disclosure-body faq-body">
         <details>
           <summary data-i18n="faq1q"></summary>
           <p data-i18n="faq1a"></p>
@@ -354,6 +376,8 @@
         <details>
           <summary data-i18n="faq7q"></summary>
           <p data-i18n="faq7a"></p>
+        </details>
+          </div>
         </details>
       </section>
 

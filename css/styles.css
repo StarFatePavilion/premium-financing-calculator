@@ -1058,11 +1058,11 @@ table.data tr.is-current { outline: 2px solid var(--green-mid); outline-offset: 
 }
 .notes li { margin: 0 0 8px; }
 
-.faq details {
+.faq .faq-body > details {
   border-bottom: 1px solid var(--line);
   padding: 10px 0;
 }
-.faq details > summary {
+.faq .faq-body > details > summary {
   cursor: pointer;
   font-weight: 650;
   color: var(--ink);
@@ -1071,14 +1071,14 @@ table.data tr.is-current { outline: 2px solid var(--green-mid); outline-offset: 
   justify-content: space-between;
   gap: 12px;
 }
-.faq details > summary::-webkit-details-marker { display: none; }
-.faq details > summary::after {
+.faq .faq-body > details > summary::-webkit-details-marker { display: none; }
+.faq .faq-body > details > summary::after {
   content: "＋";
   color: var(--faint);
   font-weight: 400;
 }
-.faq details[open] > summary::after { content: "－"; }
-.faq details p {
+.faq .faq-body > details[open] > summary::after { content: "－"; }
+.faq .faq-body > details p {
   margin: 8px 0 4px;
   color: var(--ink-soft);
 }
@@ -1262,7 +1262,7 @@ table.data tr.is-current { outline: 2px solid var(--green-mid); outline-offset: 
   margin-top: 28px;
 }
 
-details.fr-disclosure,
+details.section-disclosure,
 details.fr-strip-disclosure {
   border-top: 1px solid var(--line);
   padding-top: 12px;
@@ -1277,7 +1277,7 @@ details.fr-strip-disclosure {
   border-top: 1px solid var(--line);
 }
 
-details.fr-disclosure > summary.fr-disclosure-summary,
+details.section-disclosure > summary.section-disclosure-summary,
 details.fr-strip-disclosure > summary.fr-strip-summary {
   list-style: none;
   cursor: pointer;
@@ -1287,24 +1287,23 @@ details.fr-strip-disclosure > summary.fr-strip-summary {
   gap: 12px;
   font-weight: 650;
   color: var(--ink);
+  margin: 0;
 }
 
-details.fr-disclosure > summary.fr-disclosure-summary {
-  margin: 0;
+details.section-disclosure > summary.section-disclosure-summary {
   font-size: 1.22rem;
 }
 
 details.fr-strip-disclosure > summary.fr-strip-summary {
-  margin: 0;
   font-size: 0.95rem;
 }
 
-details.fr-disclosure > summary::-webkit-details-marker,
+details.section-disclosure > summary::-webkit-details-marker,
 details.fr-strip-disclosure > summary::-webkit-details-marker {
   display: none;
 }
 
-details.fr-disclosure > summary::after,
+details.section-disclosure > summary::after,
 details.fr-strip-disclosure > summary::after {
   content: "＋";
   color: var(--faint);
@@ -1312,18 +1311,21 @@ details.fr-strip-disclosure > summary::after {
   flex: 0 0 auto;
 }
 
-details.fr-disclosure[open] > summary::after,
+details.section-disclosure[open] > summary::after,
 details.fr-strip-disclosure[open] > summary::after {
   content: "－";
 }
 
-details.fr-disclosure > #fulfillment-body {
+details.section-disclosure > .disclosure-body,
+details.section-disclosure > #fulfillment-body,
+details.fr-strip-disclosure > .fr-compare-strip {
   margin-top: 12px;
 }
 
-details.fr-strip-disclosure > .fr-compare-strip {
-  margin-top: 10px;
+.chart-section .chart-head {
+  margin-top: 0;
 }
+
 
 .fr-lead {
   margin: 0 0 10px;
@@ -1708,13 +1710,13 @@ details.fr-strip-disclosure > .fr-compare-strip {
     break-inside: auto;
     overflow: visible !important;
   }
-  details.fr-disclosure,
+  details.section-disclosure,
   details.fr-strip-disclosure {
     border: 0;
     padding: 0;
     background: transparent;
   }
-  details.fr-disclosure > summary::after,
+  details.section-disclosure > summary::after,
   details.fr-strip-disclosure > summary::after {
     display: none;
   }

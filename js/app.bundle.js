@@ -962,8 +962,9 @@ const FULFILLMENT = {
 
 const METRICS = ["overall", "terminal", "annual", "reversionary"];
 
-/** UI disclosures for the 10Life comparison start collapsed on every load. */
+/** Secondary UI disclosures (10Life, chart, how-to, FAQ, …) start collapsed on every load. */
 const FULFILLMENT_DISCLOSURE_DEFAULT_OPEN = false;
+const SECONDARY_DISCLOSURE_DEFAULT_OPEN = FULFILLMENT_DISCLOSURE_DEFAULT_OPEN;
 
 const CALCULATOR_INSURER_IDS = FULFILLMENT.calculatorInsurerIds || [
   "boc-life",
@@ -3598,14 +3599,29 @@ function renderFulfillment() {
 
 
 
+const SECONDARY_DISCLOSURE_IDS = [
+  "fr-disclosure",
+  "fr-strip-disclosure",
+  "chart-disclosure",
+  "how-disclosure",
+  "cashflow-disclosure",
+  "sensitivity-disclosure",
+  "notes-disclosure",
+  "faq-disclosure",
+];
+
+function ensureSecondaryDisclosuresCollapsedOnLoad() {
+  // Native <details> omit [open] in HTML; re-assert defaults before first paint.
+  if (SECONDARY_DISCLOSURE_DEFAULT_OPEN || FULFILLMENT_DISCLOSURE_DEFAULT_OPEN) return;
+  for (const id of SECONDARY_DISCLOSURE_IDS) {
+    const el = document.getElementById(id);
+    if (el && !el.dataset.userToggled) el.open = false;
+  }
+}
+
+/** @deprecated alias kept for older call sites / tests */
 function ensureFulfillmentDisclosuresCollapsedOnLoad() {
-  // Native <details> omit [open] in HTML; this helper documents the contract for tests
-  // and re-asserts the default if a caller ever sets open before first paint.
-  if (FULFILLMENT_DISCLOSURE_DEFAULT_OPEN) return;
-  const main = document.getElementById("fr-disclosure");
-  const strip = document.getElementById("fr-strip-disclosure");
-  if (main && !main.dataset.userToggled) main.open = false;
-  if (strip && !strip.dataset.userToggled) strip.open = false;
+  ensureSecondaryDisclosuresCollapsedOnLoad();
 }
 
 function renderFrCompareStrip() {
@@ -4074,16 +4090,11 @@ function bind() {
     renderFulfillment();
   });
 
-  const frDisclosure = document.getElementById("fr-disclosure");
-  if (frDisclosure) {
-    frDisclosure.addEventListener("toggle", () => {
-      frDisclosure.dataset.userToggled = "1";
-    });
-  }
-  const frStripDisclosure = document.getElementById("fr-strip-disclosure");
-  if (frStripDisclosure) {
-    frStripDisclosure.addEventListener("toggle", () => {
-      frStripDisclosure.dataset.userToggled = "1";
+  for (const id of SECONDARY_DISCLOSURE_IDS) {
+    const el = document.getElementById(id);
+    if (!el) continue;
+    el.addEventListener("toggle", () => {
+      el.dataset.userToggled = "1";
     });
   }
   document.getElementById("fr-compare-strip").addEventListener("click", (e) => {
@@ -4195,7 +4206,7 @@ function init() {
   applyUrlParams();
   applyPlanDefaults(currentPlan(), { keepPremium: false });
   bind();
-  ensureFulfillmentDisclosuresCollapsedOnLoad();
+  ensureSecondaryDisclosuresCollapsedOnLoad();
   render();
 }
 
