@@ -2439,6 +2439,79 @@ html[data-lang="en"] .proposal-export .export-scenario-metric .v {
   font-size: 0.98rem;
 }
 
+
+.proposal-export .export-financing-suit {
+  margin-top: 24px;
+  padding-top: 14px;
+  border-top: 1px solid #8a7348;
+}
+.proposal-export .export-financing-suit .section-title {
+  margin: 0 0 8px;
+  font-size: 1.08rem;
+}
+.proposal-export .export-financing-suit-intro,
+.proposal-export .export-financing-suit-list,
+.proposal-export .export-financing-suit-footer {
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: #1c1b16;
+}
+.proposal-export .export-financing-suit-intro {
+  margin: 0 0 8px;
+}
+.proposal-export .export-financing-suit-list {
+  margin: 0 0 8px;
+  padding: 0 0 0 1.15em;
+}
+.proposal-export .export-financing-suit-list li {
+  margin: 0 0 6px;
+}
+.proposal-export .export-financing-suit-list li:last-child {
+  margin-bottom: 0;
+}
+.proposal-export .export-financing-suit-footer {
+  margin: 0;
+  color: #3d3a34;
+}
+html[lang="en"] .proposal-export .export-financing-suit-intro,
+html[data-lang="en"] .proposal-export .export-financing-suit-intro,
+html[lang="en"] .proposal-export .export-financing-suit-list,
+html[data-lang="en"] .proposal-export .export-financing-suit-list,
+html[lang="en"] .proposal-export .export-financing-suit-footer,
+html[data-lang="en"] .proposal-export .export-financing-suit-footer {
+  font-size: 0.68rem;
+  line-height: 1.35;
+}
+html[lang="en"] .proposal-export .export-financing-suit .section-title,
+html[data-lang="en"] .proposal-export .export-financing-suit .section-title {
+  margin: 0 0 6px;
+  font-size: 1rem;
+}
+html[lang="en"] .proposal-export .export-financing-suit,
+html[data-lang="en"] .proposal-export .export-financing-suit {
+  padding-top: 10px;
+}
+html[lang="en"] .proposal-export .export-financing-suit-intro,
+html[data-lang="en"] .proposal-export .export-financing-suit-intro {
+  margin: 0 0 6px;
+}
+html[lang="en"] .proposal-export .export-financing-suit-list,
+html[data-lang="en"] .proposal-export .export-financing-suit-list {
+  margin: 0 0 6px;
+}
+html[lang="en"] .proposal-export .export-financing-suit-list li,
+html[data-lang="en"] .proposal-export .export-financing-suit-list li {
+  margin: 0 0 4px;
+}
+html[lang="en"] .proposal-export-page[data-page="3"] .export-scenarios-grid,
+html[data-lang="en"] .proposal-export-page[data-page="3"] .export-scenarios-grid {
+  gap: 8px;
+}
+html[lang="en"] .proposal-export-page[data-page="3"] .export-scenario-card,
+html[data-lang="en"] .proposal-export-page[data-page="3"] .export-scenario-card {
+  padding: 8px 12px;
+}
+
 .proposal-export-page[data-page="4"] {
   display: flex;
   flex-direction: column;

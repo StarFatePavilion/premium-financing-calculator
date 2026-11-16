@@ -2091,6 +2091,13 @@ const STRINGS = {
     exportScenarioOptimistic: "樂觀情況（買入一年後，借貸利率下降 1 個百分點，其後一直維持）",
     exportScenarioYearHeading: "以下為第 {n} 年的演示數字",
     exportScenarioPathLabel: "息率路徑",
+    exportFinancingSuitTitle: "保費融資適合什麼人士",
+    exportFinancingSuitIntro: "保費融資較適合同時符合以下情況的人士：",
+    exportFinancingSuitBulletAssets: "已有可用作資產證明的資金或資產（例如銀行存款、股票，或沒有按揭的香港物業），希望以較少首期參與較大保費額的儲蓄計劃，並保留其餘流動資金。",
+    exportFinancingSuitBulletInterest: "有穩定現金流，可按期另行支付貸款利息；利息不會加入貸款本金。",
+    exportFinancingSuitBulletRisk: "明白演示退保價值及回報並非保證，融資息率亦可能變動，並可能令結果較演示更差，包括錄得虧損。",
+    exportFinancingSuitBulletHold: "計劃持有至本提案標示的提取年份附近，而不是短期內退保。",
+    exportFinancingSuitFooter: "此說明僅供參考，並非對個別人士的合適性評估，亦不是任何銀行或保險公司的官方要約。投保及融資前，請按個人財務狀況及銀行批核結果考慮是否適合。",
 
   },
   "zh-Hans": {
@@ -2413,6 +2420,13 @@ const STRINGS = {
     exportScenarioOptimistic: "乐观情况（买入一年后，借贷利率下降 1 个百分点，其后一直维持）",
     exportScenarioYearHeading: "以下为第 {n} 年的演示数字",
     exportScenarioPathLabel: "利率路径",
+    exportFinancingSuitTitle: "保费融资适合什么人士",
+    exportFinancingSuitIntro: "保费融资较适合同时符合以下情况的人士：",
+    exportFinancingSuitBulletAssets: "已有可用作资产证明的资金或资产（例如银行存款、股票，或没有按揭的香港物业），希望以较少首期参与较大保费额的储蓄计划，并保留其余流动资金。",
+    exportFinancingSuitBulletInterest: "有稳定现金流，可按期另行支付贷款利息；利息不会加入贷款本金。",
+    exportFinancingSuitBulletRisk: "明白演示退保价值及回报并非保证，融资利率亦可能变动，并可能令结果较演示更差，包括录得亏损。",
+    exportFinancingSuitBulletHold: "计划持有至本提案标示的提取年份附近，而不是短期内退保。",
+    exportFinancingSuitFooter: "此说明仅供参考，并非对个别人士的合适性评估，也不是任何银行或保险公司的官方要约。投保及融资前，请按个人财务状况及银行批核结果考虑是否适合。",
 
   },
   en: {
@@ -2735,6 +2749,13 @@ const STRINGS = {
     exportScenarioOptimistic: "Optimistic case (from one year after purchase, the financing rate falls by 1 percentage point and stays there)",
     exportScenarioYearHeading: "Illustrated figures below are at year {n}.",
     exportScenarioPathLabel: "Rate path",
+    exportFinancingSuitTitle: "Who premium financing may suit",
+    exportFinancingSuitIntro: "Premium financing may better suit people who meet all of the following:",
+    exportFinancingSuitBulletAssets: "They already have funds or assets that can be used as asset proof (for example bank deposits, equities, or unmortgaged Hong Kong property), and they wish to take part in a larger-premium savings plan with a smaller down payment, while keeping the rest of their liquidity.",
+    exportFinancingSuitBulletInterest: "They have stable cash flow to pay the loan interest separately as it falls due. Interest is not added to the loan principal.",
+    exportFinancingSuitBulletRisk: "They understand that illustrated surrender values and returns are not guaranteed, that the financing rate may change, and that results may be worse than the illustration, including a loss.",
+    exportFinancingSuitBulletHold: "They intend to hold the plan to around the withdrawal year marked in this proposal, rather than surrendering in the short term.",
+    exportFinancingSuitFooter: "This note is for illustration only. It is not a suitability assessment of any individual, and it is not an official offer from any bank or insurer. Before applying for a policy or financing, consider whether it is appropriate in light of your own finances and the bank’s approval.",
 
   },
 };
@@ -3351,6 +3372,17 @@ function exportRateScenariosHtml(plan, inputs, opts) {
       <div class="export-scenarios-grid">
         ${cards}
       </div>
+      <section class="export-financing-suit" data-export-financing-suit="1">
+        <h2 class="section-title">${escapeHtml(t(lang, "exportFinancingSuitTitle"))}</h2>
+        <p class="export-financing-suit-intro">${escapeHtml(t(lang, "exportFinancingSuitIntro"))}</p>
+        <ul class="export-financing-suit-list">
+          <li>${escapeHtml(t(lang, "exportFinancingSuitBulletAssets"))}</li>
+          <li>${escapeHtml(t(lang, "exportFinancingSuitBulletInterest"))}</li>
+          <li>${escapeHtml(t(lang, "exportFinancingSuitBulletRisk"))}</li>
+          <li>${escapeHtml(t(lang, "exportFinancingSuitBulletHold"))}</li>
+        </ul>
+        <p class="export-financing-suit-footer">${escapeHtml(t(lang, "exportFinancingSuitFooter"))}</p>
+      </section>
     </section>`;
 }
 
