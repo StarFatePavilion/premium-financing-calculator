@@ -1200,6 +1200,9 @@ function defaultPromoRate(plan) {
  * Standard: years 1–4 promo (realRate); years 5–10 post (pRate − 1.8%).
  * fwd-wih-usd special (base scenario only): 1–4 promo; 5–7 mid (pRate − 3%); 8–10 post.
  * Scenarios: constant = promo all years; rise/fall apply from year 5 (absolute rate if provided).
+ * Optional additive shift: if rateShiftFromYear and rateShiftDelta are set, add the
+ * delta to each scheduled rate from that year onward, then floor at 0. This does
+ * not change the meaning of scenario "rise" | "fall" | "constant".
  */
 function rateForYear(plan, year, assumptions = {}) {
   const promo = assumptions.promoRate ?? defaultPromoRate(plan);
@@ -1209,24 +1212,32 @@ function rateForYear(plan, year, assumptions = {}) {
   const isSpecial =
     plan.interestRule === "fwd-wih-usd-special" && scenario === "base";
 
-  if (scenario === "constant") return promo;
-
-  if (year <= 4) return promo;
-
-  if (scenario === "rise") {
-    if (assumptions.riseTo != null) return assumptions.riseTo;
-    return post + (assumptions.riseDelta ?? DEFAULT_RISE_DELTA);
+  let rate;
+  if (scenario === "constant") {
+    rate = promo;
+  } else if (year <= 4) {
+    rate = promo;
+  } else if (scenario === "rise") {
+    rate = assumptions.riseTo != null
+      ? assumptions.riseTo
+      : post + (assumptions.riseDelta ?? DEFAULT_RISE_DELTA);
+  } else if (scenario === "fall") {
+    rate = assumptions.fallTo != null
+      ? assumptions.fallTo
+      : post + (assumptions.fallDelta ?? DEFAULT_FALL_DELTA);
+  } else if (isSpecial) {
+    rate = year <= 7 ? mid : post;
+  } else {
+    rate = post;
   }
-  if (scenario === "fall") {
-    if (assumptions.fallTo != null) return assumptions.fallTo;
-    return post + (assumptions.fallDelta ?? DEFAULT_FALL_DELTA);
-  }
 
-  if (isSpecial) {
-    if (year <= 7) return mid;
-    return post;
+  const shiftFrom = assumptions.rateShiftFromYear;
+  const delta = assumptions.rateShiftDelta;
+  if (shiftFrom != null && Number.isFinite(Number(delta)) && year >= shiftFrom) {
+    rate += Number(delta);
+    if (rate < 0) rate = 0;
   }
-  return post;
+  return rate;
 }
 
 /**
@@ -1544,6 +1555,8 @@ function calculate(plan, inputs = {}) {
     fallDelta: inputs.fallDelta,
     riseTo: inputs.riseTo,
     fallTo: inputs.fallTo,
+    rateShiftFromYear: inputs.rateShiftFromYear,
+    rateShiftDelta: inputs.rateShiftDelta,
   };
 
   const reinvest = !!inputs.reinvest;
@@ -2071,6 +2084,14 @@ const STRINGS = {
     exportProfileWpSuit: "此計劃於較早年期的演示融資結果較為溫和，部分假設下第五年或仍為虧損，較適合考慮較長持有期（例如約{ordinal}）的人士。演示數字並非保證。",
     exportProfilePtSuit: "此計劃於較早年期的演示融資結果較為溫和，較適合考慮較長持有期（例如約{ordinal}）的人士。演示數字並非保證。",
     exportProfileRfSuit: "此計劃於較早年期的演示融資結果較為溫和，較適合看重永明品牌並考慮較長持有期（例如約{ordinal}）的人士。演示數字並非保證。",
+    exportScenarioTitle: "息率情境比較",
+    exportScenarioIntro: "本頁只調整第 2 個保單年度起的借貸利率；演示保單價值維持不變；利息另行支付，不滾入貸款本金。上升 0.5 個百分點與下降 1 個百分點均為固定演示假設，並非預測；實際銀行息率可能不同。",
+    exportScenarioBase: "一般情況",
+    exportScenarioPessimistic: "悲觀情況（買入一年後，借貸利率上升 0.5 個百分點，其後一直維持）",
+    exportScenarioOptimistic: "樂觀情況（買入一年後，借貸利率下降 1 個百分點，其後一直維持）",
+    exportScenarioYearHeading: "以下為第 {n} 年的演示數字",
+    exportScenarioPathLabel: "息率路徑",
+
   },
   "zh-Hans": {
     appTitle: "保费融资计算器",
@@ -2385,6 +2406,14 @@ const STRINGS = {
     exportProfileWpSuit: "此计划于较早年期的演示融资结果较为温和，部分假设下第五年或仍为亏损，较适合考虑较长持有期（例如约{ordinal}）的人士。演示数字并非保证。",
     exportProfilePtSuit: "此计划于较早年期的演示融资结果较为温和，较适合考虑较长持有期（例如约{ordinal}）的人士。演示数字并非保证。",
     exportProfileRfSuit: "此计划于较早年期的演示融资结果较为温和，较适合看重永明品牌并考虑较长持有期（例如约{ordinal}）的人士。演示数字并非保证。",
+    exportScenarioTitle: "息率情境比较",
+    exportScenarioIntro: "本页只调整第 2 个保单年度起的借贷利率；演示保单价值维持不变；利息另行支付，不滚入贷款本金。上升 0.5 个百分点与下降 1 个百分点均为固定演示假设，并非预测；实际银行利率可能不同。",
+    exportScenarioBase: "一般情况",
+    exportScenarioPessimistic: "悲观情况（买入一年后，借贷利率上升 0.5 个百分点，其后一直维持）",
+    exportScenarioOptimistic: "乐观情况（买入一年后，借贷利率下降 1 个百分点，其后一直维持）",
+    exportScenarioYearHeading: "以下为第 {n} 年的演示数字",
+    exportScenarioPathLabel: "利率路径",
+
   },
   en: {
     appTitle: "Premium Financing Calculator",
@@ -2699,6 +2728,14 @@ const STRINGS = {
     exportProfileWpSuit: "This plan’s illustrated financing result in the earlier years is more modest, and under some assumptions year 5 may still be a loss, so it may better suit someone considering a longer hold, for example around {ordinal}. Illustrated figures are not guaranteed.",
     exportProfilePtSuit: "This plan’s illustrated financing result in the earlier years is more modest, so it may better suit someone considering a longer hold, for example around {ordinal}. Illustrated figures are not guaranteed.",
     exportProfileRfSuit: "This plan’s illustrated financing result in the earlier years is more modest, so it may better suit someone who values the Sun Life brand and is considering a longer hold, for example around {ordinal}. Illustrated figures are not guaranteed.",
+    exportScenarioTitle: "Financing-rate scenarios",
+    exportScenarioIntro: "This page changes only the financing interest rate from the second policy year. Illustrated policy values stay the same. Interest is paid separately and is not added to the loan principal. The +0.5 and −1 percentage-point moves are fixed illustration assumptions, not a forecast. Actual bank rates may differ.",
+    exportScenarioBase: "Base case",
+    exportScenarioPessimistic: "Pessimistic case (from one year after purchase, the financing rate rises by 0.5 percentage points and stays there)",
+    exportScenarioOptimistic: "Optimistic case (from one year after purchase, the financing rate falls by 1 percentage point and stays there)",
+    exportScenarioYearHeading: "Illustrated figures below are at year {n}.",
+    exportScenarioPathLabel: "Rate path",
+
   },
 };
 
@@ -3146,7 +3183,179 @@ function exportRecLabelKey(planId) {
   return EXPORT_REC_LABEL_KEYS[planId] || null;
 }
 
+/* ---- js/export-rate-scenarios.js ---- */
+/**
+ * PDF-only financing-rate scenario comparison (new proposal page 3).
+ *
+ * Shocks are a permanent parallel shift of the scheduled rate from policy
+ * year 2. They are not the live UI’s year-5 rise/fall/constant toggle.
+ */
+
+
+
+const EXPORT_RATE_SHIFT_FROM_YEAR = 2;
+const EXPORT_RATE_SHIFT_PESSIMISTIC = 0.005;
+const EXPORT_RATE_SHIFT_OPTIMISTIC = -0.01;
+
+function escapeHtml(s) {
+  return String(s ?? "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
+/**
+ * Keep the proposal’s typed promo / post / mid rates, but force the basic
+ * scheduled path (scenario "base") and drop year-5 rise/fall overrides.
+ */
+function baseScheduleInputs(inputs = {}) {
+  const next = { ...inputs, scenario: "base" };
+  delete next.riseTo;
+  delete next.fallTo;
+  delete next.riseDelta;
+  delete next.fallDelta;
+  delete next.rateShiftFromYear;
+  delete next.rateShiftDelta;
+  return next;
+}
+
+function exportRateScenarioDefs() {
+  return [
+    { id: "base", nameKey: "exportScenarioBase", delta: 0 },
+    {
+      id: "pessimistic",
+      nameKey: "exportScenarioPessimistic",
+      delta: EXPORT_RATE_SHIFT_PESSIMISTIC,
+    },
+    {
+      id: "optimistic",
+      nameKey: "exportScenarioOptimistic",
+      delta: EXPORT_RATE_SHIFT_OPTIMISTIC,
+    },
+  ];
+}
+
+function calculateExportRateScenarios(plan, inputs = {}) {
+  const baseInputs = baseScheduleInputs(inputs);
+  return exportRateScenarioDefs().map((def) => {
+    const calcInputs = def.delta
+      ? {
+          ...baseInputs,
+          rateShiftFromYear: EXPORT_RATE_SHIFT_FROM_YEAR,
+          rateShiftDelta: def.delta,
+        }
+      : { ...baseInputs };
+    return { ...def, result: calculate(plan, calcInputs) };
+  });
+}
+
+function ratePathSegments(result) {
+  const years = result?.years || [];
+  const segs = [];
+  if (!years.length) return segs;
+  let start = 1;
+  for (let y = 2; y <= years.length + 1; y++) {
+    const prev = years[start - 1]?.rate;
+    const cur = y > years.length ? null : years[y - 1]?.rate;
+    if (y > years.length || cur !== prev) {
+      segs.push({ from: start, to: y - 1, rate: prev });
+      start = y;
+    }
+  }
+  return segs;
+}
+
+function formatScenarioRatePct(rate) {
+  if (rate == null || !Number.isFinite(rate)) return "—";
+  const sign = rate < 0 ? "−" : "";
+  return `${sign}${(Math.abs(rate) * 100).toFixed(2)}%`;
+}
+
+function yearRangeLabel(lang, from, to) {
+  if (lang === "en") {
+    if (from === to) return `Year ${from}`;
+    return `Years ${from}–${to}`;
+  }
+  if (from === to) return `第 ${from} 年`;
+  return `第 ${from}–${to} 年`;
+}
+
+function formatRatePath(segments, lang = "zh-Hant") {
+  const joiner = lang === "en" ? "; " : "；";
+  return (segments || [])
+    .map((seg, i) => {
+      let label = yearRangeLabel(lang, seg.from, seg.to);
+      if (lang === "en" && i > 0) label = label.replace(/^Y/, "y");
+      return lang === "en"
+        ? `${label}: ${formatScenarioRatePct(seg.rate)}`
+        : `${label} ${formatScenarioRatePct(seg.rate)}`;
+    })
+    .join(joiner);
+}
+
+/**
+ * @param {object} plan
+ * @param {object} inputs  raw proposal inputs; rise/fall will be stripped
+ * @param {{ lang: string, featuredYear: number, formatMoney: Function, formatPct: Function }} opts
+ */
+function exportRateScenariosHtml(plan, inputs, opts) {
+  const lang = opts.lang || "zh-Hant";
+  const featuredYear = Number(opts.featuredYear);
+  const formatMoney = opts.formatMoney;
+  const formatPct = opts.formatPct;
+  const scenarios = calculateExportRateScenarios(plan, inputs);
+  const year = Number.isFinite(featuredYear) && featuredYear >= 1 ? featuredYear : 10;
+
+  const cards = scenarios
+    .map((sc) => {
+      const row = sc.result.years[year - 1] || sc.result.years.at(-1);
+      const path = formatRatePath(ratePathSegments(sc.result), lang);
+      const profitTone = row.profit < 0 ? "is-loss" : "is-profit";
+      const retTone = row.totalReturn != null && row.totalReturn < 0 ? "is-loss" : "is-profit";
+      const avrTone = row.avr != null && row.avr < 0 ? "is-loss" : "is-profit";
+      return `<article class="export-scenario-card" data-scenario="${escapeHtml(sc.id)}" data-year="${year}" data-profit="${row.profit}" data-interest="${row.accInterest}" data-return="${row.totalReturn}" data-avr="${row.avr}">
+        <h3 class="export-scenario-name">${escapeHtml(t(lang, sc.nameKey))}</h3>
+        <p class="export-scenario-path"><span class="k">${escapeHtml(t(lang, "exportScenarioPathLabel"))}</span> ${escapeHtml(path)}</p>
+        <div class="export-scenario-metrics">
+          <div class="export-scenario-metric" data-metric="interest">
+            <div class="k">${escapeHtml(t(lang, "colAccInt"))}</div>
+            ${formatMoney(row.accInterest, "is-outlay")}
+          </div>
+          <div class="export-scenario-metric" data-metric="profit">
+            <div class="k">${escapeHtml(t(lang, "netProfit"))}</div>
+            ${formatMoney(row.profit, profitTone)}
+          </div>
+          <div class="export-scenario-metric" data-metric="return">
+            <div class="k">${escapeHtml(t(lang, "colTotRet"))}</div>
+            ${formatPct(row.totalReturn, retTone)}
+          </div>
+          <div class="export-scenario-metric" data-metric="avr">
+            <div class="k">${escapeHtml(t(lang, "avrLabel"))}</div>
+            ${formatPct(row.avr, avrTone)}
+          </div>
+        </div>
+      </article>`;
+    })
+    .join("");
+
+  return `<section class="export-rate-scenarios" data-export-scenarios="1" data-year="${year}">
+      <h2 class="section-title">${escapeHtml(t(lang, "exportScenarioTitle"))}</h2>
+      <p class="section-lead export-scenarios-intro">${escapeHtml(t(lang, "exportScenarioIntro"))}</p>
+      <ul class="export-scenarios-assumptions">
+        <li>${escapeHtml(t(lang, "exportScenarioBase"))}</li>
+        <li>${escapeHtml(t(lang, "exportScenarioPessimistic"))}</li>
+        <li>${escapeHtml(t(lang, "exportScenarioOptimistic"))}</li>
+      </ul>
+      <p class="export-scenarios-year">${escapeHtml(t(lang, "exportScenarioYearHeading", { n: year }))}</p>
+      <div class="export-scenarios-grid">
+        ${cards}
+      </div>
+    </section>`;
+}
+
 /* ---- js/app.js ---- */
+
 
 
 
@@ -3780,6 +3989,20 @@ function exportContinuationBar() {
   const brand = document.querySelector(".topbar .brand");
   if (brand) bar.appendChild(brand.cloneNode(true));
   return bar;
+}
+
+function exportScenarioFormatMoney(result, lang, amount, tone) {
+  const plan = currentPlan();
+  const wan = displayPrimaryHkd(amount, plan.currency, result.fx, lang);
+  const exact = bothCcy(amount, plan.currency, result.fx, lang);
+  const toneCls = tone ? ` ${tone}` : "";
+  const unit = wan.unit ? ` <span class="unit">${escapeHtml(wan.unit)}</span>` : "";
+  return `<div class="v tabular${toneCls}">${escapeHtml(wan.main)}${unit}</div><div class="micro">${escapeHtml(exact)}</div>`;
+}
+
+function exportScenarioFormatPct(decimal, tone) {
+  const toneCls = tone ? ` ${tone}` : "";
+  return `<div class="v tabular${toneCls}">${escapeHtml(fmtPct(decimal, 1))}</div>`;
 }
 
 
@@ -5403,32 +5626,48 @@ function bind() {
     page3.dataset.page = "3";
     page3.appendChild(exportContinuationBar());
 
-    const proofWrap = document.createElement("div");
-    proofWrap.innerHTML = exportLoanProofHtml(result, lang);
-    const proof = proofWrap.firstElementChild;
-    if (proof) page3.appendChild(proof);
-
-    const profileWrap = document.createElement("div");
-    profileWrap.innerHTML = exportPlanProfileHtml(currentPlan(), result, lang);
-    const profile = profileWrap.firstElementChild;
-    if (profile) page3.appendChild(profile);
+    const scenarioWrap = document.createElement("div");
+    const scenarioInputs = baseScheduleInputs(inputsFromState(currentPlan()));
+    scenarioWrap.innerHTML = exportRateScenariosHtml(currentPlan(), scenarioInputs, {
+      lang,
+      featuredYear: featuredN,
+      formatMoney: (amount, tone) => exportScenarioFormatMoney(result, lang, amount, tone),
+      formatPct: exportScenarioFormatPct,
+    });
+    const scenarios = scenarioWrap.firstElementChild;
+    if (scenarios) page3.appendChild(scenarios);
 
     const page4 = makeExportPage();
     page4.dataset.page = "4";
     page4.appendChild(exportContinuationBar());
 
+    const proofWrap = document.createElement("div");
+    proofWrap.innerHTML = exportLoanProofHtml(result, lang);
+    const proof = proofWrap.firstElementChild;
+    if (proof) page4.appendChild(proof);
+
+    const profileWrap = document.createElement("div");
+    profileWrap.innerHTML = exportPlanProfileHtml(currentPlan(), result, lang);
+    const profile = profileWrap.firstElementChild;
+    if (profile) page4.appendChild(profile);
+
+    const page5 = makeExportPage();
+    page5.dataset.page = "5";
+    page5.appendChild(exportContinuationBar());
+
     const storyWrap = document.createElement("div");
     storyWrap.innerHTML = exportSurrenderStoryHtml(result, lang, featuredN);
     const story = storyWrap.firstElementChild;
-    if (story) page4.appendChild(story);
+    if (story) page5.appendChild(story);
 
     const disc = cloneForExport(document.querySelector("section.disclaimer, .disclaimer"));
-    if (disc) page4.appendChild(disc);
+    if (disc) page5.appendChild(disc);
 
     root.appendChild(page1);
     root.appendChild(page2);
     root.appendChild(page3);
     root.appendChild(page4);
+    root.appendChild(page5);
     document.body.appendChild(root);
     return root;
   }

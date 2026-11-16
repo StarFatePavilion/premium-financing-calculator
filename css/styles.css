@@ -2318,7 +2318,128 @@ details.fr-strip-disclosure > .fr-compare-strip {
   margin: 0;
   color: #3d3a34;
 }
-.proposal-export-page[data-page="3"] {
+
+.proposal-export .export-rate-scenarios {
+  margin-top: 4px;
+}
+.proposal-export .export-rate-scenarios .section-title {
+  margin: 0 0 8px;
+  font-size: 1.08rem;
+}
+.proposal-export .export-scenarios-intro {
+  margin: 0 0 10px;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: #1c1b16;
+}
+.proposal-export .export-scenarios-assumptions {
+  margin: 0 0 12px;
+  padding: 0 0 0 1.15em;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: #1c1b16;
+}
+.proposal-export .export-scenarios-assumptions li {
+  margin: 0 0 4px;
+}
+.proposal-export .export-scenarios-assumptions li:last-child {
+  margin-bottom: 0;
+}
+.proposal-export .export-scenarios-year {
+  margin: 0 0 8px;
+  font-size: 0.86rem;
+  font-weight: 650;
+  color: #6e5630;
+}
+.proposal-export .export-scenarios-grid {
+  display: grid;
+  gap: 10px;
+}
+.proposal-export .export-scenario-card {
+  background: #ebe4d8;
+  color: #1c1b16;
+  border: 1px solid #cfc6b4;
+  border-left: 4px solid #8a7348;
+  box-shadow: none;
+  border-radius: 12px;
+  padding: 10px 14px;
+}
+.proposal-export .export-scenario-name {
+  margin: 0 0 4px;
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: #1c1b16;
+}
+.proposal-export .export-scenario-path {
+  margin: 0 0 8px;
+  font-size: 0.76rem;
+  line-height: 1.45;
+  color: #3d3a34;
+}
+.proposal-export .export-scenario-path .k {
+  font-weight: 650;
+  margin-right: 0.4em;
+  color: #3d3a34;
+}
+.proposal-export .export-scenario-metrics {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px 16px;
+}
+.proposal-export .export-scenario-metric .k {
+  font-size: 0.72rem;
+  color: #3d3a34;
+  margin-bottom: 1px;
+}
+.proposal-export .export-scenario-metric .v {
+  font-size: 1.05rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+}
+.proposal-export .export-scenario-metric .v .unit {
+  font-size: 0.8rem;
+  font-weight: 650;
+  margin-left: 2px;
+}
+.proposal-export .export-scenario-metric .v.is-profit,
+.proposal-export .export-scenario-metric .v.is-profit .unit {
+  color: var(--num-profit);
+}
+.proposal-export .export-scenario-metric .v.is-loss,
+.proposal-export .export-scenario-metric .v.is-loss .unit {
+  color: var(--num-loss);
+}
+.proposal-export .export-scenario-metric .v.is-outlay,
+.proposal-export .export-scenario-metric .v.is-outlay .unit {
+  color: var(--num-outlay);
+}
+.proposal-export .export-scenario-metric .micro {
+  font-size: 0.68rem;
+  color: #3d3a34;
+  margin-top: 1px;
+}
+html[lang="en"] .proposal-export .export-scenarios-intro,
+html[data-lang="en"] .proposal-export .export-scenarios-intro,
+html[lang="en"] .proposal-export .export-scenarios-assumptions,
+html[data-lang="en"] .proposal-export .export-scenarios-assumptions {
+  font-size: 0.74rem;
+  line-height: 1.45;
+}
+html[lang="en"] .proposal-export .export-scenario-path,
+html[data-lang="en"] .proposal-export .export-scenario-path,
+html[lang="en"] .proposal-export .export-scenario-metric .k,
+html[data-lang="en"] .proposal-export .export-scenario-metric .k {
+  font-size: 0.7rem;
+  line-height: 1.4;
+}
+html[lang="en"] .proposal-export .export-scenario-metric .v,
+html[data-lang="en"] .proposal-export .export-scenario-metric .v {
+  font-size: 0.98rem;
+}
+
+.proposal-export-page[data-page="4"] {
   display: flex;
   flex-direction: column;
 }
