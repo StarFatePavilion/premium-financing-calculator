@@ -1796,6 +1796,7 @@ const STRINGS = {
     discountAuto: "按級距自動計算",
     discountOverride: "自行輸入",
     discountApplied: "套用折扣",
+    premiumAfterDiscountLabel: "折扣後保費",
     discountTier: "級距",
     promoRateLabel: "首 4 年優惠息率",
     postRateLabel: "第 5 年起息率",
@@ -2125,6 +2126,7 @@ const STRINGS = {
     discountAuto: "按级距自动计算",
     discountOverride: "自行输入",
     discountApplied: "套用折扣",
+    premiumAfterDiscountLabel: "折扣后保费",
     discountTier: "级距",
     promoRateLabel: "首 4 年优惠利率",
     postRateLabel: "第 5 年起利率",
@@ -2454,6 +2456,7 @@ const STRINGS = {
     discountAuto: "Auto from tier table",
     discountOverride: "Enter manually",
     discountApplied: "Applied discount",
+    premiumAfterDiscountLabel: "Premium after discount",
     discountTier: "Tier",
     promoRateLabel: "Promotional rate, first 4 years",
     postRateLabel: "Rate from year 5",
@@ -5100,6 +5103,14 @@ function restoreField(el, formatted) {
   if (el.value !== formatted) el.value = formatted;
 }
 
+
+function exportPremiumIdentLine(result, plan, lang = state.lang) {
+  const discPct = `${(result.discount * 100).toFixed(1)}%`;
+  return `${t(lang, "premiumLabel")}：${fmtMoney(result.original, plan.currency, lang)}  ·  ` +
+    `${t(lang, "discountLabel")} ${discPct}  ·  ` +
+    `${t(lang, "premiumAfterDiscountLabel")} ${fmtMoney(result.premiumAfterDiscount, plan.currency, lang)}`;
+}
+
 function render() {
   applyStaticI18n(document, state.lang);
   document.querySelectorAll(".lang-switch button").forEach((b) => {
@@ -5123,7 +5134,7 @@ function render() {
   }
   const printPrem = document.getElementById("print-premium");
   if (printPrem) {
-    printPrem.textContent = `${t(state.lang, "premiumLabel")}：${fmtMoney(result.original, plan.currency, state.lang)}`;
+    printPrem.textContent = exportPremiumIdentLine(result, plan, state.lang);
   }
   const warn = document.getElementById("down-warning");
   if (result.downPayment <= 0) {

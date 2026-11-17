@@ -1990,9 +1990,16 @@ details.fr-strip-disclosure > .fr-compare-strip {
 }
 .proposal-export .print-premium {
   margin: 0 0 2px;
-  font-size: 0.88rem;
+  font-size: 0.82rem;
   font-weight: 650;
   font-variant-numeric: tabular-nums;
+  line-height: 1.3;
+  white-space: normal;
+}
+html[lang="en"] .proposal-export .print-premium,
+html[data-lang="en"] .proposal-export .print-premium {
+  font-size: 0.76rem;
+  line-height: 1.3;
 }
 .proposal-export .hero {
   display: grid !important;
